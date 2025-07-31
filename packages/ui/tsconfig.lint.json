@@ -1,0 +1,8 @@
+{
+  "extends": "@dxp/typescript-config/ui.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["src", "turbo", "./tailwind.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

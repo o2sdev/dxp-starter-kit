@@ -1,0 +1,12 @@
+{
+    "extends": "@dxp/typescript-config/api.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "dist"]
+}

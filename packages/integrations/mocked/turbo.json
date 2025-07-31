@@ -1,0 +1,11 @@
+{
+    "extends": ["//"],
+    "tasks": {
+        "dev": {
+            "env": ["MOCKED_INTEGRATION_DELAYS_ENABLED", "NODE_ENV", "AUTH_DATABASE_URL"]
+        },
+        "build": {
+            "env": ["MOCKED_INTEGRATION_DELAYS_ENABLED", "NODE_ENV", "AUTH_DATABASE_URL"]
+        }
+    }
+}

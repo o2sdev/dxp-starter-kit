@@ -1,0 +1,35 @@
+'use server';
+
+import { Modules } from '@dxp/api-harmonization';
+import * as Faq from '@dxp/blocks.faq/frontend';
+import { getLocale } from 'next-intl/server';
+import React from 'react';
+
+import { CMS } from '@dxp/framework/modules';
+
+import { auth } from '@/auth';
+
+// BLOCK IMPORT
+import { routing } from '@/i18n';
+
+export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: string[]) => {
+    const session = await auth();
+    const locale = await getLocale();
+
+    return blocks.map((block) => {
+        const blockProps = {
+            id: block.id,
+            slug: slug,
+            locale: locale,
+            accessToken: session?.accessToken,
+            routing: routing,
+        };
+
+        switch (block.__typename as Modules.Page.Model.Blocks) {
+            case 'FaqBlock':
+                return <Faq.Renderer key={block.id} {...blockProps} />;
+            default:
+                return null;
+        }
+    });
+};

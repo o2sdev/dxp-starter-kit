@@ -1,0 +1,57 @@
+{
+    "name": "@dxp",
+    "private": true,
+    "scripts": {
+        "prepare": "husky",
+        "dev": "turbo dev",
+        "build": "turbo build",
+        "start": "turbo start",
+        "format": "turbo format",
+        "lint": "turbo lint",
+        "test": "turbo test",
+        "generate": "turbo gen",
+        "eject-block": "ts-node ./scripts/cli.ts eject-block",
+        "docs": "turbo start --filter=@dxp/docs",
+        "changeset": "changeset",
+        "version-packages": "changeset version",
+        "prerelease": "turbo run build",
+        "release": "changeset publish",
+        "update-deps": "npx npm-check-updates --format group --workspaces --interactive"
+    },
+    "engines": {
+        "node": ">=22"
+    },
+    "packageManager": "npm@11.4.0",
+    "workspaces": [
+        "apps/*",
+        "packages/*",
+        "packages/configs/*",
+        "packages/integrations/*",
+        "packages/utils/*",
+        "packages/cli/*",
+        "packages/blocks/*",
+        "packages/modules/*"
+    ],
+    "devDependencies": {
+        "@commitlint/cli": "^19.8.1",
+        "@commitlint/config-conventional": "^19.8.1",
+        "@turbo/gen": "^2.5.3",
+        "@types/cli-progress": "^3.11.6",
+        "@types/prompts": "^2.4.9",
+        "@types/unzipper": "^0.10.11",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.0.0",
+        "prettier": "^3.5.3",
+        "syncpack": "^14.0.0-alpha.11",
+        "turbo": "^2.5.3",
+        "typescript": "5.8.3"
+    },
+    "dependencies": {
+        "@changesets/cli": "^2.29.4",
+        "@types/prompts": "^2.4.9",
+        "cli-progress": "^3.12.0",
+        "commander": "^14.0.0",
+        "prompts": "^2.4.2",
+        "unzipper": "^0.12.3"
+    }
+}

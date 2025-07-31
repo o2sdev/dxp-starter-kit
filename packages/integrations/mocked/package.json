@@ -1,0 +1,61 @@
+{
+    "name": "@dxp/integrations.mocked",
+    "version": "1.10.0",
+    "private": false,
+    "license": "MIT",
+    "exports": {
+        "./integration": "./dist/integration.js",
+        "./sdk": "./dist/sdk/index.js",
+        "./auth": "./dist/auth/index.js"
+    },
+    "files": [
+        "dist",
+        "prisma",
+        ".env.local"
+    ],
+    "scripts": {
+        "prepare": "npx prisma generate && dotenv -e .env.local -- prisma migrate deploy && dotenv -e .env.local -- prisma db seed",
+        "postinstall": "npx prisma generate",
+        "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+        "build": "dotenv -e .env.local -- prisma migrate deploy && tsc && tsc-alias",
+        "lint": "tsc --noEmit && eslint . --max-warnings 0",
+        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json}\"",
+        "seed": "dotenv -e .env.local -- tsx prisma/seed.ts"
+    },
+    "prisma": {
+        "schema": "./prisma/schema.prisma",
+        "seed": "tsx prisma/seed.ts"
+    },
+    "dependencies": {
+        "@auth/prisma-adapter": "^2.9.1",
+        "@prisma/client": "^6.8.2",
+        "bcryptjs": "^3.0.2",
+        "dotenv-cli": "^8.0.0",
+        "jsonwebtoken": "^9.0.2",
+        "prisma": "^6.8.2",
+        "@dxp/framework": "*",
+        "@o2s/utils.logger": "*"
+    },
+    "devDependencies": {
+        "@types/jsonwebtoken": "^9.0.9",
+        "@dxp/eslint-config": "*",
+        "@dxp/prettier-config": "*",
+        "@dxp/typescript-config": "*",
+        "@o2s/telemetry": "*",
+        "concurrently": "^9.1.2",
+        "eslint": "^9.27.0",
+        "prettier": "^3.5.3",
+        "shx": "^0.4.0",
+        "tsc-alias": "^1.8.16",
+        "typescript": "^5.8.3"
+    },
+    "peerDependencies": {
+        "@nestjs/axios": "^4",
+        "@nestjs/common": "^11",
+        "@nestjs/config": "^4.0.2",
+        "@nestjs/core": "^11",
+        "rxjs": "^7",
+        "next-auth": "^5.0.0-beta.27",
+        "zod": "^3.25.4"
+    }
+}

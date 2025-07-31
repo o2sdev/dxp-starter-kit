@@ -1,0 +1,20 @@
+{
+    "extends": "@dxp/typescript-config/api.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "baseUrl": "./",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "paths": {
+            "@dxp/api-harmonization/models/*": ["./src/models/*"],
+            "@dxp/api-harmonization/blocks": ["./src/blocks"],
+            "@dxp/api-harmonization/blocks/*": ["./src/blocks/*"],
+            "@dxp/api-harmonization/components": ["./src/components"],
+            "@dxp/api-harmonization/components/*": ["./src/components/*"],
+            "@dxp/api-harmonization/config/*": ["./src/config/*"],
+            "@dxp/api-harmonization/utils": ["./src/utils"],
+            "@dxp/api-harmonization/utils/*": ["./src/utils/*"],
+            "@dxp/api-harmonization/lib/*": ["./src/hooks/*"]
+        }
+    }
+}

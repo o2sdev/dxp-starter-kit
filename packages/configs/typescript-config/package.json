@@ -1,0 +1,6 @@
+{
+    "name": "@dxp/typescript-config",
+    "version": "1.0.0",
+    "private": true,
+    "license": "MIT"
+}

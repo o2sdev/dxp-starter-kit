@@ -1,0 +1,206 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@source "../../../apps/frontend/src/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../../../packages/ui/src/**/*.{ts,tsx}";
+@source "../../../node_modules/@o2s/**/*.{js,ts,jsx,tsx}";
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant hover (&:hover);
+
+@theme inline {
+    --font-*: initial;
+    --font-sans: Inter, sans-serif;
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-tertiary: var(--tertiary);
+    --color-tertiary-foreground: var(--tertiary-foreground);
+    --color-tertiary-border: var(--tertiary-border);
+    --color-tertiary-hover: var(--tertiary-hover);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-info: var(--info);
+    --color-info-foreground: var(--info-foreground);
+    --color-info-hover: var(--info-hover);
+    --color-info-foreground-hover: var(--info-foreground-hover);
+
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-success-hover: var(--success-hover);
+    --color-success-foreground-hover: var(--success-foreground-hover);
+
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-warning-hover: var(--warning-hover);
+    --color-warning-foreground-hover: var(--warning-foreground-hover);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-navbar-foreground: var(--navbar-foreground);
+    --color-navbar-background: var(--navbar-background);
+    --color-navbar-muted: var(--navbar-muted);
+    --color-navbar-border: var(--navbar-border);
+
+    --color-navbar-primary: var(--navbar-primary);
+    --color-navbar-primary-foreground: var(--navbar-primary-foreground);
+
+    --color-navbar-accent-background: var(--navbar-accent-background);
+    --color-navbar-accent-foreground: var(--navbar-accent-foreground);
+
+    --color-navbar-sub-background: var(--navbar-sub-background);
+    --color-navbar-sub-foreground: var(--navbar-sub-foreground);
+    --color-navbar-sub-accent: var(--navbar-sub-accent);
+    --color-navbar-sub-muted: var(--navbar-sub-muted);
+
+    --color-footer-background: var(--footer-background);
+    --color-footer-foreground: var(--footer-foreground);
+    --color-footer-muted: var(--footer-muted);
+    --color-footer-border: var(--footer-border);
+
+    --color-badge-default-background: var(--badge-default-background);
+    --color-badge-default-foreground: var(--badge-default-foreground);
+
+    --color-badge-secondary-background: var(--badge-secondary-background);
+    --color-badge-secondary-foreground: var(--badge-secondary-foreground);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-collapsible-down: collapsible-down 0.2s ease-out;
+    --animate-collapsible-up: collapsible-up 0.2s ease-out;
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+    @keyframes collapsible-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-collapsible-content-height);
+        }
+    }
+    @keyframes collapsible-up {
+        from {
+            height: var(--radix-collapsible-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+    @media (width >= --theme(--breakpoint-sm)) {
+        max-width: none;
+    }
+    @media (width >= 640px) {
+        max-width: 640px;
+    }
+    @media (width >= 768px) {
+        max-width: 768px;
+    }
+    @media (width >= 1024px) {
+        max-width: 1024px;
+    }
+    @media (width >= 1280px) {
+        max-width: 1280px;
+    }
+    @media (width >= 1536px) {
+        max-width: 1536px;
+    }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply font-sans antialiased bg-background text-foreground;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer base {
+    [role='button'],
+    button {
+        cursor: pointer;
+    }
+
+    :disabled {
+        cursor: default;
+    }
+}
