@@ -1,4 +1,7 @@
 import * as Faq from '@dxp/blocks.faq/api-harmonization';
+import * as HeroBanner from '@dxp/blocks.hero-banner/api-harmonization';
+
+// BLOCK IMPORT
 
 import { CMS, Models } from '@dxp/framework/modules';
 
@@ -45,5 +48,6 @@ export class PageData {
     breadcrumbs!: Breadcrumb[];
 }
 
-export type Blocks = Faq.Model.FaqBlock['__typename'];
-// BLOCK REGISTER
+export type Blocks =
+    // BLOCK REGISTER
+    Faq.Model.FaqBlock['__typename'] | HeroBanner.Model.HeroBannerBlock['__typename'];

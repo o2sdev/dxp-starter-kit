@@ -14,52 +14,11 @@ const MOCK_HEADER_LOGON_EN: CMS.Model.Header.Header = {
         open: 'Open menu',
         close: 'Close Menu',
     },
-    userInfo: {
-        url: '/user-account',
-        label: 'User Profile',
-    },
     items: [
         {
-            __typename: 'NavigationGroup',
-            title: 'Customer Portal',
-            items: [
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Dashboard',
-                    url: '/',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Cases',
-                    url: '/cases',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Invoices',
-                    url: '/invoices',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Notifications',
-                    url: '/notifications',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Services',
-                    url: '/services',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Orders',
-                    url: '/orders',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-            ],
+            __typename: 'NavigationItem',
+            label: 'Dashboard',
+            url: '/',
         },
         {
             __typename: 'NavigationGroup',
@@ -73,14 +32,6 @@ const MOCK_HEADER_LOGON_EN: CMS.Model.Header.Header = {
             ],
         },
     ],
-    notification: {
-        url: '/notifications',
-        label: 'Notifications',
-    },
-    contextSwitcher: {
-        closeLabel: 'Close',
-        showContextSwitcher: true,
-    },
 };
 const MOCK_HEADER_LOGON_DE: CMS.Model.Header.Header = {
     id: 'fqj6nnyk4irqq5b7rnc4ogsj',
@@ -96,10 +47,6 @@ const MOCK_HEADER_LOGON_DE: CMS.Model.Header.Header = {
         open: 'Menü öffnen',
         close: 'Menü schließen',
     },
-    userInfo: {
-        url: '/user-account',
-        label: 'Benutzerprofil',
-    },
     items: [
         {
             __typename: 'NavigationGroup',
@@ -109,37 +56,6 @@ const MOCK_HEADER_LOGON_DE: CMS.Model.Header.Header = {
                     __typename: 'NavigationItem',
                     label: 'Startseite',
                     url: '/',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Fälle',
-                    url: '/faelle',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Rechnungen',
-                    url: '/rechnungen',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Benachrichtigungen',
-                    url: '/benachrichtigungen',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Dienstleistungen',
-                    url: '/dienstleistungen',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Bestellungen',
-                    url: '/bestellungen',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
                 },
             ],
         },
@@ -155,14 +71,6 @@ const MOCK_HEADER_LOGON_DE: CMS.Model.Header.Header = {
             ],
         },
     ],
-    notification: {
-        url: '/benachrichtigungen',
-        label: 'Benachrichtigungen',
-    },
-    contextSwitcher: {
-        closeLabel: 'Schließen',
-        showContextSwitcher: true,
-    },
 };
 const MOCK_HEADER_LOGON_PL: CMS.Model.Header.Header = {
     id: 'fqj6nnyk4irqq5b7rnc4ogsj',
@@ -178,10 +86,6 @@ const MOCK_HEADER_LOGON_PL: CMS.Model.Header.Header = {
         open: 'Otwórz menu',
         close: 'Zamknij menu',
     },
-    userInfo: {
-        url: '/konto-uzytkownika',
-        label: 'Profil użytkownika',
-    },
     items: [
         {
             __typename: 'NavigationGroup',
@@ -191,36 +95,6 @@ const MOCK_HEADER_LOGON_PL: CMS.Model.Header.Header = {
                     __typename: 'NavigationItem',
                     label: 'Strona główna',
                     url: '/',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Zgłoszenia',
-                    url: '/zgloszenia',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Rachunki',
-                    url: '/rachunki',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Powiadomienia',
-                    url: '/powiadomienia',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Usługi',
-                    url: '/uslugi',
-                    permissions: [Auth.Constants.Roles.ORG_USER],
-                },
-                {
-                    __typename: 'NavigationItem',
-                    label: 'Zamówienia',
-                    url: '/zamowienia',
                     permissions: [Auth.Constants.Roles.ORG_USER],
                 },
             ],
@@ -237,14 +111,6 @@ const MOCK_HEADER_LOGON_PL: CMS.Model.Header.Header = {
             ],
         },
     ],
-    notification: {
-        url: '/powiadomienia',
-        label: 'Powiadomienia',
-    },
-    contextSwitcher: {
-        closeLabel: 'Zamknij',
-        showContextSwitcher: true,
-    },
 };
 
 export const mapHeader = (id: string, locale: string): CMS.Model.Header.Header => {

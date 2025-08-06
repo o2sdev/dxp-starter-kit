@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import { CMS } from '@dxp/framework/modules';
 
 import { mapFaqBlock } from './mappers/blocks/cms.faq.mapper';
+import { mapHeroBannerBlock } from './mappers/blocks/cms.hero-banner.mapper';
 import { mapAppConfig } from './mappers/cms.app-config.mapper';
 import { mapFooter } from './mappers/cms.footer.mapper';
 import { mapHeader } from './mappers/cms.header.mapper';
@@ -51,5 +52,9 @@ export class CmsService implements CMS.Service {
 
     getFaqBlock(_options: CMS.Request.GetCmsEntryParams) {
         return of(mapFaqBlock(_options.locale)).pipe(responseDelay());
+    }
+
+    getHeroBannerBlock(_options: CMS.Request.GetCmsEntryParams) {
+        return of(mapHeroBannerBlock(_options.locale)).pipe(responseDelay());
     }
 }

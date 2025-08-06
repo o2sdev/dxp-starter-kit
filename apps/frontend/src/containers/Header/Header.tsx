@@ -1,6 +1,5 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
 import React from 'react';
 
 import { Image } from '@dxp/ui/components/Image';
@@ -14,13 +13,8 @@ import { LocaleSwitcher } from '../Toolbar/LocaleSwitcher';
 import { DesktopNavigation } from './DesktopNavigation/DesktopNavigation';
 import { HeaderProps } from './Header.types';
 import { MobileNavigation } from './MobileNavigation/MobileNavigation';
-import { NotificationInfo } from './NotificationInfo/NotificationInfo';
-import { UserInfo } from './UserInfo/UserInfo';
 
 export const Header: React.FC<HeaderProps> = ({ data, alternativeUrls, children }) => {
-    const session = useSession();
-    const isSignedIn = !!session.data?.user;
-
     const LogoSlot = (
         <Link asChild>
             {/*TODO: get label from API*/}
@@ -32,22 +26,6 @@ export const Header: React.FC<HeaderProps> = ({ data, alternativeUrls, children 
         </Link>
     );
 
-    const UserSlot = () => {
-        if (!isSignedIn || !data.userInfo) {
-            return undefined;
-        }
-
-        return <UserInfo user={session?.data?.user} userInfo={data.userInfo} />;
-    };
-
-    const NotificationSlot = () => {
-        if (!isSignedIn || !data.notification?.url || !data.notification?.label) {
-            return null;
-        }
-
-        return <NotificationInfo data={{ url: data.notification.url, label: data.notification.label }} />;
-    };
-
     const LocaleSlot = () => {
         return <LocaleSwitcher label={data.languageSwitcherLabel} alternativeUrls={alternativeUrls} />;
     };
@@ -56,20 +34,12 @@ export const Header: React.FC<HeaderProps> = ({ data, alternativeUrls, children 
         <header className="flex flex-col gap-4">
             <>
                 <div className="md:block hidden">
-                    <DesktopNavigation
-                        logoSlot={LogoSlot}
-                        localeSlot={<LocaleSlot />}
-                        notificationSlot={<NotificationSlot />}
-                        userSlot={<UserSlot />}
-                        items={data.items}
-                    />
+                    <DesktopNavigation logoSlot={LogoSlot} localeSlot={<LocaleSlot />} items={data.items} />
                 </div>
                 <div className="md:hidden">
                     <MobileNavigation
                         logoSlot={LogoSlot}
                         localeSlot={<LocaleSlot />}
-                        notificationSlot={<NotificationSlot />}
-                        userSlot={<UserSlot />}
                         items={data.items}
                         title={data.title}
                         mobileMenuLabel={data.mobileMenuLabel}

@@ -22,14 +22,7 @@ import { Link as NextLink, usePathname } from '@/i18n';
 
 import { DesktopNavigationProps } from './DesktopNavigation.types';
 
-export function DesktopNavigation({
-    logoSlot,
-    contextSlot,
-    localeSlot,
-    notificationSlot,
-    userSlot,
-    items,
-}: DesktopNavigationProps) {
+export function DesktopNavigation({ logoSlot, localeSlot, items }: DesktopNavigationProps) {
     const pathname = usePathname();
 
     const activeNavigationGroup = items.find((item) => {
@@ -168,17 +161,8 @@ export function DesktopNavigation({
 
                     {/* Right Section */}
                     <div className="flex gap-4">
-                        {/* Company Selector */}
-                        {contextSlot}
-
                         {/* Language Selector */}
                         {localeSlot}
-
-                        {/* Notification Button */}
-                        {notificationSlot}
-
-                        {/* User Avatar */}
-                        {userSlot}
                     </div>
                 </div>
             </div>

@@ -19,16 +19,7 @@ import { Link as NextLink, usePathname } from '@/i18n';
 
 import { MobileNavigationProps } from './MobileNavigation.types';
 
-export function MobileNavigation({
-    logoSlot,
-    contextSlot,
-    localeSlot,
-    notificationSlot,
-    userSlot,
-    items,
-    title,
-    mobileMenuLabel,
-}: MobileNavigationProps) {
+export function MobileNavigation({ logoSlot, localeSlot, items, title, mobileMenuLabel }: MobileNavigationProps) {
     const pathname = usePathname();
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -108,12 +99,6 @@ export function MobileNavigation({
 
                 {/* Right Section */}
                 <div className="flex gap-4">
-                    {/* Notification Button */}
-                    {notificationSlot}
-
-                    {/* User Avatar */}
-                    {userSlot}
-
                     {/* Menu Layer with Trigger Button */}
                     <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                         <SheetTrigger asChild>
@@ -140,8 +125,6 @@ export function MobileNavigation({
                             </SheetHeader>
                             <div className="flex flex-col gap-4 mt-4">
                                 <div className="flex flex-col gap-4">
-                                    {/* Company Selector */}
-                                    {contextSlot}
                                     {/* Language Selector */}
                                     {localeSlot}
                                 </div>
