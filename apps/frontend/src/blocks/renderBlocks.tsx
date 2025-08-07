@@ -2,6 +2,7 @@
 
 import { Modules } from '@dxp/api-harmonization';
 import * as Faq from '@dxp/blocks.faq/frontend';
+import * as FeatureSection from '@dxp/blocks.feature-section/frontend';
 import * as HeroBanner from '@dxp/blocks.hero-banner/frontend';
 // BLOCK IMPORT
 
@@ -32,6 +33,8 @@ export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: str
                 return <Faq.Renderer key={block.id} {...blockProps} />;
             case 'HeroBannerBlock':
                 return <HeroBanner.Renderer key={block.id} {...blockProps} />;
+            case 'FeatureSectionBlock':
+                return <FeatureSection.Renderer key={block.id} {...blockProps} />;
             // BLOCK REGISTER
             default:
                 return null;
