@@ -2,7 +2,7 @@ import { CMS } from '@dxp/framework/modules';
 
 export const PAGE_HELP_AND_SUPPORT_EN: CMS.Model.Page.Page = {
     id: 'help-and-support',
-    slug: '/',
+    slug: '/help-and-support',
     locale: 'en',
     seo: {
         noIndex: false,
@@ -36,7 +36,7 @@ export const PAGE_HELP_AND_SUPPORT_EN: CMS.Model.Page.Page = {
 
 export const PAGE_HELP_AND_SUPPORT_DE: CMS.Model.Page.Page = {
     id: 'help-and-support',
-    slug: '/',
+    slug: '/hilfe-und-support',
     locale: 'de',
     seo: {
         noIndex: false,
@@ -70,7 +70,7 @@ export const PAGE_HELP_AND_SUPPORT_DE: CMS.Model.Page.Page = {
 
 export const PAGE_HELP_AND_SUPPORT_PL: CMS.Model.Page.Page = {
     id: 'help-and-support',
-    slug: '/',
+    slug: '/pomoc-i-wsparcie',
     locale: 'pl',
     seo: {
         noIndex: false,

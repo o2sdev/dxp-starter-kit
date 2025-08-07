@@ -6,10 +6,6 @@ import { AdapterUser } from 'next-auth/adapters';
 import { JWT } from 'next-auth/jwt';
 import { useSession } from 'next-auth/react';
 
-import { Models } from '@dxp/framework/modules';
-
-import { sdk } from '@/api/sdk';
-
 const DEFAULT_ROLE = process.env.AUTH_DEFAULT_USER_ROLE!;
 
 type JwtCallbackParams = {

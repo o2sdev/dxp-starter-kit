@@ -2,6 +2,9 @@
 
 import { Modules } from '@dxp/api-harmonization';
 import * as Faq from '@dxp/blocks.faq/frontend';
+import * as HeroBanner from '@dxp/blocks.hero-banner/frontend';
+// BLOCK IMPORT
+
 import { getLocale } from 'next-intl/server';
 import React from 'react';
 
@@ -9,7 +12,6 @@ import { CMS } from '@dxp/framework/modules';
 
 import { auth } from '@/auth';
 
-// BLOCK IMPORT
 import { routing } from '@/i18n';
 
 export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: string[]) => {
@@ -28,6 +30,9 @@ export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: str
         switch (block.__typename as Modules.Page.Model.Blocks) {
             case 'FaqBlock':
                 return <Faq.Renderer key={block.id} {...blockProps} />;
+            case 'HeroBannerBlock':
+                return <HeroBanner.Renderer key={block.id} {...blockProps} />;
+            // BLOCK REGISTER
             default:
                 return null;
         }

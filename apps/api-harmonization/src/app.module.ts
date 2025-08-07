@@ -1,5 +1,8 @@
 import { configuration } from '@dxp/api-harmonization/config/configuration';
 import * as Faq from '@dxp/blocks.faq/api-harmonization';
+import * as HeroBanner from '@dxp/blocks.hero-banner/api-harmonization';
+// BLOCK IMPORT
+
 import { Auth } from '@dxp/configs.integrations';
 import { HttpModule } from '@nestjs/axios';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
@@ -10,7 +13,6 @@ import { LoggerModule, LoggerService } from '@o2s/utils.logger';
 
 import { Articles, Auth as AuthModule, CMS, Cache, Search } from '@dxp/framework/modules';
 
-// BLOCK IMPORT
 import { AppConfig } from './app.config';
 import { AppService } from './app.service';
 import { ContextHeadersMiddleware } from './middleware/context-headers.middleware';
@@ -46,6 +48,7 @@ export const AuthModuleBaseModule = AuthModule.Module.register(AppConfig);
         NotFoundPageModule.register(AppConfig),
 
         Faq.Module.register(AppConfig),
+        HeroBanner.Module.register(AppConfig),
         // BLOCK REGISTER
     ],
     providers: [

@@ -11,7 +11,7 @@ const typographyVariants = cva('', {
             h2: 'scroll-m-20 text-lg md:text-2xl font-semibold tracking-tight',
             h3: 'scroll-m-20 text-base md:text-xl font-semibold tracking-tight',
             h4: 'scroll-m-20 text-base md:text-lg font-semibold tracking-tight',
-            highlightedBig: 'text-3xl/12 md:text-4xl/[54px] font-semibold tracking-tight',
+            highlightedBig: 'text-4xl/12 md:text-5xl/[54px] font-bold tracking-tight',
             highlightedSmall: 'text-base md:text-xl/8 font-semibold tracking-tight',
             subtitle: 'scroll-m-20 text-sm md:text-base font-semibold tracking-tight',
             small: 'text-sm',

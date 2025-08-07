@@ -5,3 +5,5 @@ export * as AppConfig from './models/app-config.model';
 export * as NotFoundPage from './models/not-found-page.model';
 
 export * as FaqBlock from './models/blocks/faq.model';
+export * as HeroBannerBlock from './models/blocks/hero-banner.model';
+// BLOCK IMPORT
