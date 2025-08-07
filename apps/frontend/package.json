@@ -37,7 +37,8 @@
         "yup": "^1.6.1",
         "zod": "^3.25.4",
         "@dxp/blocks.faq": "*",
-        "@dxp/blocks.hero-banner": "*"
+        "@dxp/blocks.hero-banner": "*",
+        "@dxp/blocks.feature-section": "*"
     },
     "devDependencies": {
         "@next/bundle-analyzer": "^15.3.2",

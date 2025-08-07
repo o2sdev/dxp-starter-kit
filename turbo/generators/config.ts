@@ -219,7 +219,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
                 type: 'modify',
                 path: 'apps/api-harmonization/src/modules/page/page.model.ts',
                 pattern: /(\/\/ BLOCK REGISTER)/g,
-                template: `// BLOCK REGISTER\n    | {{pascalCase name}}.Model.{{pascalCase name}}Block['__typename'] |`,
+                template: `// BLOCK REGISTER\n    | {{pascalCase name}}.Model.{{pascalCase name}}Block['__typename']`,
             },
 
             // FRONTEND

@@ -2,7 +2,7 @@ import { CMS } from '@dxp/framework/modules';
 
 const MOCK_HERO_BANNER_BLOCK_EN: CMS.Model.HeroBannerBlock.HeroBannerBlock = {
     id: 'hero-banner-1',
-    preTitle: 'Pre Title',
+    preTitle: 'Hero Banner',
     title: "Headline that solves user's {highlightedText}",
     highlightedText: 'main problem',
     subtitle: 'Subtitle that explains the headline',
@@ -64,7 +64,6 @@ const MOCK_HERO_BANNER_BLOCK_DE: CMS.Model.HeroBannerBlock.HeroBannerBlock = {
 
 const MOCK_HERO_BANNER_BLOCK_PL: CMS.Model.HeroBannerBlock.HeroBannerBlock = {
     id: 'hero-banner-1',
-    preTitle: 'Przed tytułem tekst',
     title: "Headline that solves user's {highlightedText}",
     highlightedText: 'main problem',
     subtitle: 'Subtitle that explains the headline',
