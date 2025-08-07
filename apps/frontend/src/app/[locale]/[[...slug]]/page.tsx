@@ -103,14 +103,21 @@ export default async function Page({ params }: Props) {
         if (!data || !meta) {
             notFound();
         }
+
+        const hasHeroBanner =
+            (data.template.__typename === 'OneColumnTemplate' &&
+                data.template.slots.main.some((block) => block.__typename === 'HeroBannerBlock')) ||
+            (data.template.__typename === 'TwoColumnTemplate' &&
+                data.template.slots.top.some((block) => block.__typename === 'HeroBannerBlock'));
+
         return (
             <GlobalProvider config={init} labels={init.labels} locale={locale}>
                 <div className="flex flex-col min-h-dvh">
                     <Header data={init.common.header} alternativeUrls={data.alternativeUrls} />
                     <div className="flex flex-col grow">
-                        <div className="py-6 px-4 md:px-6 ml-auto mr-auto w-full md:max-w-7xl">
-                            <main className="flex flex-col gap-6 row-start-2 items-center sm:items-start">
-                                <div className="flex flex-col gap-6 w-full">
+                        <main className="flex flex-col gap-6 row-start-2 items-center sm:items-start">
+                            {!hasHeroBanner && (
+                                <div className="flex flex-col gap-6 w-full pt-6 px-4 md:px-6 ml-auto mr-auto md:max-w-7xl">
                                     <Breadcrumbs
                                         breadcrumbs={
                                             rootBreadcrumb ? [rootBreadcrumb, ...data.breadcrumbs] : data.breadcrumbs
@@ -126,10 +133,12 @@ export default async function Page({ params }: Props) {
                                         </>
                                     )}
                                 </div>
+                            )}
 
+                            <div className="relative w-full h-full">
                                 <PageTemplate slug={slug} data={data} />
-                            </main>
-                        </div>
+                            </div>
+                        </main>
                     </div>
                     <Footer data={init.common.footer} />
 

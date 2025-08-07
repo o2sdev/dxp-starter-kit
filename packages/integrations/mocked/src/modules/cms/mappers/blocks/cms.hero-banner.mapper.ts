@@ -3,7 +3,8 @@ import { CMS } from '@dxp/framework/modules';
 const MOCK_HERO_BANNER_BLOCK_EN: CMS.Model.HeroBannerBlock.HeroBannerBlock = {
     id: 'hero-banner-1',
     preTitle: 'Pre Title',
-    title: "Headline that solves user's main problem",
+    title: "Headline that solves user's {highlightedText}",
+    highlightedText: 'main problem',
     subtitle: 'Subtitle that explains the headline',
     description:
         'Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.',
@@ -17,61 +18,70 @@ const MOCK_HERO_BANNER_BLOCK_EN: CMS.Model.HeroBannerBlock.HeroBannerBlock = {
     },
     links: [
         {
-            label: 'Button 1',
-            icon: 'arrow-right',
+            label: 'Get started',
+            icon: 'ArrowRight',
             description: 'Button 1 description',
             url: '/',
         },
         {
-            label: 'Button 2',
+            label: 'Explore',
             description: 'Button 2 description',
-            icon: 'arrow-right',
+            icon: 'ArrowRight',
             url: '/',
         },
     ],
+    labels: {
+        showMore: 'Show more',
+    },
 };
 
 const MOCK_HERO_BANNER_BLOCK_DE: CMS.Model.HeroBannerBlock.HeroBannerBlock = {
     id: 'hero-banner-1',
-    preTitle: 'Pre Title',
-    title: "Headline that solves user's main problem",
-    subtitle: 'Subtitle that explains the headline',
+    title: "Headline that solves user's {highlightedText}",
+    highlightedText: 'main problem',
     description:
         'Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.',
-    inverted: false,
+    inverted: true,
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
         width: 1920,
         height: 1080,
         alt: 'Hero Banner Image',
-        priority: true,
+        priority: false,
     },
     links: [
         {
-            label: 'Button 1',
-            icon: 'arrow-right',
+            label: 'Get started',
+            icon: 'ArrowRight',
             url: '/',
             description: 'Button 1 description',
         },
     ],
+    labels: {
+        showMore: 'Mehr anzeigen',
+    },
 };
 
 const MOCK_HERO_BANNER_BLOCK_PL: CMS.Model.HeroBannerBlock.HeroBannerBlock = {
     id: 'hero-banner-1',
     preTitle: 'Przed tytułem tekst',
-    title: "Headline that solves user's main problem",
+    title: "Headline that solves user's {highlightedText}",
+    highlightedText: 'main problem',
     subtitle: 'Subtitle that explains the headline',
     description:
         'Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.',
     inverted: false,
     links: [
         {
-            label: 'Button 1',
-            icon: 'arrow-right',
+            label: 'Get started',
+            icon: 'ArrowRight',
             url: '/',
             description: 'Button 1 description',
         },
     ],
+    labels: {
+        showMore: 'Pokaż więcej',
+    },
 };
 
 export const mapHeroBannerBlock = (locale: string): CMS.Model.HeroBannerBlock.HeroBannerBlock => {

@@ -1,4 +1,7 @@
+import { VariantProps } from 'class-variance-authority';
 import { defineRouting } from 'next-intl/routing';
+
+import { buttonVariants } from '@dxp/ui/elements/button';
 
 import { Model } from '../api-harmonization/hero-banner.client';
 

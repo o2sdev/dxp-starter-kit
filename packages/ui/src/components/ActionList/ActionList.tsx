@@ -1,8 +1,4 @@
-import React from 'react';
-
 import { cn } from '@dxp/ui/lib/utils';
-
-import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 
 import { Button } from '@dxp/ui/elements/button';
 import {
@@ -12,36 +8,33 @@ import {
     DropdownMenuTrigger,
 } from '@dxp/ui/elements/dropdown-menu';
 
+import { DynamicIcon } from '../DynamicIcon/DynamicIcon';
+
 import { ActionListProps } from './ActionList.types';
 
 export const ActionList: React.FC<Readonly<ActionListProps>> = ({
     className,
     showMoreLabel,
-    visibleActions,
-    dropdownActions,
+    actions,
     triggerVariant = 'outline',
 }) => {
-    if (!visibleActions.length && !dropdownActions.length) {
-        return null;
-    }
-
     return (
         <div className={cn('w-full sm:w-auto flex flex-col sm:flex-row-reverse gap-4 align-end', className)}>
-            {visibleActions[0]}
+            {actions?.[0]}
 
             <div className="flex flex-row sm:flex-row-reverse gap-4">
-                {visibleActions[1]}
+                {actions?.[1]}
 
-                {dropdownActions.length > 0 && (
+                {actions?.length && actions.length > 2 && (
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant={triggerVariant} size="icon" aria-label={showMoreLabel}>
                                 <DynamicIcon name="MoreVertical" size={16} />
                             </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="min-w-50">
-                            {dropdownActions.map((action) => (
-                                <DropdownMenuItem asChild key={action?.toString()}>
+                        <DropdownMenuContent align="center" className="min-w-50 flex flex-col">
+                            {actions.slice(2).map((action, index) => (
+                                <DropdownMenuItem asChild key={index.toString()}>
                                     {action}
                                 </DropdownMenuItem>
                             ))}

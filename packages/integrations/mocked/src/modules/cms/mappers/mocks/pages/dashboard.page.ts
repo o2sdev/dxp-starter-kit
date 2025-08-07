@@ -18,7 +18,7 @@ export const PAGE_DASHBOARD_EN: CMS.Model.Page.Page = {
         },
     },
     permissions: [],
-    hasOwnTitle: false,
+    hasOwnTitle: true,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
