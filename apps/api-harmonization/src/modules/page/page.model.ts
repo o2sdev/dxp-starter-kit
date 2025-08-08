@@ -1,3 +1,4 @@
+import * as CtaSection from '@dxp/blocks.cta-section/api-harmonization';
 import * as Faq from '@dxp/blocks.faq/api-harmonization';
 import * as FeatureSection from '@dxp/blocks.feature-section/api-harmonization';
 import * as HeroBanner from '@dxp/blocks.hero-banner/api-harmonization';
@@ -51,6 +52,7 @@ export class PageData {
 
 export type Blocks =
     // BLOCK REGISTER
+    | CtaSection.Model.CtaSectionBlock['__typename']
     | FeatureSection.Model.FeatureSectionBlock['__typename']
     | Faq.Model.FaqBlock['__typename']
     | HeroBanner.Model.HeroBannerBlock['__typename'];
