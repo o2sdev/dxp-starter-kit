@@ -65,6 +65,14 @@ const MOCK_CTA_SECTION_BLOCK_PL: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
     description:
         'Add one or two compelling sentences that reinforce your main value proposition and overcome final objections.',
     inverted: false,
+    links: [
+        {
+            label: 'Get started',
+            icon: 'ArrowRight',
+            url: '/',
+            description: 'Button 1 description',
+        },
+    ],
     labels: {
         showMore: 'Pokaż więcej',
     },

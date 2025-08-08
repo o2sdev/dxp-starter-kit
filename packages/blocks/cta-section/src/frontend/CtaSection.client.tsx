@@ -39,16 +39,12 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
                         inverted ? 'pl-6 lg:pl-0' : 'pr-6 lg:pr-0',
                     )}
                 >
-                    <div
-                        className={cn(
-                            'w-full h-full flex flex-col gap-8 md:gap-6',
-                            !isImageAvailable && 'mx-auto md:gap-16',
-                        )}
-                    >
+                    <div className={cn('w-full h-full flex flex-col gap-8 md:gap-6', !isImageAvailable && 'mx-auto')}>
                         <div
                             className={cn(
-                                'h-full flex flex-col gap-5 md:gap-4 justify-between',
-                                !isImageAvailable && 'items-center text-center max-w-2xl mx-auto',
+                                'h-full flex flex-col gap-5 md:gap-4 justify-between items-center text-center lg:items-start lg:text-left',
+                                !isImageAvailable &&
+                                    'items-center text-center lg:items-center lg:text-center max-w-2xl mx-auto',
                             )}
                         >
                             <div className="flex flex-col gap-5 md:gap-4">
@@ -76,7 +72,10 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
 
                         {links && (
                             <ActionList
-                                className={cn('sm:flex-row align-start', !isImageAvailable && 'justify-center')}
+                                className={cn(
+                                    'sm:flex-row align-start justify-center lg:justify-start',
+                                    !isImageAvailable && 'justify-center lg:justify-center',
+                                )}
                                 actions={links.map(
                                     (link, index) =>
                                         link.label && (
