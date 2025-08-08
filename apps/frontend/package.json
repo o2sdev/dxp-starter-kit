@@ -38,7 +38,8 @@
         "zod": "^3.25.4",
         "@dxp/blocks.faq": "*",
         "@dxp/blocks.hero-banner": "*",
-        "@dxp/blocks.feature-section": "*"
+        "@dxp/blocks.feature-section": "*",
+        "@dxp/blocks.cta-section": "*"
     },
     "devDependencies": {
         "@next/bundle-analyzer": "^15.3.2",
