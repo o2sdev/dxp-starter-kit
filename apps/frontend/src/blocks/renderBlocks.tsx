@@ -1,6 +1,7 @@
 'use server';
 
 import { Modules } from '@dxp/api-harmonization';
+import * as BentoGrid from '@dxp/blocks.bento-grid/frontend';
 import * as CtaSection from '@dxp/blocks.cta-section/frontend';
 import * as Faq from '@dxp/blocks.faq/frontend';
 import * as FeatureSection from '@dxp/blocks.feature-section/frontend';
@@ -38,6 +39,8 @@ export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: str
                 return <FeatureSection.Renderer key={block.id} {...blockProps} />;
             case 'CtaSectionBlock':
                 return <CtaSection.Renderer key={block.id} {...blockProps} />;
+            case 'BentoGridBlock':
+                return <BentoGrid.Renderer key={block.id} {...blockProps} />;
             // BLOCK REGISTER
             default:
                 return null;

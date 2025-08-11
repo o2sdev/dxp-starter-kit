@@ -109,8 +109,10 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                                                 }
                                             >
                                                 <LinkComponent href={link.url}>
-                                                    {link.label}
-                                                    {link.icon && <DynamicIcon name={link.icon} size={16} />}
+                                                    <>
+                                                        {link.label}
+                                                        {link.icon && <DynamicIcon name={link.icon} size={16} />}
+                                                    </>
                                                 </LinkComponent>
                                             </Button>
                                         ),

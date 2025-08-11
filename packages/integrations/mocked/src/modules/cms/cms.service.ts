@@ -3,6 +3,7 @@ import { of } from 'rxjs';
 
 import { CMS } from '@dxp/framework/modules';
 
+import { mapBentoGridBlock } from './mappers/blocks/cms.bento-grid.mapper';
 import { mapCtaSectionBlock } from './mappers/blocks/cms.cta-section.mapper';
 import { mapFaqBlock } from './mappers/blocks/cms.faq.mapper';
 import { mapFeatureSectionBlock } from './mappers/blocks/cms.feature-section.mapper';
@@ -66,5 +67,9 @@ export class CmsService implements CMS.Service {
 
     getCtaSectionBlock(_options: CMS.Request.GetCmsEntryParams) {
         return of(mapCtaSectionBlock(_options.locale)).pipe(responseDelay());
+    }
+
+    getBentoGridBlock(_options: CMS.Request.GetCmsEntryParams) {
+        return of(mapBentoGridBlock(_options.locale)).pipe(responseDelay());
     }
 }

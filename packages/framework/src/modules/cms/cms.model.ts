@@ -8,4 +8,5 @@ export * as FaqBlock from './models/blocks/faq.model';
 export * as HeroBannerBlock from './models/blocks/hero-banner.model';
 export * as FeatureSectionBlock from './models/blocks/feature-section.model';
 export * as CtaSectionBlock from './models/blocks/cta-section.model';
+export * as BentoGridBlock from './models/blocks/bento-grid.model';
 // BLOCK IMPORT
