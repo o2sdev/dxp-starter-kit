@@ -39,7 +39,8 @@
         "@dxp/blocks.faq": "*",
         "@dxp/blocks.hero-banner": "*",
         "@dxp/blocks.feature-section": "*",
-        "@dxp/blocks.cta-section": "*"
+        "@dxp/blocks.cta-section": "*",
+        "@dxp/blocks.bento-grid": "*"
     },
     "devDependencies": {
         "@next/bundle-analyzer": "^15.3.2",

@@ -36,6 +36,10 @@ export const PAGE_DASHBOARD_EN: CMS.Model.Page.Page = {
                     id: 'cta-section-1',
                 },
                 {
+                    __typename: 'BentoGridBlock',
+                    id: 'bento-grid-1',
+                },
+                {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
                 },
@@ -82,6 +86,10 @@ export const PAGE_DASHBOARD_DE: CMS.Model.Page.Page = {
                     id: 'cta-section-1',
                 },
                 {
+                    __typename: 'BentoGridBlock',
+                    id: 'bento-grid-1',
+                },
+                {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
                 },
@@ -126,6 +134,10 @@ export const PAGE_DASHBOARD_PL: CMS.Model.Page.Page = {
                 {
                     __typename: 'CtaSectionBlock',
                     id: 'cta-section-1',
+                },
+                {
+                    __typename: 'BentoGridBlock',
+                    id: 'bento-grid-1',
                 },
                 {
                     __typename: 'FaqBlock',

@@ -88,8 +88,10 @@ export const HeroBannerPure: React.FC<HeroBannerPureProps> = ({ locale, accessTo
                                                 }
                                             >
                                                 <LinkComponent href={link.url}>
-                                                    {link.label}
-                                                    {link.icon && <DynamicIcon name={link.icon} size={16} />}
+                                                    <>
+                                                        {link.label}
+                                                        {link.icon && <DynamicIcon name={link.icon} size={16} />}
+                                                    </>
                                                 </LinkComponent>
                                             </Button>
                                         ),
