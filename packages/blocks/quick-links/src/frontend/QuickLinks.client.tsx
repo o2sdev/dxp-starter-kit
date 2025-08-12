@@ -5,6 +5,7 @@ import React from 'react';
 
 import { InformativeCard } from '@dxp/ui/components/Cards';
 import { Container } from '@dxp/ui/components/Container';
+import { DynamicIconProps } from '@dxp/ui/components/DynamicIcon';
 import { RichText } from '@dxp/ui/components/RichText';
 
 import { Typography } from '@dxp/ui/elements/typography';
@@ -44,8 +45,11 @@ export const QuickLinksPure: React.FC<QuickLinksPureProps> = ({ locale, accessTo
                                 href={item.link?.url}
                                 title={item.title}
                                 description={item.description}
-                                iconSize={40}
-                                icon={item.icon}
+                                icon={{
+                                    name: item.icon as DynamicIconProps['name'],
+                                    size: 40,
+                                    className: 'text-primary',
+                                }}
                                 LinkComponent={LinkComponent}
                             />
                         </li>

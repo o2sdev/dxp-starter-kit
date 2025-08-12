@@ -12,7 +12,6 @@ import { InformativeCardProps } from './InformativeCard.types';
 
 const InformativeCardContent: React.FC<Readonly<InformativeCardProps>> = ({
     icon,
-    iconSize,
     title,
     description,
     href,
@@ -25,7 +24,9 @@ const InformativeCardContent: React.FC<Readonly<InformativeCardProps>> = ({
     return (
         <div className="flex flex-row w-full h-full gap-2 p-6 justify-between">
             <div className="flex flex-col gap-2 flex-grow">
-                {icon && <DynamicIcon name={icon} size={iconSize} className="!text-foreground" />}
+                {icon && (
+                    <DynamicIcon name={icon.name} size={icon.size} className={cn('text-foreground', icon.className)} />
+                )}
                 {title && <Typography variant="h3">{title}</Typography>}
 
                 {description && (

@@ -16,8 +16,8 @@ export const HeroBannerRenderer: React.FC<HeroBannerRendererProps> = ({ id, acce
             fallback={
                 <Container variant="full">
                     <div className="h-full w-full flex flex-col lg:flex-row gap-12 lg:gap-16'">
-                        <Loading bars={15} />
-                        <Loading bars={15} />
+                        <Loading bars={13} />
+                        <Loading bars={13} />
                     </div>
                 </Container>
             }
