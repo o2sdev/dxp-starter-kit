@@ -14,3 +14,8 @@ export type FaqPureProps = FaqProps & Model.FaqBlock;
 export type FaqRendererProps = Omit<FaqProps, ''> & {
     slug: string[];
 };
+
+export type FaqSectionProps = {
+    title?: string;
+    items: Model.FaqBlock['sections'][number]['items'];
+};

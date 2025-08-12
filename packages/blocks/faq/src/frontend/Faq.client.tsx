@@ -3,6 +3,8 @@
 import { createNavigation } from 'next-intl/navigation';
 import React from 'react';
 
+import { cn } from '@dxp/ui/lib/utils';
+
 import { Container } from '@dxp/ui/components/Container';
 import { RichText } from '@dxp/ui/components/RichText';
 
@@ -10,42 +12,43 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@d
 import { Button } from '@dxp/ui/elements/button';
 import { Typography } from '@dxp/ui/elements/typography';
 
-import { FaqPureProps } from './Faq.types';
+import { FaqPureProps, FaqSectionProps } from './Faq.types';
 
 export const FaqPure: React.FC<FaqPureProps> = ({ locale, accessToken, routing, ...component }) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
-    const { title, subtitle, items, banner } = component;
+    const { title, description, sections, banner, oneColumn, preTitle } = component;
+    const variant = oneColumn ? 'narrow' : 'full';
 
     return (
-        <Container variant="narrow">
-            <div className="w-full flex flex-col gap-6">
-                {title && (
-                    <div className="w-full flex flex-col gap-4">
-                        <Typography variant="h2" asChild>
-                            <h2>{title}</h2>
-                        </Typography>
-
-                        {subtitle && (
+        <Container variant={variant}>
+            <div className="w-full flex flex-col gap-8">
+                <div className={cn('w-full flex flex-col gap-8 md:gap-16', oneColumn ? 'flex-col' : 'md:flex-row')}>
+                    <div className="flex flex-col gap-5 flex-1">
+                        {preTitle && (
                             <Typography variant="body" className="text-muted-foreground">
-                                {subtitle}
+                                {preTitle}
                             </Typography>
                         )}
 
-                        {items && items?.length > 0 && (
-                            <Accordion type="multiple">
-                                {items.map((item, index) => (
-                                    <AccordionItem key={index} value={`${index}`}>
-                                        <AccordionTrigger>{item.title}</AccordionTrigger>
-                                        <AccordionContent>
-                                            <RichText content={item.content} className="text-muted-foreground" />
-                                        </AccordionContent>
-                                    </AccordionItem>
-                                ))}
-                            </Accordion>
+                        {title && (
+                            <Typography variant="h1" asChild>
+                                <h2>{title}</h2>
+                            </Typography>
                         )}
+
+                        {description && <RichText content={description} className="text-muted-foreground" />}
                     </div>
-                )}
+
+                    {sections && sections?.length > 0 && (
+                        <div className="flex flex-col gap-8 w-full flex-1">
+                            {sections.map((section, index) => (
+                                <FaqSection key={index} title={section.title} items={section.items} />
+                            ))}
+                        </div>
+                    )}
+                </div>
+
                 {banner?.title && (
                     <div className="flex flex-col p-6 bg-muted/60 rounded-lg gap-6 items-center">
                         <div className="flex flex-col gap-2 items-center">
@@ -63,5 +66,29 @@ export const FaqPure: React.FC<FaqPureProps> = ({ locale, accessToken, routing, 
                 )}
             </div>
         </Container>
+    );
+};
+
+const FaqSection: React.FC<FaqSectionProps> = ({ title, items }) => {
+    return (
+        <div className="flex flex-col gap-2">
+            {title && (
+                <Typography variant="h3" asChild>
+                    <h3>{title}</h3>
+                </Typography>
+            )}
+            {items && items?.length > 0 && (
+                <Accordion type="multiple">
+                    {items.map((item, index) => (
+                        <AccordionItem key={index} value={`${index}`}>
+                            <AccordionTrigger>{item.title}</AccordionTrigger>
+                            <AccordionContent>
+                                <RichText content={item.content} className="text-muted-foreground" />
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+            )}
+        </div>
     );
 };
