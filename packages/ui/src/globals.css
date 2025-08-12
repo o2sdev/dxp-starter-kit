@@ -204,4 +204,8 @@
     :disabled {
         cursor: default;
     }
+
+    code {
+        text-wrap: wrap;
+    }
 }

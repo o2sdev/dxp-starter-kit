@@ -6,9 +6,11 @@ export const mapFaq = (cms: CMS.Model.FaqBlock.FaqBlock): FaqBlock => {
     return {
         __typename: 'FaqBlock',
         id: cms.id,
+        preTitle: cms.preTitle,
         title: cms.title,
-        subtitle: cms.subtitle,
-        items: cms.items,
+        description: cms.description,
+        sections: cms.sections,
         banner: cms.banner,
+        oneColumn: cms.oneColumn,
     };
 };

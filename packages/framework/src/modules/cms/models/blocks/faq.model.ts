@@ -1,10 +1,17 @@
 import { Block, Link, RichText } from '@/utils/models';
 
 export class FaqBlock extends Block.Block {
+    preTitle?: string;
     title?: string;
-    subtitle?: string;
-    items?: FaqItem[];
+    description?: string;
+    sections!: FaqSection[];
+    oneColumn?: boolean;
     banner?: FaqBoxWithButton;
+}
+
+export class FaqSection {
+    title?: string;
+    items!: FaqItem[];
 }
 
 export class FaqItem {
