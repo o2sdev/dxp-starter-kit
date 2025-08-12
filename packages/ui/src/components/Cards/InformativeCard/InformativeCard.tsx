@@ -23,7 +23,7 @@ const InformativeCardContent: React.FC<Readonly<InformativeCardProps>> = ({
     }
 
     return (
-        <div className="flex flex-row w-full gap-2 p-6 items-end justify-between">
+        <div className="flex flex-row w-full h-full gap-2 p-6 justify-between">
             <div className="flex flex-col gap-2 flex-grow">
                 {icon && <DynamicIcon name={icon} size={iconSize} className="!text-foreground" />}
                 {title && <Typography variant="h3">{title}</Typography>}
@@ -41,7 +41,7 @@ const InformativeCardContent: React.FC<Readonly<InformativeCardProps>> = ({
                 )}
             </div>
             {href && (
-                <div className="px-4 py-2 w-4 items-end">
+                <div className="px-4 py-2 w-4 self-end">
                     <ArrowRight className="h-4 w-4 flex-shrink-0 align-bottom" />
                 </div>
             )}

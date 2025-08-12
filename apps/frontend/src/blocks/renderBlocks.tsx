@@ -7,6 +7,7 @@ import * as Faq from '@dxp/blocks.faq/frontend';
 import * as FeatureSection from '@dxp/blocks.feature-section/frontend';
 import * as HeroBanner from '@dxp/blocks.hero-banner/frontend';
 import * as MediaSection from '@dxp/blocks.media-section/frontend';
+import * as QuickLinks from '@dxp/blocks.quick-links/frontend';
 // BLOCK IMPORT
 
 import { getLocale } from 'next-intl/server';
@@ -44,6 +45,8 @@ export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: str
                 return <BentoGrid.Renderer key={block.id} {...blockProps} />;
             case 'MediaSectionBlock':
                 return <MediaSection.Renderer key={block.id} {...blockProps} />;
+            case 'QuickLinksBlock':
+                return <QuickLinks.Renderer key={block.id} {...blockProps} />;
             // BLOCK REGISTER
             default:
                 return null;
