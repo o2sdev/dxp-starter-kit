@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ data }) => {
 
     const navigationItemClass = cn(navigationMenuTriggerStyle());
 
-    const mobileNavigationItemClass = cn(navigationMenuTriggerStyle(), navigationItemClass);
+    const mobileNavigationItemClass = cn(navigationMenuTriggerStyle(), navigationItemClass, 'justify-start');
 
     const getUrl = (item: Models.Navigation.NavigationGroup) => {
         const lvl1Item = item.items?.[0];

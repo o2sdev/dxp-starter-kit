@@ -1,3 +1,7 @@
+import { useRouter } from 'next/navigation';
+
+import { cn } from '@dxp/ui/lib/utils';
+
 import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
 import { RichText } from '@dxp/ui/components/RichText';
@@ -44,20 +48,15 @@ export const FeatureCardContent: React.FC<FeatureCardProps> = ({ title, descript
 };
 
 export const FeatureCard: React.FC<Readonly<FeatureCardProps>> = (props) => {
-    const { LinkComponent } = props;
+    const router = useRouter();
 
-    if (props.link) {
-        return (
-            <Link
-                asChild
-                className="flex flex-grow hover:no-underline w-full h-full items-start whitespace-normal text-card-foreground font-normal"
-                tabIndex={-1}
-            >
-                <LinkComponent href={props.link.url} aria-label={props.title}>
-                    <FeatureCardContent {...props} />
-                </LinkComponent>
-            </Link>
-        );
-    }
-    return <FeatureCardContent {...props} />;
+    return (
+        <div
+            tabIndex={-1}
+            onClick={() => props.link?.url && router.push(props.link?.url)}
+            className={cn(props.link?.url && 'cursor-pointer')}
+        >
+            <FeatureCardContent {...props} />
+        </div>
+    );
 };

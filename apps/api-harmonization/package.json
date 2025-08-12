@@ -47,7 +47,8 @@
         "@dxp/blocks.hero-banner": "*",
         "@dxp/blocks.feature-section": "*",
         "@dxp/blocks.cta-section": "*",
-        "@dxp/blocks.bento-grid": "*"
+        "@dxp/blocks.bento-grid": "*",
+        "@dxp/blocks.media-section": "*"
     },
     "devDependencies": {
         "@nestjs/cli": "^11.0.7",
