@@ -16,9 +16,15 @@ const MOCK_HEADER_LOGON_EN: CMS.Model.Header.Header = {
     },
     items: [
         {
-            __typename: 'NavigationItem',
-            label: 'Dashboard',
-            url: '/',
+            __typename: 'NavigationGroup',
+            title: 'Personal',
+            items: [
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Dashboard',
+                    url: '/',
+                },
+            ],
         },
         {
             __typename: 'NavigationGroup',

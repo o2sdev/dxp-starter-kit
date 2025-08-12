@@ -5,22 +5,49 @@ import { cn } from '@dxp/ui/lib/utils';
 
 import { ContainerProps } from './Container.types';
 
-const containerVariants = cva('w-full mx-auto px-4 py-16 md:px-6 md:py-20', {
+const containerVariants = cva('w-full mx-auto px-4 md:px-6', {
     variants: {
         variant: {
             full: 'md:max-w-7xl',
             narrow: 'md:max-w-3xl',
         },
+        spacing: {
+            none: '',
+            small: 'py-6 md:py-6',
+            medium: 'py-16 md:py-20',
+            large: 'py-32 md:py-40',
+        },
     },
     defaultVariants: {
         variant: 'full',
+        spacing: 'medium',
     },
 });
 
-export const Container: React.FC<ContainerProps> = ({ variant = 'full', children, className }) => {
+const containerBackgroundVariants = cva('w-full', {
+    variants: {
+        background: {
+            none: '',
+            light: 'bg-white text-black',
+            dark: 'bg-black/80 text-white',
+            brand: 'bg-primary/20',
+        },
+    },
+    defaultVariants: {
+        background: 'none',
+    },
+});
+
+export const Container: React.FC<ContainerProps> = ({
+    variant = 'full',
+    children,
+    className,
+    spacing = 'medium',
+    background = 'none',
+}) => {
     return (
-        <div className={cn('w-full', className)}>
-            <div className={containerVariants({ variant })}>
+        <div className={cn(containerBackgroundVariants({ background }), className)}>
+            <div className={containerVariants({ variant, spacing })}>
                 <div className="">{children}</div>
             </div>
         </div>

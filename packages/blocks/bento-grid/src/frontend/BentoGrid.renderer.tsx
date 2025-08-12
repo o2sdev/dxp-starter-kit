@@ -14,9 +14,16 @@ export const BentoGridRenderer: React.FC<BentoGridRendererProps> = ({ id, access
         <Suspense
             key={id}
             fallback={
-                <>
-                    <Loading bars={2} />
-                </>
+                <Container variant="full">
+                    <div className="flex flex-col gap-12">
+                        <Loading bars={5} />
+                        <div className="flex flex-col lg:flex-row gap-12">
+                            <Loading bars={15} />
+                            <Loading bars={15} />
+                            <Loading bars={15} />
+                        </div>
+                    </div>
+                </Container>
             }
         >
             <BentoGrid id={id} accessToken={accessToken} locale={locale} routing={routing} />

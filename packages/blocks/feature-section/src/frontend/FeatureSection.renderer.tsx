@@ -14,8 +14,11 @@ export const FeatureSectionRenderer: React.FC<FeatureSectionRendererProps> = ({ 
         <Suspense
             key={id}
             fallback={
-                <Container>
-                    <Loading bars={12} />
+                <Container variant="full">
+                    <div className="h-full w-full flex flex-col lg:flex-row gap-12 lg:gap-16'">
+                        <Loading bars={15} />
+                        <Loading bars={15} />
+                    </div>
                 </Container>
             }
         >

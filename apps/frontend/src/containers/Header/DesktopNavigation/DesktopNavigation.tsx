@@ -89,22 +89,24 @@ export function DesktopNavigation({ logoSlot, localeSlot, items }: DesktopNaviga
         );
     };
 
-    const NavigationGroup = ({ item }: { item: Models.Navigation.NavigationGroup; className?: string }) => {
+    const NavigationGroup = ({ item, className }: { item: Models.Navigation.NavigationGroup; className?: string }) => {
         return (
             <NavigationMenuItem key={item.title}>
-                <NavigationMenuTrigger className={navigationItemClass}>{item.title}</NavigationMenuTrigger>
+                <NavigationMenuTrigger className={cn(navigationItemClass, className)}>
+                    {item.title}
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                    <ul className="grid w-[375px] flex-col gap-3 p-4">
+                    <ul className="grid gap-2 md:w-[350px] lg:w-[600px] lg:grid-cols-[1fr_1fr] p-2">
                         {item.items.map((item) => {
                             if (item.__typename !== 'NavigationItem') {
                                 return null;
                             }
 
                             return (
-                                <li key={item.label}>
+                                <li key={item.label} className="w-full h-full">
                                     <NavigationLink
                                         href={item.url || '/'}
-                                        className="px-4 py-2 h-16 w-full !justify-start"
+                                        className="px-4 py-2 min-h-16 h-full w-full !justify-start items-start"
                                     >
                                         <div className="flex flex-col gap-1">
                                             <Typography variant="body" className="text-navbar-primary">
@@ -187,7 +189,13 @@ export function DesktopNavigation({ logoSlot, localeSlot, items }: DesktopNaviga
                                                 />
                                             );
                                         case 'NavigationGroup':
-                                            return <NavigationGroup item={item} key={item.title} />;
+                                            return (
+                                                <NavigationGroup
+                                                    item={item}
+                                                    key={item.title}
+                                                    className="!text-base !text-navbar-sub-foreground hover:!text-navbar-sub-foreground hover:!bg-navbar-sub-accent"
+                                                />
+                                            );
                                     }
                                 })}
                             </NavigationMenuList>

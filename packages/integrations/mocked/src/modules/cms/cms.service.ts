@@ -8,6 +8,7 @@ import { mapCtaSectionBlock } from './mappers/blocks/cms.cta-section.mapper';
 import { mapFaqBlock } from './mappers/blocks/cms.faq.mapper';
 import { mapFeatureSectionBlock } from './mappers/blocks/cms.feature-section.mapper';
 import { mapHeroBannerBlock } from './mappers/blocks/cms.hero-banner.mapper';
+import { mapMediaSectionBlock } from './mappers/blocks/cms.media-section.mapper';
 import { mapAppConfig } from './mappers/cms.app-config.mapper';
 import { mapFooter } from './mappers/cms.footer.mapper';
 import { mapHeader } from './mappers/cms.header.mapper';
@@ -71,5 +72,9 @@ export class CmsService implements CMS.Service {
 
     getBentoGridBlock(_options: CMS.Request.GetCmsEntryParams) {
         return of(mapBentoGridBlock(_options.locale)).pipe(responseDelay());
+    }
+
+    getMediaSectionBlock(_options: CMS.Request.GetCmsEntryParams) {
+        return of(mapMediaSectionBlock(_options.locale)).pipe(responseDelay());
     }
 }

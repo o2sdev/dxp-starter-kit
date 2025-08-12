@@ -4,6 +4,7 @@ import * as CtaSection from '@dxp/blocks.cta-section/api-harmonization';
 import * as Faq from '@dxp/blocks.faq/api-harmonization';
 import * as FeatureSection from '@dxp/blocks.feature-section/api-harmonization';
 import * as HeroBanner from '@dxp/blocks.hero-banner/api-harmonization';
+import * as MediaSection from '@dxp/blocks.media-section/api-harmonization';
 // BLOCK IMPORT
 
 import { Auth } from '@dxp/configs.integrations';
@@ -55,6 +56,7 @@ export const AuthModuleBaseModule = AuthModule.Module.register(AppConfig);
         FeatureSection.Module.register(AppConfig),
         CtaSection.Module.register(AppConfig),
         BentoGrid.Module.register(AppConfig),
+        MediaSection.Module.register(AppConfig),
         // BLOCK REGISTER
     ],
     providers: [
