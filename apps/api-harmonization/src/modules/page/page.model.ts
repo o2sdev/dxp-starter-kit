@@ -4,6 +4,7 @@ import * as Faq from '@dxp/blocks.faq/api-harmonization';
 import * as FeatureSection from '@dxp/blocks.feature-section/api-harmonization';
 import * as HeroBanner from '@dxp/blocks.hero-banner/api-harmonization';
 import * as MediaSection from '@dxp/blocks.media-section/api-harmonization';
+import * as QuickLinks from '@dxp/blocks.quick-links/api-harmonization';
 
 // BLOCK IMPORT
 
@@ -54,6 +55,7 @@ export class PageData {
 
 export type Blocks =
     // BLOCK REGISTER
+    | QuickLinks.Model.QuickLinksBlock['__typename']
     | MediaSection.Model.MediaSectionBlock['__typename']
     | BentoGrid.Model.BentoGridBlock['__typename']
     | CtaSection.Model.CtaSectionBlock['__typename']

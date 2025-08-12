@@ -28,6 +28,10 @@ export const PAGE_DASHBOARD_EN: CMS.Model.Page.Page = {
                     id: 'hero-banner-1',
                 },
                 {
+                    __typename: 'QuickLinksBlock',
+                    id: 'quick-links-1',
+                },
+                {
                     __typename: 'MediaSectionBlock',
                     id: 'media-section-1',
                 },
@@ -82,6 +86,10 @@ export const PAGE_DASHBOARD_DE: CMS.Model.Page.Page = {
                     id: 'hero-banner-1',
                 },
                 {
+                    __typename: 'QuickLinksBlock',
+                    id: 'quick-links-1',
+                },
+                {
                     __typename: 'MediaSectionBlock',
                     id: 'media-section-1',
                 },
@@ -134,6 +142,10 @@ export const PAGE_DASHBOARD_PL: CMS.Model.Page.Page = {
                 {
                     __typename: 'HeroBannerBlock',
                     id: 'hero-banner-1',
+                },
+                {
+                    __typename: 'QuickLinksBlock',
+                    id: 'quick-links-1',
                 },
                 {
                     __typename: 'MediaSectionBlock',
