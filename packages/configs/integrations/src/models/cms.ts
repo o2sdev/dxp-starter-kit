@@ -1,4 +1,4 @@
-import { Config, Integration } from '@dxp/integrations.mocked/integration';
+import { Config, Integration } from '@dxp/integrations.strapi-cms/integration';
 
 import { ApiConfig } from '@dxp/framework/modules';
 

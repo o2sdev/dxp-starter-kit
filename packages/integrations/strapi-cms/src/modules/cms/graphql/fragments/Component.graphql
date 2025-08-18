@@ -1,0 +1,10 @@
+fragment Component on Component {
+    __typename
+    documentId
+    layout {
+        ...LayoutSection
+    }
+    content {
+        __typename
+    }
+}

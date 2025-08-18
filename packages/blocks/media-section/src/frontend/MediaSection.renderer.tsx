@@ -1,7 +1,6 @@
 import { useLocale } from 'next-intl';
 import React, { Suspense } from 'react';
 
-import { Container } from '@dxp/ui/components/Container';
 import { Loading } from '@dxp/ui/components/Loading';
 
 import { MediaSection } from './MediaSection.server';
@@ -14,12 +13,10 @@ export const MediaSectionRenderer: React.FC<MediaSectionRendererProps> = ({ id, 
         <Suspense
             key={id}
             fallback={
-                <Container variant="full">
-                    <div className="flex flex-col gap-12">
-                        <Loading bars={5} />
-                        <Loading bars={25} />
-                    </div>
-                </Container>
+                <div className="flex flex-col gap-12">
+                    <Loading bars={5} />
+                    <Loading bars={25} />
+                </div>
             }
         >
             <MediaSection id={id} accessToken={accessToken} locale={locale} routing={routing} />

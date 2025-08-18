@@ -1,0 +1,17 @@
+fragment FeatureSectionComponent on ComponentComponentsFeatureSection {
+    __typename
+    id
+    preTitle
+    title
+    description
+    featureList {
+        ...FeatureItem
+    }
+    inverted
+    image {
+        ...Media
+    }
+    links {
+        ...Link
+    }
+}

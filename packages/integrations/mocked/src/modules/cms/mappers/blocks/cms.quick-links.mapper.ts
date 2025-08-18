@@ -7,40 +7,24 @@ const MOCK_QUICK_LINKS_BLOCK_EN: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
     description: 'Quickly explore the most important links for easy navigation to key resources.',
     items: [
         {
-            title: 'Open account',
+            label: 'Open account',
             icon: 'MapPin',
-            link: {
-                label: 'Learn more',
-                url: '/',
-                icon: 'ArrowRight',
-            },
+            url: '/',
         },
         {
-            title: 'Cards',
+            label: 'Cards',
             icon: 'Drill',
-            link: {
-                label: 'Learn more',
-                url: '/',
-                icon: 'ArrowRight',
-            },
+            url: '/',
         },
         {
-            title: 'Download app',
+            label: 'Download app',
             icon: 'SmilePlus',
-            link: {
-                label: 'Learn more',
-                url: '/',
-                icon: 'ArrowRight',
-            },
+            url: '/',
         },
         {
-            title: 'Support',
+            label: 'Support',
             icon: 'CreditCard',
-            link: {
-                label: 'Learn more',
-                url: '/',
-                icon: 'ArrowRight',
-            },
+            url: '/',
         },
     ],
 };
@@ -52,44 +36,28 @@ const MOCK_QUICK_LINKS_BLOCK_DE: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
     description: 'Quickly explore the most important links for easy navigation to key resources.',
     items: [
         {
-            title: 'Find a retailer',
+            label: 'Find a retailer',
             description: 'Locate nearby authorized retailers for products and services.',
             icon: 'MapPin',
-            link: {
-                label: 'Learn more',
-                url: '/',
-                icon: 'ArrowRight',
-            },
+            url: '/',
         },
         {
-            title: 'Online repair',
+            label: 'Online repair',
             description: 'Request repair and support through our platform.',
             icon: 'Drill',
-            link: {
-                label: 'Learn more',
-                url: '/',
-                icon: 'ArrowRight',
-            },
+            url: '/',
         },
         {
-            title: 'Rate service',
+            label: 'Rate service',
             description: 'Share your feedback to help us improve the quality of our service.',
             icon: 'SmilePlus',
-            link: {
-                label: 'Learn more',
-                url: '/',
-                icon: 'ArrowRight',
-            },
+            url: '/',
         },
         {
-            title: 'Check payment history',
+            label: 'Check payment history',
             description: 'View and track your past payments to stay updated.',
             icon: 'CreditCard',
-            link: {
-                label: 'Learn more',
-                url: '/',
-                icon: 'ArrowRight',
-            },
+            url: '/',
         },
     ],
 };
@@ -101,14 +69,10 @@ const MOCK_QUICK_LINKS_BLOCK_PL: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
     description: 'Quickly explore the most important links for easy navigation to key resources.',
     items: [
         {
-            title: 'Find a retailer',
+            label: 'Find a retailer',
             description: 'Locate nearby authorized retailers for products and services.',
             icon: 'MapPin',
-            link: {
-                label: 'Learn more',
-                url: '/',
-                icon: 'ArrowRight',
-            },
+            url: '/',
         },
     ],
 };

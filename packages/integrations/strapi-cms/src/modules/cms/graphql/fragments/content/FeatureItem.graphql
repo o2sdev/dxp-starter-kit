@@ -1,0 +1,5 @@
+fragment FeatureItem on ComponentContentFeatureItem {
+    title
+    description
+    icon
+}

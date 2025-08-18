@@ -1,0 +1,81 @@
+query getComponent($id: ID!, $locale: I18NLocaleCode!) {
+    component(documentId: $id, locale: $locale) {
+        name
+        content {
+            __typename
+            ... on ComponentComponentsFaq {
+                ...FaqComponent
+            }
+            ... on ComponentComponentsQuickLinks {
+                ...QuickLinksComponent
+            }
+            ... on ComponentComponentsCategoryList {
+                ...CategoryListComponent
+            }
+            ... on ComponentComponentsArticleList {
+                ...ArticleListComponent
+            }
+            ... on ComponentComponentsCategory {
+                ...CategoryComponent
+            }
+            ... on ComponentComponentsArticleSearch {
+                ...ArticleSearchComponent
+            }
+            ... on ComponentComponentsHeroSection {
+                ...HeroSectionComponent
+            }
+            ... on ComponentComponentsMediaSection {
+                ...MediaSectionComponent
+            }
+            ... on ComponentComponentsFeatureSection {
+                ...FeatureSectionComponent
+            }
+            ... on ComponentComponentsCtaSection {
+                ...CtaSectionComponent
+            }
+            ... on ComponentComponentsBentoGrid {
+                ...BentoGridComponent
+            }
+        }
+    }
+    configurableTexts(locale: $locale) {
+        dates {
+            today
+            yesterday
+        }
+        actions {
+            showMore
+            showLess
+            show
+            hide
+            edit
+            save
+            cancel
+            delete
+            logOut
+            settings
+            renew
+            details
+            reorder
+            clickToSelect
+            payOnline
+            close
+            trackOrder
+            showAllArticles
+            on
+            off
+        }
+        errors {
+            requestError {
+                title
+                content
+            }
+        }
+        media {
+            play
+            pause
+            mute
+            unmute
+        }
+    }
+}

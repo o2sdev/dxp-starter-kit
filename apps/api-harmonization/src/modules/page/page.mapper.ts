@@ -36,6 +36,7 @@ export const mapPage = (
             alternativeUrls,
             template: page.template,
             hasOwnTitle: page.hasOwnTitle,
+            showBreadcrumbs: page.showBreadcrumbs,
             breadcrumbs: mapPageBreadcrumbs(page),
         },
     };
@@ -71,6 +72,7 @@ export const mapArticle = (
                 },
             },
             hasOwnTitle: true,
+            showBreadcrumbs: true,
             breadcrumbs: mapArticleBreadcrumbs(article, category),
         },
     };

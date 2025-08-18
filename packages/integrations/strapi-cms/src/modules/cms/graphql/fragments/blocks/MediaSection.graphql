@@ -1,0 +1,13 @@
+fragment MediaSectionComponent on ComponentComponentsMediaSection {
+    __typename
+    id
+    preTitle
+    title
+    description
+    media {
+        ...Media
+    }
+    links {
+        ...Link
+    }
+}

@@ -14,3 +14,5 @@ export * as Navigation from './navigation';
 export * as SEO from './seo';
 export * as Headers from './headers';
 export * as InfoCard from './info-card';
+export * as FeatureItem from './feature-item';
+export * as CardWithImage from './card-with-image';

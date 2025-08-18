@@ -1,0 +1,50 @@
+{
+    "name": "@dxp/integrations.strapi-cms",
+    "version": "0.0.1",
+    "private": false,
+    "license": "MIT",
+    "exports": {
+        "./integration": "./dist/src/integration.js",
+        "./sdk": "./dist/sdk/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+        "build": "tsc && tsc-alias",
+        "lint": "tsc --noEmit && eslint . --max-warnings 0",
+        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json}\"",
+        "generate": "SET CMS_STRAPI_BASE_URL=https://strapi-dxp.dev.hycom.pl&& graphql-codegen && prettier --write \"generated/**/*.ts\""
+    },
+    "dependencies": {
+        "@dxp/framework": "*",
+        "@o2s/utils.logger": "*",
+        "flatted": "^3.3.3",
+        "graphql": "16.11.0"
+    },
+    "devDependencies": {
+        "@graphql-codegen/add": "^5.0.3",
+        "@graphql-codegen/cli": "^5.0.6",
+        "@graphql-codegen/introspection": "^4.0.3",
+        "@graphql-codegen/typescript": "^4.1.6",
+        "@graphql-codegen/typescript-graphql-request": "^6.2.0",
+        "@graphql-codegen/typescript-operations": "^4.6.1",
+        "@graphql-codegen/typescript-resolvers": "^4.5.1",
+        "@dxp/eslint-config": "*",
+        "@dxp/prettier-config": "*",
+        "@dxp/typescript-config": "*",
+        "concurrently": "^9.1.2",
+        "eslint": "^9.24.0",
+        "prettier": "^3.5.3",
+        "tsc-alias": "^1.8.15",
+        "typescript": "^5.8.3"
+    },
+    "peerDependencies": {
+        "@nestjs/axios": "^4",
+        "@nestjs/common": "^11",
+        "@nestjs/config": "^4.0.2",
+        "@nestjs/core": "^11",
+        "rxjs": "^7"
+    }
+}

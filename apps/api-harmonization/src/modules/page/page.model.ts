@@ -2,7 +2,7 @@ import * as BentoGrid from '@dxp/blocks.bento-grid/api-harmonization';
 import * as CtaSection from '@dxp/blocks.cta-section/api-harmonization';
 import * as Faq from '@dxp/blocks.faq/api-harmonization';
 import * as FeatureSection from '@dxp/blocks.feature-section/api-harmonization';
-import * as HeroBanner from '@dxp/blocks.hero-banner/api-harmonization';
+import * as HeroSection from '@dxp/blocks.hero-section/api-harmonization';
 import * as MediaSection from '@dxp/blocks.media-section/api-harmonization';
 import * as QuickLinks from '@dxp/blocks.quick-links/api-harmonization';
 
@@ -50,15 +50,16 @@ export class PageData {
     };
     template!: CMS.Model.Page.PageTemplate;
     hasOwnTitle!: boolean;
+    showBreadcrumbs!: boolean;
     breadcrumbs!: Breadcrumb[];
 }
 
 export type Blocks =
     // BLOCK REGISTER
+    | HeroSection.Model.HeroSectionBlock['__typename']
     | QuickLinks.Model.QuickLinksBlock['__typename']
     | MediaSection.Model.MediaSectionBlock['__typename']
     | BentoGrid.Model.BentoGridBlock['__typename']
     | CtaSection.Model.CtaSectionBlock['__typename']
     | FeatureSection.Model.FeatureSectionBlock['__typename']
-    | Faq.Model.FaqBlock['__typename']
-    | HeroBanner.Model.HeroBannerBlock['__typename'];
+    | Faq.Model.FaqBlock['__typename'];

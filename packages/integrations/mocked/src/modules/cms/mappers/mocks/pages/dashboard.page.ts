@@ -19,13 +19,14 @@ export const PAGE_DASHBOARD_EN: CMS.Model.Page.Page = {
     },
     permissions: [],
     hasOwnTitle: true,
+    showBreadcrumbs: false,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
             main: [
                 {
-                    __typename: 'HeroBannerBlock',
-                    id: 'hero-banner-1',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-1',
                 },
                 {
                     __typename: 'QuickLinksBlock',
@@ -77,13 +78,14 @@ export const PAGE_DASHBOARD_DE: CMS.Model.Page.Page = {
     },
     permissions: [],
     hasOwnTitle: false,
+    showBreadcrumbs: false,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
             main: [
                 {
-                    __typename: 'HeroBannerBlock',
-                    id: 'hero-banner-1',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-1',
                 },
                 {
                     __typename: 'QuickLinksBlock',
@@ -135,13 +137,14 @@ export const PAGE_DASHBOARD_PL: CMS.Model.Page.Page = {
     },
     permissions: [],
     hasOwnTitle: false,
+    showBreadcrumbs: false,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
             main: [
                 {
-                    __typename: 'HeroBannerBlock',
-                    id: 'hero-banner-1',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-1',
                 },
                 {
                     __typename: 'QuickLinksBlock',

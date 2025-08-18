@@ -4,7 +4,6 @@ import { createNavigation } from 'next-intl/navigation';
 import React from 'react';
 
 import { ActionList } from '@dxp/ui/components/ActionList';
-import { Container } from '@dxp/ui/components/Container';
 import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
 import { RichText } from '@dxp/ui/components/RichText';
@@ -21,71 +20,69 @@ export const MediaSectionPure: React.FC<MediaSectionPureProps> = ({ locale, acce
     const isMediaAvailable = media && media.url;
 
     return (
-        <Container spacing="medium" background="brand">
-            <div className="w-full flex flex-col gap-12 md:gap-16">
-                <div className="w-full flex flex-col gap-6 md:gap-8">
-                    <div className="h-full max-w-2xl mx-auto flex flex-col gap-4 md:gap-5 text-center">
-                        {preTitle && (
-                            <Typography variant="body" className="text-muted-foreground font-semibold">
-                                {preTitle}
-                            </Typography>
-                        )}
+        <div className="w-full flex flex-col gap-12 md:gap-16">
+            <div className="w-full flex flex-col gap-6 md:gap-8">
+                <div className="h-full max-w-2xl mx-auto flex flex-col gap-4 md:gap-5 text-center">
+                    {preTitle && (
+                        <Typography variant="body" className="text-muted-foreground font-semibold">
+                            {preTitle}
+                        </Typography>
+                    )}
 
-                        {title && (
-                            <Typography variant="highlightedBig" asChild>
-                                <h2>{title}</h2>
-                            </Typography>
-                        )}
+                    {title && (
+                        <Typography variant="highlightedBig" asChild>
+                            <h2>{title}</h2>
+                        </Typography>
+                    )}
 
-                        {description && (
-                            <RichText content={description} baseFontSize="body" className="text-muted-foreground" />
-                        )}
-                    </div>
-
-                    {links && (
-                        <ActionList
-                            className="sm:flex-row align-start justify-center"
-                            actions={links.map(
-                                (link, index) =>
-                                    link.label && (
-                                        <Button
-                                            asChild
-                                            variant={index === 0 ? 'default' : 'link'}
-                                            key={link.label}
-                                            className={
-                                                index === 0
-                                                    ? 'no-underline hover:no-underline'
-                                                    : 'no-underline hover:no-underline flex-1'
-                                            }
-                                        >
-                                            <LinkComponent href={link.url}>
-                                                <>
-                                                    {link.label}
-                                                    {link.icon && <DynamicIcon name={link.icon} size={16} />}
-                                                </>
-                                            </LinkComponent>
-                                        </Button>
-                                    ),
-                            )}
-                            showMoreLabel=""
-                        />
+                    {description && (
+                        <RichText content={description} baseFontSize="body" className="text-muted-foreground" />
                     )}
                 </div>
 
-                {isMediaAvailable && (
-                    <div className="w-full max-w-5xl mx-auto">
-                        <div className="w-full flex flex-col justify-center flex-1">
-                            <Image
-                                src={media.url}
-                                alt={media.alt}
-                                width={media.width}
-                                height={media.height}
-                                className="object-cover h-auto w-full rounded-xl shadow-xl/20"
-                            />
-                        </div>
-                    </div>
+                {links && links.length > 0 && (
+                    <ActionList
+                        className="sm:flex-row align-start justify-center"
+                        actions={links.map(
+                            (link, index) =>
+                                link.label && (
+                                    <Button
+                                        asChild
+                                        variant={index === 0 ? 'default' : 'link'}
+                                        key={link.label}
+                                        className={
+                                            index === 0
+                                                ? 'no-underline hover:no-underline'
+                                                : 'no-underline hover:no-underline flex-1'
+                                        }
+                                    >
+                                        <LinkComponent href={link.url}>
+                                            <>
+                                                {link.label}
+                                                {link.icon && <DynamicIcon name={link.icon} size={16} />}
+                                            </>
+                                        </LinkComponent>
+                                    </Button>
+                                ),
+                        )}
+                        showMoreLabel=""
+                    />
                 )}
             </div>
-        </Container>
+
+            {isMediaAvailable && (
+                <div className="w-full max-w-5xl mx-auto">
+                    <div className="w-full flex flex-col justify-center flex-1">
+                        <Image
+                            src={media.url}
+                            alt={media.alt}
+                            width={media.width}
+                            height={media.height}
+                            className="object-cover h-auto w-full rounded-xl shadow-xl/20"
+                        />
+                    </div>
+                </div>
+            )}
+        </div>
     );
 };

@@ -8,8 +8,9 @@ import { ContainerProps } from './Container.types';
 const containerVariants = cva('w-full mx-auto px-4 md:px-6', {
     variants: {
         variant: {
-            full: 'md:max-w-7xl',
             narrow: 'md:max-w-3xl',
+            wide: 'md:max-w-7xl',
+            full: 'md:max-w-10xl',
         },
         spacing: {
             none: '',
@@ -28,8 +29,8 @@ const containerBackgroundVariants = cva('w-full', {
     variants: {
         background: {
             none: '',
-            light: 'bg-white text-black',
-            dark: 'bg-black/80 text-white',
+            light: 'bg-white !text-black',
+            dark: 'bg-black/80 !text-white',
             brand: 'bg-primary/20',
         },
     },

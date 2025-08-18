@@ -1,7 +1,6 @@
 import { useLocale } from 'next-intl';
 import React, { Suspense } from 'react';
 
-import { Container } from '@dxp/ui/components/Container';
 import { Loading } from '@dxp/ui/components/Loading';
 
 import { QuickLinks } from './QuickLinks.server';
@@ -14,17 +13,15 @@ export const QuickLinksRenderer: React.FC<QuickLinksRendererProps> = ({ id, acce
         <Suspense
             key={id}
             fallback={
-                <Container variant="full" spacing="small">
-                    <div className="flex flex-col gap-5 md:gap-6">
-                        <Loading bars={1} />
-                        <div className="grid grid-flow-row gap-6 sm:grid-cols-[repeat(2,minmax(250px,600px))] lg:grid-cols-[repeat(4,minmax(200px,600px))]">
-                            <Loading bars={4} />
-                            <Loading bars={4} />
-                            <Loading bars={4} />
-                            <Loading bars={4} />
-                        </div>
+                <div className="flex flex-col gap-5 md:gap-6">
+                    <Loading bars={1} />
+                    <div className="grid grid-flow-row gap-6 sm:grid-cols-[repeat(2,minmax(250px,600px))] lg:grid-cols-[repeat(4,minmax(200px,600px))]">
+                        <Loading bars={3} />
+                        <Loading bars={3} />
+                        <Loading bars={3} />
+                        <Loading bars={3} />
                     </div>
-                </Container>
+                </div>
             }
         >
             <QuickLinks id={id} accessToken={accessToken} locale={locale} routing={routing} />
