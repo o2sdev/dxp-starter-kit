@@ -104,36 +104,35 @@ export default async function Page({ params }: Props) {
             notFound();
         }
 
-        const hasHeroBanner =
-            (data.template.__typename === 'OneColumnTemplate' &&
-                data.template.slots.main.some((block) => block.__typename === 'HeroBannerBlock')) ||
-            (data.template.__typename === 'TwoColumnTemplate' &&
-                data.template.slots.top.some((block) => block.__typename === 'HeroBannerBlock'));
-
         return (
             <GlobalProvider config={init} labels={init.labels} locale={locale}>
                 <div className="flex flex-col min-h-dvh">
                     <Header data={init.common.header} alternativeUrls={data.alternativeUrls} />
                     <div className="flex flex-col grow">
-                        <main className="flex flex-col gap-6 row-start-2 items-center sm:items-start">
-                            {!hasHeroBanner && (
-                                <div className="flex flex-col gap-6 w-full pt-6 px-4 md:px-6 ml-auto mr-auto md:max-w-7xl">
-                                    <Breadcrumbs
-                                        breadcrumbs={
-                                            rootBreadcrumb ? [rootBreadcrumb, ...data.breadcrumbs] : data.breadcrumbs
-                                        }
-                                        LinkComponent={Link}
-                                    />
-                                    {!data.hasOwnTitle && (
-                                        <>
-                                            <Typography variant="h1" asChild>
-                                                <h1>{meta.seo.title}</h1>
-                                            </Typography>
-                                            <Separator />
-                                        </>
-                                    )}
-                                </div>
-                            )}
+                        <main className="flex flex-col row-start-2 items-center sm:items-start">
+                            <div className="w-full px-4 md:px-6 ml-auto mr-auto md:max-w-7xl">
+                                {data.showBreadcrumbs && (
+                                    <div className="my-6">
+                                        <Breadcrumbs
+                                            breadcrumbs={
+                                                rootBreadcrumb
+                                                    ? [rootBreadcrumb, ...data.breadcrumbs]
+                                                    : data.breadcrumbs
+                                            }
+                                            LinkComponent={Link}
+                                        />
+                                    </div>
+                                )}
+
+                                {!data.hasOwnTitle && (
+                                    <div className="flex flex-col gap-6 my-6">
+                                        <Typography variant="h1" asChild>
+                                            <h1>{meta.seo.title}</h1>
+                                        </Typography>
+                                        <Separator />
+                                    </div>
+                                )}
+                            </div>
 
                             <div className="relative w-full h-full">
                                 <PageTemplate slug={slug} data={data} />

@@ -13,6 +13,7 @@ export interface InformativeCardProps {
 
 interface Icon {
     name: DynamicIconProps['name'];
-    size?: number;
-    className?: string;
+    size?: DynamicIconProps['size'];
+    className?: DynamicIconProps['className'];
+    strokeWidth?: DynamicIconProps['strokeWidth'];
 }

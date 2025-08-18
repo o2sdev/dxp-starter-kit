@@ -1,0 +1,10 @@
+fragment BentoGridComponent on ComponentComponentsBentoGrid {
+    __typename
+    id
+    preTitle
+    title
+    description
+    items {
+        ...CardWithImage
+    }
+}

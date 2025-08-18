@@ -1,0 +1,21 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "extends": [
+        "//"
+    ],
+    "tasks": {
+        "dev": {
+            "dependsOn": [
+                "@dxp/framework#build"
+            ]
+        },
+        "build": {
+            "dependsOn": [
+                "@dxp/framework#build"
+            ],
+            "env": [
+                "CMS_STRAPI_BASE_URL"
+            ]
+        }
+    }
+}

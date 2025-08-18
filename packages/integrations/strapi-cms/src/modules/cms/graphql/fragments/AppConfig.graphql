@@ -1,0 +1,9 @@
+fragment AppConfig on AppConfig {
+    documentId
+    header: signedInHeader {
+        documentId
+    }
+    footer: signedInFooter {
+        documentId
+    }
+}

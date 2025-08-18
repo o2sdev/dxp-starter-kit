@@ -1,0 +1,14 @@
+fragment CtaSectionComponent on ComponentComponentsCtaSection {
+    __typename
+    id
+    preTitle
+    title
+    description
+    inverted
+    image {
+        ...Media
+    }
+    links {
+        ...Link
+    }
+}

@@ -9,9 +9,7 @@ import { GetQuickLinksBlockQuery } from './quick-links.request';
 
 @Injectable()
 export class QuickLinksService {
-    constructor(
-        private readonly cmsService: CMS.Service,
-    ) {}
+    constructor(private readonly cmsService: CMS.Service) {}
 
     getQuickLinksBlock(
         query: GetQuickLinksBlockQuery,

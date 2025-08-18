@@ -1,0 +1,17 @@
+fragment HeroSectionComponent on ComponentComponentsHeroSection {
+    __typename
+    id
+    preTitle
+    title
+    subtitle
+    description
+    highlightedText
+    inverted
+    image {
+        ...Media
+    }
+    links {
+        ...Link
+    }
+    headingType
+}

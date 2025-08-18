@@ -5,10 +5,7 @@ import { sdk } from '../sdk';
 
 import { QuickLinksProps } from './QuickLinks.types';
 
-
-export const QuickLinksDynamic = dynamic(() =>
-    import('./QuickLinks.client').then((module) => module.QuickLinksPure),
-);
+export const QuickLinksDynamic = dynamic(() => import('./QuickLinks.client').then((module) => module.QuickLinksPure));
 
 export const QuickLinks: React.FC<QuickLinksProps> = async ({ id, accessToken, locale, routing }) => {
     try {

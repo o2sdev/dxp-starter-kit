@@ -1,0 +1,10 @@
+fragment CardWithImage on ComponentContentCardWithImage {
+    title
+    description
+    image {
+        ...Media
+    }
+    link {
+        ...Link
+    }
+}

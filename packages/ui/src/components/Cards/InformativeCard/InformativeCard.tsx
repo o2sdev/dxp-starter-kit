@@ -25,7 +25,12 @@ const InformativeCardContent: React.FC<Readonly<InformativeCardProps>> = ({
         <div className="flex flex-row w-full h-full gap-2 p-6 justify-between">
             <div className="flex flex-col gap-2 flex-grow">
                 {icon && (
-                    <DynamicIcon name={icon.name} size={icon.size} className={cn('text-foreground', icon.className)} />
+                    <DynamicIcon
+                        name={icon.name}
+                        size={icon.size}
+                        className={cn('text-foreground', icon.className)}
+                        strokeWidth={icon.strokeWidth}
+                    />
                 )}
                 {title && <Typography variant="h3">{title}</Typography>}
 

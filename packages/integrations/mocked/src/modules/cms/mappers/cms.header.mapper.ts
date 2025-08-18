@@ -9,6 +9,10 @@ const MOCK_HEADER_LOGON_EN: CMS.Model.Header.Header = {
         width: 92,
         height: 24,
     },
+    contextSwitcher: {
+        showContextSwitcher: true,
+        closeLabel: 'Close',
+    },
     languageSwitcherLabel: 'Language',
     mobileMenuLabel: {
         open: 'Open menu',
@@ -48,6 +52,10 @@ const MOCK_HEADER_LOGON_DE: CMS.Model.Header.Header = {
         width: 92,
         height: 24,
     },
+    contextSwitcher: {
+        showContextSwitcher: true,
+        closeLabel: 'Schließen',
+    },
     languageSwitcherLabel: 'Sprache',
     mobileMenuLabel: {
         open: 'Menü öffnen',
@@ -86,6 +94,10 @@ const MOCK_HEADER_LOGON_PL: CMS.Model.Header.Header = {
         alt: 'Logo',
         width: 92,
         height: 24,
+    },
+    contextSwitcher: {
+        showContextSwitcher: true,
+        closeLabel: 'Zamknij',
     },
     languageSwitcherLabel: 'Język',
     mobileMenuLabel: {

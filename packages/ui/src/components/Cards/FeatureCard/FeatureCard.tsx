@@ -21,7 +21,7 @@ export const FeatureCardContent: React.FC<FeatureCardProps> = ({ title, descript
 
                 <RichText content={description} baseFontSize="small" className="text-muted-foreground" />
 
-                {link && (
+                {link?.url && (
                     <Link asChild variant="default" className="self-start">
                         <LinkComponent href={link.url}>
                             <>

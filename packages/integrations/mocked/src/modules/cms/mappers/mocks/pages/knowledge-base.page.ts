@@ -19,6 +19,7 @@ export const PAGE_HELP_AND_SUPPORT_EN: CMS.Model.Page.Page = {
     },
     permissions: [],
     hasOwnTitle: false,
+    showBreadcrumbs: true,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
@@ -53,6 +54,7 @@ export const PAGE_HELP_AND_SUPPORT_DE: CMS.Model.Page.Page = {
     },
     permissions: [],
     hasOwnTitle: false,
+    showBreadcrumbs: true,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
@@ -87,6 +89,7 @@ export const PAGE_HELP_AND_SUPPORT_PL: CMS.Model.Page.Page = {
     },
     permissions: [],
     hasOwnTitle: false,
+    showBreadcrumbs: true,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {

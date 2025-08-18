@@ -15,7 +15,6 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from '@dxp/ui/elements/navigation-menu';
-import { Separator } from '@dxp/ui/elements/separator';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { Link as NextLink, usePathname } from '@/i18n';
@@ -169,8 +168,6 @@ export function DesktopNavigation({ logoSlot, localeSlot, items }: DesktopNaviga
                 </div>
             </div>
 
-            <Separator />
-
             {/* Bottom Navigation Bar */}
             {activeNavigationGroup?.__typename === 'NavigationGroup' && (
                 <div className="w-full bg-navbar-sub-background">
@@ -201,7 +198,6 @@ export function DesktopNavigation({ logoSlot, localeSlot, items }: DesktopNaviga
                             </NavigationMenuList>
                         </NavigationMenu>
                     </div>
-                    <Separator />
                 </div>
             )}
         </nav>
