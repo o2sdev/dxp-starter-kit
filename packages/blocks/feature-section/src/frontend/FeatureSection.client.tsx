@@ -23,7 +23,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
 }) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
-    const { title, description, image, featureList, links, preTitle, inverted, labels } = component;
+    const { title, description, image, featureList, links, preTitle, inverted, labels, iconBorder } = component;
 
     const isImageAvailable = image && image.url;
 
@@ -49,7 +49,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                         )}
 
                         {title && (
-                            <Typography variant="h2" asChild>
+                            <Typography variant="highlightedMedium" asChild>
                                 <h2>{title}</h2>
                             </Typography>
                         )}
@@ -63,7 +63,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                         <ul
                             className={cn(
                                 'grid grid-rows-1 gap-8 md:gap-4',
-                                !isImageAvailable && 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6',
+                                !isImageAvailable && 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6',
                             )}
                         >
                             {featureList.map((feature, index) => (
@@ -75,7 +75,13 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                                     )}
                                 >
                                     {feature.icon && (
-                                        <div className="mt-0.5">
+                                        <div
+                                            className={cn(
+                                                iconBorder
+                                                    ? 'p-2 border-1 border-border rounded-sm shadow-xs'
+                                                    : 'mt-0.5',
+                                            )}
+                                        >
                                             <DynamicIcon name={feature.icon!} size={20} className="text-primary" />
                                         </div>
                                     )}

@@ -452,6 +452,7 @@ export type ComponentComponentsFaqSectionsArgs = {
 export type ComponentComponentsFeatureSection = {
     description?: Maybe<Scalars['String']['output']>;
     featureList?: Maybe<Array<Maybe<ComponentContentFeatureItem>>>;
+    iconBorder: Scalars['Boolean']['output'];
     id: Scalars['ID']['output'];
     image?: Maybe<UploadFile>;
     inverted: Scalars['Boolean']['output'];
@@ -468,6 +469,22 @@ export type ComponentComponentsFeatureSectionFeatureListArgs = {
 
 export type ComponentComponentsFeatureSectionLinksArgs = {
     filters?: InputMaybe<ComponentContentLinkFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentComponentsFeatureSectionGrid = {
+    description?: Maybe<Scalars['String']['output']>;
+    featureList?: Maybe<Array<Maybe<ComponentContentFeatureItem>>>;
+    iconBorder: Scalars['Boolean']['output'];
+    id: Scalars['ID']['output'];
+    inverted: Scalars['Boolean']['output'];
+    preTitle?: Maybe<Scalars['String']['output']>;
+    title?: Maybe<Scalars['String']['output']>;
+};
+
+export type ComponentComponentsFeatureSectionGridFeatureListArgs = {
+    filters?: InputMaybe<ComponentContentFeatureItemFiltersInput>;
     pagination?: InputMaybe<PaginationArg>;
     sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
@@ -581,6 +598,7 @@ export type ComponentContentDynamicZone =
     | ComponentComponentsCtaSection
     | ComponentComponentsFaq
     | ComponentComponentsFeatureSection
+    | ComponentComponentsFeatureSectionGrid
     | ComponentComponentsHeroSection
     | ComponentComponentsMediaSection
     | ComponentComponentsQuickLinks
@@ -1272,6 +1290,7 @@ export type GenericMorph =
     | ComponentComponentsCtaSection
     | ComponentComponentsFaq
     | ComponentComponentsFeatureSection
+    | ComponentComponentsFeatureSectionGrid
     | ComponentComponentsHeroSection
     | ComponentComponentsMediaSection
     | ComponentComponentsQuickLinks
@@ -2790,6 +2809,7 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               image?: Maybe<_RefType['UploadFile']>;
               links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
           })
+        | ComponentComponentsFeatureSectionGrid
         | (Omit<ComponentComponentsHeroSection, 'image' | 'links'> & {
               image?: Maybe<_RefType['UploadFile']>;
               links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
@@ -2883,6 +2903,7 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               image?: Maybe<_RefType['UploadFile']>;
               links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
           })
+        | ComponentComponentsFeatureSectionGrid
         | (Omit<ComponentComponentsHeroSection, 'image' | 'links'> & {
               image?: Maybe<_RefType['UploadFile']>;
               links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
@@ -3159,6 +3180,7 @@ export type ResolversTypes = {
             links?: Maybe<Array<Maybe<ResolversTypes['ComponentContentLink']>>>;
         }
     >;
+    ComponentComponentsFeatureSectionGrid: ResolverTypeWrapper<ComponentComponentsFeatureSectionGrid>;
     ComponentComponentsHeroSection: ResolverTypeWrapper<
         Omit<ComponentComponentsHeroSection, 'image' | 'links'> & {
             image?: Maybe<ResolversTypes['UploadFile']>;
@@ -3552,6 +3574,7 @@ export type ResolversParentTypes = {
         image?: Maybe<ResolversParentTypes['UploadFile']>;
         links?: Maybe<Array<Maybe<ResolversParentTypes['ComponentContentLink']>>>;
     };
+    ComponentComponentsFeatureSectionGrid: ComponentComponentsFeatureSectionGrid;
     ComponentComponentsHeroSection: Omit<ComponentComponentsHeroSection, 'image' | 'links'> & {
         image?: Maybe<ResolversParentTypes['UploadFile']>;
         links?: Maybe<Array<Maybe<ResolversParentTypes['ComponentContentLink']>>>;
@@ -4178,6 +4201,7 @@ export type ComponentComponentsFeatureSectionResolvers<
         ContextType,
         RequireFields<ComponentComponentsFeatureSectionFeatureListArgs, 'pagination' | 'sort'>
     >;
+    iconBorder?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
     id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
     image?: Resolver<Maybe<ResolversTypes['UploadFile']>, ParentType, ContextType>;
     inverted?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
@@ -4187,6 +4211,26 @@ export type ComponentComponentsFeatureSectionResolvers<
         ContextType,
         RequireFields<ComponentComponentsFeatureSectionLinksArgs, 'pagination' | 'sort'>
     >;
+    preTitle?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ComponentComponentsFeatureSectionGridResolvers<
+    ContextType = any,
+    ParentType extends
+        ResolversParentTypes['ComponentComponentsFeatureSectionGrid'] = ResolversParentTypes['ComponentComponentsFeatureSectionGrid'],
+> = {
+    description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    featureList?: Resolver<
+        Maybe<Array<Maybe<ResolversTypes['ComponentContentFeatureItem']>>>,
+        ParentType,
+        ContextType,
+        RequireFields<ComponentComponentsFeatureSectionGridFeatureListArgs, 'pagination' | 'sort'>
+    >;
+    iconBorder?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    inverted?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
     preTitle?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
     title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
@@ -4318,6 +4362,7 @@ export type ComponentContentDynamicZoneResolvers<
         | 'ComponentComponentsCtaSection'
         | 'ComponentComponentsFaq'
         | 'ComponentComponentsFeatureSection'
+        | 'ComponentComponentsFeatureSectionGrid'
         | 'ComponentComponentsHeroSection'
         | 'ComponentComponentsMediaSection'
         | 'ComponentComponentsQuickLinks'
@@ -4869,6 +4914,7 @@ export type GenericMorphResolvers<
         | 'ComponentComponentsCtaSection'
         | 'ComponentComponentsFaq'
         | 'ComponentComponentsFeatureSection'
+        | 'ComponentComponentsFeatureSectionGrid'
         | 'ComponentComponentsHeroSection'
         | 'ComponentComponentsMediaSection'
         | 'ComponentComponentsQuickLinks'
@@ -6059,6 +6105,7 @@ export type Resolvers<ContextType = any> = {
     ComponentComponentsCtaSection?: ComponentComponentsCtaSectionResolvers<ContextType>;
     ComponentComponentsFaq?: ComponentComponentsFaqResolvers<ContextType>;
     ComponentComponentsFeatureSection?: ComponentComponentsFeatureSectionResolvers<ContextType>;
+    ComponentComponentsFeatureSectionGrid?: ComponentComponentsFeatureSectionGridResolvers<ContextType>;
     ComponentComponentsHeroSection?: ComponentComponentsHeroSectionResolvers<ContextType>;
     ComponentComponentsMediaSection?: ComponentComponentsMediaSectionResolvers<ContextType>;
     ComponentComponentsQuickLinks?: ComponentComponentsQuickLinksResolvers<ContextType>;
@@ -6370,6 +6417,7 @@ export type ComponentFragment = {
         | { __typename: 'ComponentComponentsCtaSection' }
         | { __typename: 'ComponentComponentsFaq' }
         | { __typename: 'ComponentComponentsFeatureSection' }
+        | { __typename: 'ComponentComponentsFeatureSectionGrid' }
         | { __typename: 'ComponentComponentsHeroSection' }
         | { __typename: 'ComponentComponentsMediaSection' }
         | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6494,6 +6542,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCtaSection' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
+                      | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                       | { __typename: 'ComponentComponentsHeroSection' }
                       | { __typename: 'ComponentComponentsMediaSection' }
                       | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6521,6 +6570,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCtaSection' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
+                      | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                       | { __typename: 'ComponentComponentsHeroSection' }
                       | { __typename: 'ComponentComponentsMediaSection' }
                       | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6545,6 +6595,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCtaSection' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
+                      | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                       | { __typename: 'ComponentComponentsHeroSection' }
                       | { __typename: 'ComponentComponentsMediaSection' }
                       | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6569,6 +6620,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCtaSection' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
+                      | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                       | { __typename: 'ComponentComponentsHeroSection' }
                       | { __typename: 'ComponentComponentsMediaSection' }
                       | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6593,6 +6645,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCtaSection' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
+                      | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                       | { __typename: 'ComponentComponentsHeroSection' }
                       | { __typename: 'ComponentComponentsMediaSection' }
                       | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6626,6 +6679,7 @@ type Template_ComponentTemplatesOneColumn_Fragment = {
             | { __typename: 'ComponentComponentsCtaSection' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
+            | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6654,6 +6708,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCtaSection' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
+            | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6678,6 +6733,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCtaSection' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
+            | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6702,6 +6758,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCtaSection' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
+            | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6726,6 +6783,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCtaSection' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
+            | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6805,6 +6863,7 @@ export type CategoryComponentFragment = {
                 | { __typename: 'ComponentComponentsCtaSection' }
                 | { __typename: 'ComponentComponentsFaq' }
                 | { __typename: 'ComponentComponentsFeatureSection' }
+                | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                 | { __typename: 'ComponentComponentsHeroSection' }
                 | { __typename: 'ComponentComponentsMediaSection' }
                 | { __typename: 'ComponentComponentsQuickLinks' }
@@ -6859,6 +6918,7 @@ export type FeatureSectionComponentFragment = {
     title?: string;
     description?: string;
     inverted: boolean;
+    iconBorder: boolean;
     featureList?: Array<{ title?: string; description?: string; icon?: string }>;
     image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
     links?: Array<{
@@ -6868,6 +6928,17 @@ export type FeatureSectionComponentFragment = {
         icon?: string;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
+};
+
+export type FeatureSectionGridComponentFragment = {
+    __typename: 'ComponentComponentsFeatureSectionGrid';
+    id: string;
+    preTitle?: string;
+    title?: string;
+    description?: string;
+    inverted: boolean;
+    iconBorder: boolean;
+    featureList?: Array<{ title?: string; description?: string; icon?: string }>;
 };
 
 export type HeroSectionComponentFragment = {
@@ -7023,6 +7094,7 @@ export type OneColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCtaSection' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
+            | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7050,6 +7122,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCtaSection' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
+            | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7074,6 +7147,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCtaSection' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
+            | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7098,6 +7172,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCtaSection' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
+            | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7122,6 +7197,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCtaSection' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
+            | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7228,6 +7304,7 @@ export type GetComponentQuery = {
                               | { __typename: 'ComponentComponentsCtaSection' }
                               | { __typename: 'ComponentComponentsFaq' }
                               | { __typename: 'ComponentComponentsFeatureSection' }
+                              | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                               | { __typename: 'ComponentComponentsHeroSection' }
                               | { __typename: 'ComponentComponentsMediaSection' }
                               | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7283,6 +7360,7 @@ export type GetComponentQuery = {
                   title?: string;
                   description?: string;
                   inverted: boolean;
+                  iconBorder: boolean;
                   featureList?: Array<{ title?: string; description?: string; icon?: string }>;
                   image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
                   links?: Array<{
@@ -7292,6 +7370,16 @@ export type GetComponentQuery = {
                       icon?: string;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
+              }
+            | {
+                  __typename: 'ComponentComponentsFeatureSectionGrid';
+                  id: string;
+                  preTitle?: string;
+                  title?: string;
+                  description?: string;
+                  inverted: boolean;
+                  iconBorder: boolean;
+                  featureList?: Array<{ title?: string; description?: string; icon?: string }>;
               }
             | {
                   __typename: 'ComponentComponentsHeroSection';
@@ -7515,6 +7603,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCtaSection' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
+                          | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7542,6 +7631,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCtaSection' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
+                          | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7566,6 +7656,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCtaSection' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
+                          | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7590,6 +7681,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCtaSection' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
+                          | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7614,6 +7706,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCtaSection' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
+                          | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7675,6 +7768,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCtaSection' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
+                          | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7702,6 +7796,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCtaSection' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
+                          | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7726,6 +7821,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCtaSection' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
+                          | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7750,6 +7846,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCtaSection' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
+                          | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
@@ -7774,6 +7871,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCtaSection' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
+                          | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
@@ -8299,10 +8397,26 @@ export const FeatureSectionComponentFragmentDoc = gql`
         links {
             ...Link
         }
+        iconBorder
     }
     ${FeatureItemFragmentDoc}
     ${MediaFragmentDoc}
     ${LinkFragmentDoc}
+`;
+export const FeatureSectionGridComponentFragmentDoc = gql`
+    fragment FeatureSectionGridComponent on ComponentComponentsFeatureSectionGrid {
+        __typename
+        id
+        preTitle
+        title
+        description
+        featureList {
+            ...FeatureItem
+        }
+        inverted
+        iconBorder
+    }
+    ${FeatureItemFragmentDoc}
 `;
 export const HeroSectionComponentFragmentDoc = gql`
     fragment HeroSectionComponent on ComponentComponentsHeroSection {
@@ -8489,6 +8603,9 @@ export const GetComponentDocument = gql`
                 ... on ComponentComponentsFeatureSection {
                     ...FeatureSectionComponent
                 }
+                ... on ComponentComponentsFeatureSectionGrid {
+                    ...FeatureSectionGridComponent
+                }
                 ... on ComponentComponentsCtaSection {
                     ...CtaSectionComponent
                 }
@@ -8547,6 +8664,7 @@ export const GetComponentDocument = gql`
     ${HeroSectionComponentFragmentDoc}
     ${MediaSectionComponentFragmentDoc}
     ${FeatureSectionComponentFragmentDoc}
+    ${FeatureSectionGridComponentFragmentDoc}
     ${CtaSectionComponentFragmentDoc}
     ${BentoGridComponentFragmentDoc}
 `;

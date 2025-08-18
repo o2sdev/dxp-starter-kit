@@ -1,0 +1,12 @@
+fragment FeatureSectionGridComponent on ComponentComponentsFeatureSectionGrid {
+    __typename
+    id
+    preTitle
+    title
+    description
+    featureList {
+        ...FeatureItem
+    }
+    inverted
+    iconBorder
+}

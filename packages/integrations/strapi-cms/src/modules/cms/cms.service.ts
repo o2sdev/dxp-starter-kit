@@ -19,6 +19,7 @@ import { mapCategoryListBlock } from './mappers/blocks/cms.category-list.mapper'
 import { mapCategoryBlock } from './mappers/blocks/cms.category.mapper';
 import { mapCtaSectionBlock } from './mappers/blocks/cms.cta-section.mapper';
 import { mapFaqBlock } from './mappers/blocks/cms.faq.mapper';
+import { mapFeatureSectionGridBlock } from './mappers/blocks/cms.feature-section-grid.mapper';
 import { mapFeatureSectionBlock } from './mappers/blocks/cms.feature-section.mapper';
 import { mapHeroSectionBlock } from './mappers/blocks/cms.hero-section.mapper';
 import { mapMediaSectionBlock } from './mappers/blocks/cms.media-section.mapper';
@@ -295,6 +296,13 @@ export class CmsService implements CMS.Service {
         const key = `feature-section-component-${options.id}-${options.locale}`;
         return this.getCachedBlock(key, () =>
             this.getBlock(options).pipe(map((data) => mapFeatureSectionBlock(data, this.baseUrl))),
+        );
+    }
+
+    getFeatureSectionGridBlock(options: CMS.Request.GetCmsEntryParams) {
+        const key = `feature-section-grid-component-${options.id}-${options.locale}`;
+        return this.getCachedBlock(key, () =>
+            this.getBlock(options).pipe(map((data) => mapFeatureSectionGridBlock(data))),
         );
     }
 

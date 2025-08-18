@@ -15,4 +15,5 @@ export * as ArticleListBlock from './models/blocks/article-list.model';
 export * as CategoryBlock from './models/blocks/category.model';
 export * as CategoryListBlock from './models/blocks/category-list.model';
 export * as ArticleSearchBlock from './models/blocks/article-search.model';
+export * as FeatureSectionGridBlock from './models/blocks/feature-section-grid.model';
 // BLOCK IMPORT

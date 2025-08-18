@@ -28,6 +28,11 @@ const MOCK_HEADER_LOGON_EN: CMS.Model.Header.Header = {
                     label: 'Dashboard',
                     url: '/',
                 },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Accounts',
+                    url: '/accounts',
+                },
             ],
         },
         {
@@ -70,6 +75,11 @@ const MOCK_HEADER_LOGON_DE: CMS.Model.Header.Header = {
                     __typename: 'NavigationItem',
                     label: 'Startseite',
                     url: '/',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Konten',
+                    url: '/konten',
                 },
             ],
         },
@@ -114,6 +124,11 @@ const MOCK_HEADER_LOGON_PL: CMS.Model.Header.Header = {
                     label: 'Strona główna',
                     url: '/',
                     permissions: [Auth.Constants.Roles.ORG_USER],
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Konta',
+                    url: '/konta',
                 },
             ],
         },

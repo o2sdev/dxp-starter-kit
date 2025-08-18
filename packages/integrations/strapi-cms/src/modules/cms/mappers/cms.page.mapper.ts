@@ -178,6 +178,8 @@ const mapComponent = (component: ComponentFragment) => {
             return 'MediaSectionBlock';
         case 'ComponentComponentsFeatureSection':
             return 'FeatureSectionBlock';
+        case 'ComponentComponentsFeatureSectionGrid':
+            return 'FeatureSectionGridBlock';
         case 'ComponentComponentsCtaSection':
             return 'CtaSectionBlock';
         case 'ComponentComponentsBentoGrid':

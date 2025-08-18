@@ -24,6 +24,7 @@ const MOCK_FEATURE_SECTION_BLOCK_EN: CMS.Model.FeatureSectionBlock.FeatureSectio
         },
     ],
     inverted: true,
+    iconBorder: false,
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
         width: 1920,
@@ -62,6 +63,7 @@ const MOCK_FEATURE_SECTION_BLOCK_DE: CMS.Model.FeatureSectionBlock.FeatureSectio
         },
     ],
     inverted: true,
+    iconBorder: false,
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
         width: 1920,
@@ -106,6 +108,7 @@ const MOCK_FEATURE_SECTION_BLOCK_PL: CMS.Model.FeatureSectionBlock.FeatureSectio
         },
     ],
     inverted: false,
+    iconBorder: true,
     labels: {
         showMore: 'Pokaż więcej',
     },
