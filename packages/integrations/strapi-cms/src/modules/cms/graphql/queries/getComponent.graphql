@@ -30,6 +30,9 @@ query getComponent($id: ID!, $locale: I18NLocaleCode!) {
             ... on ComponentComponentsFeatureSection {
                 ...FeatureSectionComponent
             }
+            ... on ComponentComponentsFeatureSectionGrid {
+                ...FeatureSectionGridComponent
+            }
             ... on ComponentComponentsCtaSection {
                 ...CtaSectionComponent
             }

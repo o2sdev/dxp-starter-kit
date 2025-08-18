@@ -11,4 +11,5 @@ export class FeatureSectionBlock extends Models.Block.Block {
     image?: CMS.Model.FeatureSectionBlock.FeatureSectionBlock['image'];
     links?: CMS.Model.FeatureSectionBlock.FeatureSectionBlock['links'];
     description?: CMS.Model.FeatureSectionBlock.FeatureSectionBlock['description'];
+    iconBorder?: CMS.Model.FeatureSectionBlock.FeatureSectionBlock['iconBorder'];
 }

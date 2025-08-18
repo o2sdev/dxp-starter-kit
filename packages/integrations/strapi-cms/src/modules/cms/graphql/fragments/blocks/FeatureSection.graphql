@@ -14,4 +14,5 @@ fragment FeatureSectionComponent on ComponentComponentsFeatureSection {
     links {
         ...Link
     }
+    iconBorder
 }

@@ -4,24 +4,19 @@ import { CMS } from '@dxp/framework/modules';
 
 import { GetComponentQuery } from '@/generated/strapi';
 
-import { mapLink } from '@/modules/cms/mappers/cms.link.mapper';
-
 import { mapFeatureItem } from '../cms.feature-item.mapper';
-import { mapMedia } from '../cms.media.mapper';
 
-export const mapFeatureSectionBlock = (
+export const mapFeatureSectionGridBlock = (
     data: GetComponentQuery,
-    baseUrl: string,
-): CMS.Model.FeatureSectionBlock.FeatureSectionBlock => {
+): CMS.Model.FeatureSectionGridBlock.FeatureSectionGridBlock => {
     const component = data.component!.content[0];
-    const configurableTexts = data.configurableTexts!;
 
     if (!component) {
         throw new NotFoundException();
     }
 
     switch (component.__typename) {
-        case 'ComponentComponentsFeatureSection':
+        case 'ComponentComponentsFeatureSectionGrid':
             return {
                 id: component.id,
                 preTitle: component.preTitle,
@@ -31,13 +26,6 @@ export const mapFeatureSectionBlock = (
                     ...mapFeatureItem(item)!,
                 })),
                 inverted: component.inverted,
-                image: mapMedia(component.image, baseUrl),
-                links: component.links?.map((item) => ({
-                    ...mapLink(item)!,
-                })),
-                labels: {
-                    showMore: configurableTexts.actions.showMore,
-                },
                 iconBorder: component.iconBorder,
             };
     }

@@ -27,30 +27,65 @@ export const PAGE_DASHBOARD_EN: CMS.Model.Page.Page = {
                 {
                     __typename: 'HeroSectionBlock',
                     id: 'hero-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'QuickLinksBlock',
                     id: 'quick-links-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'MediaSectionBlock',
                     id: 'media-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'brand',
+                    },
                 },
                 {
                     __typename: 'FeatureSectionBlock',
                     id: 'feature-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'CtaSectionBlock',
                     id: 'cta-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'BentoGridBlock',
                     id: 'bento-grid-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
             ],
         },
@@ -86,30 +121,65 @@ export const PAGE_DASHBOARD_DE: CMS.Model.Page.Page = {
                 {
                     __typename: 'HeroSectionBlock',
                     id: 'hero-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'QuickLinksBlock',
                     id: 'quick-links-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'MediaSectionBlock',
                     id: 'media-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'brand',
+                    },
                 },
                 {
                     __typename: 'FeatureSectionBlock',
                     id: 'feature-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'CtaSectionBlock',
                     id: 'cta-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'BentoGridBlock',
                     id: 'bento-grid-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
             ],
         },
@@ -145,30 +215,65 @@ export const PAGE_DASHBOARD_PL: CMS.Model.Page.Page = {
                 {
                     __typename: 'HeroSectionBlock',
                     id: 'hero-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'QuickLinksBlock',
                     id: 'quick-links-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'MediaSectionBlock',
                     id: 'media-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'brand',
+                    },
                 },
                 {
                     __typename: 'FeatureSectionBlock',
                     id: 'feature-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'CtaSectionBlock',
                     id: 'cta-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'BentoGridBlock',
                     id: 'bento-grid-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
                 {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
             ],
         },

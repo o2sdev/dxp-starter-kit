@@ -4,6 +4,7 @@ import { Modules } from '@dxp/api-harmonization';
 import * as BentoGrid from '@dxp/blocks.bento-grid/frontend';
 import * as CtaSection from '@dxp/blocks.cta-section/frontend';
 import * as Faq from '@dxp/blocks.faq/frontend';
+import * as FeatureSectionGrid from '@dxp/blocks.feature-section-grid/frontend';
 import * as FeatureSection from '@dxp/blocks.feature-section/frontend';
 import * as HeroSection from '@dxp/blocks.hero-section/frontend';
 import * as MediaSection from '@dxp/blocks.media-section/frontend';
@@ -80,6 +81,8 @@ const renderBlock = (typename: string, blockProps: BlockProps) => {
             return <QuickLinks.Renderer {...blockProps} />;
         case 'HeroSectionBlock':
             return <HeroSection.Renderer {...blockProps} />;
+        case 'FeatureSectionGridBlock':
+            return <FeatureSectionGrid.Renderer {...blockProps} />;
         // BLOCK REGISTER
         default:
             return null;

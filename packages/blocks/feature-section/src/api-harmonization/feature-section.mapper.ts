@@ -17,5 +17,6 @@ export const mapFeatureSection = (
         labels: cms.labels,
         image: cms.image,
         links: cms.links,
+        iconBorder: cms.iconBorder,
     };
 };

@@ -2,6 +2,7 @@ import { configuration } from '@dxp/api-harmonization/config/configuration';
 import * as BentoGrid from '@dxp/blocks.bento-grid/api-harmonization';
 import * as CtaSection from '@dxp/blocks.cta-section/api-harmonization';
 import * as Faq from '@dxp/blocks.faq/api-harmonization';
+import * as FeatureSectionGrid from '@dxp/blocks.feature-section-grid/api-harmonization';
 import * as FeatureSection from '@dxp/blocks.feature-section/api-harmonization';
 import * as HeroSection from '@dxp/blocks.hero-section/api-harmonization';
 import * as MediaSection from '@dxp/blocks.media-section/api-harmonization';
@@ -59,6 +60,7 @@ export const AuthModuleBaseModule = AuthModule.Module.register(AppConfig);
         MediaSection.Module.register(AppConfig),
         QuickLinks.Module.register(AppConfig),
         HeroSection.Module.register(AppConfig),
+        FeatureSectionGrid.Module.register(AppConfig),
         // BLOCK REGISTER
     ],
     providers: [

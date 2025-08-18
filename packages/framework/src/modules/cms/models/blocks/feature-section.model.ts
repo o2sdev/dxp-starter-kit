@@ -12,6 +12,7 @@ export class FeatureSectionBlock extends Block.Block {
     inverted?: boolean;
     image?: Media.Media;
     links?: Link.Link[];
+    iconBorder?: boolean;
     labels!: {
         showMore: string;
     };
