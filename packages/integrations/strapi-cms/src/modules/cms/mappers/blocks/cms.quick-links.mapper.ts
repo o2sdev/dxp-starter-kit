@@ -4,7 +4,7 @@ import { CMS } from '@dxp/framework/modules';
 
 import { GetComponentQuery } from '@/generated/strapi';
 
-import { mapLink } from '@/modules/cms/mappers/cms.link.mapper';
+import { mapLink } from '@/modules/cms/mappers/content/cms.link.mapper';
 
 export const mapQuickLinksBlock = (data: GetComponentQuery): CMS.Model.QuickLinksBlock.QuickLinksBlock => {
     const component = data.component!.content[0];

@@ -1,0 +1,4 @@
+fragment Badge on ComponentContentBadge {
+    label
+    variant
+}

@@ -523,6 +523,20 @@ export type ComponentComponentsMediaSectionLinksArgs = {
     sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type ComponentComponentsPricingSection = {
+    description?: Maybe<Scalars['String']['output']>;
+    id: Scalars['ID']['output'];
+    pricingList?: Maybe<Array<Maybe<ComponentContentPricingCard>>>;
+    subtitle?: Maybe<Scalars['String']['output']>;
+    title?: Maybe<Scalars['String']['output']>;
+};
+
+export type ComponentComponentsPricingSectionPricingListArgs = {
+    filters?: InputMaybe<ComponentContentPricingCardFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type ComponentComponentsQuickLinks = {
     description?: Maybe<Scalars['String']['output']>;
     id: Scalars['ID']['output'];
@@ -563,6 +577,20 @@ export type ComponentContentArticleSectionInput = {
     title?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type ComponentContentBadge = {
+    id: Scalars['ID']['output'];
+    label?: Maybe<Scalars['String']['output']>;
+    variant: Enum_Componentcontentbadge_Variant;
+};
+
+export type ComponentContentBadgeFiltersInput = {
+    and?: InputMaybe<Array<InputMaybe<ComponentContentBadgeFiltersInput>>>;
+    label?: InputMaybe<StringFilterInput>;
+    not?: InputMaybe<ComponentContentBadgeFiltersInput>;
+    or?: InputMaybe<Array<InputMaybe<ComponentContentBadgeFiltersInput>>>;
+    variant?: InputMaybe<StringFilterInput>;
+};
+
 export type ComponentContentBanner = {
     altDescription?: Maybe<Scalars['String']['output']>;
     button?: Maybe<ComponentContentLink>;
@@ -601,6 +629,7 @@ export type ComponentContentDynamicZone =
     | ComponentComponentsFeatureSectionGrid
     | ComponentComponentsHeroSection
     | ComponentComponentsMediaSection
+    | ComponentComponentsPricingSection
     | ComponentComponentsQuickLinks
     | Error;
 
@@ -794,6 +823,67 @@ export type ComponentContentNavigationItemFiltersInput = {
     or?: InputMaybe<Array<InputMaybe<ComponentContentNavigationItemFiltersInput>>>;
     page?: InputMaybe<PageFiltersInput>;
     url?: InputMaybe<StringFilterInput>;
+};
+
+export type ComponentContentPrice = {
+    currency: Enum_Componentcontentprice_Currency;
+    id: Scalars['ID']['output'];
+    period?: Maybe<Scalars['String']['output']>;
+    value?: Maybe<Scalars['Float']['output']>;
+};
+
+export type ComponentContentPriceFiltersInput = {
+    and?: InputMaybe<Array<InputMaybe<ComponentContentPriceFiltersInput>>>;
+    currency?: InputMaybe<StringFilterInput>;
+    not?: InputMaybe<ComponentContentPriceFiltersInput>;
+    or?: InputMaybe<Array<InputMaybe<ComponentContentPriceFiltersInput>>>;
+    period?: InputMaybe<StringFilterInput>;
+    value?: InputMaybe<FloatFilterInput>;
+};
+
+export type ComponentContentPricingCard = {
+    description?: Maybe<Scalars['String']['output']>;
+    featureList?: Maybe<Array<Maybe<ComponentContentFeatureItem>>>;
+    featureListTitle?: Maybe<Scalars['String']['output']>;
+    id: Scalars['ID']['output'];
+    image?: Maybe<UploadFile>;
+    isPromoted: Scalars['Boolean']['output'];
+    links?: Maybe<Array<Maybe<ComponentContentLink>>>;
+    price?: Maybe<ComponentContentPrice>;
+    tags?: Maybe<Array<Maybe<ComponentContentBadge>>>;
+    title: Scalars['String']['output'];
+};
+
+export type ComponentContentPricingCardFeatureListArgs = {
+    filters?: InputMaybe<ComponentContentFeatureItemFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentContentPricingCardLinksArgs = {
+    filters?: InputMaybe<ComponentContentLinkFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentContentPricingCardTagsArgs = {
+    filters?: InputMaybe<ComponentContentBadgeFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentContentPricingCardFiltersInput = {
+    and?: InputMaybe<Array<InputMaybe<ComponentContentPricingCardFiltersInput>>>;
+    description?: InputMaybe<StringFilterInput>;
+    featureList?: InputMaybe<ComponentContentFeatureItemFiltersInput>;
+    featureListTitle?: InputMaybe<StringFilterInput>;
+    isPromoted?: InputMaybe<BooleanFilterInput>;
+    links?: InputMaybe<ComponentContentLinkFiltersInput>;
+    not?: InputMaybe<ComponentContentPricingCardFiltersInput>;
+    or?: InputMaybe<Array<InputMaybe<ComponentContentPricingCardFiltersInput>>>;
+    price?: InputMaybe<ComponentContentPriceFiltersInput>;
+    tags?: InputMaybe<ComponentContentBadgeFiltersInput>;
+    title?: InputMaybe<StringFilterInput>;
 };
 
 export type ComponentContentRichTextWithTitle = {
@@ -1160,6 +1250,20 @@ export enum Enum_Componentcomponentsherosection_Headingtype {
     H2 = 'h2',
 }
 
+export enum Enum_Componentcontentbadge_Variant {
+    Default = 'default',
+    Destructive = 'destructive',
+    Outline = 'outline',
+    Secondary = 'secondary',
+}
+
+export enum Enum_Componentcontentprice_Currency {
+    Eur = 'EUR',
+    Gbp = 'GBP',
+    Pln = 'PLN',
+    Usd = 'USD',
+}
+
 export enum Enum_Componentlayoutsection_Background {
     Brand = 'brand',
     Dark = 'dark',
@@ -1293,9 +1397,11 @@ export type GenericMorph =
     | ComponentComponentsFeatureSectionGrid
     | ComponentComponentsHeroSection
     | ComponentComponentsMediaSection
+    | ComponentComponentsPricingSection
     | ComponentComponentsQuickLinks
     | ComponentContentAlertBox
     | ComponentContentArticleSection
+    | ComponentContentBadge
     | ComponentContentBanner
     | ComponentContentCardWithImage
     | ComponentContentFaqSection
@@ -1311,6 +1417,8 @@ export type GenericMorph =
     | ComponentContentMessageSimple
     | ComponentContentNavigationGroup
     | ComponentContentNavigationItem
+    | ComponentContentPrice
+    | ComponentContentPricingCard
     | ComponentContentRichTextWithTitle
     | ComponentLabelsActions
     | ComponentLabelsDates
@@ -2818,6 +2926,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
               media?: Maybe<_RefType['UploadFile']>;
           })
+        | (Omit<ComponentComponentsPricingSection, 'pricingList'> & {
+              pricingList?: Maybe<Array<Maybe<_RefType['ComponentContentPricingCard']>>>;
+          })
         | (Omit<ComponentComponentsQuickLinks, 'items'> & { items: Array<Maybe<_RefType['ComponentContentLink']>> })
         | Error;
     FooterItemsDynamicZone:
@@ -2912,9 +3023,13 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
               media?: Maybe<_RefType['UploadFile']>;
           })
+        | (Omit<ComponentComponentsPricingSection, 'pricingList'> & {
+              pricingList?: Maybe<Array<Maybe<_RefType['ComponentContentPricingCard']>>>;
+          })
         | (Omit<ComponentComponentsQuickLinks, 'items'> & { items: Array<Maybe<_RefType['ComponentContentLink']>> })
         | ComponentContentAlertBox
         | ComponentContentArticleSection
+        | ComponentContentBadge
         | (Omit<ComponentContentBanner, 'button'> & { button?: Maybe<_RefType['ComponentContentLink']> })
         | (Omit<ComponentContentCardWithImage, 'image' | 'link'> & {
               image?: Maybe<_RefType['UploadFile']>;
@@ -2935,6 +3050,11 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               items: Array<Maybe<_RefType['ComponentContentNavigationItem']>>;
           })
         | (Omit<ComponentContentNavigationItem, 'page'> & { page?: Maybe<_RefType['Page']> })
+        | ComponentContentPrice
+        | (Omit<ComponentContentPricingCard, 'image' | 'links'> & {
+              image?: Maybe<_RefType['UploadFile']>;
+              links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
+          })
         | ComponentContentRichTextWithTitle
         | ComponentLabelsActions
         | ComponentLabelsDates
@@ -3193,6 +3313,11 @@ export type ResolversTypes = {
             media?: Maybe<ResolversTypes['UploadFile']>;
         }
     >;
+    ComponentComponentsPricingSection: ResolverTypeWrapper<
+        Omit<ComponentComponentsPricingSection, 'pricingList'> & {
+            pricingList?: Maybe<Array<Maybe<ResolversTypes['ComponentContentPricingCard']>>>;
+        }
+    >;
     ComponentComponentsQuickLinks: ResolverTypeWrapper<
         Omit<ComponentComponentsQuickLinks, 'items'> & { items: Array<Maybe<ResolversTypes['ComponentContentLink']>> }
     >;
@@ -3200,6 +3325,8 @@ export type ResolversTypes = {
     ComponentContentArticleSection: ResolverTypeWrapper<ComponentContentArticleSection>;
     ComponentContentArticleSectionFiltersInput: ComponentContentArticleSectionFiltersInput;
     ComponentContentArticleSectionInput: ComponentContentArticleSectionInput;
+    ComponentContentBadge: ResolverTypeWrapper<ComponentContentBadge>;
+    ComponentContentBadgeFiltersInput: ComponentContentBadgeFiltersInput;
     ComponentContentBanner: ResolverTypeWrapper<
         Omit<ComponentContentBanner, 'button'> & { button?: Maybe<ResolversTypes['ComponentContentLink']> }
     >;
@@ -3247,6 +3374,15 @@ export type ResolversTypes = {
         Omit<ComponentContentNavigationItem, 'page'> & { page?: Maybe<ResolversTypes['Page']> }
     >;
     ComponentContentNavigationItemFiltersInput: ComponentContentNavigationItemFiltersInput;
+    ComponentContentPrice: ResolverTypeWrapper<ComponentContentPrice>;
+    ComponentContentPriceFiltersInput: ComponentContentPriceFiltersInput;
+    ComponentContentPricingCard: ResolverTypeWrapper<
+        Omit<ComponentContentPricingCard, 'image' | 'links'> & {
+            image?: Maybe<ResolversTypes['UploadFile']>;
+            links?: Maybe<Array<Maybe<ResolversTypes['ComponentContentLink']>>>;
+        }
+    >;
+    ComponentContentPricingCardFiltersInput: ComponentContentPricingCardFiltersInput;
     ComponentContentRichTextWithTitle: ResolverTypeWrapper<ComponentContentRichTextWithTitle>;
     ComponentEntityResponseCollection: ResolverTypeWrapper<
         Omit<ComponentEntityResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['Component']> }
@@ -3313,6 +3449,8 @@ export type ResolversTypes = {
     DateTimeFilterInput: DateTimeFilterInput;
     DeleteMutationResponse: ResolverTypeWrapper<DeleteMutationResponse>;
     ENUM_COMPONENTCOMPONENTSHEROSECTION_HEADINGTYPE: Enum_Componentcomponentsherosection_Headingtype;
+    ENUM_COMPONENTCONTENTBADGE_VARIANT: Enum_Componentcontentbadge_Variant;
+    ENUM_COMPONENTCONTENTPRICE_CURRENCY: Enum_Componentcontentprice_Currency;
     ENUM_COMPONENTLAYOUTSECTION_BACKGROUND: Enum_Componentlayoutsection_Background;
     ENUM_COMPONENTLAYOUTSECTION_SPACING: Enum_Componentlayoutsection_Spacing;
     ENUM_COMPONENTLAYOUTSECTION_VARIANT: Enum_Componentlayoutsection_Variant;
@@ -3583,6 +3721,9 @@ export type ResolversParentTypes = {
         links?: Maybe<Array<Maybe<ResolversParentTypes['ComponentContentLink']>>>;
         media?: Maybe<ResolversParentTypes['UploadFile']>;
     };
+    ComponentComponentsPricingSection: Omit<ComponentComponentsPricingSection, 'pricingList'> & {
+        pricingList?: Maybe<Array<Maybe<ResolversParentTypes['ComponentContentPricingCard']>>>;
+    };
     ComponentComponentsQuickLinks: Omit<ComponentComponentsQuickLinks, 'items'> & {
         items: Array<Maybe<ResolversParentTypes['ComponentContentLink']>>;
     };
@@ -3590,6 +3731,8 @@ export type ResolversParentTypes = {
     ComponentContentArticleSection: ComponentContentArticleSection;
     ComponentContentArticleSectionFiltersInput: ComponentContentArticleSectionFiltersInput;
     ComponentContentArticleSectionInput: ComponentContentArticleSectionInput;
+    ComponentContentBadge: ComponentContentBadge;
+    ComponentContentBadgeFiltersInput: ComponentContentBadgeFiltersInput;
     ComponentContentBanner: Omit<ComponentContentBanner, 'button'> & {
         button?: Maybe<ResolversParentTypes['ComponentContentLink']>;
     };
@@ -3629,6 +3772,13 @@ export type ResolversParentTypes = {
         page?: Maybe<ResolversParentTypes['Page']>;
     };
     ComponentContentNavigationItemFiltersInput: ComponentContentNavigationItemFiltersInput;
+    ComponentContentPrice: ComponentContentPrice;
+    ComponentContentPriceFiltersInput: ComponentContentPriceFiltersInput;
+    ComponentContentPricingCard: Omit<ComponentContentPricingCard, 'image' | 'links'> & {
+        image?: Maybe<ResolversParentTypes['UploadFile']>;
+        links?: Maybe<Array<Maybe<ResolversParentTypes['ComponentContentLink']>>>;
+    };
+    ComponentContentPricingCardFiltersInput: ComponentContentPricingCardFiltersInput;
     ComponentContentRichTextWithTitle: ComponentContentRichTextWithTitle;
     ComponentEntityResponseCollection: Omit<ComponentEntityResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['Component']>;
@@ -4282,6 +4432,24 @@ export type ComponentComponentsMediaSectionResolvers<
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type ComponentComponentsPricingSectionResolvers<
+    ContextType = any,
+    ParentType extends
+        ResolversParentTypes['ComponentComponentsPricingSection'] = ResolversParentTypes['ComponentComponentsPricingSection'],
+> = {
+    description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    pricingList?: Resolver<
+        Maybe<Array<Maybe<ResolversTypes['ComponentContentPricingCard']>>>,
+        ParentType,
+        ContextType,
+        RequireFields<ComponentComponentsPricingSectionPricingListArgs, 'pagination' | 'sort'>
+    >;
+    subtitle?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type ComponentComponentsQuickLinksResolvers<
     ContextType = any,
     ParentType extends
@@ -4319,6 +4487,16 @@ export type ComponentContentArticleSectionResolvers<
     content?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
     title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ComponentContentBadgeResolvers<
+    ContextType = any,
+    ParentType extends ResolversParentTypes['ComponentContentBadge'] = ResolversParentTypes['ComponentContentBadge'],
+> = {
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    variant?: Resolver<ResolversTypes['ENUM_COMPONENTCONTENTBADGE_VARIANT'], ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -4365,6 +4543,7 @@ export type ComponentContentDynamicZoneResolvers<
         | 'ComponentComponentsFeatureSectionGrid'
         | 'ComponentComponentsHeroSection'
         | 'ComponentComponentsMediaSection'
+        | 'ComponentComponentsPricingSection'
         | 'ComponentComponentsQuickLinks'
         | 'Error',
         ParentType,
@@ -4545,6 +4724,50 @@ export type ComponentContentNavigationItemResolvers<
     label?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     page?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ComponentContentPriceResolvers<
+    ContextType = any,
+    ParentType extends ResolversParentTypes['ComponentContentPrice'] = ResolversParentTypes['ComponentContentPrice'],
+> = {
+    currency?: Resolver<ResolversTypes['ENUM_COMPONENTCONTENTPRICE_CURRENCY'], ParentType, ContextType>;
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    period?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    value?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ComponentContentPricingCardResolvers<
+    ContextType = any,
+    ParentType extends
+        ResolversParentTypes['ComponentContentPricingCard'] = ResolversParentTypes['ComponentContentPricingCard'],
+> = {
+    description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    featureList?: Resolver<
+        Maybe<Array<Maybe<ResolversTypes['ComponentContentFeatureItem']>>>,
+        ParentType,
+        ContextType,
+        RequireFields<ComponentContentPricingCardFeatureListArgs, 'pagination' | 'sort'>
+    >;
+    featureListTitle?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    image?: Resolver<Maybe<ResolversTypes['UploadFile']>, ParentType, ContextType>;
+    isPromoted?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+    links?: Resolver<
+        Maybe<Array<Maybe<ResolversTypes['ComponentContentLink']>>>,
+        ParentType,
+        ContextType,
+        RequireFields<ComponentContentPricingCardLinksArgs, 'pagination' | 'sort'>
+    >;
+    price?: Resolver<Maybe<ResolversTypes['ComponentContentPrice']>, ParentType, ContextType>;
+    tags?: Resolver<
+        Maybe<Array<Maybe<ResolversTypes['ComponentContentBadge']>>>,
+        ParentType,
+        ContextType,
+        RequireFields<ComponentContentPricingCardTagsArgs, 'pagination' | 'sort'>
+    >;
+    title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -4917,9 +5140,11 @@ export type GenericMorphResolvers<
         | 'ComponentComponentsFeatureSectionGrid'
         | 'ComponentComponentsHeroSection'
         | 'ComponentComponentsMediaSection'
+        | 'ComponentComponentsPricingSection'
         | 'ComponentComponentsQuickLinks'
         | 'ComponentContentAlertBox'
         | 'ComponentContentArticleSection'
+        | 'ComponentContentBadge'
         | 'ComponentContentBanner'
         | 'ComponentContentCardWithImage'
         | 'ComponentContentFaqSection'
@@ -4935,6 +5160,8 @@ export type GenericMorphResolvers<
         | 'ComponentContentMessageSimple'
         | 'ComponentContentNavigationGroup'
         | 'ComponentContentNavigationItem'
+        | 'ComponentContentPrice'
+        | 'ComponentContentPricingCard'
         | 'ComponentContentRichTextWithTitle'
         | 'ComponentLabelsActions'
         | 'ComponentLabelsDates'
@@ -6108,9 +6335,11 @@ export type Resolvers<ContextType = any> = {
     ComponentComponentsFeatureSectionGrid?: ComponentComponentsFeatureSectionGridResolvers<ContextType>;
     ComponentComponentsHeroSection?: ComponentComponentsHeroSectionResolvers<ContextType>;
     ComponentComponentsMediaSection?: ComponentComponentsMediaSectionResolvers<ContextType>;
+    ComponentComponentsPricingSection?: ComponentComponentsPricingSectionResolvers<ContextType>;
     ComponentComponentsQuickLinks?: ComponentComponentsQuickLinksResolvers<ContextType>;
     ComponentContentAlertBox?: ComponentContentAlertBoxResolvers<ContextType>;
     ComponentContentArticleSection?: ComponentContentArticleSectionResolvers<ContextType>;
+    ComponentContentBadge?: ComponentContentBadgeResolvers<ContextType>;
     ComponentContentBanner?: ComponentContentBannerResolvers<ContextType>;
     ComponentContentCardWithImage?: ComponentContentCardWithImageResolvers<ContextType>;
     ComponentContentDynamicZone?: ComponentContentDynamicZoneResolvers<ContextType>;
@@ -6128,6 +6357,8 @@ export type Resolvers<ContextType = any> = {
     ComponentContentMessageSimple?: ComponentContentMessageSimpleResolvers<ContextType>;
     ComponentContentNavigationGroup?: ComponentContentNavigationGroupResolvers<ContextType>;
     ComponentContentNavigationItem?: ComponentContentNavigationItemResolvers<ContextType>;
+    ComponentContentPrice?: ComponentContentPriceResolvers<ContextType>;
+    ComponentContentPricingCard?: ComponentContentPricingCardResolvers<ContextType>;
     ComponentContentRichTextWithTitle?: ComponentContentRichTextWithTitleResolvers<ContextType>;
     ComponentEntityResponseCollection?: ComponentEntityResponseCollectionResolvers<ContextType>;
     ComponentLabelsActions?: ComponentLabelsActionsResolvers<ContextType>;
@@ -6420,6 +6651,7 @@ export type ComponentFragment = {
         | { __typename: 'ComponentComponentsFeatureSectionGrid' }
         | { __typename: 'ComponentComponentsHeroSection' }
         | { __typename: 'ComponentComponentsMediaSection' }
+        | { __typename: 'ComponentComponentsPricingSection' }
         | { __typename: 'ComponentComponentsQuickLinks' }
         | { __typename: 'Error' }
     >;
@@ -6545,6 +6777,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                       | { __typename: 'ComponentComponentsHeroSection' }
                       | { __typename: 'ComponentComponentsMediaSection' }
+                      | { __typename: 'ComponentComponentsPricingSection' }
                       | { __typename: 'ComponentComponentsQuickLinks' }
                       | { __typename: 'Error' }
                   >;
@@ -6573,6 +6806,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                       | { __typename: 'ComponentComponentsHeroSection' }
                       | { __typename: 'ComponentComponentsMediaSection' }
+                      | { __typename: 'ComponentComponentsPricingSection' }
                       | { __typename: 'ComponentComponentsQuickLinks' }
                       | { __typename: 'Error' }
                   >;
@@ -6598,6 +6832,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                       | { __typename: 'ComponentComponentsHeroSection' }
                       | { __typename: 'ComponentComponentsMediaSection' }
+                      | { __typename: 'ComponentComponentsPricingSection' }
                       | { __typename: 'ComponentComponentsQuickLinks' }
                       | { __typename: 'Error' }
                   >;
@@ -6623,6 +6858,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                       | { __typename: 'ComponentComponentsHeroSection' }
                       | { __typename: 'ComponentComponentsMediaSection' }
+                      | { __typename: 'ComponentComponentsPricingSection' }
                       | { __typename: 'ComponentComponentsQuickLinks' }
                       | { __typename: 'Error' }
                   >;
@@ -6648,6 +6884,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                       | { __typename: 'ComponentComponentsHeroSection' }
                       | { __typename: 'ComponentComponentsMediaSection' }
+                      | { __typename: 'ComponentComponentsPricingSection' }
                       | { __typename: 'ComponentComponentsQuickLinks' }
                       | { __typename: 'Error' }
                   >;
@@ -6682,6 +6919,7 @@ type Template_ComponentTemplatesOneColumn_Fragment = {
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
+            | { __typename: 'ComponentComponentsPricingSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
             | { __typename: 'Error' }
         >;
@@ -6711,6 +6949,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
+            | { __typename: 'ComponentComponentsPricingSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
             | { __typename: 'Error' }
         >;
@@ -6736,6 +6975,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
+            | { __typename: 'ComponentComponentsPricingSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
             | { __typename: 'Error' }
         >;
@@ -6761,6 +7001,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
+            | { __typename: 'ComponentComponentsPricingSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
             | { __typename: 'Error' }
         >;
@@ -6786,6 +7027,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
+            | { __typename: 'ComponentComponentsPricingSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
             | { __typename: 'Error' }
         >;
@@ -6866,6 +7108,7 @@ export type CategoryComponentFragment = {
                 | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                 | { __typename: 'ComponentComponentsHeroSection' }
                 | { __typename: 'ComponentComponentsMediaSection' }
+                | { __typename: 'ComponentComponentsPricingSection' }
                 | { __typename: 'ComponentComponentsQuickLinks' }
                 | { __typename: 'Error' }
             >;
@@ -6977,6 +7220,31 @@ export type MediaSectionComponentFragment = {
     }>;
 };
 
+export type PricingSectionComponentFragment = {
+    __typename: 'ComponentComponentsPricingSection';
+    id: string;
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    pricingList?: Array<{
+        title: string;
+        description?: string;
+        isPromoted: boolean;
+        featureListTitle?: string;
+        image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+        price?: { value?: number; currency: Enum_Componentcontentprice_Currency; period?: string };
+        tags?: Array<{ label?: string; variant: Enum_Componentcontentbadge_Variant }>;
+        links?: Array<{
+            label: string;
+            url?: string;
+            description?: string;
+            icon?: string;
+            page?: { slug: string; SEO: { title: string; description: string } };
+        }>;
+        featureList?: Array<{ title?: string; description?: string; icon?: string }>;
+    }>;
+};
+
 export type QuickLinksComponentFragment = {
     __typename: 'ComponentComponentsQuickLinks';
     id: string;
@@ -6991,6 +7259,8 @@ export type QuickLinksComponentFragment = {
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
+
+export type BadgeFragment = { label?: string; variant: Enum_Componentcontentbadge_Variant };
 
 export type BannerFragment = {
     title: string;
@@ -7060,6 +7330,26 @@ export type NavigationItemFragment = {
     page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
 };
 
+export type PriceFragment = { value?: number; currency: Enum_Componentcontentprice_Currency; period?: string };
+
+export type PricingCardFragment = {
+    title: string;
+    description?: string;
+    isPromoted: boolean;
+    featureListTitle?: string;
+    image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+    price?: { value?: number; currency: Enum_Componentcontentprice_Currency; period?: string };
+    tags?: Array<{ label?: string; variant: Enum_Componentcontentbadge_Variant }>;
+    links?: Array<{
+        label: string;
+        url?: string;
+        description?: string;
+        icon?: string;
+        page?: { slug: string; SEO: { title: string; description: string } };
+    }>;
+    featureList?: Array<{ title?: string; description?: string; icon?: string }>;
+};
+
 export type SeoFragment = {
     title: string;
     noIndex: boolean;
@@ -7097,6 +7387,7 @@ export type OneColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
+            | { __typename: 'ComponentComponentsPricingSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
             | { __typename: 'Error' }
         >;
@@ -7125,6 +7416,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
+            | { __typename: 'ComponentComponentsPricingSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
             | { __typename: 'Error' }
         >;
@@ -7150,6 +7442,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
+            | { __typename: 'ComponentComponentsPricingSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
             | { __typename: 'Error' }
         >;
@@ -7175,6 +7468,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
+            | { __typename: 'ComponentComponentsPricingSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
             | { __typename: 'Error' }
         >;
@@ -7200,6 +7494,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
             | { __typename: 'ComponentComponentsHeroSection' }
             | { __typename: 'ComponentComponentsMediaSection' }
+            | { __typename: 'ComponentComponentsPricingSection' }
             | { __typename: 'ComponentComponentsQuickLinks' }
             | { __typename: 'Error' }
         >;
@@ -7307,6 +7602,7 @@ export type GetComponentQuery = {
                               | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                               | { __typename: 'ComponentComponentsHeroSection' }
                               | { __typename: 'ComponentComponentsMediaSection' }
+                              | { __typename: 'ComponentComponentsPricingSection' }
                               | { __typename: 'ComponentComponentsQuickLinks' }
                               | { __typename: 'Error' }
                           >;
@@ -7413,6 +7709,30 @@ export type GetComponentQuery = {
                       description?: string;
                       icon?: string;
                       page?: { slug: string; SEO: { title: string; description: string } };
+                  }>;
+              }
+            | {
+                  __typename: 'ComponentComponentsPricingSection';
+                  id: string;
+                  title?: string;
+                  subtitle?: string;
+                  description?: string;
+                  pricingList?: Array<{
+                      title: string;
+                      description?: string;
+                      isPromoted: boolean;
+                      featureListTitle?: string;
+                      image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+                      price?: { value?: number; currency: Enum_Componentcontentprice_Currency; period?: string };
+                      tags?: Array<{ label?: string; variant: Enum_Componentcontentbadge_Variant }>;
+                      links?: Array<{
+                          label: string;
+                          url?: string;
+                          description?: string;
+                          icon?: string;
+                          page?: { slug: string; SEO: { title: string; description: string } };
+                      }>;
+                      featureList?: Array<{ title?: string; description?: string; icon?: string }>;
                   }>;
               }
             | {
@@ -7606,6 +7926,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
+                          | { __typename: 'ComponentComponentsPricingSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
                           | { __typename: 'Error' }
                       >;
@@ -7634,6 +7955,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
+                          | { __typename: 'ComponentComponentsPricingSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
                           | { __typename: 'Error' }
                       >;
@@ -7659,6 +7981,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
+                          | { __typename: 'ComponentComponentsPricingSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
                           | { __typename: 'Error' }
                       >;
@@ -7684,6 +8007,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
+                          | { __typename: 'ComponentComponentsPricingSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
                           | { __typename: 'Error' }
                       >;
@@ -7709,6 +8033,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
+                          | { __typename: 'ComponentComponentsPricingSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
                           | { __typename: 'Error' }
                       >;
@@ -7771,6 +8096,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
+                          | { __typename: 'ComponentComponentsPricingSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
                           | { __typename: 'Error' }
                       >;
@@ -7799,6 +8125,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
+                          | { __typename: 'ComponentComponentsPricingSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
                           | { __typename: 'Error' }
                       >;
@@ -7824,6 +8151,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
+                          | { __typename: 'ComponentComponentsPricingSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
                           | { __typename: 'Error' }
                       >;
@@ -7849,6 +8177,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
+                          | { __typename: 'ComponentComponentsPricingSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
                           | { __typename: 'Error' }
                       >;
@@ -7874,6 +8203,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
                           | { __typename: 'ComponentComponentsHeroSection' }
                           | { __typename: 'ComponentComponentsMediaSection' }
+                          | { __typename: 'ComponentComponentsPricingSection' }
                           | { __typename: 'ComponentComponentsQuickLinks' }
                           | { __typename: 'Error' }
                       >;
@@ -8456,6 +8786,60 @@ export const MediaSectionComponentFragmentDoc = gql`
     ${MediaFragmentDoc}
     ${LinkFragmentDoc}
 `;
+export const PriceFragmentDoc = gql`
+    fragment Price on ComponentContentPrice {
+        value
+        currency
+        period
+    }
+`;
+export const BadgeFragmentDoc = gql`
+    fragment Badge on ComponentContentBadge {
+        label
+        variant
+    }
+`;
+export const PricingCardFragmentDoc = gql`
+    fragment PricingCard on ComponentContentPricingCard {
+        title
+        image {
+            ...Media
+        }
+        description
+        price {
+            ...Price
+        }
+        isPromoted
+        tags {
+            ...Badge
+        }
+        links {
+            ...Link
+        }
+        featureListTitle
+        featureList {
+            ...FeatureItem
+        }
+    }
+    ${MediaFragmentDoc}
+    ${PriceFragmentDoc}
+    ${BadgeFragmentDoc}
+    ${LinkFragmentDoc}
+    ${FeatureItemFragmentDoc}
+`;
+export const PricingSectionComponentFragmentDoc = gql`
+    fragment PricingSectionComponent on ComponentComponentsPricingSection {
+        __typename
+        id
+        title
+        subtitle
+        description
+        pricingList {
+            ...PricingCard
+        }
+    }
+    ${PricingCardFragmentDoc}
+`;
 export const QuickLinksComponentFragmentDoc = gql`
     fragment QuickLinksComponent on ComponentComponentsQuickLinks {
         __typename
@@ -8612,6 +8996,9 @@ export const GetComponentDocument = gql`
                 ... on ComponentComponentsBentoGrid {
                     ...BentoGridComponent
                 }
+                ... on ComponentComponentsPricingSection {
+                    ...PricingSectionComponent
+                }
             }
         }
         configurableTexts(locale: $locale) {
@@ -8667,6 +9054,7 @@ export const GetComponentDocument = gql`
     ${FeatureSectionGridComponentFragmentDoc}
     ${CtaSectionComponentFragmentDoc}
     ${BentoGridComponentFragmentDoc}
+    ${PricingSectionComponentFragmentDoc}
 `;
 export const GetFooterDocument = gql`
     query getFooter($locale: I18NLocaleCode!, $id: ID!) {

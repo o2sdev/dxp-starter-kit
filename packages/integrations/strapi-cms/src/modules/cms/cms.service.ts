@@ -23,6 +23,7 @@ import { mapFeatureSectionGridBlock } from './mappers/blocks/cms.feature-section
 import { mapFeatureSectionBlock } from './mappers/blocks/cms.feature-section.mapper';
 import { mapHeroSectionBlock } from './mappers/blocks/cms.hero-section.mapper';
 import { mapMediaSectionBlock } from './mappers/blocks/cms.media-section.mapper';
+import { mapPricingSectionBlock } from './mappers/blocks/cms.pricing-section.mapper';
 import { mapQuickLinksBlock } from './mappers/blocks/cms.quick-links.mapper';
 import { mapAppConfig } from './mappers/cms.app-config.mapper';
 import { mapFooter } from './mappers/cms.footer.mapper';
@@ -322,6 +323,13 @@ export class CmsService implements CMS.Service {
         const key = `bento-grid-component-${options.id}-${options.locale}`;
         return this.getCachedBlock(key, () =>
             this.getBlock(options).pipe(map((data) => mapBentoGridBlock(data, this.baseUrl))),
+        );
+    }
+
+    getPricingSectionBlock(options: CMS.Request.GetCmsEntryParams) {
+        const key = `pricing-section-component-${options.id}-${options.locale}`;
+        return this.getCachedBlock(key, () =>
+            this.getBlock(options).pipe(map((data) => mapPricingSectionBlock(data, this.baseUrl))),
         );
     }
 }

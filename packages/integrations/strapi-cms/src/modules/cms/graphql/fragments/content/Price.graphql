@@ -1,0 +1,5 @@
+fragment Price on ComponentContentPrice {
+    value
+    currency
+    period
+}

@@ -5,6 +5,7 @@ import * as FeatureSectionGrid from '@dxp/blocks.feature-section-grid/api-harmon
 import * as FeatureSection from '@dxp/blocks.feature-section/api-harmonization';
 import * as HeroSection from '@dxp/blocks.hero-section/api-harmonization';
 import * as MediaSection from '@dxp/blocks.media-section/api-harmonization';
+import * as PricingSection from '@dxp/blocks.pricing-section/api-harmonization';
 import * as QuickLinks from '@dxp/blocks.quick-links/api-harmonization';
 
 // BLOCK IMPORT
@@ -57,6 +58,7 @@ export class PageData {
 
 export type Blocks =
     // BLOCK REGISTER
+    | PricingSection.Model.PricingSectionBlock['__typename']
     | FeatureSectionGrid.Model.FeatureSectionGridBlock['__typename']
     | HeroSection.Model.HeroSectionBlock['__typename']
     | QuickLinks.Model.QuickLinksBlock['__typename']

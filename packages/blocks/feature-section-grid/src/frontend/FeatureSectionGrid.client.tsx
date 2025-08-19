@@ -39,15 +39,13 @@ export const FeatureSectionGridPure: React.FC<FeatureSectionGridPureProps> = ({
                 <ul className="grid grid-rows-1 sm:grid-cols-2 gap-x-6 gap-y-8">
                     {featureList.map((feature, index) => (
                         <li key={`${feature.title}-${index}`} className="flex flex-row gap-4 items-start">
-                            {feature.icon && (
-                                <div
-                                    className={cn(
-                                        iconBorder ? 'p-2 border-1 border-border rounded-sm shadow-xs' : 'mt-0.5',
-                                    )}
-                                >
-                                    <DynamicIcon name={feature.icon!} size={20} className="text-primary" />
-                                </div>
-                            )}
+                            <div
+                                className={cn(
+                                    iconBorder ? 'p-2 border-1 border-border rounded-sm shadow-xs' : 'mt-0.5',
+                                )}
+                            >
+                                <DynamicIcon name={feature.icon || 'Check'} size={20} className="text-primary" />
+                            </div>
                             <div className="flex flex-col gap-1">
                                 <Typography variant="subtitle">{feature.title}</Typography>
                                 <Typography variant="body">{feature.description}</Typography>

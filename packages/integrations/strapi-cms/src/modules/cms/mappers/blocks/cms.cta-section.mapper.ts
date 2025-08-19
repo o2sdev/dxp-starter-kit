@@ -4,9 +4,9 @@ import { CMS } from '@dxp/framework/modules';
 
 import { GetComponentQuery } from '@/generated/strapi';
 
-import { mapLink } from '@/modules/cms/mappers/cms.link.mapper';
+import { mapLink } from '@/modules/cms/mappers/content/cms.link.mapper';
 
-import { mapMedia } from '../cms.media.mapper';
+import { mapMedia } from '../content/cms.media.mapper';
 
 export const mapCtaSectionBlock = (
     data: GetComponentQuery,

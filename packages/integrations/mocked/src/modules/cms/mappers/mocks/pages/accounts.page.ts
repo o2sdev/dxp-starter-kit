@@ -18,19 +18,28 @@ export const PAGE_ACCOUNTS_EN: CMS.Model.Page.Page = {
         },
     },
     permissions: [],
-    hasOwnTitle: false,
-    showBreadcrumbs: false,
+    hasOwnTitle: true,
+    showBreadcrumbs: true,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
             main: [
+                {
+                    __typename: 'PricingSectionBlock',
+                    id: 'pricing-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
                 {
                     __typename: 'FeatureSectionGridBlock',
                     id: 'feature-section-grid-1',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
-                        background: 'none',
+                        background: 'brand',
                     },
                 },
                 {
@@ -67,19 +76,28 @@ export const PAGE_ACCOUNTS_DE: CMS.Model.Page.Page = {
         },
     },
     permissions: [],
-    hasOwnTitle: false,
-    showBreadcrumbs: false,
+    hasOwnTitle: true,
+    showBreadcrumbs: true,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
             main: [
+                {
+                    __typename: 'PricingSectionBlock',
+                    id: 'pricing-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
                 {
                     __typename: 'FeatureSectionGridBlock',
                     id: 'feature-section-grid-1',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
-                        background: 'none',
+                        background: 'brand',
                     },
                 },
                 {
@@ -116,19 +134,28 @@ export const PAGE_ACCOUNTS_PL: CMS.Model.Page.Page = {
         },
     },
     permissions: [],
-    hasOwnTitle: false,
-    showBreadcrumbs: false,
+    hasOwnTitle: true,
+    showBreadcrumbs: true,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
             main: [
+                {
+                    __typename: 'PricingSectionBlock',
+                    id: 'pricing-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
                 {
                     __typename: 'FeatureSectionGridBlock',
                     id: 'feature-section-grid-1',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
-                        background: 'none',
+                        background: 'brand',
                     },
                 },
                 {

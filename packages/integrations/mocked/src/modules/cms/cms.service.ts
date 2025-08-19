@@ -10,6 +10,7 @@ import { mapFeatureSectionGridBlock } from './mappers/blocks/cms.feature-section
 import { mapFeatureSectionBlock } from './mappers/blocks/cms.feature-section.mapper';
 import { mapHeroSectionBlock } from './mappers/blocks/cms.hero-section.mapper';
 import { mapMediaSectionBlock } from './mappers/blocks/cms.media-section.mapper';
+import { mapPricingSectionBlock } from './mappers/blocks/cms.pricing-section.mapper';
 import { mapQuickLinksBlock } from './mappers/blocks/cms.quick-links.mapper';
 import { mapAppConfig } from './mappers/cms.app-config.mapper';
 import { mapFooter } from './mappers/cms.footer.mapper';
@@ -86,5 +87,9 @@ export class CmsService implements CMS.Service {
 
     getFeatureSectionGridBlock(_options: CMS.Request.GetCmsEntryParams) {
         return of(mapFeatureSectionGridBlock(_options.locale)).pipe(responseDelay());
+    }
+
+    getPricingSectionBlock(_options: CMS.Request.GetCmsEntryParams) {
+        return of(mapPricingSectionBlock(_options.locale)).pipe(responseDelay());
     }
 }

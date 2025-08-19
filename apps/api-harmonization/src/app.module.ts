@@ -6,6 +6,7 @@ import * as FeatureSectionGrid from '@dxp/blocks.feature-section-grid/api-harmon
 import * as FeatureSection from '@dxp/blocks.feature-section/api-harmonization';
 import * as HeroSection from '@dxp/blocks.hero-section/api-harmonization';
 import * as MediaSection from '@dxp/blocks.media-section/api-harmonization';
+import * as PricingSection from '@dxp/blocks.pricing-section/api-harmonization';
 import * as QuickLinks from '@dxp/blocks.quick-links/api-harmonization';
 // BLOCK IMPORT
 
@@ -61,6 +62,7 @@ export const AuthModuleBaseModule = AuthModule.Module.register(AppConfig);
         QuickLinks.Module.register(AppConfig),
         HeroSection.Module.register(AppConfig),
         FeatureSectionGrid.Module.register(AppConfig),
+        PricingSection.Module.register(AppConfig),
         // BLOCK REGISTER
     ],
     providers: [

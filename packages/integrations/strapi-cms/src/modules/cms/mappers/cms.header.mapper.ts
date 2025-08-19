@@ -4,7 +4,7 @@ import { CMS, Models } from '@dxp/framework/modules';
 
 import { GetHeaderQuery, NavigationGroupFragment, NavigationItemFragment } from '@/generated/strapi';
 
-import { mapRoles } from '@/modules/cms/mappers/cms.roles.mapper';
+import { mapRoles } from '@/modules/cms/mappers/content/cms.roles.mapper';
 
 export const mapHeader = (data: GetHeaderQuery, baseURL?: string): CMS.Model.Header.Header => {
     const component = data.header!;

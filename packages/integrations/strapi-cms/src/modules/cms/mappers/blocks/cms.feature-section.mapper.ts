@@ -4,10 +4,10 @@ import { CMS } from '@dxp/framework/modules';
 
 import { GetComponentQuery } from '@/generated/strapi';
 
-import { mapLink } from '@/modules/cms/mappers/cms.link.mapper';
+import { mapLink } from '@/modules/cms/mappers/content/cms.link.mapper';
 
-import { mapFeatureItem } from '../cms.feature-item.mapper';
-import { mapMedia } from '../cms.media.mapper';
+import { mapFeatureItem } from '../content/cms.feature-item.mapper';
+import { mapMedia } from '../content/cms.media.mapper';
 
 export const mapFeatureSectionBlock = (
     data: GetComponentQuery,

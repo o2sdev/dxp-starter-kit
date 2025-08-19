@@ -36,28 +36,30 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
         >
             <div className="w-full flex flex-col justify-center flex-1">
                 <div className={cn('w-full flex flex-col gap-8 md:gap-6', !isImageAvailable && 'mx-auto md:gap-16')}>
-                    <div
-                        className={cn(
-                            'h-full flex flex-col gap-5 md:gap-4',
-                            !isImageAvailable && 'items-center text-center max-w-2xl mx-auto',
-                        )}
-                    >
-                        {preTitle && (
-                            <Typography variant="body" className="text-muted-foreground">
-                                {preTitle}
-                            </Typography>
-                        )}
+                    {(preTitle || title || description) && (
+                        <div
+                            className={cn(
+                                'h-full flex flex-col gap-5 md:gap-4',
+                                !isImageAvailable && 'items-center text-center max-w-2xl mx-auto',
+                            )}
+                        >
+                            {preTitle && (
+                                <Typography variant="body" className="text-muted-foreground">
+                                    {preTitle}
+                                </Typography>
+                            )}
 
-                        {title && (
-                            <Typography variant="highlightedMedium" asChild>
-                                <h2>{title}</h2>
-                            </Typography>
-                        )}
+                            {title && (
+                                <Typography variant="highlightedMedium" asChild>
+                                    <h2>{title}</h2>
+                                </Typography>
+                            )}
 
-                        {description && (
-                            <RichText content={description} baseFontSize="body" className="text-muted-foreground" />
-                        )}
-                    </div>
+                            {description && (
+                                <RichText content={description} baseFontSize="body" className="text-muted-foreground" />
+                            )}
+                        </div>
+                    )}
 
                     {featureList && featureList.length > 0 && (
                         <ul
@@ -74,17 +76,17 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                                         !isImageAvailable && '!flex-col gap-5 items-center text-center',
                                     )}
                                 >
-                                    {feature.icon && (
-                                        <div
-                                            className={cn(
-                                                iconBorder
-                                                    ? 'p-2 border-1 border-border rounded-sm shadow-xs'
-                                                    : 'mt-0.5',
-                                            )}
-                                        >
-                                            <DynamicIcon name={feature.icon!} size={20} className="text-primary" />
-                                        </div>
-                                    )}
+                                    <div
+                                        className={cn(
+                                            iconBorder ? 'p-2 border-1 border-border rounded-sm shadow-xs' : 'mt-0.5',
+                                        )}
+                                    >
+                                        <DynamicIcon
+                                            name={feature.icon || 'Check'}
+                                            size={20}
+                                            className="text-primary"
+                                        />
+                                    </div>
                                     <div className="flex flex-col gap-2">
                                         <Typography variant="subtitle">{feature.title}</Typography>
                                         <Typography variant="body">{feature.description}</Typography>
