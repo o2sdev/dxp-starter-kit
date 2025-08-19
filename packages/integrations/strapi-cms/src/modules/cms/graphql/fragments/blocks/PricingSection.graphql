@@ -1,0 +1,10 @@
+fragment PricingSectionComponent on ComponentComponentsPricingSection {
+    __typename
+    id
+    title
+    subtitle
+    description
+    pricingList {
+        ...PricingCard
+    }
+}

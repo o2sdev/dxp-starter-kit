@@ -32,14 +32,14 @@ export const FeatureCardContent: React.FC<FeatureCardProps> = ({ title, descript
                     </Link>
                 )}
             </div>
-            <div className="relative overflow-hidden h-[264px] flex-shrink-0 rounded-b-lg">
+            <div className="relative overflow-hidden h-[264px] flex-shrink-0 rounded-b-md">
                 {image?.url && image?.alt && (
                     <Image
                         src={image.url}
                         alt={image.alt}
                         width={image.width}
                         height={image.height}
-                        className="object-cover object-center w-full h-auto"
+                        className="object-cover object-center w-full h-full"
                     />
                 )}
             </div>

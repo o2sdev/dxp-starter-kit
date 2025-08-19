@@ -4,7 +4,7 @@ import { CMS } from '@dxp/framework/modules';
 
 import { GetComponentQuery } from '@/generated/strapi';
 
-import { mapFeatureItem } from '../cms.feature-item.mapper';
+import { mapFeatureItem } from '../content/cms.feature-item.mapper';
 
 export const mapFeatureSectionGridBlock = (
     data: GetComponentQuery,

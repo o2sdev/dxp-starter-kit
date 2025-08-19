@@ -43,7 +43,8 @@
         "@dxp/blocks.bento-grid": "*",
         "@dxp/blocks.media-section": "*",
         "@dxp/blocks.quick-links": "*",
-        "@dxp/blocks.feature-section-grid": "*"
+        "@dxp/blocks.feature-section-grid": "*",
+        "@dxp/blocks.pricing-section": "*"
     },
     "devDependencies": {
         "@next/bundle-analyzer": "^15.3.2",

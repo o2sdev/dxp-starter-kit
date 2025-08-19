@@ -4,7 +4,7 @@ import { CMS } from '@dxp/framework/modules';
 
 import { ComponentFragment, LayoutSectionFragment, PageFragment, TemplateFragment } from '@/generated/strapi';
 
-import { mapRoles } from '@/modules/cms/mappers/cms.roles.mapper';
+import { mapRoles } from '@/modules/cms/mappers/content/cms.roles.mapper';
 
 export const mapPage = (data: PageFragment): CMS.Model.Page.Page => {
     const template = mapTemplate(data.template[0]);
@@ -184,5 +184,7 @@ const mapComponent = (component: ComponentFragment) => {
             return 'CtaSectionBlock';
         case 'ComponentComponentsBentoGrid':
             return 'BentoGridBlock';
+        case 'ComponentComponentsPricingSection':
+            return 'PricingSectionBlock';
     }
 };

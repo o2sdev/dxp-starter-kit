@@ -1,0 +1,21 @@
+fragment PricingCard on ComponentContentPricingCard {
+    title
+    image {
+        ...Media
+    }
+    description
+    price {
+        ...Price
+    }
+    isPromoted
+    tags {
+        ...Badge
+    }
+    links {
+        ...Link
+    }
+    featureListTitle
+    featureList {
+        ...FeatureItem
+    }
+}

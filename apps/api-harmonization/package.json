@@ -51,7 +51,8 @@
         "@dxp/blocks.bento-grid": "*",
         "@dxp/blocks.media-section": "*",
         "@dxp/blocks.quick-links": "*",
-        "@dxp/blocks.feature-section-grid": "*"
+        "@dxp/blocks.feature-section-grid": "*",
+        "@dxp/blocks.pricing-section": "*"
     },
     "devDependencies": {
         "@nestjs/cli": "^11.0.7",

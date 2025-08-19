@@ -4,7 +4,7 @@ import { CMS } from '@dxp/framework/modules';
 
 import { GetComponentQuery } from '@/generated/strapi';
 
-import { mapCardWithImage } from '../cms.card-with-image.mapper';
+import { mapCardWithImage } from '../content/cms.card-with-image.mapper';
 
 export const mapBentoGridBlock = (
     data: GetComponentQuery,

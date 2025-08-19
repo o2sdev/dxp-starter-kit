@@ -8,6 +8,7 @@ import * as FeatureSectionGrid from '@dxp/blocks.feature-section-grid/frontend';
 import * as FeatureSection from '@dxp/blocks.feature-section/frontend';
 import * as HeroSection from '@dxp/blocks.hero-section/frontend';
 import * as MediaSection from '@dxp/blocks.media-section/frontend';
+import * as PricingSection from '@dxp/blocks.pricing-section/frontend';
 import * as QuickLinks from '@dxp/blocks.quick-links/frontend';
 // BLOCK IMPORT
 import { RoutingConfig } from 'next-intl/routing';
@@ -83,6 +84,8 @@ const renderBlock = (typename: string, blockProps: BlockProps) => {
             return <HeroSection.Renderer {...blockProps} />;
         case 'FeatureSectionGridBlock':
             return <FeatureSectionGrid.Renderer {...blockProps} />;
+        case 'PricingSectionBlock':
+            return <PricingSection.Renderer {...blockProps} />;
         // BLOCK REGISTER
         default:
             return null;

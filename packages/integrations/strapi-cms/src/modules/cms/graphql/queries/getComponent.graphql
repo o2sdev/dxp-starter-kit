@@ -39,6 +39,9 @@ query getComponent($id: ID!, $locale: I18NLocaleCode!) {
             ... on ComponentComponentsBentoGrid {
                 ...BentoGridComponent
             }
+            ... on ComponentComponentsPricingSection {
+                ...PricingSectionComponent
+            }
         }
     }
     configurableTexts(locale: $locale) {

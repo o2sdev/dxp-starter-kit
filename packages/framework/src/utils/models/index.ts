@@ -16,3 +16,5 @@ export * as Headers from './headers';
 export * as InfoCard from './info-card';
 export * as FeatureItem from './feature-item';
 export * as CardWithImage from './card-with-image';
+export * as Badge from './badge';
+export * as PricingCard from './pricing-card';
