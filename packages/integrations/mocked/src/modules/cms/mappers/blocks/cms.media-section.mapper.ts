@@ -17,6 +17,7 @@ const MOCK_MEDIA_SECTION_BLOCK_EN: CMS.Model.MediaSectionBlock.MediaSectionBlock
             label: 'Learn more',
             url: '/',
             icon: 'ArrowRight',
+            variant: 'primary',
         },
     ],
     labels: {

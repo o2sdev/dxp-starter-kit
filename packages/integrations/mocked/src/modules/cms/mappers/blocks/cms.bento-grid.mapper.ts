@@ -22,6 +22,7 @@ const MOCK_BENTO_GRID_BLOCK_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
                 label: 'Learn more',
                 url: '/',
                 icon: 'ArrowRight',
+                variant: 'default',
             },
         },
         {
@@ -39,6 +40,7 @@ const MOCK_BENTO_GRID_BLOCK_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
                 label: 'Learn more',
                 url: '/',
                 icon: 'ArrowRight',
+                variant: 'default',
             },
         },
         {
@@ -56,6 +58,7 @@ const MOCK_BENTO_GRID_BLOCK_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
                 label: 'Learn more',
                 url: '/',
                 icon: 'ArrowRight',
+                variant: 'default',
             },
         },
     ],

@@ -10,8 +10,14 @@ const linkVariants = cva(
         variants: {
             variant: {
                 default: 'text-primary underline-offset-4 hover:underline',
-                primaryButton:
+                primary:
                     'h-10 px-4 py-2 no-underline hover:no-underline bg-primary text-primary-foreground hover:bg-primary/90',
+                secondary:
+                    'h-10 px-4 py-2 no-underline hover:no-underline bg-secondary text-secondary-foreground hover:bg-secondary/80',
+                outline:
+                    'h-10 px-4 py-2 no-underline hover:no-underline bg-secondary text-secondary-foreground hover:bg-secondary/90',
+                destructive:
+                    'h-10 px-4 py-2 no-underline hover:no-underline bg-destructive text-destructive-foreground hover:bg-destructive/90',
             },
         },
         defaultVariants: {

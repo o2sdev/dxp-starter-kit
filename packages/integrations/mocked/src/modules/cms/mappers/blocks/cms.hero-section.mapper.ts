@@ -22,12 +22,14 @@ const MOCK_HERO_SECTION_BLOCK_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
             icon: 'ArrowRight',
             description: 'Button 1 description',
             url: '/',
+            variant: 'primary',
         },
         {
             label: 'Explore',
             description: 'Button 2 description',
             icon: 'ArrowRight',
             url: '/',
+            variant: 'default',
         },
     ],
     labels: {
@@ -55,6 +57,7 @@ const MOCK_HERO_SECTION_BLOCK_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
             icon: 'ArrowRight',
             url: '/',
             description: 'Button 1 description',
+            variant: 'primary',
         },
     ],
     labels: {
@@ -76,6 +79,7 @@ const MOCK_HERO_SECTION_BLOCK_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
             icon: 'ArrowRight',
             url: '/',
             description: 'Button 1 description',
+            variant: 'primary',
         },
     ],
     labels: {

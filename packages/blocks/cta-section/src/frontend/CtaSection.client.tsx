@@ -10,7 +10,7 @@ import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
 import { RichText } from '@dxp/ui/components/RichText';
 
-import { Button } from '@dxp/ui/elements/button';
+import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { CtaSectionPureProps } from './CtaSection.types';
@@ -18,11 +18,9 @@ import { CtaSectionPureProps } from './CtaSection.types';
 export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessToken, routing, ...component }) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
-    const { title, description, image, links, preTitle, inverted: isInverted, labels } = component;
+    const { title, description, image, links, preTitle, inverted, labels } = component;
 
     const isImageAvailable = image && image.url;
-
-    const inverted = isInverted;
 
     return (
         <div
@@ -73,14 +71,14 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
                             actions={links.map(
                                 (link, index) =>
                                     link.label && (
-                                        <Button
+                                        <Link
                                             asChild
-                                            variant={index === 0 ? 'default' : 'link'}
+                                            variant={link.variant}
                                             key={`${link.label}-${index}`}
                                             className={
-                                                index === 0
-                                                    ? 'no-underline hover:no-underline bg-primary-foreground text-primary hover:bg-primary-foreground/80'
-                                                    : 'no-underline hover:no-underline flex-1 text-primary-foreground'
+                                                link.variant === 'primary'
+                                                    ? 'bg-primary-foreground text-primary hover:bg-primary-foreground/90'
+                                                    : 'text-primary-foreground'
                                             }
                                         >
                                             <LinkComponent href={link.url}>
@@ -89,7 +87,7 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
                                                     {link.icon && <DynamicIcon name={link.icon} size={16} />}
                                                 </>
                                             </LinkComponent>
-                                        </Button>
+                                        </Link>
                                     ),
                             )}
                             showMoreLabel={labels.showMore}
