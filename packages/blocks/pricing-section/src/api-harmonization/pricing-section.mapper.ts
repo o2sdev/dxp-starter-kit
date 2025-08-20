@@ -12,6 +12,7 @@ export const mapPricingSection = (
         title: cms.title,
         subtitle: cms.subtitle,
         description: cms.description,
+        headingType: cms.headingType,
         pricingList: cms.pricingList,
     };
 };

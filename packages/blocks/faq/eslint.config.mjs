@@ -10,9 +10,15 @@ export default defineConfig([
     {
         files: ['src/frontend/**/*'],
         extends: [frontendConfig],
+        rules: {
+            '@next/next/no-html-link-for-pages': 'off',
+        },
     },
     {
         files: ['src/sdk/**/*'],
         extends: [frontendConfig],
+        rules: {
+            '@next/next/no-html-link-for-pages': 'off',
+        },
     },
 ]);

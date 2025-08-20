@@ -5,6 +5,7 @@ const MOCK_PRICING_SECTION_BLOCK_EN: CMS.Model.PricingSectionBlock.PricingSectio
     title: 'Accounts',
     subtitle: 'Subtitle',
     description: 'Choose the right account for your needs and enjoy simple, secure banking every day.',
+    headingType: 'h1',
     pricingList: [
         {
             title: 'Everyday account',
@@ -167,6 +168,7 @@ const MOCK_PRICING_SECTION_BLOCK_DE: CMS.Model.PricingSectionBlock.PricingSectio
     title: 'Accounts',
     subtitle: 'Subtitle',
     description: 'Choose the right account for your needs and enjoy simple, secure banking every day.',
+    headingType: 'h1',
     pricingList: [
         {
             title: 'Everyday account',
@@ -278,6 +280,7 @@ const MOCK_PRICING_SECTION_BLOCK_PL: CMS.Model.PricingSectionBlock.PricingSectio
     title: "Headline that shows solution's impact on user success",
     subtitle: 'Subtitle',
     description: 'Description',
+    headingType: 'h2',
     pricingList: [
         {
             title: 'Everyday account',

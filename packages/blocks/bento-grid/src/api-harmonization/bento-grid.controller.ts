@@ -12,11 +12,11 @@ import { BentoGridService } from './bento-grid.service';
 @Controller(URL)
 @UseInterceptors(LoggerService)
 export class BentoGridController {
-    constructor(protected readonly service: BentoGridService) {} 
-    
+    constructor(protected readonly service: BentoGridService) {}
+
     @Get()
     @Auth.Decorators.Roles({ roles: [] })
-    getBentoGridBlock(@Headers() headers: Models.Headers.AppHeaders, @Query() query: GetBentoGridBlockQuery) { 
+    getBentoGridBlock(@Headers() headers: Models.Headers.AppHeaders, @Query() query: GetBentoGridBlockQuery) {
         return this.service.getBentoGridBlock(query, headers);
     }
 }

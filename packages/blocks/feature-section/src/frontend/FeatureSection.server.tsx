@@ -5,7 +5,6 @@ import { sdk } from '../sdk';
 
 import { FeatureSectionProps } from './FeatureSection.types';
 
-
 export const FeatureSectionDynamic = dynamic(() =>
     import('./FeatureSection.client').then((module) => module.FeatureSectionPure),
 );

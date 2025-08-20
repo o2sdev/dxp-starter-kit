@@ -12,11 +12,11 @@ import { FeatureSectionService } from './feature-section.service';
 @Controller(URL)
 @UseInterceptors(LoggerService)
 export class FeatureSectionController {
-    constructor(protected readonly service: FeatureSectionService) {} 
-    
+    constructor(protected readonly service: FeatureSectionService) {}
+
     @Get()
     @Auth.Decorators.Roles({ roles: [] })
-    getFeatureSectionBlock(@Headers() headers: Models.Headers.AppHeaders, @Query() query: GetFeatureSectionBlockQuery) { 
+    getFeatureSectionBlock(@Headers() headers: Models.Headers.AppHeaders, @Query() query: GetFeatureSectionBlockQuery) {
         return this.service.getFeatureSectionBlock(query, headers);
     }
 }

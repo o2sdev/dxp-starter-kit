@@ -32,7 +32,7 @@ export const FeatureItem: React.FC<FeatureItemProps> = ({ title, description, ic
                         <Button
                             variant="link"
                             onClick={() => setIsOpen(true)}
-                            className="no-underline hover:no-underline h-auto p-1 self-start text-muted-foreground"
+                            className="no-underline hover:no-underline h-auto p-0 pt-0.5 self-start text-muted-foreground"
                         >
                             {icon && <DynamicIcon name="Info" size={16} />}
                         </Button>
@@ -55,8 +55,8 @@ export const PricingCard: React.FC<Readonly<PricingCardProps>> = (props) => {
                 isPromoted && 'border-2 border-primary shadow-lg',
             )}
         >
-            <div className="relative overflow-hidden h-[264px] flex-shrink-0 rounded-t-md">
-                {image?.url && (
+            {image?.url && (
+                <div className="relative overflow-hidden h-[264px] flex-shrink-0 rounded-t-md">
                     <Image
                         src={image.url}
                         alt={image.alt}
@@ -64,8 +64,8 @@ export const PricingCard: React.FC<Readonly<PricingCardProps>> = (props) => {
                         height={image.height}
                         className="object-cover object-center w-full h-full"
                     />
-                )}
-            </div>
+                </div>
+            )}
 
             <div className="flex flex-col gap-8 p-6 h-full">
                 <div className="flex flex-col gap-6">
@@ -91,7 +91,7 @@ export const PricingCard: React.FC<Readonly<PricingCardProps>> = (props) => {
                         )}
                     </div>
 
-                    {price && (
+                    {price?.value !== 0 && (
                         <Typography variant="highlightedMedium">
                             <Price price={price} />
                         </Typography>
