@@ -1,5 +1,11 @@
 # @dxp/utils.api-harmonization
 
+## 0.0.5
+
+### Patch Changes
+
+- 0e1d77d: added mising dependencies
+
 ## 0.0.4
 
 ### Patch Changes
