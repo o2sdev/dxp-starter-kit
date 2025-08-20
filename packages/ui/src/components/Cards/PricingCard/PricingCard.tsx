@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 import { cn } from '@dxp/ui/lib/utils';
 
 import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';

@@ -74,6 +74,7 @@ program
             // rmSync(`${targetDirectory}/apps/docs`, { recursive: true });
             rmSync(`${targetDirectory}/packages/framework`, { recursive: true });
             rmSync(`${targetDirectory}/packages/integrations`, { recursive: true });
+            rmSync(`${targetDirectory}/packages/blocks`, { recursive: true });
             rmSync(`${targetDirectory}/packages/utils`, { recursive: true });
             rmSync(`${targetDirectory}/packages/cli`, { recursive: true });
 
@@ -114,13 +115,25 @@ program
 program.parse(process.argv);
 
 const removeSymLinks = (file: string) => {
+    // TODO: figure out how to remove symlinks in a smarter way without specifying every block here
     const names = [
         ['docs', 'apps/docs'],
         ['create-dxp-app', 'packages/create-dxp-app'],
         ['framework', 'packages/framework'],
+        ['utils.api-harmonization', 'packages/utils/api-harmonization'],
+        ['utils.frontend', 'packages/utils/frontend'],
         ['integrations.mocked', 'packages/integrations/mocked'],
         ['integrations.strapi-cms', 'packages/integrations/strapi-cms'],
         ['integrations.redis', 'packages/integrations/redis'],
+        ['blocks.bento-grid', 'packages/blocks/bento-grid'],
+        ['blocks.cta-section', 'packages/blocks/cta-section'],
+        ['blocks.faq', 'packages/blocks/faq'],
+        ['blocks.feature-section', 'packages/blocks/feature-section'],
+        ['blocks.feature-section-grid', 'packages/blocks/feature-section-grid'],
+        ['blocks.hero-section', 'packages/blocks/hero-section'],
+        ['blocks.media-section', 'packages/blocks/media-section'],
+        ['blocks.pricing-section', 'packages/blocks/pricing-section'],
+        ['blocks.quick-links', 'packages/blocks/quick-links'],
     ];
 
     let newFile = file;
