@@ -46,7 +46,7 @@ jobs:
             - name: Creating .npmrc
               run: |
                   cat << EOF > "$HOME/.npmrc"
-                    @o2s:registry=https://registry.npmjs.org
+                    @dxp:registry=https://registry.npmjs.org
                     //registry.npmjs.org/:_authToken=$NPM_TOKEN
                   EOF
               env:
@@ -67,7 +67,7 @@ jobs:
               if: steps.changesets.outputs.published == 'true'
               uses: actions/checkout@v3
               with:
-                  ref: create-o2s-app/base
+                  ref: create-dxp-app/base
 
             - name: Reset branch
               if: steps.changesets.outputs.published == 'true'
@@ -77,14 +77,14 @@ jobs:
 
             - name: Update api-harmonization dependencies
               if: steps.changesets.outputs.published == 'true'
-              run: npm install @dxp/framework@latest @o2s/utils.logger@latest @dxp/integrations.mocked --workspace=@o2s/api-harmonization
+              run: npm install @dxp/framework@latest @o2s/utils.logger@latest @dxp/integrations.mocked --workspace=@dxp/api-harmonization
 
-            - name: Create create-o2s-app Pull Request
+            - name: Create create-dxp-app Pull Request
               id: cpr
               uses: peter-evans/create-pull-request@v7
               if: steps.changesets.outputs.published == 'true'
               with:
-                  commit-message: 'feat(create-o2s-app): update dependencies'
-                  branch: create-o2s-app/patch
+                  commit-message: 'feat(create-dxp-app): update dependencies'
+                  branch: create-dxp-app/patch
                   delete-branch: true
-                  title: 'Update dependencies in create-o2s-app'
+                  title: 'Update dependencies in create-dxp-app'
