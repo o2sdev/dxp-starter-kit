@@ -1,5 +1,11 @@
 # @dxp/eslint-config
 
+## 1.0.4
+
+### Patch Changes
+
+- 1657f42: updated eslint configs to better suite blocks
+
 ## 1.0.3
 
 ### Patch Changes
