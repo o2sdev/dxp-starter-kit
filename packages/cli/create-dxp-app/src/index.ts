@@ -118,13 +118,16 @@ const removeSymLinks = (file: string) => {
     // TODO: figure out how to remove symlinks in a smarter way without specifying every block here
     const names = [
         ['docs', 'apps/docs'],
-        ['create-dxp-app', 'packages/create-dxp-app'],
+        ['create-dxp-app', 'packages/cli/create-dxp-app'],
         ['framework', 'packages/framework'],
+
         ['utils.api-harmonization', 'packages/utils/api-harmonization'],
         ['utils.frontend', 'packages/utils/frontend'],
+
         ['integrations.mocked', 'packages/integrations/mocked'],
         ['integrations.strapi-cms', 'packages/integrations/strapi-cms'],
         ['integrations.redis', 'packages/integrations/redis'],
+
         ['blocks.bento-grid', 'packages/blocks/bento-grid'],
         ['blocks.cta-section', 'packages/blocks/cta-section'],
         ['blocks.faq', 'packages/blocks/faq'],
