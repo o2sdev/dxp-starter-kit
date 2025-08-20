@@ -115,42 +115,17 @@ program
 program.parse(process.argv);
 
 const removeSymLinks = (file: string) => {
-    // TODO: figure out how to remove symlinks in a smarter way without specifying every block here
-    const names = [
-        ['docs', 'apps/docs'],
-        ['create-dxp-app', 'packages/cli/create-dxp-app'],
-        ['framework', 'packages/framework'],
+    const json = JSON.parse(file);
 
-        ['utils.api-harmonization', 'packages/utils/api-harmonization'],
-        ['utils.frontend', 'packages/utils/frontend'],
+    // Traverse packages and remove any key with "link": true
+    if (json && json.packages) {
+        for (const [key, value] of Object.entries(json.packages)) {
+            if (value && typeof value === 'object' && (value as { link: boolean }).link) {
+                delete json.packages[key];
+            }
+        }
+    }
 
-        ['integrations.mocked', 'packages/integrations/mocked'],
-        ['integrations.strapi-cms', 'packages/integrations/strapi-cms'],
-        ['integrations.redis', 'packages/integrations/redis'],
-
-        ['blocks.bento-grid', 'packages/blocks/bento-grid'],
-        ['blocks.cta-section', 'packages/blocks/cta-section'],
-        ['blocks.faq', 'packages/blocks/faq'],
-        ['blocks.feature-section', 'packages/blocks/feature-section'],
-        ['blocks.feature-section-grid', 'packages/blocks/feature-section-grid'],
-        ['blocks.hero-section', 'packages/blocks/hero-section'],
-        ['blocks.media-section', 'packages/blocks/media-section'],
-        ['blocks.pricing-section', 'packages/blocks/pricing-section'],
-        ['blocks.quick-links', 'packages/blocks/quick-links'],
-    ];
-
-    let newFile = file;
-
-    names.forEach(([name, path]) => {
-        newFile = newFile.replaceAll(
-            `
-        "node_modules/@dxp/${name}": {
-            "resolved": "${path}",
-            "link": true
-        },`,
-            '',
-        );
-    });
-
-    return newFile;
+    // Stringify cleaned JSON
+    return JSON.stringify(json, null, 4);
 };
