@@ -9,9 +9,7 @@ import { GetCtaSectionBlockQuery } from './cta-section.request';
 
 @Injectable()
 export class CtaSectionService {
-    constructor(
-        private readonly cmsService: CMS.Service,
-    ) {}
+    constructor(private readonly cmsService: CMS.Service) {}
 
     getCtaSectionBlock(
         query: GetCtaSectionBlockQuery,

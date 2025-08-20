@@ -5,7 +5,6 @@ import { sdk } from '../sdk';
 
 import { PricingSectionProps } from './PricingSection.types';
 
-
 export const PricingSectionDynamic = dynamic(() =>
     import('./PricingSection.client').then((module) => module.PricingSectionPure),
 );

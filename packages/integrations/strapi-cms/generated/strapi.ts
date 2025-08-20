@@ -525,6 +525,7 @@ export type ComponentComponentsMediaSectionLinksArgs = {
 
 export type ComponentComponentsPricingSection = {
     description?: Maybe<Scalars['String']['output']>;
+    headingType: Enum_Componentcomponentspricingsection_Headingtype;
     id: Scalars['ID']['output'];
     pricingList?: Maybe<Array<Maybe<ComponentContentPricingCard>>>;
     subtitle?: Maybe<Scalars['String']['output']>;
@@ -1246,6 +1247,11 @@ export type DeleteMutationResponse = {
 };
 
 export enum Enum_Componentcomponentsherosection_Headingtype {
+    H1 = 'h1',
+    H2 = 'h2',
+}
+
+export enum Enum_Componentcomponentspricingsection_Headingtype {
     H1 = 'h1',
     H2 = 'h2',
 }
@@ -3449,6 +3455,7 @@ export type ResolversTypes = {
     DateTimeFilterInput: DateTimeFilterInput;
     DeleteMutationResponse: ResolverTypeWrapper<DeleteMutationResponse>;
     ENUM_COMPONENTCOMPONENTSHEROSECTION_HEADINGTYPE: Enum_Componentcomponentsherosection_Headingtype;
+    ENUM_COMPONENTCOMPONENTSPRICINGSECTION_HEADINGTYPE: Enum_Componentcomponentspricingsection_Headingtype;
     ENUM_COMPONENTCONTENTBADGE_VARIANT: Enum_Componentcontentbadge_Variant;
     ENUM_COMPONENTCONTENTPRICE_CURRENCY: Enum_Componentcontentprice_Currency;
     ENUM_COMPONENTLAYOUTSECTION_BACKGROUND: Enum_Componentlayoutsection_Background;
@@ -4438,6 +4445,11 @@ export type ComponentComponentsPricingSectionResolvers<
         ResolversParentTypes['ComponentComponentsPricingSection'] = ResolversParentTypes['ComponentComponentsPricingSection'],
 > = {
     description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    headingType?: Resolver<
+        ResolversTypes['ENUM_COMPONENTCOMPONENTSPRICINGSECTION_HEADINGTYPE'],
+        ParentType,
+        ContextType
+    >;
     id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
     pricingList?: Resolver<
         Maybe<Array<Maybe<ResolversTypes['ComponentContentPricingCard']>>>,
@@ -7226,6 +7238,7 @@ export type PricingSectionComponentFragment = {
     title?: string;
     subtitle?: string;
     description?: string;
+    headingTypePricing: Enum_Componentcomponentspricingsection_Headingtype;
     pricingList?: Array<{
         title: string;
         description?: string;
@@ -7717,6 +7730,7 @@ export type GetComponentQuery = {
                   title?: string;
                   subtitle?: string;
                   description?: string;
+                  headingTypePricing: Enum_Componentcomponentspricingsection_Headingtype;
                   pricingList?: Array<{
                       title: string;
                       description?: string;
@@ -8834,6 +8848,7 @@ export const PricingSectionComponentFragmentDoc = gql`
         title
         subtitle
         description
+        headingTypePricing: headingType
         pricingList {
             ...PricingCard
         }

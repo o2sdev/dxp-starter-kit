@@ -5,7 +5,6 @@ import { sdk } from '../sdk';
 
 import { HeroSectionProps } from './HeroSection.types';
 
-
 export const HeroSectionDynamic = dynamic(() =>
     import('./HeroSection.client').then((module) => module.HeroSectionPure),
 );

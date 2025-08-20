@@ -12,11 +12,11 @@ import { PricingSectionService } from './pricing-section.service';
 @Controller(URL)
 @UseInterceptors(LoggerService)
 export class PricingSectionController {
-    constructor(protected readonly service: PricingSectionService) {} 
-    
+    constructor(protected readonly service: PricingSectionService) {}
+
     @Get()
     @Auth.Decorators.Roles({ roles: [] })
-    getPricingSectionBlock(@Headers() headers: Models.Headers.AppHeaders, @Query() query: GetPricingSectionBlockQuery) { 
+    getPricingSectionBlock(@Headers() headers: Models.Headers.AppHeaders, @Query() query: GetPricingSectionBlockQuery) {
         return this.service.getPricingSectionBlock(query, headers);
     }
 }

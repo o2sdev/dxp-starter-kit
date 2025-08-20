@@ -9,9 +9,7 @@ import { GetFeatureSectionBlockQuery } from './feature-section.request';
 
 @Injectable()
 export class FeatureSectionService {
-    constructor(
-        private readonly cmsService: CMS.Service,
-    ) {}
+    constructor(private readonly cmsService: CMS.Service) {}
 
     getFeatureSectionBlock(
         query: GetFeatureSectionBlockQuery,

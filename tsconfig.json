@@ -1,9 +1,0 @@
-{
-    "extends": "@dxp/typescript-config/base.json",
-    "compilerOptions": {
-        "paths": {},
-        "outDir": "./dist"
-    },
-    "include": ["src"],
-    "exclude": ["node_modules", "dist"]
-}

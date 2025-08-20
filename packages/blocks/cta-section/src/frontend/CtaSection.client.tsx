@@ -18,11 +18,9 @@ import { CtaSectionPureProps } from './CtaSection.types';
 export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessToken, routing, ...component }) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
-    const { title, description, image, links, preTitle, inverted: isInverted, labels } = component;
+    const { title, description, image, links, preTitle, inverted, labels } = component;
 
     const isImageAvailable = image && image.url;
-
-    const inverted = isInverted;
 
     return (
         <div
