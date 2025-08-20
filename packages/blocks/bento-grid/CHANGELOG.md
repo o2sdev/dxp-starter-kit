@@ -1,5 +1,11 @@
 # @dxp/blocks.bento-grid
 
+## 0.0.5
+
+### Patch Changes
+
+- 1657f42: updated eslint configs to better suite blocks
+
 ## 0.0.4
 
 ### Patch Changes
