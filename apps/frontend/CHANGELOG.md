@@ -1,5 +1,25 @@
 # @dxp/frontend
 
+## 1.8.3
+
+### Patch Changes
+
+- d12f3b8: updated build configs
+- Updated dependencies [d12f3b8]
+    - @dxp/api-harmonization@1.8.3
+    - @dxp/blocks.bento-grid@0.0.4
+    - @dxp/blocks.cta-section@0.0.4
+    - @dxp/blocks.faq@0.0.4
+    - @dxp/blocks.feature-section@0.0.4
+    - @dxp/blocks.feature-section-grid@0.0.4
+    - @dxp/blocks.hero-section@0.0.4
+    - @dxp/blocks.media-section@0.0.4
+    - @dxp/blocks.pricing-section@0.0.4
+    - @dxp/blocks.quick-links@0.0.4
+    - @dxp/framework@0.0.4
+    - @dxp/integrations.mocked@0.0.4
+    - @dxp/ui@1.0.3
+
 ## 1.8.2
 
 ### Patch Changes

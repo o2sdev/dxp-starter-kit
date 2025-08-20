@@ -1,5 +1,17 @@
 # @dxp/blocks.bento-grid
 
+## 0.0.4
+
+### Patch Changes
+
+- d12f3b8: updated build configs
+- Updated dependencies [d12f3b8]
+  - @dxp/configs.integrations@0.0.4
+  - @dxp/framework@0.0.4
+  - @dxp/ui@1.0.3
+  - @dxp/utils.api-harmonization@0.0.4
+  - @dxp/utils.frontend@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
