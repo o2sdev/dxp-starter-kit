@@ -1,5 +1,5 @@
 {
-    "name": "@dxp",
+    "name": "dxp",
     "private": true,
     "scripts": {
         "prepare": "husky",
