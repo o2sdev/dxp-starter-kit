@@ -17,7 +17,7 @@ import React from 'react';
 
 import { CMS } from '@dxp/framework/modules';
 
-import { Container } from '@dxp/ui/components/container';
+import { Container } from '@dxp/ui/components/Container';
 
 import { auth } from '@/auth';
 
