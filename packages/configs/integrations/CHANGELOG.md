@@ -1,5 +1,15 @@
 # @dxp/configs.integrations
 
+## 0.0.4
+
+### Patch Changes
+
+- d12f3b8: updated build configs
+- Updated dependencies [d12f3b8]
+    - @dxp/framework@0.0.4
+    - @dxp/integrations.mocked@0.0.4
+    - @dxp/integrations.strapi-cms@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
