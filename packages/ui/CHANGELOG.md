@@ -1,5 +1,13 @@
 # @dxp/ui
 
+## 1.0.2
+
+### Patch Changes
+
+- dd0d723: initial release
+- Updated dependencies [dd0d723]
+    - @dxp/framework@0.0.3
+
 ## 1.0.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
     "name": "@dxp/integrations.strapi-cms",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "private": false,
     "license": "MIT",
     "exports": {
