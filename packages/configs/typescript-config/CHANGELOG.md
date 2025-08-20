@@ -1,5 +1,11 @@
 # @dxp/typescript-config
 
+## 1.0.1
+
+### Patch Changes
+
+- dd0d723: initial release
+
 ## 1.0.0
 
 ### Major Changes
