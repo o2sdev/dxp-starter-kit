@@ -1,5 +1,5 @@
 import { config as apiConfig } from '@dxp/eslint-config/api';
-import { config as frontendConfig } from '@dxp/eslint-config/frontend';
+import { config as frontendConfig } from '@dxp/eslint-config/frontend-block';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
