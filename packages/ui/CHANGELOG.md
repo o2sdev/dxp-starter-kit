@@ -1,5 +1,11 @@
 # @dxp/ui
 
+## 1.0.4
+
+### Patch Changes
+
+- 0e1d77d: added mising dependencies
+
 ## 1.0.3
 
 ### Patch Changes

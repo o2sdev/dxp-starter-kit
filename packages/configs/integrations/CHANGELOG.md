@@ -1,5 +1,13 @@
 # @dxp/configs.integrations
 
+## 0.0.5
+
+### Patch Changes
+
+- 0e1d77d: added mising dependencies
+- Updated dependencies [0e1d77d]
+    - @dxp/integrations.strapi-cms@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
