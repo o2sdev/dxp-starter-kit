@@ -280,7 +280,7 @@ const MOCK_PRICING_SECTION_BLOCK_PL: CMS.Model.PricingSectionBlock.PricingSectio
     title: "Headline that shows solution's impact on user success",
     subtitle: 'Subtitle',
     description: 'Description',
-    headingType: 'h2',
+    headingType: 'h1',
     pricingList: [
         {
             title: 'Everyday account',

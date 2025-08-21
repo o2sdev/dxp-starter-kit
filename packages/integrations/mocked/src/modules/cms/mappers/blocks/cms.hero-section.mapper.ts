@@ -9,6 +9,7 @@ const MOCK_HERO_SECTION_BLOCK_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
     description:
         'Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.',
     inverted: false,
+    headingType: 'h1',
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
         width: 1920,
@@ -42,6 +43,7 @@ const MOCK_HERO_SECTION_BLOCK_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
     description:
         'Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.',
     inverted: true,
+    headingType: 'h1',
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
         width: 1920,
@@ -70,6 +72,7 @@ const MOCK_HERO_SECTION_BLOCK_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
     description:
         'Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.',
     inverted: false,
+    headingType: 'h1',
     links: [
         {
             label: 'Get started',

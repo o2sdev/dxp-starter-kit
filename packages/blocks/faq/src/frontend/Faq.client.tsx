@@ -29,7 +29,7 @@ export const FaqPure: React.FC<FaqPureProps> = ({ locale, accessToken, routing, 
                     )}
 
                     {title && (
-                        <Typography variant="h1" asChild>
+                        <Typography variant="highlightedMedium" asChild>
                             <h2>{title}</h2>
                         </Typography>
                     )}
