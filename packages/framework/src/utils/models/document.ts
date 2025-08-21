@@ -1,6 +1,7 @@
+import { Media } from '@/utils/models';
+
 export class Document {
-    id!: string;
-    url!: string;
+    file!: Media.Media;
     icon?: string;
     title!: string;
 }

@@ -32,27 +32,38 @@ export const DocumentListPure: React.FC<DocumentListPureProps> = ({ locale, acce
 
                 {documents && documents?.length > 0 && (
                     <ul className="flex flex-col gap-0 w-full">
-                        {documents.map((document, index) => (
-                            <li key={index}>
-                                <Button
-                                    asChild
-                                    variant="link"
-                                    className="py-4 px-0 h-auto text-foreground text-md hover:text-foreground whitespace-normal"
-                                >
-                                    <LinkComponent href={document.url}>
-                                        <div className="flex gap-3">
-                                            {document.icon && (
-                                                <DynamicIcon name={document.icon} size={24} className="text-primary" />
-                                            )}
-                                            <Typography variant="body" asChild>
-                                                <p>{document.title}</p>
-                                            </Typography>
-                                        </div>
-                                    </LinkComponent>
-                                </Button>
-                                <Separator />
-                            </li>
-                        ))}
+                        {documents.map(
+                            (document, index) =>
+                                document.file.url && (
+                                    <li key={`${document.title}-${index}`}>
+                                        <Button
+                                            asChild
+                                            variant="link"
+                                            className="py-4 px-0 h-auto text-foreground text-md hover:text-foreground whitespace-normal"
+                                        >
+                                            <LinkComponent
+                                                href={document.file.url}
+                                                download={document.file.alt}
+                                                target="_blank"
+                                            >
+                                                <div className="flex gap-3">
+                                                    {document.icon && (
+                                                        <DynamicIcon
+                                                            name={document.icon}
+                                                            size={24}
+                                                            className="text-primary"
+                                                        />
+                                                    )}
+                                                    <Typography variant="body" asChild>
+                                                        <p>{document.title}</p>
+                                                    </Typography>
+                                                </div>
+                                            </LinkComponent>
+                                        </Button>
+                                        <Separator />
+                                    </li>
+                                ),
+                        )}
                     </ul>
                 )}
             </div>

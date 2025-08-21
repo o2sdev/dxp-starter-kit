@@ -7,27 +7,35 @@ const MOCK_DOCUMENT_LIST_BLOCK_EN: CMS.Model.DocumentListBlock.DocumentListBlock
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     documents: [
         {
-            id: 'document-1',
             title: 'Tariff of commissions and fees for natural persons lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum',
-            url: 'https://www.google.com',
+            file: {
+                url: 'https://www.google.com',
+                alt: 'Tariff of commissions and fees for natural persons',
+            },
             icon: 'FileText',
         },
         {
-            id: 'document-2',
             title: 'Tariff of commissions and fees for natural persons lorem ipsum',
-            url: 'https://www.google.com',
+            file: {
+                url: 'https://www.google.com',
+                alt: 'Tariff of commissions and fees for natural persons',
+            },
             icon: 'FileText',
         },
         {
-            id: 'document-3',
             title: 'Tariff of commissions and fees for natural persons lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum',
-            url: 'https://www.google.com',
+            file: {
+                url: 'https://www.google.com',
+                alt: 'Tariff of commissions and fees for natural persons',
+            },
             icon: 'FileText',
         },
         {
-            id: 'document-4',
             title: 'Tariff of commissions and fees for natural persons',
-            url: 'https://www.google.com',
+            file: {
+                url: 'https://www.google.com',
+                alt: 'Tariff of commissions and fees for natural persons',
+            },
             icon: 'FileText',
         },
     ],
@@ -40,9 +48,11 @@ const MOCK_DOCUMENT_LIST_BLOCK_DE: CMS.Model.DocumentListBlock.DocumentListBlock
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     documents: [
         {
-            id: 'document-1',
             title: 'Tariff of commissions and fees for natural persons',
-            url: 'https://www.google.com',
+            file: {
+                url: 'https://www.google.com',
+                alt: 'Tariff of commissions and fees for natural persons',
+            },
             icon: 'FileText',
         },
     ],
@@ -55,9 +65,11 @@ const MOCK_DOCUMENT_LIST_BLOCK_PL: CMS.Model.DocumentListBlock.DocumentListBlock
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     documents: [
         {
-            id: 'document-1',
             title: 'Tariff of commissions and fees for natural persons',
-            url: 'https://www.google.com',
+            file: {
+                url: 'https://www.google.com',
+                alt: 'Tariff of commissions and fees for natural persons',
+            },
             icon: 'FileText',
         },
     ],

@@ -186,5 +186,7 @@ const mapComponent = (component: ComponentFragment) => {
             return 'BentoGridBlock';
         case 'ComponentComponentsPricingSection':
             return 'PricingSectionBlock';
+        case 'ComponentComponentsDocumentList':
+            return 'DocumentListBlock';
     }
 };
