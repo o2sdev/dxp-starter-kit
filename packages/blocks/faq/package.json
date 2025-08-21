@@ -1,6 +1,6 @@
 {
     "name": "@dxp/blocks.faq",
-    "version": "0.0.1",
+    "version": "0.0.5",
     "private": false,
     "license": "MIT",
     "description": "A simple block displaying static content in the form of an FAQ.",

@@ -9,9 +9,7 @@ import { GetHeroSectionBlockQuery } from './hero-section.request';
 
 @Injectable()
 export class HeroSectionService {
-    constructor(
-        private readonly cmsService: CMS.Service,
-    ) {}
+    constructor(private readonly cmsService: CMS.Service) {}
 
     getHeroSectionBlock(
         query: GetHeroSectionBlockQuery,

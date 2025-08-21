@@ -9,9 +9,7 @@ import { GetPricingSectionBlockQuery } from './pricing-section.request';
 
 @Injectable()
 export class PricingSectionService {
-    constructor(
-        private readonly cmsService: CMS.Service,
-    ) {}
+    constructor(private readonly cmsService: CMS.Service) {}
 
     getPricingSectionBlock(
         query: GetPricingSectionBlockQuery,

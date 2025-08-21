@@ -1,6 +1,6 @@
 {
     "name": "@dxp/configs.integrations",
-    "version": "0.0.1",
+    "version": "0.0.5",
     "private": true,
     "license": "MIT",
     "exports": {
@@ -19,5 +19,15 @@
         "@dxp/framework": "*",
         "@dxp/integrations.mocked": "*",
         "@dxp/integrations.strapi-cms": "*"
+    },
+    "devDependencies": {
+        "@dxp/eslint-config": "*",
+        "@dxp/prettier-config": "*",
+        "@dxp/typescript-config": "*",
+        "concurrently": "^9.1.2",
+        "eslint": "^9.27.0",
+        "prettier": "^3.5.3",
+        "tsc-alias": "^1.8.16",
+        "typescript": "^5.8.3"
     }
 }

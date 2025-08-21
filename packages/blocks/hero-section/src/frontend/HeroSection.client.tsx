@@ -47,7 +47,7 @@ export const HeroSectionPure: React.FC<HeroSectionPureProps> = ({ locale, access
                         )}
 
                         {title && (
-                            <Typography variant="highlightedBig" asChild>
+                            <Typography variant={headingType === 'h1' ? 'highlightedBig' : 'highlightedMedium'} asChild>
                                 <HeadingComponent>
                                     {Utils.StringReplace.reactStringReplace(title, {
                                         highlightedText: <span className="text-primary">{highlightedText}</span>,

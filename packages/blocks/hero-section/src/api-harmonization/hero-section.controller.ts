@@ -12,11 +12,11 @@ import { HeroSectionService } from './hero-section.service';
 @Controller(URL)
 @UseInterceptors(LoggerService)
 export class HeroSectionController {
-    constructor(protected readonly service: HeroSectionService) {} 
-    
+    constructor(protected readonly service: HeroSectionService) {}
+
     @Get()
     @Auth.Decorators.Roles({ roles: [] })
-    getHeroSectionBlock(@Headers() headers: Models.Headers.AppHeaders, @Query() query: GetHeroSectionBlockQuery) { 
+    getHeroSectionBlock(@Headers() headers: Models.Headers.AppHeaders, @Query() query: GetHeroSectionBlockQuery) {
         return this.service.getHeroSectionBlock(query, headers);
     }
 }

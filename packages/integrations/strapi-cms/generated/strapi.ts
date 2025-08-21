@@ -7255,6 +7255,7 @@ export type PricingSectionComponentFragment = {
     title?: string;
     subtitle?: string;
     description?: string;
+    headingTypePricing: Enum_Componentcomponentspricingsection_Headingtype;
     pricingList?: Array<{
         title: string;
         description?: string;
@@ -7757,6 +7758,7 @@ export type GetComponentQuery = {
                   title?: string;
                   subtitle?: string;
                   description?: string;
+                  headingTypePricing: Enum_Componentcomponentspricingsection_Headingtype;
                   pricingList?: Array<{
                       title: string;
                       description?: string;
@@ -8877,6 +8879,7 @@ export const PricingSectionComponentFragmentDoc = gql`
         title
         subtitle
         description
+        headingTypePricing: headingType
         pricingList {
             ...PricingCard
         }

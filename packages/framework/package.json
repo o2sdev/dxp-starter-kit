@@ -1,6 +1,6 @@
 {
     "name": "@dxp/framework",
-    "version": "1.10.0",
+    "version": "0.0.4",
     "private": false,
     "license": "MIT",
     "exports": {

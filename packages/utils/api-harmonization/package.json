@@ -1,6 +1,6 @@
 {
     "name": "@dxp/utils.api-harmonization",
-    "version": "0.0.1",
+    "version": "0.0.5",
     "description": "",
     "author": "",
     "private": false,
@@ -19,6 +19,16 @@
     },
     "dependencies": {
         "@dxp/framework": "*"
+    },
+    "devDependencies": {
+        "@dxp/eslint-config": "*",
+        "@dxp/prettier-config": "*",
+        "@dxp/typescript-config": "*",
+        "concurrently": "^9.1.2",
+        "eslint": "^9.27.0",
+        "prettier": "^3.5.3",
+        "tsc-alias": "^1.8.16",
+        "typescript": "^5.8.3"
     },
     "peerDependencies": {
         "jsonwebtoken": "^9.0.2",

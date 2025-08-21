@@ -4,6 +4,7 @@ fragment PricingSectionComponent on ComponentComponentsPricingSection {
     title
     subtitle
     description
+    headingTypePricing: headingType
     pricingList {
         ...PricingCard
     }

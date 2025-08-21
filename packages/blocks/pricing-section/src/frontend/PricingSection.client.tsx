@@ -17,14 +17,16 @@ export const PricingSectionPure: React.FC<PricingSectionPureProps> = ({
     ...component
 }) => {
     const { Link: LinkComponent } = createNavigation(routing);
-    const { title, subtitle, description, pricingList } = component;
+    const { title, subtitle, description, pricingList, headingType } = component;
+
+    const HeadingComponent = headingType ? headingType : 'h2';
 
     return (
         <div className="w-full flex flex-col gap-16">
             <div className="h-full flex flex-col gap-4 md:gap-5">
                 {title && (
-                    <Typography variant="highlightedMedium" asChild>
-                        <h2>{title}</h2>
+                    <Typography variant={headingType === 'h1' ? 'highlightedBig' : 'highlightedMedium'} asChild>
+                        <HeadingComponent>{title}</HeadingComponent>
                     </Typography>
                 )}
 

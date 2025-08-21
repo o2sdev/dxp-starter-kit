@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { cn } from '@dxp/ui/lib/utils';
 
 import { Button } from '@dxp/ui/elements/button';

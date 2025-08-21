@@ -1,0 +1,34 @@
+{
+    "name": "create-dxp-app",
+    "version": "0.0.6",
+    "private": false,
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "bin": {
+        "create-dxp-app": "./dist/index.js"
+    },
+    "scripts": {
+        "create-dxp-app": "ts-node ./src/index.ts",
+        "build": "tsc && tsc-alias",
+        "lint": "tsc --noEmit && eslint . --max-warnings 0",
+        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json}\""
+    },
+    "dependencies": {
+        "@o2s/telemetry": "^1.0.8",
+        "@types/prompts": "^2.4.9",
+        "cli-progress": "^3.12.0",
+        "commander": "^14.0.0",
+        "prompts": "^2.4.2",
+        "simple-git": "^3.27.0",
+        "ts-node": "^10.9.2"
+    },
+    "devDependencies": {
+        "@dxp/eslint-config": "*",
+        "@dxp/prettier-config": "*",
+        "@dxp/typescript-config": "*",
+        "@types/cli-progress": "^3.11.6",
+        "eslint": "^9.27.0",
+        "prettier": "^3.5.3",
+        "typescript": "^5.8.3"
+    }
+}

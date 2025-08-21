@@ -23,6 +23,7 @@ export const mapPricingSectionBlock = (
                 title: component.title,
                 subtitle: component.subtitle,
                 description: component.description,
+                headingType: component.headingTypePricing,
                 pricingList: component.pricingList?.map((item) => ({
                     ...mapPricingCard(item, baseUrl),
                 })),
