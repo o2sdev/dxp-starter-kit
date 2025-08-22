@@ -10,7 +10,7 @@ import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
 import { RichText } from '@dxp/ui/components/RichText';
 
-import { Button } from '@dxp/ui/elements/button';
+import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { FeatureSectionPureProps } from './FeatureSection.types';
@@ -102,23 +102,14 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                             actions={links.map(
                                 (link, index) =>
                                     link.label && (
-                                        <Button
-                                            asChild
-                                            variant={index === 0 ? 'default' : 'link'}
-                                            key={`${link.label}-${index}`}
-                                            className={
-                                                index === 0
-                                                    ? 'no-underline hover:no-underline'
-                                                    : 'no-underline hover:no-underline flex-1'
-                                            }
-                                        >
+                                        <Link asChild variant={link.variant} key={`${link.label}-${index}`}>
                                             <LinkComponent href={link.url}>
                                                 <>
                                                     {link.label}
                                                     {link.icon && <DynamicIcon name={link.icon} size={16} />}
                                                 </>
                                             </LinkComponent>
-                                        </Button>
+                                        </Link>
                                     ),
                             )}
                             showMoreLabel={labels.showMore}
