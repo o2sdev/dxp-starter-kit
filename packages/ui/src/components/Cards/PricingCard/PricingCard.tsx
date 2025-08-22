@@ -12,6 +12,7 @@ import { TooltipHover } from '@dxp/ui/components/TooltipHover';
 
 import { Badge } from '@dxp/ui/elements/badge';
 import { Button } from '@dxp/ui/elements/button';
+import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { FeatureItemProps, PricingCardProps } from './PricingCard.types';
@@ -104,19 +105,14 @@ export const PricingCard: React.FC<Readonly<PricingCardProps>> = (props) => {
                             {links.map((link, index) => (
                                 <li key={`${link.label}-${index}`} className="w-full">
                                     {link.label && (
-                                        <Button
-                                            asChild
-                                            variant={index === 0 ? (isPromoted ? 'default' : 'secondary') : 'link'}
-                                            key={link.label}
-                                            className="no-underline hover:no-underline w-full"
-                                        >
+                                        <Link asChild variant={link.variant} key={link.label} className="w-full">
                                             <LinkComponent href={link.url}>
                                                 <>
                                                     {link.label}
                                                     {link.icon && <DynamicIcon name={link.icon} size={16} />}
                                                 </>
                                             </LinkComponent>
-                                        </Button>
+                                        </Link>
                                     )}
                                 </li>
                             ))}

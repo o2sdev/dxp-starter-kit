@@ -9,6 +9,7 @@ const MOCK_HERO_SECTION_BLOCK_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
     description:
         'Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.',
     inverted: false,
+    headingType: 'h1',
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
         width: 1920,
@@ -22,12 +23,14 @@ const MOCK_HERO_SECTION_BLOCK_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
             icon: 'ArrowRight',
             description: 'Button 1 description',
             url: '/',
+            variant: 'primary',
         },
         {
             label: 'Explore',
             description: 'Button 2 description',
             icon: 'ArrowRight',
             url: '/',
+            variant: 'link',
         },
     ],
     labels: {
@@ -42,6 +45,7 @@ const MOCK_HERO_SECTION_BLOCK_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
     description:
         'Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.',
     inverted: true,
+    headingType: 'h1',
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
         width: 1920,
@@ -55,6 +59,7 @@ const MOCK_HERO_SECTION_BLOCK_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
             icon: 'ArrowRight',
             url: '/',
             description: 'Button 1 description',
+            variant: 'primary',
         },
     ],
     labels: {
@@ -70,12 +75,14 @@ const MOCK_HERO_SECTION_BLOCK_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
     description:
         'Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.',
     inverted: false,
+    headingType: 'h1',
     links: [
         {
             label: 'Get started',
             icon: 'ArrowRight',
             url: '/',
             description: 'Button 1 description',
+            variant: 'primary',
         },
     ],
     labels: {

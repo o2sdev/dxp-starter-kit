@@ -2,8 +2,7 @@ fragment Banner on ComponentContentBanner {
     title
     description
     altDescription
-    button {
-        label
-        url
+    link {
+        ...Link
     }
 }

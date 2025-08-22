@@ -25,7 +25,7 @@ export const PricingSectionPure: React.FC<PricingSectionPureProps> = ({
         <div className="w-full flex flex-col gap-16">
             <div className="h-full flex flex-col gap-4 md:gap-5">
                 {title && (
-                    <Typography variant="highlightedMedium" asChild>
+                    <Typography variant={headingType === 'h1' ? 'highlightedBig' : 'highlightedMedium'} asChild>
                         <HeadingComponent>{title}</HeadingComponent>
                     </Typography>
                 )}

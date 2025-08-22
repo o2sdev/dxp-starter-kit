@@ -26,7 +26,7 @@ export const QuickLinksPure: React.FC<QuickLinksPureProps> = ({ locale, accessTo
                 )}
 
                 {title && (
-                    <Typography variant="h2" asChild>
+                    <Typography variant="highlightedMedium" asChild>
                         <h2>{title}</h2>
                     </Typography>
                 )}

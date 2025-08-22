@@ -607,9 +607,9 @@ export type ComponentContentBadgeFiltersInput = {
 
 export type ComponentContentBanner = {
     altDescription?: Maybe<Scalars['String']['output']>;
-    button?: Maybe<ComponentContentLink>;
     description?: Maybe<Scalars['String']['output']>;
     id: Scalars['ID']['output'];
+    link?: Maybe<ComponentContentLink>;
     title: Scalars['String']['output'];
 };
 
@@ -1295,11 +1295,13 @@ export enum Enum_Componentcontentbadge_Variant {
 }
 
 export enum Enum_Componentcontentlink_Variant {
-    Default = 'default',
     Destructive = 'destructive',
+    Ghost = 'ghost',
+    Link = 'link',
     Outline = 'outline',
     Primary = 'primary',
     Secondary = 'secondary',
+    Tertiary = 'tertiary',
 }
 
 export enum Enum_Componentcontentprice_Currency {
@@ -3083,7 +3085,7 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | ComponentContentAlertBox
         | ComponentContentArticleSection
         | ComponentContentBadge
-        | (Omit<ComponentContentBanner, 'button'> & { button?: Maybe<_RefType['ComponentContentLink']> })
+        | (Omit<ComponentContentBanner, 'link'> & { link?: Maybe<_RefType['ComponentContentLink']> })
         | (Omit<ComponentContentCardWithImage, 'image' | 'link'> & {
               image?: Maybe<_RefType['UploadFile']>;
               link?: Maybe<_RefType['ComponentContentLink']>;
@@ -3387,7 +3389,7 @@ export type ResolversTypes = {
     ComponentContentBadge: ResolverTypeWrapper<ComponentContentBadge>;
     ComponentContentBadgeFiltersInput: ComponentContentBadgeFiltersInput;
     ComponentContentBanner: ResolverTypeWrapper<
-        Omit<ComponentContentBanner, 'button'> & { button?: Maybe<ResolversTypes['ComponentContentLink']> }
+        Omit<ComponentContentBanner, 'link'> & { link?: Maybe<ResolversTypes['ComponentContentLink']> }
     >;
     ComponentContentCardWithImage: ResolverTypeWrapper<
         Omit<ComponentContentCardWithImage, 'image' | 'link'> & {
@@ -3801,8 +3803,8 @@ export type ResolversParentTypes = {
     ComponentContentArticleSectionInput: ComponentContentArticleSectionInput;
     ComponentContentBadge: ComponentContentBadge;
     ComponentContentBadgeFiltersInput: ComponentContentBadgeFiltersInput;
-    ComponentContentBanner: Omit<ComponentContentBanner, 'button'> & {
-        button?: Maybe<ResolversParentTypes['ComponentContentLink']>;
+    ComponentContentBanner: Omit<ComponentContentBanner, 'link'> & {
+        link?: Maybe<ResolversParentTypes['ComponentContentLink']>;
     };
     ComponentContentCardWithImage: Omit<ComponentContentCardWithImage, 'image' | 'link'> & {
         image?: Maybe<ResolversParentTypes['UploadFile']>;
@@ -4597,9 +4599,9 @@ export type ComponentContentBannerResolvers<
     ParentType extends ResolversParentTypes['ComponentContentBanner'] = ResolversParentTypes['ComponentContentBanner'],
 > = {
     altDescription?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-    button?: Resolver<Maybe<ResolversTypes['ComponentContentLink']>, ParentType, ContextType>;
     description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
     id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    link?: Resolver<Maybe<ResolversTypes['ComponentContentLink']>, ParentType, ContextType>;
     title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -7195,6 +7197,7 @@ export type BentoGridComponentFragment = {
             url?: string;
             description?: string;
             icon?: string;
+            variant?: Enum_Componentcontentlink_Variant;
             page?: { slug: string; SEO: { title: string; description: string } };
         };
     }>;
@@ -7260,6 +7263,7 @@ export type CtaSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7284,7 +7288,19 @@ export type FaqComponentFragment = {
     description?: string;
     oneColumn: boolean;
     sections?: Array<{ title?: string; items: Array<{ title: string; description: string }> }>;
-    banner?: { title: string; description?: string; altDescription?: string; button?: { label: string; url?: string } };
+    banner?: {
+        title: string;
+        description?: string;
+        altDescription?: string;
+        link?: {
+            label: string;
+            url?: string;
+            description?: string;
+            icon?: string;
+            variant?: Enum_Componentcontentlink_Variant;
+            page?: { slug: string; SEO: { title: string; description: string } };
+        };
+    };
 };
 
 export type FeatureSectionComponentFragment = {
@@ -7302,6 +7318,7 @@ export type FeatureSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7333,6 +7350,7 @@ export type HeroSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7349,6 +7367,7 @@ export type MediaSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7373,6 +7392,7 @@ export type PricingSectionComponentFragment = {
             url?: string;
             description?: string;
             icon?: string;
+            variant?: Enum_Componentcontentlink_Variant;
             page?: { slug: string; SEO: { title: string; description: string } };
         }>;
         featureList?: Array<{ title?: string; description?: string; icon?: string }>;
@@ -7390,6 +7410,7 @@ export type QuickLinksComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7400,7 +7421,14 @@ export type BannerFragment = {
     title: string;
     description?: string;
     altDescription?: string;
-    button?: { label: string; url?: string };
+    link?: {
+        label: string;
+        url?: string;
+        description?: string;
+        icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
+        page?: { slug: string; SEO: { title: string; description: string } };
+    };
 };
 
 export type CardWithImageFragment = {
@@ -7412,6 +7440,7 @@ export type CardWithImageFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     };
 };
@@ -7434,6 +7463,7 @@ export type InformationCardFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     };
 };
@@ -7443,6 +7473,7 @@ export type LinkFragment = {
     url?: string;
     description?: string;
     icon?: string;
+    variant?: Enum_Componentcontentlink_Variant;
     page?: { slug: string; SEO: { title: string; description: string } };
 };
 
@@ -7485,6 +7516,7 @@ export type PricingCardFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
     featureList?: Array<{ title?: string; description?: string; icon?: string }>;
@@ -7715,6 +7747,7 @@ export type GetComponentQuery = {
                           url?: string;
                           description?: string;
                           icon?: string;
+                          variant?: Enum_Componentcontentlink_Variant;
                           page?: { slug: string; SEO: { title: string; description: string } };
                       };
                   }>;
@@ -7777,9 +7810,11 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | {
                   __typename: 'ComponentComponentsDocumentList';
                   id: string;
@@ -7803,7 +7838,14 @@ export type GetComponentQuery = {
                       title: string;
                       description?: string;
                       altDescription?: string;
-                      button?: { label: string; url?: string };
+                      link?: {
+                          label: string;
+                          url?: string;
+                          description?: string;
+                          icon?: string;
+                          variant?: Enum_Componentcontentlink_Variant;
+                          page?: { slug: string; SEO: { title: string; description: string } };
+                      };
                   };
               }
             | {
@@ -7821,6 +7863,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7850,6 +7893,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7865,6 +7909,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7888,6 +7933,7 @@ export type GetComponentQuery = {
                           url?: string;
                           description?: string;
                           icon?: string;
+                          variant?: Enum_Componentcontentlink_Variant;
                           page?: { slug: string; SEO: { title: string; description: string } };
                       }>;
                       featureList?: Array<{ title?: string; description?: string; icon?: string }>;
@@ -7904,6 +7950,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -8758,6 +8805,7 @@ export const LinkFragmentDoc = gql`
         }
         description
         icon
+        variant
     }
 `;
 export const CardWithImageFragmentDoc = gql`
@@ -8864,11 +8912,11 @@ export const BannerFragmentDoc = gql`
         title
         description
         altDescription
-        button {
-            label
-            url
+        link {
+            ...Link
         }
     }
+    ${LinkFragmentDoc}
 `;
 export const FaqComponentFragmentDoc = gql`
     fragment FaqComponent on ComponentComponentsFaq {

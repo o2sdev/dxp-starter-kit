@@ -22,5 +22,5 @@ export class FaqItem {
 export class FaqBoxWithButton {
     title?: string;
     description?: RichText.RichText;
-    button?: Link.Link;
+    link?: Link.Link;
 }
