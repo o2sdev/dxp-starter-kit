@@ -1,5 +1,17 @@
 # @dxp/blocks.feature-section-grid
 
+## 0.0.6
+
+### Patch Changes
+
+- 57d91eb: fix: fix build issue
+
+  - replace buttonsVariant with baseVariant,
+  - use RichText for descriptions
+
+- Updated dependencies [57d91eb]
+  - @dxp/ui@1.2.1
+
 ## 0.0.5
 
 ### Patch Changes
