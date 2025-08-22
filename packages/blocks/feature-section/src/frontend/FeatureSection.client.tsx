@@ -89,7 +89,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                                     </div>
                                     <div className="flex flex-col gap-2">
                                         <Typography variant="subtitle">{feature.title}</Typography>
-                                        <Typography variant="body">{feature.description}</Typography>
+                                        <RichText content={feature.description} baseFontSize="body" />
                                     </div>
                                 </li>
                             ))}

@@ -48,7 +48,7 @@ export const FeatureSectionGridPure: React.FC<FeatureSectionGridPureProps> = ({
                             </div>
                             <div className="flex flex-col gap-1">
                                 <Typography variant="subtitle">{feature.title}</Typography>
-                                {feature.description && <Typography variant="body">{feature.description}</Typography>}
+                                {feature.description && <RichText content={feature.description} baseFontSize="body" />}
                             </div>
                         </li>
                     ))}
