@@ -7268,6 +7268,18 @@ export type CtaSectionComponentFragment = {
     }>;
 };
 
+export type DocumentListComponentFragment = {
+    __typename: 'ComponentComponentsDocumentList';
+    id: string;
+    title?: string;
+    description?: string;
+    documents?: Array<{
+        title: string;
+        icon?: string;
+        file: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+    }>;
+};
+
 export type FaqComponentFragment = {
     __typename: 'ComponentComponentsFaq';
     id: string;
@@ -7434,6 +7446,12 @@ export type CardWithImageFragment = {
 };
 
 export type FeatureItemFragment = { title?: string; description?: string; icon?: string };
+
+export type FileFragment = {
+    title: string;
+    icon?: string;
+    file: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+};
 
 export type InformationCardFragment = {
     title: string;
@@ -7797,6 +7815,17 @@ export type GetComponentQuery = {
                   }>;
               }
             | { __typename: 'ComponentComponentsDocumentList' }
+            | {
+                  __typename: 'ComponentComponentsDocumentList';
+                  id: string;
+                  title?: string;
+                  description?: string;
+                  documents?: Array<{
+                      title: string;
+                      icon?: string;
+                      file: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+                  }>;
+              }
             | {
                   __typename: 'ComponentComponentsFaq';
                   id: string;
@@ -8856,6 +8885,28 @@ export const CtaSectionComponentFragmentDoc = gql`
     ${MediaFragmentDoc}
     ${LinkFragmentDoc}
 `;
+export const FileFragmentDoc = gql`
+    fragment File on ComponentContentFile {
+        title
+        file {
+            ...Media
+        }
+        icon
+    }
+    ${MediaFragmentDoc}
+`;
+export const DocumentListComponentFragmentDoc = gql`
+    fragment DocumentListComponent on ComponentComponentsDocumentList {
+        __typename
+        id
+        title
+        description
+        documents {
+            ...File
+        }
+    }
+    ${FileFragmentDoc}
+`;
 export const BannerFragmentDoc = gql`
     fragment Banner on ComponentContentBanner {
         title
@@ -9187,6 +9238,9 @@ export const GetComponentDocument = gql`
                 ... on ComponentComponentsPricingSection {
                     ...PricingSectionComponent
                 }
+                ... on ComponentComponentsDocumentList {
+                    ...DocumentListComponent
+                }
             }
         }
         configurableTexts(locale: $locale) {
@@ -9243,6 +9297,7 @@ export const GetComponentDocument = gql`
     ${CtaSectionComponentFragmentDoc}
     ${BentoGridComponentFragmentDoc}
     ${PricingSectionComponentFragmentDoc}
+    ${DocumentListComponentFragmentDoc}
 `;
 export const GetFooterDocument = gql`
     query getFooter($locale: I18NLocaleCode!, $id: ID!) {
