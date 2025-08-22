@@ -61,6 +61,78 @@ const MOCK_BENTO_GRID_BLOCK_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
                 variant: 'link',
             },
         },
+        {
+            title: 'Feature title',
+            description:
+                'Shortly describe how this feature solves a specific user problem. Focus on benefits rather than features.',
+            image: {
+                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
+                width: 1920,
+                height: 1080,
+                alt: 'Hero Banner Image',
+                priority: true,
+            },
+            link: {
+                label: 'Learn more',
+                url: '/',
+                icon: 'ArrowRight',
+                variant: 'link',
+            },
+        },
+        {
+            title: 'Feature title',
+            description:
+                'Shortly describe how this feature solves a specific user problem. Focus on benefits rather than features.',
+            image: {
+                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
+                width: 1920,
+                height: 1080,
+                alt: 'Hero Banner Image',
+                priority: true,
+            },
+            link: {
+                label: 'Learn more',
+                url: '/',
+                icon: 'ArrowRight',
+                variant: 'link',
+            },
+        },
+        {
+            title: 'Feature title',
+            description:
+                'Shortly describe how this feature solves a specific user problem. Focus on benefits rather than features.',
+            image: {
+                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
+                width: 1920,
+                height: 1080,
+                alt: 'Hero Banner Image',
+                priority: true,
+            },
+            link: {
+                label: 'Learn more',
+                url: '/',
+                icon: 'ArrowRight',
+                variant: 'link',
+            },
+        },
+        {
+            title: 'Feature title',
+            description:
+                'Shortly describe how this feature solves a specific user problem. Focus on benefits rather than features.',
+            image: {
+                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
+                width: 1920,
+                height: 1080,
+                alt: 'Hero Banner Image',
+                priority: true,
+            },
+            link: {
+                label: 'Learn more',
+                url: '/',
+                icon: 'ArrowRight',
+                variant: 'link',
+            },
+        },
     ],
 };
 
