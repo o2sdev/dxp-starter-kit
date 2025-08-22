@@ -1,5 +1,11 @@
 # @dxp/ui
 
+## 1.2.0
+
+### Minor Changes
+
+- 3d6afed: feat: add proper Bento grid layout for better responsiveness
+
 ## 1.1.0
 
 ### Minor Changes
