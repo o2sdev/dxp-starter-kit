@@ -63,28 +63,28 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-            - name: Checkout code
-              if: steps.changesets.outputs.published == 'true'
-              uses: actions/checkout@v3
-              with:
-                  ref: create-dxp-app/base
-
-            - name: Reset branch
-              if: steps.changesets.outputs.published == 'true'
-              run: |
-                  git fetch origin main:main
-                  git reset --hard main
-
-            - name: Update api-harmonization dependencies
-              if: steps.changesets.outputs.published == 'true'
-              run: npm install @dxp/framework@latest @o2s/utils.logger@latest @dxp/integrations.mocked --workspace=@dxp/api-harmonization
-
-            - name: Create create-dxp-app Pull Request
-              id: cpr
-              uses: peter-evans/create-pull-request@v7
-              if: steps.changesets.outputs.published == 'true'
-              with:
-                  commit-message: 'feat(create-dxp-app): update dependencies'
-                  branch: create-dxp-app/patch
-                  delete-branch: true
-                  title: 'Update dependencies in create-dxp-app'
+#            - name: Checkout code
+#              if: steps.changesets.outputs.published == 'true'
+#              uses: actions/checkout@v3
+#              with:
+#                  ref: create-dxp-app/base
+#
+#            - name: Reset branch
+#              if: steps.changesets.outputs.published == 'true'
+#              run: |
+#                  git fetch origin main:main
+#                  git reset --hard main
+#
+#            - name: Update api-harmonization dependencies
+#              if: steps.changesets.outputs.published == 'true'
+#              run: npm install @dxp/framework@latest @o2s/utils.logger@latest @dxp/integrations.mocked --workspace=@dxp/api-harmonization
+#
+#            - name: Create create-dxp-app Pull Request
+#              id: cpr
+#              uses: peter-evans/create-pull-request@v7
+#              if: steps.changesets.outputs.published == 'true'
+#              with:
+#                  commit-message: 'feat(create-dxp-app): update dependencies'
+#                  branch: create-dxp-app/patch
+#                  delete-branch: true
+#                  title: 'Update dependencies in create-dxp-app'
