@@ -1,5 +1,11 @@
 # @dxp/integrations.mocked
 
+## 0.2.0
+
+### Minor Changes
+
+- 3d6afed: feat: add proper Bento grid layout for better responsiveness
+
 ## 0.1.0
 
 ### Minor Changes
