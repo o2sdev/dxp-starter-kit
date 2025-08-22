@@ -11,4 +11,4 @@
 '@dxp/ui': minor
 ---
 
-feat: replace buttons to links in blocks
+feat: replace buttons with links in blocks and add CMS-editable variant field
