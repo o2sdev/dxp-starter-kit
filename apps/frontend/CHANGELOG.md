@@ -1,5 +1,33 @@
 # @dxp/frontend
 
+## 1.9.0
+
+### Minor Changes
+
+- e383fa0: feat: add DocumentList block for downloadable documents
+
+    - add mocks,
+    - add model in framework,
+    - add DocumentList block to strapi integration,
+
+### Patch Changes
+
+- Updated dependencies [05158f2]
+- Updated dependencies [e383fa0]
+- Updated dependencies [ecbe952]
+    - @dxp/blocks.pricing-section@0.1.0
+    - @dxp/blocks.hero-section@0.1.0
+    - @dxp/integrations.mocked@0.1.0
+    - @dxp/blocks.quick-links@0.1.0
+    - @dxp/blocks.faq@0.1.0
+    - @dxp/blocks.document-list@0.1.0
+    - @dxp/api-harmonization@1.9.0
+    - @dxp/framework@0.1.0
+    - @dxp/blocks.feature-section@0.1.0
+    - @dxp/blocks.media-section@0.1.0
+    - @dxp/blocks.cta-section@0.1.0
+    - @dxp/ui@1.1.0
+
 ## 1.8.3
 
 ### Patch Changes

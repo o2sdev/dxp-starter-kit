@@ -1,5 +1,24 @@
 # @dxp/integrations.mocked
 
+## 0.1.0
+
+### Minor Changes
+
+- 05158f2: feat: align block headings
+- e383fa0: feat: add DocumentList block for downloadable documents
+
+    - add mocks,
+    - add model in framework,
+    - add DocumentList block to strapi integration,
+
+- ecbe952: feat: replace buttons with links in blocks and add CMS-editable variant field
+
+### Patch Changes
+
+- Updated dependencies [e383fa0]
+- Updated dependencies [ecbe952]
+    - @dxp/framework@0.1.0
+
 ## 0.0.4
 
 ### Patch Changes

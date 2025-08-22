@@ -1,5 +1,20 @@
 # @dxp/blocks.faq
 
+## 0.1.0
+
+### Minor Changes
+
+- 05158f2: feat: align block headings
+- ecbe952: feat: replace buttons with links in blocks and add CMS-editable variant field
+
+### Patch Changes
+
+- Updated dependencies [e383fa0]
+- Updated dependencies [ecbe952]
+  - @dxp/framework@0.1.0
+  - @dxp/configs.integrations@0.1.0
+  - @dxp/ui@1.1.0
+
 ## 0.0.5
 
 ### Patch Changes
