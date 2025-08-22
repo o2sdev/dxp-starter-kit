@@ -38,12 +38,14 @@ const MOCK_FEATURE_SECTION_BLOCK_EN: CMS.Model.FeatureSectionBlock.FeatureSectio
             icon: 'ArrowRight',
             description: 'Button 1 description',
             url: '/',
+            variant: 'primary',
         },
         {
             label: 'Explore',
             description: 'Button 2 description',
             icon: 'ArrowRight',
             url: '/',
+            variant: 'link',
         },
     ],
     labels: {
@@ -77,6 +79,7 @@ const MOCK_FEATURE_SECTION_BLOCK_DE: CMS.Model.FeatureSectionBlock.FeatureSectio
             icon: 'ArrowRight',
             url: '/',
             description: 'Button 1 description',
+            variant: 'primary',
         },
     ],
     labels: {

@@ -8,7 +8,7 @@ import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
 import { RichText } from '@dxp/ui/components/RichText';
 
-import { Button } from '@dxp/ui/elements/button';
+import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { MediaSectionPureProps } from './MediaSection.types';
@@ -44,25 +44,16 @@ export const MediaSectionPure: React.FC<MediaSectionPureProps> = ({ locale, acce
                     <ActionList
                         className="sm:flex-row align-start justify-center"
                         actions={links.map(
-                            (link, index) =>
+                            (link) =>
                                 link.label && (
-                                    <Button
-                                        asChild
-                                        variant={index === 0 ? 'default' : 'link'}
-                                        key={link.label}
-                                        className={
-                                            index === 0
-                                                ? 'no-underline hover:no-underline'
-                                                : 'no-underline hover:no-underline flex-1'
-                                        }
-                                    >
+                                    <Link asChild variant={link.variant} key={link.label}>
                                         <LinkComponent href={link.url}>
                                             <>
                                                 {link.label}
                                                 {link.icon && <DynamicIcon name={link.icon} size={16} />}
                                             </>
                                         </LinkComponent>
-                                    </Button>
+                                    </Link>
                                 ),
                         )}
                         showMoreLabel=""

@@ -5,10 +5,11 @@ import React from 'react';
 
 import { cn } from '@dxp/ui/lib/utils';
 
+import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { RichText } from '@dxp/ui/components/RichText';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@dxp/ui/elements/accordion';
-import { Button } from '@dxp/ui/elements/button';
+import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { FaqPureProps, FaqSectionProps } from './Faq.types';
@@ -54,10 +55,15 @@ export const FaqPure: React.FC<FaqPureProps> = ({ locale, accessToken, routing, 
                         </Typography>
                         <RichText content={banner?.description} className="text-muted-foreground" />
                     </div>
-                    {banner?.button && (
-                        <Button asChild aria-label={banner.button.label}>
-                            <LinkComponent href={banner?.button?.url}>{banner.button.label}</LinkComponent>
-                        </Button>
+                    {banner?.link?.url && (
+                        <Link asChild variant={banner.link.variant}>
+                            <LinkComponent href={banner.link.url}>
+                                <>
+                                    {banner.link.label}
+                                    {banner.link.icon && <DynamicIcon name={banner.link.icon} size={16} />}
+                                </>
+                            </LinkComponent>
+                        </Link>
                     )}
                 </div>
             )}
@@ -77,7 +83,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({ title, items }) => {
                 <Accordion type="multiple">
                     {items.map((item, index) => (
                         <AccordionItem key={index} value={`${index}`}>
-                            <AccordionTrigger>{item.title}</AccordionTrigger>
+                            <AccordionTrigger tag="h4">{item.title}</AccordionTrigger>
                             <AccordionContent>
                                 <RichText content={item.content} className="text-muted-foreground" />
                             </AccordionContent>

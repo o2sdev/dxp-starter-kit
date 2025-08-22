@@ -4,6 +4,8 @@ import { CMS } from '@dxp/framework/modules';
 
 import { GetComponentQuery } from '@/generated/strapi';
 
+import { mapLink } from '../content/cms.link.mapper';
+
 export const mapFaqBlock = (data: GetComponentQuery): CMS.Model.FaqBlock.FaqBlock => {
     const component = data.component!.content[0];
 
@@ -26,11 +28,13 @@ export const mapFaqBlock = (data: GetComponentQuery): CMS.Model.FaqBlock.FaqBloc
                             content: item.description,
                         })),
                     })) || [],
-                banner: {
-                    title: component.banner?.title,
-                    description: component.banner?.description,
-                    button: component.banner?.button,
-                } as CMS.Model.FaqBlock.FaqBoxWithButton,
+                banner: component.banner
+                    ? {
+                          title: component.banner.title,
+                          description: component.banner.description,
+                          link: mapLink(component.banner.link),
+                      }
+                    : undefined,
                 oneColumn: component.oneColumn,
             };
     }

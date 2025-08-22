@@ -78,15 +78,6 @@ export const PAGE_DASHBOARD_EN: CMS.Model.Page.Page = {
                         background: 'none',
                     },
                 },
-                {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
             ],
         },
     },
@@ -172,15 +163,6 @@ export const PAGE_DASHBOARD_DE: CMS.Model.Page.Page = {
                         background: 'none',
                     },
                 },
-                {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
             ],
         },
     },
@@ -262,15 +244,6 @@ export const PAGE_DASHBOARD_PL: CMS.Model.Page.Page = {
                     id: 'bento-grid-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
-                    layout: {
-                        variant: 'narrow',
                         spacing: 'medium',
                         background: 'none',
                     },

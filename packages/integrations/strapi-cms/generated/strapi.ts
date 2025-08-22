@@ -433,6 +433,19 @@ export type ComponentComponentsCtaSectionLinksArgs = {
     sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type ComponentComponentsDocumentList = {
+    description?: Maybe<Scalars['String']['output']>;
+    documents?: Maybe<Array<Maybe<ComponentContentFile>>>;
+    id: Scalars['ID']['output'];
+    title?: Maybe<Scalars['String']['output']>;
+};
+
+export type ComponentComponentsDocumentListDocumentsArgs = {
+    filters?: InputMaybe<ComponentContentFileFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type ComponentComponentsFaq = {
     banner?: Maybe<ComponentContentBanner>;
     description?: Maybe<Scalars['String']['output']>;
@@ -594,9 +607,9 @@ export type ComponentContentBadgeFiltersInput = {
 
 export type ComponentContentBanner = {
     altDescription?: Maybe<Scalars['String']['output']>;
-    button?: Maybe<ComponentContentLink>;
     description?: Maybe<Scalars['String']['output']>;
     id: Scalars['ID']['output'];
+    link?: Maybe<ComponentContentLink>;
     title: Scalars['String']['output'];
 };
 
@@ -625,6 +638,7 @@ export type ComponentContentDynamicZone =
     | ComponentComponentsCategory
     | ComponentComponentsCategoryList
     | ComponentComponentsCtaSection
+    | ComponentComponentsDocumentList
     | ComponentComponentsFaq
     | ComponentComponentsFeatureSection
     | ComponentComponentsFeatureSectionGrid
@@ -680,6 +694,21 @@ export type ComponentContentFieldMappingValuesArgs = {
     filters?: InputMaybe<ComponentContentKeyValueFiltersInput>;
     pagination?: InputMaybe<PaginationArg>;
     sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentContentFile = {
+    file: UploadFile;
+    icon?: Maybe<Scalars['String']['output']>;
+    id: Scalars['ID']['output'];
+    title: Scalars['String']['output'];
+};
+
+export type ComponentContentFileFiltersInput = {
+    and?: InputMaybe<Array<InputMaybe<ComponentContentFileFiltersInput>>>;
+    icon?: InputMaybe<StringFilterInput>;
+    not?: InputMaybe<ComponentContentFileFiltersInput>;
+    or?: InputMaybe<Array<InputMaybe<ComponentContentFileFiltersInput>>>;
+    title?: InputMaybe<StringFilterInput>;
 };
 
 export type ComponentContentIconWithText = {
@@ -745,6 +774,7 @@ export type ComponentContentLink = {
     label: Scalars['String']['output'];
     page?: Maybe<Page>;
     url?: Maybe<Scalars['String']['output']>;
+    variant?: Maybe<Enum_Componentcontentlink_Variant>;
 };
 
 export type ComponentContentLinkFiltersInput = {
@@ -756,6 +786,7 @@ export type ComponentContentLinkFiltersInput = {
     or?: InputMaybe<Array<InputMaybe<ComponentContentLinkFiltersInput>>>;
     page?: InputMaybe<PageFiltersInput>;
     url?: InputMaybe<StringFilterInput>;
+    variant?: InputMaybe<StringFilterInput>;
 };
 
 export type ComponentContentListWithIcons = {
@@ -1263,6 +1294,16 @@ export enum Enum_Componentcontentbadge_Variant {
     Secondary = 'secondary',
 }
 
+export enum Enum_Componentcontentlink_Variant {
+    Destructive = 'destructive',
+    Ghost = 'ghost',
+    Link = 'link',
+    Outline = 'outline',
+    Primary = 'primary',
+    Secondary = 'secondary',
+    Tertiary = 'tertiary',
+}
+
 export enum Enum_Componentcontentprice_Currency {
     Eur = 'EUR',
     Gbp = 'GBP',
@@ -1398,6 +1439,7 @@ export type GenericMorph =
     | ComponentComponentsCategory
     | ComponentComponentsCategoryList
     | ComponentComponentsCtaSection
+    | ComponentComponentsDocumentList
     | ComponentComponentsFaq
     | ComponentComponentsFeatureSection
     | ComponentComponentsFeatureSectionGrid
@@ -1413,6 +1455,7 @@ export type GenericMorph =
     | ComponentContentFaqSection
     | ComponentContentFeatureItem
     | ComponentContentFieldMapping
+    | ComponentContentFile
     | ComponentContentIconWithText
     | ComponentContentInformationCard
     | ComponentContentKeyValue
@@ -2918,6 +2961,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               image?: Maybe<_RefType['UploadFile']>;
               links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
           })
+        | (Omit<ComponentComponentsDocumentList, 'documents'> & {
+              documents?: Maybe<Array<Maybe<_RefType['ComponentContentFile']>>>;
+          })
         | (Omit<ComponentComponentsFaq, 'banner'> & { banner?: Maybe<_RefType['ComponentContentBanner']> })
         | (Omit<ComponentComponentsFeatureSection, 'image' | 'links'> & {
               image?: Maybe<_RefType['UploadFile']>;
@@ -3015,6 +3061,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               image?: Maybe<_RefType['UploadFile']>;
               links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
           })
+        | (Omit<ComponentComponentsDocumentList, 'documents'> & {
+              documents?: Maybe<Array<Maybe<_RefType['ComponentContentFile']>>>;
+          })
         | (Omit<ComponentComponentsFaq, 'banner'> & { banner?: Maybe<_RefType['ComponentContentBanner']> })
         | (Omit<ComponentComponentsFeatureSection, 'image' | 'links'> & {
               image?: Maybe<_RefType['UploadFile']>;
@@ -3036,7 +3085,7 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | ComponentContentAlertBox
         | ComponentContentArticleSection
         | ComponentContentBadge
-        | (Omit<ComponentContentBanner, 'button'> & { button?: Maybe<_RefType['ComponentContentLink']> })
+        | (Omit<ComponentContentBanner, 'link'> & { link?: Maybe<_RefType['ComponentContentLink']> })
         | (Omit<ComponentContentCardWithImage, 'image' | 'link'> & {
               image?: Maybe<_RefType['UploadFile']>;
               link?: Maybe<_RefType['ComponentContentLink']>;
@@ -3044,6 +3093,7 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | ComponentContentFaqSection
         | ComponentContentFeatureItem
         | ComponentContentFieldMapping
+        | (Omit<ComponentContentFile, 'file'> & { file: _RefType['UploadFile'] })
         | ComponentContentIconWithText
         | (Omit<ComponentContentInformationCard, 'link'> & { link?: Maybe<_RefType['ComponentContentLink']> })
         | ComponentContentKeyValue
@@ -3297,6 +3347,11 @@ export type ResolversTypes = {
             links?: Maybe<Array<Maybe<ResolversTypes['ComponentContentLink']>>>;
         }
     >;
+    ComponentComponentsDocumentList: ResolverTypeWrapper<
+        Omit<ComponentComponentsDocumentList, 'documents'> & {
+            documents?: Maybe<Array<Maybe<ResolversTypes['ComponentContentFile']>>>;
+        }
+    >;
     ComponentComponentsFaq: ResolverTypeWrapper<
         Omit<ComponentComponentsFaq, 'banner'> & { banner?: Maybe<ResolversTypes['ComponentContentBanner']> }
     >;
@@ -3334,7 +3389,7 @@ export type ResolversTypes = {
     ComponentContentBadge: ResolverTypeWrapper<ComponentContentBadge>;
     ComponentContentBadgeFiltersInput: ComponentContentBadgeFiltersInput;
     ComponentContentBanner: ResolverTypeWrapper<
-        Omit<ComponentContentBanner, 'button'> & { button?: Maybe<ResolversTypes['ComponentContentLink']> }
+        Omit<ComponentContentBanner, 'link'> & { link?: Maybe<ResolversTypes['ComponentContentLink']> }
     >;
     ComponentContentCardWithImage: ResolverTypeWrapper<
         Omit<ComponentContentCardWithImage, 'image' | 'link'> & {
@@ -3352,6 +3407,10 @@ export type ResolversTypes = {
     ComponentContentFeatureItem: ResolverTypeWrapper<ComponentContentFeatureItem>;
     ComponentContentFeatureItemFiltersInput: ComponentContentFeatureItemFiltersInput;
     ComponentContentFieldMapping: ResolverTypeWrapper<ComponentContentFieldMapping>;
+    ComponentContentFile: ResolverTypeWrapper<
+        Omit<ComponentContentFile, 'file'> & { file: ResolversTypes['UploadFile'] }
+    >;
+    ComponentContentFileFiltersInput: ComponentContentFileFiltersInput;
     ComponentContentIconWithText: ResolverTypeWrapper<ComponentContentIconWithText>;
     ComponentContentIconWithTextFiltersInput: ComponentContentIconWithTextFiltersInput;
     ComponentContentInformationCard: ResolverTypeWrapper<
@@ -3457,6 +3516,7 @@ export type ResolversTypes = {
     ENUM_COMPONENTCOMPONENTSHEROSECTION_HEADINGTYPE: Enum_Componentcomponentsherosection_Headingtype;
     ENUM_COMPONENTCOMPONENTSPRICINGSECTION_HEADINGTYPE: Enum_Componentcomponentspricingsection_Headingtype;
     ENUM_COMPONENTCONTENTBADGE_VARIANT: Enum_Componentcontentbadge_Variant;
+    ENUM_COMPONENTCONTENTLINK_VARIANT: Enum_Componentcontentlink_Variant;
     ENUM_COMPONENTCONTENTPRICE_CURRENCY: Enum_Componentcontentprice_Currency;
     ENUM_COMPONENTLAYOUTSECTION_BACKGROUND: Enum_Componentlayoutsection_Background;
     ENUM_COMPONENTLAYOUTSECTION_SPACING: Enum_Componentlayoutsection_Spacing;
@@ -3712,6 +3772,9 @@ export type ResolversParentTypes = {
         image?: Maybe<ResolversParentTypes['UploadFile']>;
         links?: Maybe<Array<Maybe<ResolversParentTypes['ComponentContentLink']>>>;
     };
+    ComponentComponentsDocumentList: Omit<ComponentComponentsDocumentList, 'documents'> & {
+        documents?: Maybe<Array<Maybe<ResolversParentTypes['ComponentContentFile']>>>;
+    };
     ComponentComponentsFaq: Omit<ComponentComponentsFaq, 'banner'> & {
         banner?: Maybe<ResolversParentTypes['ComponentContentBanner']>;
     };
@@ -3740,8 +3803,8 @@ export type ResolversParentTypes = {
     ComponentContentArticleSectionInput: ComponentContentArticleSectionInput;
     ComponentContentBadge: ComponentContentBadge;
     ComponentContentBadgeFiltersInput: ComponentContentBadgeFiltersInput;
-    ComponentContentBanner: Omit<ComponentContentBanner, 'button'> & {
-        button?: Maybe<ResolversParentTypes['ComponentContentLink']>;
+    ComponentContentBanner: Omit<ComponentContentBanner, 'link'> & {
+        link?: Maybe<ResolversParentTypes['ComponentContentLink']>;
     };
     ComponentContentCardWithImage: Omit<ComponentContentCardWithImage, 'image' | 'link'> & {
         image?: Maybe<ResolversParentTypes['UploadFile']>;
@@ -3755,6 +3818,8 @@ export type ResolversParentTypes = {
     ComponentContentFeatureItem: ComponentContentFeatureItem;
     ComponentContentFeatureItemFiltersInput: ComponentContentFeatureItemFiltersInput;
     ComponentContentFieldMapping: ComponentContentFieldMapping;
+    ComponentContentFile: Omit<ComponentContentFile, 'file'> & { file: ResolversParentTypes['UploadFile'] };
+    ComponentContentFileFiltersInput: ComponentContentFileFiltersInput;
     ComponentContentIconWithText: ComponentContentIconWithText;
     ComponentContentIconWithTextFiltersInput: ComponentContentIconWithTextFiltersInput;
     ComponentContentInformationCard: Omit<ComponentContentInformationCard, 'link'> & {
@@ -4327,6 +4392,23 @@ export type ComponentComponentsCtaSectionResolvers<
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type ComponentComponentsDocumentListResolvers<
+    ContextType = any,
+    ParentType extends
+        ResolversParentTypes['ComponentComponentsDocumentList'] = ResolversParentTypes['ComponentComponentsDocumentList'],
+> = {
+    description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    documents?: Resolver<
+        Maybe<Array<Maybe<ResolversTypes['ComponentContentFile']>>>,
+        ParentType,
+        ContextType,
+        RequireFields<ComponentComponentsDocumentListDocumentsArgs, 'pagination' | 'sort'>
+    >;
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type ComponentComponentsFaqResolvers<
     ContextType = any,
     ParentType extends ResolversParentTypes['ComponentComponentsFaq'] = ResolversParentTypes['ComponentComponentsFaq'],
@@ -4517,9 +4599,9 @@ export type ComponentContentBannerResolvers<
     ParentType extends ResolversParentTypes['ComponentContentBanner'] = ResolversParentTypes['ComponentContentBanner'],
 > = {
     altDescription?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-    button?: Resolver<Maybe<ResolversTypes['ComponentContentLink']>, ParentType, ContextType>;
     description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
     id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    link?: Resolver<Maybe<ResolversTypes['ComponentContentLink']>, ParentType, ContextType>;
     title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -4550,6 +4632,7 @@ export type ComponentContentDynamicZoneResolvers<
         | 'ComponentComponentsCategory'
         | 'ComponentComponentsCategoryList'
         | 'ComponentComponentsCtaSection'
+        | 'ComponentComponentsDocumentList'
         | 'ComponentComponentsFaq'
         | 'ComponentComponentsFeatureSection'
         | 'ComponentComponentsFeatureSectionGrid'
@@ -4612,6 +4695,17 @@ export type ComponentContentFieldMappingResolvers<
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type ComponentContentFileResolvers<
+    ContextType = any,
+    ParentType extends ResolversParentTypes['ComponentContentFile'] = ResolversParentTypes['ComponentContentFile'],
+> = {
+    file?: Resolver<ResolversTypes['UploadFile'], ParentType, ContextType>;
+    icon?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type ComponentContentIconWithTextResolvers<
     ContextType = any,
     ParentType extends
@@ -4669,6 +4763,7 @@ export type ComponentContentLinkResolvers<
     label?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     page?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    variant?: Resolver<Maybe<ResolversTypes['ENUM_COMPONENTCONTENTLINK_VARIANT']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -5147,6 +5242,7 @@ export type GenericMorphResolvers<
         | 'ComponentComponentsCategory'
         | 'ComponentComponentsCategoryList'
         | 'ComponentComponentsCtaSection'
+        | 'ComponentComponentsDocumentList'
         | 'ComponentComponentsFaq'
         | 'ComponentComponentsFeatureSection'
         | 'ComponentComponentsFeatureSectionGrid'
@@ -5162,6 +5258,7 @@ export type GenericMorphResolvers<
         | 'ComponentContentFaqSection'
         | 'ComponentContentFeatureItem'
         | 'ComponentContentFieldMapping'
+        | 'ComponentContentFile'
         | 'ComponentContentIconWithText'
         | 'ComponentContentInformationCard'
         | 'ComponentContentKeyValue'
@@ -6342,6 +6439,7 @@ export type Resolvers<ContextType = any> = {
     ComponentComponentsCategory?: ComponentComponentsCategoryResolvers<ContextType>;
     ComponentComponentsCategoryList?: ComponentComponentsCategoryListResolvers<ContextType>;
     ComponentComponentsCtaSection?: ComponentComponentsCtaSectionResolvers<ContextType>;
+    ComponentComponentsDocumentList?: ComponentComponentsDocumentListResolvers<ContextType>;
     ComponentComponentsFaq?: ComponentComponentsFaqResolvers<ContextType>;
     ComponentComponentsFeatureSection?: ComponentComponentsFeatureSectionResolvers<ContextType>;
     ComponentComponentsFeatureSectionGrid?: ComponentComponentsFeatureSectionGridResolvers<ContextType>;
@@ -6359,6 +6457,7 @@ export type Resolvers<ContextType = any> = {
     ComponentContentFaqSection?: ComponentContentFaqSectionResolvers<ContextType>;
     ComponentContentFeatureItem?: ComponentContentFeatureItemResolvers<ContextType>;
     ComponentContentFieldMapping?: ComponentContentFieldMappingResolvers<ContextType>;
+    ComponentContentFile?: ComponentContentFileResolvers<ContextType>;
     ComponentContentIconWithText?: ComponentContentIconWithTextResolvers<ContextType>;
     ComponentContentInformationCard?: ComponentContentInformationCardResolvers<ContextType>;
     ComponentContentKeyValue?: ComponentContentKeyValueResolvers<ContextType>;
@@ -6658,6 +6757,7 @@ export type ComponentFragment = {
         | { __typename: 'ComponentComponentsCategory' }
         | { __typename: 'ComponentComponentsCategoryList' }
         | { __typename: 'ComponentComponentsCtaSection' }
+        | { __typename: 'ComponentComponentsDocumentList' }
         | { __typename: 'ComponentComponentsFaq' }
         | { __typename: 'ComponentComponentsFeatureSection' }
         | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6784,6 +6884,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCategory' }
                       | { __typename: 'ComponentComponentsCategoryList' }
                       | { __typename: 'ComponentComponentsCtaSection' }
+                      | { __typename: 'ComponentComponentsDocumentList' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6813,6 +6914,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCategory' }
                       | { __typename: 'ComponentComponentsCategoryList' }
                       | { __typename: 'ComponentComponentsCtaSection' }
+                      | { __typename: 'ComponentComponentsDocumentList' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6839,6 +6941,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCategory' }
                       | { __typename: 'ComponentComponentsCategoryList' }
                       | { __typename: 'ComponentComponentsCtaSection' }
+                      | { __typename: 'ComponentComponentsDocumentList' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6865,6 +6968,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCategory' }
                       | { __typename: 'ComponentComponentsCategoryList' }
                       | { __typename: 'ComponentComponentsCtaSection' }
+                      | { __typename: 'ComponentComponentsDocumentList' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6891,6 +6995,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCategory' }
                       | { __typename: 'ComponentComponentsCategoryList' }
                       | { __typename: 'ComponentComponentsCtaSection' }
+                      | { __typename: 'ComponentComponentsDocumentList' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6926,6 +7031,7 @@ type Template_ComponentTemplatesOneColumn_Fragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6956,6 +7062,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6982,6 +7089,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7008,6 +7116,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7034,6 +7143,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7087,6 +7197,7 @@ export type BentoGridComponentFragment = {
             url?: string;
             description?: string;
             icon?: string;
+            variant?: Enum_Componentcontentlink_Variant;
             page?: { slug: string; SEO: { title: string; description: string } };
         };
     }>;
@@ -7115,6 +7226,7 @@ export type CategoryComponentFragment = {
                 | { __typename: 'ComponentComponentsCategory' }
                 | { __typename: 'ComponentComponentsCategoryList' }
                 | { __typename: 'ComponentComponentsCtaSection' }
+                | { __typename: 'ComponentComponentsDocumentList' }
                 | { __typename: 'ComponentComponentsFaq' }
                 | { __typename: 'ComponentComponentsFeatureSection' }
                 | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7151,6 +7263,7 @@ export type CtaSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7163,7 +7276,19 @@ export type FaqComponentFragment = {
     description?: string;
     oneColumn: boolean;
     sections?: Array<{ title?: string; items: Array<{ title: string; description: string }> }>;
-    banner?: { title: string; description?: string; altDescription?: string; button?: { label: string; url?: string } };
+    banner?: {
+        title: string;
+        description?: string;
+        altDescription?: string;
+        link?: {
+            label: string;
+            url?: string;
+            description?: string;
+            icon?: string;
+            variant?: Enum_Componentcontentlink_Variant;
+            page?: { slug: string; SEO: { title: string; description: string } };
+        };
+    };
 };
 
 export type FeatureSectionComponentFragment = {
@@ -7181,6 +7306,7 @@ export type FeatureSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7212,6 +7338,7 @@ export type HeroSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7228,6 +7355,7 @@ export type MediaSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7252,6 +7380,7 @@ export type PricingSectionComponentFragment = {
             url?: string;
             description?: string;
             icon?: string;
+            variant?: Enum_Componentcontentlink_Variant;
             page?: { slug: string; SEO: { title: string; description: string } };
         }>;
         featureList?: Array<{ title?: string; description?: string; icon?: string }>;
@@ -7269,6 +7398,7 @@ export type QuickLinksComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7279,7 +7409,14 @@ export type BannerFragment = {
     title: string;
     description?: string;
     altDescription?: string;
-    button?: { label: string; url?: string };
+    link?: {
+        label: string;
+        url?: string;
+        description?: string;
+        icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
+        page?: { slug: string; SEO: { title: string; description: string } };
+    };
 };
 
 export type CardWithImageFragment = {
@@ -7291,6 +7428,7 @@ export type CardWithImageFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     };
 };
@@ -7307,6 +7445,7 @@ export type InformationCardFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     };
 };
@@ -7316,6 +7455,7 @@ export type LinkFragment = {
     url?: string;
     description?: string;
     icon?: string;
+    variant?: Enum_Componentcontentlink_Variant;
     page?: { slug: string; SEO: { title: string; description: string } };
 };
 
@@ -7358,6 +7498,7 @@ export type PricingCardFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
     featureList?: Array<{ title?: string; description?: string; icon?: string }>;
@@ -7395,6 +7536,7 @@ export type OneColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7424,6 +7566,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7450,6 +7593,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7476,6 +7620,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7502,6 +7647,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7583,6 +7729,7 @@ export type GetComponentQuery = {
                           url?: string;
                           description?: string;
                           icon?: string;
+                          variant?: Enum_Componentcontentlink_Variant;
                           page?: { slug: string; SEO: { title: string; description: string } };
                       };
                   }>;
@@ -7610,6 +7757,7 @@ export type GetComponentQuery = {
                               | { __typename: 'ComponentComponentsCategory' }
                               | { __typename: 'ComponentComponentsCategoryList' }
                               | { __typename: 'ComponentComponentsCtaSection' }
+                              | { __typename: 'ComponentComponentsDocumentList' }
                               | { __typename: 'ComponentComponentsFaq' }
                               | { __typename: 'ComponentComponentsFeatureSection' }
                               | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7644,9 +7792,11 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | {
                   __typename: 'ComponentComponentsFaq';
                   id: string;
@@ -7659,7 +7809,14 @@ export type GetComponentQuery = {
                       title: string;
                       description?: string;
                       altDescription?: string;
-                      button?: { label: string; url?: string };
+                      link?: {
+                          label: string;
+                          url?: string;
+                          description?: string;
+                          icon?: string;
+                          variant?: Enum_Componentcontentlink_Variant;
+                          page?: { slug: string; SEO: { title: string; description: string } };
+                      };
                   };
               }
             | {
@@ -7677,6 +7834,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7706,6 +7864,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7721,6 +7880,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7744,6 +7904,7 @@ export type GetComponentQuery = {
                           url?: string;
                           description?: string;
                           icon?: string;
+                          variant?: Enum_Componentcontentlink_Variant;
                           page?: { slug: string; SEO: { title: string; description: string } };
                       }>;
                       featureList?: Array<{ title?: string; description?: string; icon?: string }>;
@@ -7760,6 +7921,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7935,6 +8097,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7964,6 +8127,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7990,6 +8154,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8016,6 +8181,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8042,6 +8208,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8105,6 +8272,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8134,6 +8302,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8160,6 +8329,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8186,6 +8356,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8212,6 +8383,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8604,6 +8776,7 @@ export const LinkFragmentDoc = gql`
         }
         description
         icon
+        variant
     }
 `;
 export const CardWithImageFragmentDoc = gql`
@@ -8688,11 +8861,11 @@ export const BannerFragmentDoc = gql`
         title
         description
         altDescription
-        button {
-            label
-            url
+        link {
+            ...Link
         }
     }
+    ${LinkFragmentDoc}
 `;
 export const FaqComponentFragmentDoc = gql`
     fragment FaqComponent on ComponentComponentsFaq {
