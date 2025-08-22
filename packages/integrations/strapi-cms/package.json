@@ -1,6 +1,6 @@
 {
     "name": "@dxp/integrations.strapi-cms",
-    "version": "0.0.5",
+    "version": "0.0.1",
     "private": false,
     "license": "MIT",
     "exports": {
@@ -22,7 +22,7 @@
         "@o2s/utils.logger": "*",
         "flatted": "^3.3.3",
         "graphql": "16.11.0",
-        "graphql-request": "7.2.0",
+        "graphql-request": "^6.1.0",
         "graphql-tag": "2.12.6"
     },
     "devDependencies": {
