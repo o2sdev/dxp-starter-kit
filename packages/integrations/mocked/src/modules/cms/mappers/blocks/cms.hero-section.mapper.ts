@@ -30,7 +30,7 @@ const MOCK_HERO_SECTION_BLOCK_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock = 
             description: 'Button 2 description',
             icon: 'ArrowRight',
             url: '/',
-            variant: 'default',
+            variant: 'link',
         },
     ],
     labels: {

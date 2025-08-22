@@ -3,5 +3,5 @@ export class Link {
     label!: string;
     description?: string;
     icon?: string;
-    variant?: 'default' | 'primary' | 'secondary' | 'outline' | 'destructive';
+    variant?: 'primary' | 'secondary' | 'tertiary' | 'outline' | 'destructive' | 'link' | 'ghost';
 }

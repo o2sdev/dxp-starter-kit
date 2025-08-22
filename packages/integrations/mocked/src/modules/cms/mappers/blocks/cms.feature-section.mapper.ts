@@ -45,7 +45,7 @@ const MOCK_FEATURE_SECTION_BLOCK_EN: CMS.Model.FeatureSectionBlock.FeatureSectio
             description: 'Button 2 description',
             icon: 'ArrowRight',
             url: '/',
-            variant: 'default',
+            variant: 'link',
         },
     ],
     labels: {

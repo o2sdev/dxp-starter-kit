@@ -125,6 +125,11 @@ const MOCK_FAQ_LIST_BLOCK_EN: CMS.Model.FaqBlock.FaqBlock = {
             ],
         },
     ],
+    banner: {
+        title: 'Still have questions?',
+        description: 'Have questions or need assistance? Our team is here to help! ',
+        link: { label: 'Contact us', url: '/', variant: 'primary' },
+    },
 };
 
 const MOCK_FAQ_LIST_BLOCK_DE: CMS.Model.FaqBlock.FaqBlock = {
@@ -249,12 +254,6 @@ const MOCK_FAQ_LIST_BLOCK_DE: CMS.Model.FaqBlock.FaqBlock = {
             ],
         },
     ],
-    banner: {
-        title: 'Noch Fragen?',
-        description:
-            'Wenn Sie weitere Fragen haben oder Hilfe benötigen, steht Ihnen unser Kundenservice-Team zur Verfügung!',
-        button: { label: 'Kontaktieren Sie uns', url: '/kontaktiere-uns' },
-    },
 };
 
 const MOCK_FAQ_LIST_BLOCK_PL: CMS.Model.FaqBlock.FaqBlock = {

@@ -27,7 +27,7 @@ const MOCK_CTA_SECTION_BLOCK_EN: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
             description: 'Button 2 description',
             icon: 'ArrowRight',
             url: '/',
-            variant: 'default',
+            variant: 'link',
         },
     ],
     labels: {
