@@ -7814,7 +7814,6 @@ export type GetComponentQuery = {
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
-            | { __typename: 'ComponentComponentsDocumentList' }
             | {
                   __typename: 'ComponentComponentsDocumentList';
                   id: string;

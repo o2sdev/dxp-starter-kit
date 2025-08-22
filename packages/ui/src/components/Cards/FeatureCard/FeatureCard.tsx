@@ -55,7 +55,7 @@ export const FeatureCard: React.FC<Readonly<FeatureCardProps>> = (props) => {
         <div
             tabIndex={-1}
             onClick={() => props.link?.url && router.push(props.link?.url)}
-            className={cn(props.link?.url && 'cursor-pointer')}
+            className={cn('h-full w-full', props.link?.url && 'cursor-pointer')}
         >
             <FeatureCardContent {...props} />
         </div>
