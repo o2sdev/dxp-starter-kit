@@ -32,6 +32,7 @@ export const mapPage = (data: PageFragment): CMS.Model.Page.Page => {
                   }
                 : undefined,
         },
+        theme: data.theme,
         hasOwnTitle: data.hasOwnTitle,
         showBreadcrumbs: data.showBreadcrumbs,
         parent: {

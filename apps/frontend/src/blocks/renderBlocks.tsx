@@ -12,7 +12,6 @@ import * as MediaSection from '@dxp/blocks.media-section/frontend';
 import * as PricingSection from '@dxp/blocks.pricing-section/frontend';
 import * as QuickLinks from '@dxp/blocks.quick-links/frontend';
 // BLOCK IMPORT
-import { RoutingConfig } from 'next-intl/routing';
 import { getLocale } from 'next-intl/server';
 import React from 'react';
 
@@ -29,16 +28,7 @@ interface BlockProps {
     slug: string[];
     locale: string;
     accessToken: string | undefined;
-    routing: RoutingConfig<
-        string[],
-        'always',
-        {
-            [key: string]: {
-                [locale: string]: string;
-            };
-        },
-        never
-    >;
+    routing: typeof routing;
 }
 
 export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: string[]) => {
