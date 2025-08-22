@@ -1,5 +1,24 @@
 # @dxp/integrations.strapi-cms
 
+## 0.1.0
+
+### Minor Changes
+
+- e383fa0: feat: add DocumentList block for downloadable documents
+
+    - add mocks,
+    - add model in framework,
+    - add DocumentList block to strapi integration,
+
+- ecbe952: feat: replace buttons with links in blocks and add CMS-editable variant field
+
+### Patch Changes
+
+- 7363f97: reverted `graphlql-request` to an older version to test support for CJS
+- Updated dependencies [e383fa0]
+- Updated dependencies [ecbe952]
+    - @dxp/framework@0.1.0
+
 ## 0.0.5
 
 ### Patch Changes
