@@ -4,7 +4,7 @@ const MOCK_FAQ_LIST_BLOCK_EN: CMS.Model.FaqBlock.FaqBlock = {
     id: 'faq-1',
     preTitle: 'FAQ section',
     title: 'Frequently asked questions',
-    oneColumn: false,
+    oneColumn: true,
     description:
         "We've compiled the most important information to help you get the most out of your experience. Can't find what you're looking for? <a href='/contact-us'>Contact us</a>.",
     sections: [
@@ -135,7 +135,7 @@ const MOCK_FAQ_LIST_BLOCK_EN: CMS.Model.FaqBlock.FaqBlock = {
 const MOCK_FAQ_LIST_BLOCK_DE: CMS.Model.FaqBlock.FaqBlock = {
     id: 'faq-1',
     title: 'FAQ',
-    oneColumn: true,
+    oneColumn: false,
     sections: [
         {
             title: 'Allgemein',

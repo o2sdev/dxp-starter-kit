@@ -3,6 +3,7 @@
 import { Modules } from '@dxp/api-harmonization';
 import * as BentoGrid from '@dxp/blocks.bento-grid/frontend';
 import * as CtaSection from '@dxp/blocks.cta-section/frontend';
+import * as DocumentList from '@dxp/blocks.document-list/frontend';
 import * as Faq from '@dxp/blocks.faq/frontend';
 import * as FeatureSectionGrid from '@dxp/blocks.feature-section-grid/frontend';
 import * as FeatureSection from '@dxp/blocks.feature-section/frontend';
@@ -86,6 +87,8 @@ const renderBlock = (typename: string, blockProps: BlockProps) => {
             return <FeatureSectionGrid.Renderer {...blockProps} />;
         case 'PricingSectionBlock':
             return <PricingSection.Renderer {...blockProps} />;
+        case 'DocumentListBlock':
+            return <DocumentList.Renderer {...blockProps} />;
         // BLOCK REGISTER
         default:
             return null;

@@ -46,7 +46,16 @@ export const PAGE_ACCOUNTS_EN: CMS.Model.Page.Page = {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
                     layout: {
-                        variant: 'wide',
+                        variant: 'narrow',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
                         spacing: 'medium',
                         background: 'none',
                     },
@@ -104,7 +113,16 @@ export const PAGE_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
                     layout: {
-                        variant: 'wide',
+                        variant: 'narrow',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
                         spacing: 'medium',
                         background: 'none',
                     },
@@ -162,7 +180,16 @@ export const PAGE_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
                     layout: {
-                        variant: 'wide',
+                        variant: 'narrow',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
                         spacing: 'medium',
                         background: 'none',
                     },

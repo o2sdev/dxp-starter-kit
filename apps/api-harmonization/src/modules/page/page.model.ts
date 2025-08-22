@@ -1,5 +1,6 @@
 import * as BentoGrid from '@dxp/blocks.bento-grid/api-harmonization';
 import * as CtaSection from '@dxp/blocks.cta-section/api-harmonization';
+import * as DocumentList from '@dxp/blocks.document-list/api-harmonization';
 import * as Faq from '@dxp/blocks.faq/api-harmonization';
 import * as FeatureSectionGrid from '@dxp/blocks.feature-section-grid/api-harmonization';
 import * as FeatureSection from '@dxp/blocks.feature-section/api-harmonization';
@@ -58,6 +59,7 @@ export class PageData {
 
 export type Blocks =
     // BLOCK REGISTER
+    | DocumentList.Model.DocumentListBlock['__typename']
     | PricingSection.Model.PricingSectionBlock['__typename']
     | FeatureSectionGrid.Model.FeatureSectionGridBlock['__typename']
     | HeroSection.Model.HeroSectionBlock['__typename']

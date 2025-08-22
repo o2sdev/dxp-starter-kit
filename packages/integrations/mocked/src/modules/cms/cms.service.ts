@@ -5,6 +5,7 @@ import { CMS } from '@dxp/framework/modules';
 
 import { mapBentoGridBlock } from './mappers/blocks/cms.bento-grid.mapper';
 import { mapCtaSectionBlock } from './mappers/blocks/cms.cta-section.mapper';
+import { mapDocumentListBlock } from './mappers/blocks/cms.document-list.mapper';
 import { mapFaqBlock } from './mappers/blocks/cms.faq.mapper';
 import { mapFeatureSectionGridBlock } from './mappers/blocks/cms.feature-section-grid.mapper';
 import { mapFeatureSectionBlock } from './mappers/blocks/cms.feature-section.mapper';
@@ -91,5 +92,9 @@ export class CmsService implements CMS.Service {
 
     getPricingSectionBlock(_options: CMS.Request.GetCmsEntryParams) {
         return of(mapPricingSectionBlock(_options.locale)).pipe(responseDelay());
+    }
+
+    getDocumentListBlock(_options: CMS.Request.GetCmsEntryParams) {
+        return of(mapDocumentListBlock(_options.locale)).pipe(responseDelay());
     }
 }

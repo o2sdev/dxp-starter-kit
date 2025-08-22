@@ -42,6 +42,9 @@ query getComponent($id: ID!, $locale: I18NLocaleCode!) {
             ... on ComponentComponentsPricingSection {
                 ...PricingSectionComponent
             }
+            ... on ComponentComponentsDocumentList {
+                ...DocumentListComponent
+            }
         }
     }
     configurableTexts(locale: $locale) {

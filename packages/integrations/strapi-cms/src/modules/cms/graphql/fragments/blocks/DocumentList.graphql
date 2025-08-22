@@ -1,0 +1,9 @@
+fragment DocumentListComponent on ComponentComponentsDocumentList {
+    __typename
+    id
+    title
+    description
+    documents {
+        ...File
+    }
+}
