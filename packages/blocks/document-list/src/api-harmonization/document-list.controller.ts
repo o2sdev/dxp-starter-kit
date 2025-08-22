@@ -12,11 +12,11 @@ import { DocumentListService } from './document-list.service';
 @Controller(URL)
 @UseInterceptors(LoggerService)
 export class DocumentListController {
-    constructor(protected readonly service: DocumentListService) {} 
-    
+    constructor(protected readonly service: DocumentListService) {}
+
     @Get()
     @Auth.Decorators.Roles({ roles: [] })
-    getDocumentListBlock(@Headers() headers: Models.Headers.AppHeaders, @Query() query: GetDocumentListBlockQuery) { 
+    getDocumentListBlock(@Headers() headers: Models.Headers.AppHeaders, @Query() query: GetDocumentListBlockQuery) {
         return this.service.getDocumentListBlock(query, headers);
     }
 }

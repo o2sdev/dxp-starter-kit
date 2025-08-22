@@ -53,7 +53,7 @@ export const FaqPure: React.FC<FaqPureProps> = ({ locale, accessToken, routing, 
                         <Typography variant="h2" asChild>
                             <h2 className="text-foreground">{banner?.title}</h2>
                         </Typography>
-                        <RichText content={banner?.description} className="text-muted-foreground" />
+                        <RichText content={banner.description} baseFontSize="body" className="text-muted-foreground" />
                     </div>
                     {banner?.link?.url && (
                         <Link asChild variant={banner.link.variant}>
