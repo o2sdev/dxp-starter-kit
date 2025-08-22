@@ -1,5 +1,17 @@
 # @dxp/blocks.feature-section
 
+## 0.1.1
+
+### Patch Changes
+
+- 57d91eb: fix: fix build issue
+
+  - replace buttonsVariant with baseVariant,
+  - use RichText for descriptions
+
+- Updated dependencies [57d91eb]
+  - @dxp/ui@1.2.1
+
 ## 0.1.0
 
 ### Minor Changes
