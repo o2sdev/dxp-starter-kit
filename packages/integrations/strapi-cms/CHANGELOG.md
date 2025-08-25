@@ -1,5 +1,13 @@
 # @dxp/integrations.strapi-cms
 
+## 0.2.3
+
+### Patch Changes
+
+- b35e813: fix: prevent rendering of empty text
+- Updated dependencies [b35e813]
+    - @dxp/framework@0.1.3
+
 ## 0.2.2
 
 ### Patch Changes

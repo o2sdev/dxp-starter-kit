@@ -1,5 +1,11 @@
 # @dxp/framework
 
+## 0.1.3
+
+### Patch Changes
+
+- b35e813: fix: prevent rendering of empty text
+
 ## 0.1.2
 
 ### Patch Changes
