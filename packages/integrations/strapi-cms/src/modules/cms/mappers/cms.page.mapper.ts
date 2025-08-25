@@ -153,6 +153,7 @@ const mapLayout = (layout: LayoutSectionFragment): CMS.Model.Page.LayoutSection 
         spacing: layout.spacing,
         background: layout.background,
         variant: layout.variant,
+        theme: layout.theme,
     };
 };
 

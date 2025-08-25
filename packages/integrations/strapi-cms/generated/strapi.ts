@@ -1058,6 +1058,7 @@ export type ComponentLayoutSection = {
     background: Enum_Componentlayoutsection_Background;
     id: Scalars['ID']['output'];
     spacing: Enum_Componentlayoutsection_Spacing;
+    theme?: Maybe<Enum_Componentlayoutsection_Theme>;
     variant: Enum_Componentlayoutsection_Variant;
 };
 
@@ -1067,6 +1068,7 @@ export type ComponentLayoutSectionFiltersInput = {
     not?: InputMaybe<ComponentLayoutSectionFiltersInput>;
     or?: InputMaybe<Array<InputMaybe<ComponentLayoutSectionFiltersInput>>>;
     spacing?: InputMaybe<StringFilterInput>;
+    theme?: InputMaybe<StringFilterInput>;
     variant?: InputMaybe<StringFilterInput>;
 };
 
@@ -1074,6 +1076,7 @@ export type ComponentLayoutSectionInput = {
     background?: InputMaybe<Enum_Componentlayoutsection_Background>;
     id?: InputMaybe<Scalars['ID']['input']>;
     spacing?: InputMaybe<Enum_Componentlayoutsection_Spacing>;
+    theme?: InputMaybe<Enum_Componentlayoutsection_Theme>;
     variant?: InputMaybe<Enum_Componentlayoutsection_Variant>;
 };
 
@@ -1325,6 +1328,12 @@ export enum Enum_Componentlayoutsection_Spacing {
     Small = 'small',
 }
 
+export enum Enum_Componentlayoutsection_Theme {
+    Business = 'business',
+    Default = 'default',
+    Personal = 'personal',
+}
+
 export enum Enum_Componentlayoutsection_Variant {
     Full = 'full',
     Narrow = 'narrow',
@@ -1333,6 +1342,8 @@ export enum Enum_Componentlayoutsection_Variant {
 
 export enum Enum_Page_Theme {
     Business = 'business',
+    Dark = 'dark',
+    Default = 'default',
     Personal = 'personal',
 }
 
@@ -2074,7 +2085,7 @@ export type Page = {
     showBreadcrumbs: Scalars['Boolean']['output'];
     slug: Scalars['String']['output'];
     template: Array<Maybe<PageTemplateDynamicZone>>;
-    theme?: Maybe<Enum_Page_Theme>;
+    theme: Enum_Page_Theme;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -3528,6 +3539,7 @@ export type ResolversTypes = {
     ENUM_COMPONENTCONTENTPRICE_CURRENCY: Enum_Componentcontentprice_Currency;
     ENUM_COMPONENTLAYOUTSECTION_BACKGROUND: Enum_Componentlayoutsection_Background;
     ENUM_COMPONENTLAYOUTSECTION_SPACING: Enum_Componentlayoutsection_Spacing;
+    ENUM_COMPONENTLAYOUTSECTION_THEME: Enum_Componentlayoutsection_Theme;
     ENUM_COMPONENTLAYOUTSECTION_VARIANT: Enum_Componentlayoutsection_Variant;
     ENUM_PAGE_THEME: Enum_Page_Theme;
     Error: ResolverTypeWrapper<Error>;
@@ -4988,6 +5000,7 @@ export type ComponentLayoutSectionResolvers<
     background?: Resolver<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_BACKGROUND'], ParentType, ContextType>;
     id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
     spacing?: Resolver<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_SPACING'], ParentType, ContextType>;
+    theme?: Resolver<Maybe<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_THEME']>, ParentType, ContextType>;
     variant?: Resolver<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_VARIANT'], ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -5797,7 +5810,7 @@ export type PageResolvers<
     showBreadcrumbs?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
     slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     template?: Resolver<Array<Maybe<ResolversTypes['PageTemplateDynamicZone']>>, ParentType, ContextType>;
-    theme?: Resolver<Maybe<ResolversTypes['ENUM_PAGE_THEME']>, ParentType, ContextType>;
+    theme?: Resolver<ResolversTypes['ENUM_PAGE_THEME'], ParentType, ContextType>;
     updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -6758,6 +6771,7 @@ export type ComponentFragment = {
         spacing: Enum_Componentlayoutsection_Spacing;
         background: Enum_Componentlayoutsection_Background;
         variant: Enum_Componentlayoutsection_Variant;
+        theme?: Enum_Componentlayoutsection_Theme;
     };
     content: Array<
         | { __typename: 'ComponentComponentsArticle' }
@@ -6861,7 +6875,7 @@ export type PageFragment = {
     publishedAt?: any;
     hasOwnTitle: boolean;
     showBreadcrumbs: boolean;
-    theme?: Enum_Page_Theme;
+    theme: Enum_Page_Theme;
     permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any };
     SEO: {
         title: string;
@@ -6886,6 +6900,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
+                      theme?: Enum_Componentlayoutsection_Theme;
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6916,6 +6931,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
+                      theme?: Enum_Componentlayoutsection_Theme;
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6943,6 +6959,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
+                      theme?: Enum_Componentlayoutsection_Theme;
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6970,6 +6987,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
+                      theme?: Enum_Componentlayoutsection_Theme;
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6997,6 +7015,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
+                      theme?: Enum_Componentlayoutsection_Theme;
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -7033,6 +7052,7 @@ type Template_ComponentTemplatesOneColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: Enum_Componentlayoutsection_Theme;
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7064,6 +7084,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: Enum_Componentlayoutsection_Theme;
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7091,6 +7112,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: Enum_Componentlayoutsection_Theme;
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7118,6 +7140,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: Enum_Componentlayoutsection_Theme;
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7145,6 +7168,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: Enum_Componentlayoutsection_Theme;
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7228,6 +7252,7 @@ export type CategoryComponentFragment = {
                 spacing: Enum_Componentlayoutsection_Spacing;
                 background: Enum_Componentlayoutsection_Background;
                 variant: Enum_Componentlayoutsection_Variant;
+                theme?: Enum_Componentlayoutsection_Theme;
             };
             content: Array<
                 | { __typename: 'ComponentComponentsArticle' }
@@ -7546,6 +7571,7 @@ export type LayoutSectionFragment = {
     spacing: Enum_Componentlayoutsection_Spacing;
     background: Enum_Componentlayoutsection_Background;
     variant: Enum_Componentlayoutsection_Variant;
+    theme?: Enum_Componentlayoutsection_Theme;
 };
 
 export type OneColumnTemplateFragment = {
@@ -7556,6 +7582,7 @@ export type OneColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: Enum_Componentlayoutsection_Theme;
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7586,6 +7613,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: Enum_Componentlayoutsection_Theme;
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7613,6 +7641,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: Enum_Componentlayoutsection_Theme;
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7640,6 +7669,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: Enum_Componentlayoutsection_Theme;
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7667,6 +7697,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: Enum_Componentlayoutsection_Theme;
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7777,6 +7808,7 @@ export type GetComponentQuery = {
                               spacing: Enum_Componentlayoutsection_Spacing;
                               background: Enum_Componentlayoutsection_Background;
                               variant: Enum_Componentlayoutsection_Variant;
+                              theme?: Enum_Componentlayoutsection_Theme;
                           };
                           content: Array<
                               | { __typename: 'ComponentComponentsArticle' }
@@ -8103,7 +8135,7 @@ export type GetPageQuery = {
         publishedAt?: any;
         hasOwnTitle: boolean;
         showBreadcrumbs: boolean;
-        theme?: Enum_Page_Theme;
+        theme: Enum_Page_Theme;
         permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any };
         SEO: {
             title: string;
@@ -8128,6 +8160,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: Enum_Componentlayoutsection_Theme;
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8158,6 +8191,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: Enum_Componentlayoutsection_Theme;
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8185,6 +8219,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: Enum_Componentlayoutsection_Theme;
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8212,6 +8247,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: Enum_Componentlayoutsection_Theme;
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8239,6 +8275,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: Enum_Componentlayoutsection_Theme;
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8279,7 +8316,7 @@ export type GetPagesQuery = {
         publishedAt?: any;
         hasOwnTitle: boolean;
         showBreadcrumbs: boolean;
-        theme?: Enum_Page_Theme;
+        theme: Enum_Page_Theme;
         permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any };
         SEO: {
             title: string;
@@ -8304,6 +8341,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: Enum_Componentlayoutsection_Theme;
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8334,6 +8372,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: Enum_Componentlayoutsection_Theme;
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8361,6 +8400,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: Enum_Componentlayoutsection_Theme;
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8388,6 +8428,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: Enum_Componentlayoutsection_Theme;
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8415,6 +8456,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: Enum_Componentlayoutsection_Theme;
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8671,6 +8713,7 @@ export const LayoutSectionFragmentDoc = gql`
         spacing
         background
         variant
+        theme
     }
 `;
 export const ComponentFragmentDoc = gql`
