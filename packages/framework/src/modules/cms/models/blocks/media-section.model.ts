@@ -7,6 +7,7 @@ export class MediaSectionBlock extends Block.Block {
     media?: Media.Media;
     links?: Link.Link[];
     labels!: {
+        showMore: string;
         play: string;
         pause: string;
         mute: string;
