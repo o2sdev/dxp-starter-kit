@@ -128,7 +128,7 @@ export class CmsService implements CMS.Service {
                     });
 
                     if (!page) {
-                        throw new NotFoundException();
+                        return undefined;
                     }
 
                     return mapPage(page);
