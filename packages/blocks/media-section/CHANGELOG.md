@@ -1,5 +1,19 @@
 # @dxp/blocks.media-section
 
+## 0.1.1
+
+### Patch Changes
+
+- 94a984c: fix: center links on mobile
+
+  Add dedicated LinkList component to handle this case.
+
+- b35e813: fix: prevent rendering of empty text
+- Updated dependencies [94a984c]
+- Updated dependencies [b35e813]
+  - @dxp/ui@1.2.4
+  - @dxp/framework@0.1.3
+
 ## 0.1.0
 
 ### Minor Changes
