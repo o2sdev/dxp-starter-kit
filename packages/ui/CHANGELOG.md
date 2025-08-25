@@ -1,5 +1,13 @@
 # @dxp/ui
 
+## 1.2.2
+
+### Patch Changes
+
+- 17ae099: added an option to set a page-based themes via CMS config
+- Updated dependencies [17ae099]
+    - @dxp/framework@0.1.1
+
 ## 1.2.1
 
 ### Patch Changes

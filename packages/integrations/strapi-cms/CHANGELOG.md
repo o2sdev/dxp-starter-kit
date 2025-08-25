@@ -1,5 +1,13 @@
 # @dxp/integrations.strapi-cms
 
+## 0.2.1
+
+### Patch Changes
+
+- 17ae099: added an option to set a page-based themes via CMS config
+- Updated dependencies [17ae099]
+    - @dxp/framework@0.1.1
+
 ## 0.2.0
 
 ### Minor Changes

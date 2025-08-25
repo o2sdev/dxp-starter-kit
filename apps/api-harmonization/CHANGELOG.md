@@ -1,5 +1,14 @@
 # @dxp/api-harmonization
 
+## 1.9.1
+
+### Patch Changes
+
+- 17ae099: added an option to set a page-based themes via CMS config
+- Updated dependencies [17ae099]
+    - @dxp/integrations.strapi-cms@0.2.1
+    - @dxp/framework@0.1.1
+
 ## 1.9.0
 
 ### Minor Changes
