@@ -1,5 +1,15 @@
 # @dxp/ui
 
+## 1.2.3
+
+### Patch Changes
+
+- 7d09337: extended theme config to provide additional info, like a different logo
+- 647d32c: added an option to set a block-based themes via CMS config
+- Updated dependencies [7d09337]
+- Updated dependencies [647d32c]
+    - @dxp/framework@0.1.2
+
 ## 1.2.2
 
 ### Patch Changes
