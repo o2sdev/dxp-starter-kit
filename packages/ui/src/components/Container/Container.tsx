@@ -45,9 +45,15 @@ export const Container: React.FC<ContainerProps> = ({
     className,
     spacing = 'medium',
     background = 'none',
+    theme,
 }) => {
+    let finalTheme = theme;
+    if (theme) {
+        finalTheme = `theme-${theme}`;
+    }
+
     return (
-        <div className={cn(containerBackgroundVariants({ background }), className)}>
+        <div className={cn(finalTheme, containerBackgroundVariants({ background }), className)}>
             <div className={containerVariants({ variant, spacing })}>
                 <div className="">{children}</div>
             </div>

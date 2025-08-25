@@ -10,7 +10,6 @@ import * as PricingSection from '@dxp/blocks.pricing-section/api-harmonization';
 import * as QuickLinks from '@dxp/blocks.quick-links/api-harmonization';
 
 // BLOCK IMPORT
-
 import { CMS, Models } from '@dxp/framework/modules';
 
 export class Init {
@@ -20,9 +19,12 @@ export class Init {
     }[];
     common!: PageCommon;
     labels!: Labels;
+    themes!: Themes;
 }
 
 export type Labels = CMS.Model.AppConfig.Labels;
+export type Themes = CMS.Model.AppConfig.Themes;
+
 export class Page {
     data?: PageData;
     meta!: Metadata;

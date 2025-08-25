@@ -6,4 +6,5 @@ export interface ContainerProps {
     className?: string;
     spacing?: 'none' | 'small' | 'medium' | 'large';
     background?: 'none' | 'light' | 'dark' | 'brand';
+    theme?: string;
 }

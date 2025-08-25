@@ -49,6 +49,7 @@ export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: str
                 variant={block.layout?.variant}
                 spacing={block.layout?.spacing}
                 background={block.layout?.background}
+                theme={block.layout?.theme}
                 key={block.id}
             >
                 {renderBlock(block.__typename, blockProps)}

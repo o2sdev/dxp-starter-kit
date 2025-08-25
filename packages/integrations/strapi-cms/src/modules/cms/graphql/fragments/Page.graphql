@@ -14,7 +14,9 @@ fragment Page on Page {
     SEO {
         ...Seo
     }
-    theme
+    theme {
+        name
+    }
     parent {
         slug
         SEO {

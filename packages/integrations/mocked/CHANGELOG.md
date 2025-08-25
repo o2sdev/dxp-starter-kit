@@ -1,5 +1,14 @@
 # @dxp/integrations.mocked
 
+## 0.2.1
+
+### Patch Changes
+
+- 7d09337: extended theme config to provide additional info, like a different logo
+- Updated dependencies [7d09337]
+- Updated dependencies [647d32c]
+    - @dxp/framework@0.1.2
+
 ## 0.2.0
 
 ### Minor Changes

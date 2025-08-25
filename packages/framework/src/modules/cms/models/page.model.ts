@@ -61,4 +61,5 @@ export class LayoutSection {
     spacing?: 'none' | 'small' | 'medium' | 'large';
     background?: 'none' | 'light' | 'dark' | 'brand';
     variant?: 'narrow' | 'full' | 'wide';
+    theme?: string;
 }

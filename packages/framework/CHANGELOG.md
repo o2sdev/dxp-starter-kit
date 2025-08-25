@@ -1,5 +1,12 @@
 # @dxp/framework
 
+## 0.1.2
+
+### Patch Changes
+
+- 7d09337: extended theme config to provide additional info, like a different logo
+- 647d32c: added an option to set a block-based themes via CMS config
+
 ## 0.1.1
 
 ### Patch Changes

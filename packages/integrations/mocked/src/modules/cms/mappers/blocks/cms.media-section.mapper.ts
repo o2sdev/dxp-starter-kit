@@ -25,6 +25,7 @@ const MOCK_MEDIA_SECTION_BLOCK_EN: CMS.Model.MediaSectionBlock.MediaSectionBlock
         pause: 'Pause',
         mute: 'Mute',
         unmute: 'Unmute',
+        showMore: 'Show more',
     },
 };
 
@@ -57,6 +58,7 @@ const MOCK_MEDIA_SECTION_BLOCK_DE: CMS.Model.MediaSectionBlock.MediaSectionBlock
         pause: 'Pause',
         mute: 'Mute',
         unmute: 'Unmute',
+        showMore: 'Mehr erfahren',
     },
 };
 
@@ -76,6 +78,7 @@ const MOCK_MEDIA_SECTION_BLOCK_PL: CMS.Model.MediaSectionBlock.MediaSectionBlock
         pause: 'Pause',
         mute: 'Mute',
         unmute: 'Unmute',
+        showMore: 'Pokaż więcej',
     },
 };
 

@@ -1,5 +1,19 @@
 # @dxp/frontend
 
+## 1.9.2
+
+### Patch Changes
+
+- e5a5a8b: fixed missing body tag for 404 page
+- 7d09337: extended theme config to provide additional info, like a different logo
+- 647d32c: added an option to set a block-based themes via CMS config
+- Updated dependencies [7d09337]
+- Updated dependencies [647d32c]
+    - @dxp/integrations.mocked@0.2.1
+    - @dxp/api-harmonization@1.9.2
+    - @dxp/framework@0.1.2
+    - @dxp/ui@1.2.3
+
 ## 1.9.1
 
 ### Patch Changes
