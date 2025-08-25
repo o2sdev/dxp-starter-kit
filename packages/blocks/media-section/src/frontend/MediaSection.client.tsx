@@ -14,7 +14,7 @@ import { Typography } from '@dxp/ui/elements/typography';
 import { MediaSectionPureProps } from './MediaSection.types';
 
 export const MediaSectionPure: React.FC<MediaSectionPureProps> = ({ locale, accessToken, routing, ...component }) => {
-    const { preTitle, title, description, media, links } = component;
+    const { preTitle, title, description, media, links, labels } = component;
     const { Link: LinkComponent } = createNavigation(routing);
 
     const isMediaAvailable = media && media.url;
@@ -56,7 +56,7 @@ export const MediaSectionPure: React.FC<MediaSectionPureProps> = ({ locale, acce
                                     </Link>
                                 ),
                         )}
-                        showMoreLabel=""
+                        showMoreLabel={labels.showMore}
                     />
                 )}
             </div>
