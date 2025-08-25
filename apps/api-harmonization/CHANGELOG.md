@@ -1,5 +1,17 @@
 # @dxp/api-harmonization
 
+## 1.9.2
+
+### Patch Changes
+
+- 7d09337: extended theme config to provide additional info, like a different logo
+- Updated dependencies [7d09337]
+- Updated dependencies [c9872bf]
+- Updated dependencies [647d32c]
+    - @dxp/integrations.strapi-cms@0.2.2
+    - @dxp/integrations.mocked@0.2.1
+    - @dxp/framework@0.1.2
+
 ## 1.9.1
 
 ### Patch Changes

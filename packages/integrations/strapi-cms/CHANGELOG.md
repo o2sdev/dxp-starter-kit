@@ -1,5 +1,16 @@
 # @dxp/integrations.strapi-cms
 
+## 0.2.2
+
+### Patch Changes
+
+- 7d09337: extended theme config to provide additional info, like a different logo
+- c9872bf: fixed incorrect handling of not found pages
+- 647d32c: added an option to set a block-based themes via CMS config
+- Updated dependencies [7d09337]
+- Updated dependencies [647d32c]
+    - @dxp/framework@0.1.2
+
 ## 0.2.1
 
 ### Patch Changes
