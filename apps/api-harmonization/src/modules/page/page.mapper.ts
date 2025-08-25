@@ -31,6 +31,7 @@ export const mapPage = (
                 noFollow: page.seo.noFollow,
             },
             locales,
+            theme: page.theme,
         },
         data: {
             alternativeUrls,

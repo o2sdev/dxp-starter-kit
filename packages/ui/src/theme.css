@@ -58,7 +58,28 @@
     --tertiary-hover: hsl(220 13% 95%);
 }
 
-.dark {
+.theme-personal {
+}
+
+.theme-business {
+    --primary: hsl(346 100% 41%);
+    --primary-foreground: hsl(0 0% 100%);
+    --secondary: hsl(165.9, 100%, 41%);
+    --secondary-foreground: hsl(0 0% 0%);
+    --navbar-background: hsl(234 25% 92%);
+    --navbar-foreground: hsl(215 28% 17%);
+    --navbar-primary: hsl(228 100% 19%);
+    --navbar-primary-foreground: hsl(0 0% 100%);
+    --navbar-border: hsl(232 12% 87%);
+    --navbar-muted: hsl(228 100% 19%);
+    --navbar-accent-background: hsl(214 95% 93%);
+    --navbar-accent-foreground: hsl(224 64% 33%);
+    --navbar-sub-background: hsl(346, 100%, 29%);
+    --navbar-sub-foreground: hsl(0 0% 100%);
+    --navbar-sub-accent: hsl(346 100% 41%);
+}
+
+.theme-dark {
     --background: hsl(226 57% 21%);
     --foreground: hsl(0 0% 98%);
     --card: hsl(224 64% 33%);

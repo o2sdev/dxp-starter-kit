@@ -1331,6 +1331,11 @@ export enum Enum_Componentlayoutsection_Variant {
     Wide = 'wide',
 }
 
+export enum Enum_Page_Theme {
+    Business = 'business',
+    Personal = 'personal',
+}
+
 export type Error = {
     code: Scalars['String']['output'];
     message?: Maybe<Scalars['String']['output']>;
@@ -2069,6 +2074,7 @@ export type Page = {
     showBreadcrumbs: Scalars['Boolean']['output'];
     slug: Scalars['String']['output'];
     template: Array<Maybe<PageTemplateDynamicZone>>;
+    theme?: Maybe<Enum_Page_Theme>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -2105,6 +2111,7 @@ export type PageFiltersInput = {
     publishedAt?: InputMaybe<DateTimeFilterInput>;
     showBreadcrumbs?: InputMaybe<BooleanFilterInput>;
     slug?: InputMaybe<StringFilterInput>;
+    theme?: InputMaybe<StringFilterInput>;
     updatedAt?: InputMaybe<DateTimeFilterInput>;
 };
 
@@ -2118,6 +2125,7 @@ export type PageInput = {
     showBreadcrumbs?: InputMaybe<Scalars['Boolean']['input']>;
     slug?: InputMaybe<Scalars['String']['input']>;
     template?: InputMaybe<Array<Scalars['PageTemplateDynamicZoneInput']['input']>>;
+    theme?: InputMaybe<Enum_Page_Theme>;
 };
 
 export type PageRelationResponseCollection = {
@@ -3521,6 +3529,7 @@ export type ResolversTypes = {
     ENUM_COMPONENTLAYOUTSECTION_BACKGROUND: Enum_Componentlayoutsection_Background;
     ENUM_COMPONENTLAYOUTSECTION_SPACING: Enum_Componentlayoutsection_Spacing;
     ENUM_COMPONENTLAYOUTSECTION_VARIANT: Enum_Componentlayoutsection_Variant;
+    ENUM_PAGE_THEME: Enum_Page_Theme;
     Error: ResolverTypeWrapper<Error>;
     FileInfoInput: FileInfoInput;
     Float: ResolverTypeWrapper<Scalars['Float']['output']>;
@@ -5788,6 +5797,7 @@ export type PageResolvers<
     showBreadcrumbs?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
     slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     template?: Resolver<Array<Maybe<ResolversTypes['PageTemplateDynamicZone']>>, ParentType, ContextType>;
+    theme?: Resolver<Maybe<ResolversTypes['ENUM_PAGE_THEME']>, ParentType, ContextType>;
     updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -6851,6 +6861,7 @@ export type PageFragment = {
     publishedAt?: any;
     hasOwnTitle: boolean;
     showBreadcrumbs: boolean;
+    theme?: Enum_Page_Theme;
     permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any };
     SEO: {
         title: string;
@@ -8092,6 +8103,7 @@ export type GetPageQuery = {
         publishedAt?: any;
         hasOwnTitle: boolean;
         showBreadcrumbs: boolean;
+        theme?: Enum_Page_Theme;
         permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any };
         SEO: {
             title: string;
@@ -8267,6 +8279,7 @@ export type GetPagesQuery = {
         publishedAt?: any;
         hasOwnTitle: boolean;
         showBreadcrumbs: boolean;
+        theme?: Enum_Page_Theme;
         permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any };
         SEO: {
             title: string;
@@ -8715,6 +8728,7 @@ export const PageFragmentDoc = gql`
         SEO {
             ...Seo
         }
+        theme
         parent {
             slug
             SEO {
