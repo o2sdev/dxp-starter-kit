@@ -3,12 +3,10 @@
 import { createNavigation } from 'next-intl/navigation';
 import React from 'react';
 
-import { ActionList } from '@dxp/ui/components/ActionList';
-import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
+import { LinkList } from '@dxp/ui/components/LinkList';
 import { RichText } from '@dxp/ui/components/RichText';
 
-import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { MediaSectionPureProps } from './MediaSection.types';
@@ -40,25 +38,7 @@ export const MediaSectionPure: React.FC<MediaSectionPureProps> = ({ locale, acce
                     )}
                 </div>
 
-                {links && links.length > 0 && (
-                    <ActionList
-                        className="sm:flex-row align-start justify-center"
-                        actions={links.map(
-                            (link) =>
-                                link.label && (
-                                    <Link asChild variant={link.variant} key={link.label}>
-                                        <LinkComponent href={link.url}>
-                                            <>
-                                                {link.label}
-                                                {link.icon && <DynamicIcon name={link.icon} size={16} />}
-                                            </>
-                                        </LinkComponent>
-                                    </Link>
-                                ),
-                        )}
-                        showMoreLabel=""
-                    />
-                )}
+                <LinkList className="justify-center" links={links} LinkComponent={LinkComponent} />
             </div>
 
             {isMediaAvailable && (

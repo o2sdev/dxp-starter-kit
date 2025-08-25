@@ -38,9 +38,9 @@ export const PricingSectionPure: React.FC<PricingSectionPureProps> = ({
             </div>
 
             {pricingList && pricingList.length > 0 && (
-                <ul className="flex flex-col lg:flex-row gap-4">
+                <ul className="flex flex-col lg:flex-row gap-8 lg:gap-4 items-center lg:items-stretch lg:justify-center ">
                     {pricingList.map((card, index) => (
-                        <li key={`${card.title}-${index}`} className="flex-1 self-stretch">
+                        <li key={`${card.title}-${index}`} className="flex-1 max-w-[400px]">
                             <PricingCard {...card} LinkComponent={LinkComponent} />
                         </li>
                     ))}

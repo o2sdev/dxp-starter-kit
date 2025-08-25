@@ -5,12 +5,11 @@ import React from 'react';
 
 import { cn } from '@dxp/ui/lib/utils';
 
-import { ActionList } from '@dxp/ui/components/ActionList';
 import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
+import { LinkList } from '@dxp/ui/components/LinkList';
 import { RichText } from '@dxp/ui/components/RichText';
 
-import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { FeatureSectionPureProps } from './FeatureSection.types';
@@ -23,7 +22,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
 }) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
-    const { title, description, image, featureList, links, preTitle, inverted, labels, iconBorder } = component;
+    const { title, description, image, featureList, links, preTitle, inverted, iconBorder } = component;
 
     const isImageAvailable = image && image.url;
 
@@ -96,25 +95,11 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                         </ul>
                     )}
 
-                    {links && links.length > 0 && (
-                        <ActionList
-                            className={cn('sm:flex-row align-start', !isImageAvailable && 'justify-center')}
-                            actions={links.map(
-                                (link, index) =>
-                                    link.label && (
-                                        <Link asChild variant={link.variant} key={`${link.label}-${index}`}>
-                                            <LinkComponent href={link.url}>
-                                                <>
-                                                    {link.label}
-                                                    {link.icon && <DynamicIcon name={link.icon} size={16} />}
-                                                </>
-                                            </LinkComponent>
-                                        </Link>
-                                    ),
-                            )}
-                            showMoreLabel={labels.showMore}
-                        />
-                    )}
+                    <LinkList
+                        className={cn(!isImageAvailable && 'justify-center')}
+                        links={links}
+                        LinkComponent={LinkComponent}
+                    />
                 </div>
             </div>
 

@@ -6,12 +6,10 @@ import React from 'react';
 
 import { cn } from '@dxp/ui/lib/utils';
 
-import { ActionList } from '@dxp/ui/components/ActionList';
-import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
+import { LinkList } from '@dxp/ui/components/LinkList';
 import { RichText } from '@dxp/ui/components/RichText';
 
-import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { HeroSectionPureProps } from './HeroSection.types';
@@ -19,8 +17,7 @@ import { HeroSectionPureProps } from './HeroSection.types';
 export const HeroSectionPure: React.FC<HeroSectionPureProps> = ({ locale, accessToken, routing, ...component }) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
-    const { title, highlightedText, subtitle, description, image, links, headingType, preTitle, inverted, labels } =
-        component;
+    const { title, highlightedText, subtitle, description, image, links, headingType, preTitle, inverted } = component;
 
     const HeadingComponent = headingType ? headingType : 'h2';
     const isImageAvailable = image && image.url;
@@ -67,25 +64,11 @@ export const HeroSectionPure: React.FC<HeroSectionPureProps> = ({ locale, access
                         )}
                     </div>
 
-                    {links && links.length > 0 && (
-                        <ActionList
-                            className={cn('sm:flex-row align-start', !isImageAvailable && 'justify-center')}
-                            actions={links.map(
-                                (link) =>
-                                    link.label && (
-                                        <Link asChild variant={link.variant} key={link.label}>
-                                            <LinkComponent href={link.url}>
-                                                <>
-                                                    {link.label}
-                                                    {link.icon && <DynamicIcon name={link.icon} size={16} />}
-                                                </>
-                                            </LinkComponent>
-                                        </Link>
-                                    ),
-                            )}
-                            showMoreLabel={labels.showMore}
-                        />
-                    )}
+                    <LinkList
+                        className={cn(!isImageAvailable && 'justify-center')}
+                        links={links}
+                        LinkComponent={LinkComponent}
+                    />
                 </div>
             </div>
 
