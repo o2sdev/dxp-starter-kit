@@ -111,7 +111,13 @@ export default async function Page({ params }: Props) {
 
         return (
             <body className={theme}>
-                <GlobalProvider config={init} labels={init.labels} locale={locale}>
+                <GlobalProvider
+                    config={init}
+                    labels={init.labels}
+                    locale={locale}
+                    themes={init.themes}
+                    currentTheme={meta.theme}
+                >
                     <div className="flex flex-col min-h-dvh">
                         <Header data={init.common.header} alternativeUrls={data.alternativeUrls} />
                         <div className="flex flex-col grow">

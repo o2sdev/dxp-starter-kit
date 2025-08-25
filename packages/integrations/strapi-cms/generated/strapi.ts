@@ -41,7 +41,21 @@ export type AppConfig = {
     signedInHeader?: Maybe<Header>;
     signedOutFooter?: Maybe<Footer>;
     signedOutHeader?: Maybe<Header>;
+    themes: Array<Maybe<Theme>>;
+    themes_connection?: Maybe<ThemeRelationResponseCollection>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type AppConfigThemesArgs = {
+    filters?: InputMaybe<ThemeFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type AppConfigThemes_ConnectionArgs = {
+    filters?: InputMaybe<ThemeFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type AppConfigInput = {
@@ -50,6 +64,7 @@ export type AppConfigInput = {
     signedInHeader?: InputMaybe<Scalars['ID']['input']>;
     signedOutFooter?: InputMaybe<Scalars['ID']['input']>;
     signedOutHeader?: InputMaybe<Scalars['ID']['input']>;
+    themes?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
 };
 
 export type AppConfigRelationResponseCollection = {
@@ -1058,7 +1073,7 @@ export type ComponentLayoutSection = {
     background: Enum_Componentlayoutsection_Background;
     id: Scalars['ID']['output'];
     spacing: Enum_Componentlayoutsection_Spacing;
-    theme?: Maybe<Enum_Componentlayoutsection_Theme>;
+    theme?: Maybe<Theme>;
     variant: Enum_Componentlayoutsection_Variant;
 };
 
@@ -1068,7 +1083,7 @@ export type ComponentLayoutSectionFiltersInput = {
     not?: InputMaybe<ComponentLayoutSectionFiltersInput>;
     or?: InputMaybe<Array<InputMaybe<ComponentLayoutSectionFiltersInput>>>;
     spacing?: InputMaybe<StringFilterInput>;
-    theme?: InputMaybe<StringFilterInput>;
+    theme?: InputMaybe<ThemeFiltersInput>;
     variant?: InputMaybe<StringFilterInput>;
 };
 
@@ -1076,8 +1091,14 @@ export type ComponentLayoutSectionInput = {
     background?: InputMaybe<Enum_Componentlayoutsection_Background>;
     id?: InputMaybe<Scalars['ID']['input']>;
     spacing?: InputMaybe<Enum_Componentlayoutsection_Spacing>;
-    theme?: InputMaybe<Enum_Componentlayoutsection_Theme>;
+    theme?: InputMaybe<Scalars['ID']['input']>;
     variant?: InputMaybe<Enum_Componentlayoutsection_Variant>;
+};
+
+export type ComponentLayoutTheme = {
+    id: Scalars['ID']['output'];
+    logo?: Maybe<UploadFile>;
+    name?: Maybe<Enum_Componentlayouttheme_Name>;
 };
 
 export type ComponentRelationResponseCollection = {
@@ -1328,21 +1349,14 @@ export enum Enum_Componentlayoutsection_Spacing {
     Small = 'small',
 }
 
-export enum Enum_Componentlayoutsection_Theme {
-    Business = 'business',
-    Default = 'default',
-    Personal = 'personal',
-}
-
 export enum Enum_Componentlayoutsection_Variant {
     Full = 'full',
     Narrow = 'narrow',
     Wide = 'wide',
 }
 
-export enum Enum_Page_Theme {
+export enum Enum_Componentlayouttheme_Name {
     Business = 'business',
-    Dark = 'dark',
     Default = 'default',
     Personal = 'personal',
 }
@@ -1491,6 +1505,7 @@ export type GenericMorph =
     | ComponentLabelsMedia
     | ComponentLabelsValidation
     | ComponentLayoutSection
+    | ComponentLayoutTheme
     | ComponentSeoMetadata
     | ComponentSeoSeo
     | ComponentSeoUserRoles
@@ -1505,6 +1520,7 @@ export type GenericMorph =
     | Page
     | ReviewWorkflowsWorkflow
     | ReviewWorkflowsWorkflowStage
+    | Theme
     | UploadFile
     | UsersPermissionsPermission
     | UsersPermissionsRole
@@ -1727,6 +1743,7 @@ export type Mutation = {
     createPage?: Maybe<Page>;
     createReviewWorkflowsWorkflow?: Maybe<ReviewWorkflowsWorkflow>;
     createReviewWorkflowsWorkflowStage?: Maybe<ReviewWorkflowsWorkflowStage>;
+    createTheme?: Maybe<Theme>;
     /** Create a new role */
     createUsersPermissionsRole?: Maybe<UsersPermissionsCreateRolePayload>;
     /** Create a new user */
@@ -1744,6 +1761,7 @@ export type Mutation = {
     deletePage?: Maybe<DeleteMutationResponse>;
     deleteReviewWorkflowsWorkflow?: Maybe<DeleteMutationResponse>;
     deleteReviewWorkflowsWorkflowStage?: Maybe<DeleteMutationResponse>;
+    deleteTheme?: Maybe<DeleteMutationResponse>;
     deleteUploadFile?: Maybe<UploadFile>;
     /** Delete an existing role */
     deleteUsersPermissionsRole?: Maybe<UsersPermissionsDeleteRolePayload>;
@@ -1771,6 +1789,7 @@ export type Mutation = {
     updatePage?: Maybe<Page>;
     updateReviewWorkflowsWorkflow?: Maybe<ReviewWorkflowsWorkflow>;
     updateReviewWorkflowsWorkflowStage?: Maybe<ReviewWorkflowsWorkflowStage>;
+    updateTheme?: Maybe<Theme>;
     updateUploadFile: UploadFile;
     /** Update an existing role */
     updateUsersPermissionsRole?: Maybe<UsersPermissionsUpdateRolePayload>;
@@ -1841,6 +1860,11 @@ export type MutationCreateReviewWorkflowsWorkflowStageArgs = {
     status?: InputMaybe<PublicationStatus>;
 };
 
+export type MutationCreateThemeArgs = {
+    data: ThemeInput;
+    status?: InputMaybe<PublicationStatus>;
+};
+
 export type MutationCreateUsersPermissionsRoleArgs = {
     data: UsersPermissionsRoleInput;
 };
@@ -1905,6 +1929,10 @@ export type MutationDeleteReviewWorkflowsWorkflowArgs = {
 };
 
 export type MutationDeleteReviewWorkflowsWorkflowStageArgs = {
+    documentId: Scalars['ID']['input'];
+};
+
+export type MutationDeleteThemeArgs = {
     documentId: Scalars['ID']['input'];
 };
 
@@ -2027,6 +2055,12 @@ export type MutationUpdateReviewWorkflowsWorkflowStageArgs = {
     status?: InputMaybe<PublicationStatus>;
 };
 
+export type MutationUpdateThemeArgs = {
+    data: ThemeInput;
+    documentId: Scalars['ID']['input'];
+    status?: InputMaybe<PublicationStatus>;
+};
+
 export type MutationUpdateUploadFileArgs = {
     id: Scalars['ID']['input'];
     info?: InputMaybe<FileInfoInput>;
@@ -2085,7 +2119,7 @@ export type Page = {
     showBreadcrumbs: Scalars['Boolean']['output'];
     slug: Scalars['String']['output'];
     template: Array<Maybe<PageTemplateDynamicZone>>;
-    theme: Enum_Page_Theme;
+    theme?: Maybe<Theme>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -2122,7 +2156,7 @@ export type PageFiltersInput = {
     publishedAt?: InputMaybe<DateTimeFilterInput>;
     showBreadcrumbs?: InputMaybe<BooleanFilterInput>;
     slug?: InputMaybe<StringFilterInput>;
-    theme?: InputMaybe<StringFilterInput>;
+    theme?: InputMaybe<ThemeFiltersInput>;
     updatedAt?: InputMaybe<DateTimeFilterInput>;
 };
 
@@ -2136,7 +2170,7 @@ export type PageInput = {
     showBreadcrumbs?: InputMaybe<Scalars['Boolean']['input']>;
     slug?: InputMaybe<Scalars['String']['input']>;
     template?: InputMaybe<Array<Scalars['PageTemplateDynamicZoneInput']['input']>>;
-    theme?: InputMaybe<Enum_Page_Theme>;
+    theme?: InputMaybe<Scalars['ID']['input']>;
 };
 
 export type PageRelationResponseCollection = {
@@ -2202,6 +2236,9 @@ export type Query = {
     reviewWorkflowsWorkflowStages_connection?: Maybe<ReviewWorkflowsWorkflowStageEntityResponseCollection>;
     reviewWorkflowsWorkflows: Array<Maybe<ReviewWorkflowsWorkflow>>;
     reviewWorkflowsWorkflows_connection?: Maybe<ReviewWorkflowsWorkflowEntityResponseCollection>;
+    theme?: Maybe<Theme>;
+    themes: Array<Maybe<Theme>>;
+    themes_connection?: Maybe<ThemeEntityResponseCollection>;
     uploadFile?: Maybe<UploadFile>;
     uploadFiles: Array<Maybe<UploadFile>>;
     uploadFiles_connection?: Maybe<UploadFileEntityResponseCollection>;
@@ -2458,6 +2495,25 @@ export type QueryReviewWorkflowsWorkflows_ConnectionArgs = {
     status?: InputMaybe<PublicationStatus>;
 };
 
+export type QueryThemeArgs = {
+    documentId: Scalars['ID']['input'];
+    status?: InputMaybe<PublicationStatus>;
+};
+
+export type QueryThemesArgs = {
+    filters?: InputMaybe<ThemeFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    status?: InputMaybe<PublicationStatus>;
+};
+
+export type QueryThemes_ConnectionArgs = {
+    filters?: InputMaybe<ThemeFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    status?: InputMaybe<PublicationStatus>;
+};
+
 export type QueryUploadFileArgs = {
     documentId: Scalars['ID']['input'];
     status?: InputMaybe<PublicationStatus>;
@@ -2628,6 +2684,41 @@ export type StringFilterInput = {
     null?: InputMaybe<Scalars['Boolean']['input']>;
     or?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     startsWith?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Theme = {
+    createdAt?: Maybe<Scalars['DateTime']['output']>;
+    documentId: Scalars['ID']['output'];
+    logo?: Maybe<UploadFile>;
+    name: Scalars['String']['output'];
+    publishedAt?: Maybe<Scalars['DateTime']['output']>;
+    updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type ThemeEntityResponseCollection = {
+    nodes: Array<Theme>;
+    pageInfo: Pagination;
+};
+
+export type ThemeFiltersInput = {
+    and?: InputMaybe<Array<InputMaybe<ThemeFiltersInput>>>;
+    createdAt?: InputMaybe<DateTimeFilterInput>;
+    documentId?: InputMaybe<IdFilterInput>;
+    name?: InputMaybe<StringFilterInput>;
+    not?: InputMaybe<ThemeFiltersInput>;
+    or?: InputMaybe<Array<InputMaybe<ThemeFiltersInput>>>;
+    publishedAt?: InputMaybe<DateTimeFilterInput>;
+    updatedAt?: InputMaybe<DateTimeFilterInput>;
+};
+
+export type ThemeInput = {
+    logo?: InputMaybe<Scalars['ID']['input']>;
+    name?: InputMaybe<Scalars['String']['input']>;
+    publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type ThemeRelationResponseCollection = {
+    nodes: Array<Theme>;
 };
 
 export type UploadFile = {
@@ -3017,6 +3108,8 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               | 'signedInHeader'
               | 'signedOutFooter'
               | 'signedOutHeader'
+              | 'themes'
+              | 'themes_connection'
           > & {
               localizations: Array<Maybe<_RefType['AppConfig']>>;
               localizations_connection?: Maybe<_RefType['AppConfigRelationResponseCollection']>;
@@ -3024,6 +3117,8 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               signedInHeader?: Maybe<_RefType['Header']>;
               signedOutFooter?: Maybe<_RefType['Footer']>;
               signedOutHeader?: Maybe<_RefType['Header']>;
+              themes: Array<Maybe<_RefType['Theme']>>;
+              themes_connection?: Maybe<_RefType['ThemeRelationResponseCollection']>;
           })
         | (Omit<Article, 'SEO' | 'content' | 'localizations' | 'localizations_connection' | 'parent'> & {
               SEO: _RefType['ComponentSeoSeo'];
@@ -3048,8 +3143,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               localizations_connection?: Maybe<_RefType['CategoryRelationResponseCollection']>;
               parent?: Maybe<_RefType['Page']>;
           })
-        | (Omit<Component, 'content' | 'localizations' | 'localizations_connection'> & {
+        | (Omit<Component, 'content' | 'layout' | 'localizations' | 'localizations_connection'> & {
               content: Array<Maybe<_RefType['ComponentContentDynamicZone']>>;
+              layout: _RefType['ComponentLayoutSection'];
               localizations: Array<Maybe<_RefType['Component']>>;
               localizations_connection?: Maybe<_RefType['ComponentRelationResponseCollection']>;
           })
@@ -3136,7 +3232,8 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | ComponentLabelsErrors
         | ComponentLabelsMedia
         | ComponentLabelsValidation
-        | ComponentLayoutSection
+        | (Omit<ComponentLayoutSection, 'theme'> & { theme?: Maybe<_RefType['Theme']> })
+        | (Omit<ComponentLayoutTheme, 'logo'> & { logo?: Maybe<_RefType['UploadFile']> })
         | ComponentSeoMetadata
         | (Omit<ComponentSeoSeo, 'image'> & { image?: Maybe<_RefType['UploadFile']> })
         | ComponentSeoUserRoles
@@ -3189,16 +3286,21 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               localizations_connection?: Maybe<_RefType['NotFoundPageRelationResponseCollection']>;
               page?: Maybe<_RefType['Page']>;
           })
-        | (Omit<Page, 'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template'> & {
+        | (Omit<
+              Page,
+              'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template' | 'theme'
+          > & {
               SEO: _RefType['ComponentSeoSeo'];
               child?: Maybe<_RefType['Page']>;
               localizations: Array<Maybe<_RefType['Page']>>;
               localizations_connection?: Maybe<_RefType['PageRelationResponseCollection']>;
               parent?: Maybe<_RefType['Page']>;
               template: Array<Maybe<_RefType['PageTemplateDynamicZone']>>;
+              theme?: Maybe<_RefType['Theme']>;
           })
         | ReviewWorkflowsWorkflow
         | ReviewWorkflowsWorkflowStage
+        | (Omit<Theme, 'logo'> & { logo?: Maybe<_RefType['UploadFile']> })
         | (Omit<UploadFile, 'related'> & { related?: Maybe<Array<Maybe<_RefType['GenericMorph']>>> })
         | UsersPermissionsPermission
         | UsersPermissionsRole
@@ -3248,6 +3350,8 @@ export type ResolversTypes = {
             | 'signedInHeader'
             | 'signedOutFooter'
             | 'signedOutHeader'
+            | 'themes'
+            | 'themes_connection'
         > & {
             localizations: Array<Maybe<ResolversTypes['AppConfig']>>;
             localizations_connection?: Maybe<ResolversTypes['AppConfigRelationResponseCollection']>;
@@ -3255,6 +3359,8 @@ export type ResolversTypes = {
             signedInHeader?: Maybe<ResolversTypes['Header']>;
             signedOutFooter?: Maybe<ResolversTypes['Footer']>;
             signedOutHeader?: Maybe<ResolversTypes['Header']>;
+            themes: Array<Maybe<ResolversTypes['Theme']>>;
+            themes_connection?: Maybe<ResolversTypes['ThemeRelationResponseCollection']>;
         }
     >;
     AppConfigInput: AppConfigInput;
@@ -3317,8 +3423,9 @@ export type ResolversTypes = {
         Omit<CategoryRelationResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['Category']> }
     >;
     Component: ResolverTypeWrapper<
-        Omit<Component, 'content' | 'localizations' | 'localizations_connection'> & {
+        Omit<Component, 'content' | 'layout' | 'localizations' | 'localizations_connection'> & {
             content: Array<Maybe<ResolversTypes['ComponentContentDynamicZone']>>;
+            layout: ResolversTypes['ComponentLayoutSection'];
             localizations: Array<Maybe<ResolversTypes['Component']>>;
             localizations_connection?: Maybe<ResolversTypes['ComponentRelationResponseCollection']>;
         }
@@ -3483,9 +3590,14 @@ export type ResolversTypes = {
     ComponentLabelsMediaInput: ComponentLabelsMediaInput;
     ComponentLabelsValidation: ResolverTypeWrapper<ComponentLabelsValidation>;
     ComponentLabelsValidationInput: ComponentLabelsValidationInput;
-    ComponentLayoutSection: ResolverTypeWrapper<ComponentLayoutSection>;
+    ComponentLayoutSection: ResolverTypeWrapper<
+        Omit<ComponentLayoutSection, 'theme'> & { theme?: Maybe<ResolversTypes['Theme']> }
+    >;
     ComponentLayoutSectionFiltersInput: ComponentLayoutSectionFiltersInput;
     ComponentLayoutSectionInput: ComponentLayoutSectionInput;
+    ComponentLayoutTheme: ResolverTypeWrapper<
+        Omit<ComponentLayoutTheme, 'logo'> & { logo?: Maybe<ResolversTypes['UploadFile']> }
+    >;
     ComponentRelationResponseCollection: ResolverTypeWrapper<
         Omit<ComponentRelationResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['Component']> }
     >;
@@ -3539,9 +3651,8 @@ export type ResolversTypes = {
     ENUM_COMPONENTCONTENTPRICE_CURRENCY: Enum_Componentcontentprice_Currency;
     ENUM_COMPONENTLAYOUTSECTION_BACKGROUND: Enum_Componentlayoutsection_Background;
     ENUM_COMPONENTLAYOUTSECTION_SPACING: Enum_Componentlayoutsection_Spacing;
-    ENUM_COMPONENTLAYOUTSECTION_THEME: Enum_Componentlayoutsection_Theme;
     ENUM_COMPONENTLAYOUTSECTION_VARIANT: Enum_Componentlayoutsection_Variant;
-    ENUM_PAGE_THEME: Enum_Page_Theme;
+    ENUM_COMPONENTLAYOUTTHEME_NAME: Enum_Componentlayouttheme_Name;
     Error: ResolverTypeWrapper<Error>;
     FileInfoInput: FileInfoInput;
     Float: ResolverTypeWrapper<Scalars['Float']['output']>;
@@ -3612,13 +3723,14 @@ export type ResolversTypes = {
         Omit<NotFoundPageRelationResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['NotFoundPage']> }
     >;
     Page: ResolverTypeWrapper<
-        Omit<Page, 'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template'> & {
+        Omit<Page, 'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template' | 'theme'> & {
             SEO: ResolversTypes['ComponentSeoSeo'];
             child?: Maybe<ResolversTypes['Page']>;
             localizations: Array<Maybe<ResolversTypes['Page']>>;
             localizations_connection?: Maybe<ResolversTypes['PageRelationResponseCollection']>;
             parent?: Maybe<ResolversTypes['Page']>;
             template: Array<Maybe<ResolversTypes['PageTemplateDynamicZone']>>;
+            theme?: Maybe<ResolversTypes['Theme']>;
         }
     >;
     PageEntityResponseCollection: ResolverTypeWrapper<
@@ -3646,6 +3758,15 @@ export type ResolversTypes = {
     ReviewWorkflowsWorkflowStageRelationResponseCollection: ResolverTypeWrapper<ReviewWorkflowsWorkflowStageRelationResponseCollection>;
     String: ResolverTypeWrapper<Scalars['String']['output']>;
     StringFilterInput: StringFilterInput;
+    Theme: ResolverTypeWrapper<Omit<Theme, 'logo'> & { logo?: Maybe<ResolversTypes['UploadFile']> }>;
+    ThemeEntityResponseCollection: ResolverTypeWrapper<
+        Omit<ThemeEntityResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['Theme']> }
+    >;
+    ThemeFiltersInput: ThemeFiltersInput;
+    ThemeInput: ThemeInput;
+    ThemeRelationResponseCollection: ResolverTypeWrapper<
+        Omit<ThemeRelationResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['Theme']> }
+    >;
     UploadFile: ResolverTypeWrapper<
         Omit<UploadFile, 'related'> & { related?: Maybe<Array<Maybe<ResolversTypes['GenericMorph']>>> }
     >;
@@ -3690,6 +3811,8 @@ export type ResolversParentTypes = {
         | 'signedInHeader'
         | 'signedOutFooter'
         | 'signedOutHeader'
+        | 'themes'
+        | 'themes_connection'
     > & {
         localizations: Array<Maybe<ResolversParentTypes['AppConfig']>>;
         localizations_connection?: Maybe<ResolversParentTypes['AppConfigRelationResponseCollection']>;
@@ -3697,6 +3820,8 @@ export type ResolversParentTypes = {
         signedInHeader?: Maybe<ResolversParentTypes['Header']>;
         signedOutFooter?: Maybe<ResolversParentTypes['Footer']>;
         signedOutHeader?: Maybe<ResolversParentTypes['Header']>;
+        themes: Array<Maybe<ResolversParentTypes['Theme']>>;
+        themes_connection?: Maybe<ResolversParentTypes['ThemeRelationResponseCollection']>;
     };
     AppConfigInput: AppConfigInput;
     AppConfigRelationResponseCollection: Omit<AppConfigRelationResponseCollection, 'nodes'> & {
@@ -3751,8 +3876,9 @@ export type ResolversParentTypes = {
     CategoryRelationResponseCollection: Omit<CategoryRelationResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['Category']>;
     };
-    Component: Omit<Component, 'content' | 'localizations' | 'localizations_connection'> & {
+    Component: Omit<Component, 'content' | 'layout' | 'localizations' | 'localizations_connection'> & {
         content: Array<Maybe<ResolversParentTypes['ComponentContentDynamicZone']>>;
+        layout: ResolversParentTypes['ComponentLayoutSection'];
         localizations: Array<Maybe<ResolversParentTypes['Component']>>;
         localizations_connection?: Maybe<ResolversParentTypes['ComponentRelationResponseCollection']>;
     };
@@ -3888,9 +4014,10 @@ export type ResolversParentTypes = {
     ComponentLabelsMediaInput: ComponentLabelsMediaInput;
     ComponentLabelsValidation: ComponentLabelsValidation;
     ComponentLabelsValidationInput: ComponentLabelsValidationInput;
-    ComponentLayoutSection: ComponentLayoutSection;
+    ComponentLayoutSection: Omit<ComponentLayoutSection, 'theme'> & { theme?: Maybe<ResolversParentTypes['Theme']> };
     ComponentLayoutSectionFiltersInput: ComponentLayoutSectionFiltersInput;
     ComponentLayoutSectionInput: ComponentLayoutSectionInput;
+    ComponentLayoutTheme: Omit<ComponentLayoutTheme, 'logo'> & { logo?: Maybe<ResolversParentTypes['UploadFile']> };
     ComponentRelationResponseCollection: Omit<ComponentRelationResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['Component']>;
     };
@@ -3997,13 +4124,17 @@ export type ResolversParentTypes = {
     NotFoundPageRelationResponseCollection: Omit<NotFoundPageRelationResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['NotFoundPage']>;
     };
-    Page: Omit<Page, 'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template'> & {
+    Page: Omit<
+        Page,
+        'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template' | 'theme'
+    > & {
         SEO: ResolversParentTypes['ComponentSeoSeo'];
         child?: Maybe<ResolversParentTypes['Page']>;
         localizations: Array<Maybe<ResolversParentTypes['Page']>>;
         localizations_connection?: Maybe<ResolversParentTypes['PageRelationResponseCollection']>;
         parent?: Maybe<ResolversParentTypes['Page']>;
         template: Array<Maybe<ResolversParentTypes['PageTemplateDynamicZone']>>;
+        theme?: Maybe<ResolversParentTypes['Theme']>;
     };
     PageEntityResponseCollection: Omit<PageEntityResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['Page']>;
@@ -4029,6 +4160,15 @@ export type ResolversParentTypes = {
     ReviewWorkflowsWorkflowStageRelationResponseCollection: ReviewWorkflowsWorkflowStageRelationResponseCollection;
     String: Scalars['String']['output'];
     StringFilterInput: StringFilterInput;
+    Theme: Omit<Theme, 'logo'> & { logo?: Maybe<ResolversParentTypes['UploadFile']> };
+    ThemeEntityResponseCollection: Omit<ThemeEntityResponseCollection, 'nodes'> & {
+        nodes: Array<ResolversParentTypes['Theme']>;
+    };
+    ThemeFiltersInput: ThemeFiltersInput;
+    ThemeInput: ThemeInput;
+    ThemeRelationResponseCollection: Omit<ThemeRelationResponseCollection, 'nodes'> & {
+        nodes: Array<ResolversParentTypes['Theme']>;
+    };
     UploadFile: Omit<UploadFile, 'related'> & { related?: Maybe<Array<Maybe<ResolversParentTypes['GenericMorph']>>> };
     UploadFileEntityResponseCollection: Omit<UploadFileEntityResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['UploadFile']>;
@@ -4079,6 +4219,18 @@ export type AppConfigResolvers<
     signedInHeader?: Resolver<Maybe<ResolversTypes['Header']>, ParentType, ContextType>;
     signedOutFooter?: Resolver<Maybe<ResolversTypes['Footer']>, ParentType, ContextType>;
     signedOutHeader?: Resolver<Maybe<ResolversTypes['Header']>, ParentType, ContextType>;
+    themes?: Resolver<
+        Array<Maybe<ResolversTypes['Theme']>>,
+        ParentType,
+        ContextType,
+        RequireFields<AppConfigThemesArgs, 'pagination' | 'sort'>
+    >;
+    themes_connection?: Resolver<
+        Maybe<ResolversTypes['ThemeRelationResponseCollection']>,
+        ParentType,
+        ContextType,
+        RequireFields<AppConfigThemes_ConnectionArgs, 'pagination' | 'sort'>
+    >;
     updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -5000,8 +5152,18 @@ export type ComponentLayoutSectionResolvers<
     background?: Resolver<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_BACKGROUND'], ParentType, ContextType>;
     id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
     spacing?: Resolver<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_SPACING'], ParentType, ContextType>;
-    theme?: Resolver<Maybe<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_THEME']>, ParentType, ContextType>;
+    theme?: Resolver<Maybe<ResolversTypes['Theme']>, ParentType, ContextType>;
     variant?: Resolver<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_VARIANT'], ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ComponentLayoutThemeResolvers<
+    ContextType = any,
+    ParentType extends ResolversParentTypes['ComponentLayoutTheme'] = ResolversParentTypes['ComponentLayoutTheme'],
+> = {
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    logo?: Resolver<Maybe<ResolversTypes['UploadFile']>, ParentType, ContextType>;
+    name?: Resolver<Maybe<ResolversTypes['ENUM_COMPONENTLAYOUTTHEME_NAME']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -5300,6 +5462,7 @@ export type GenericMorphResolvers<
         | 'ComponentLabelsMedia'
         | 'ComponentLabelsValidation'
         | 'ComponentLayoutSection'
+        | 'ComponentLayoutTheme'
         | 'ComponentSeoMetadata'
         | 'ComponentSeoSeo'
         | 'ComponentSeoUserRoles'
@@ -5314,6 +5477,7 @@ export type GenericMorphResolvers<
         | 'Page'
         | 'ReviewWorkflowsWorkflow'
         | 'ReviewWorkflowsWorkflowStage'
+        | 'Theme'
         | 'UploadFile'
         | 'UsersPermissionsPermission'
         | 'UsersPermissionsRole'
@@ -5514,6 +5678,12 @@ export type MutationResolvers<
         ContextType,
         RequireFields<MutationCreateReviewWorkflowsWorkflowStageArgs, 'data' | 'status'>
     >;
+    createTheme?: Resolver<
+        Maybe<ResolversTypes['Theme']>,
+        ParentType,
+        ContextType,
+        RequireFields<MutationCreateThemeArgs, 'data' | 'status'>
+    >;
     createUsersPermissionsRole?: Resolver<
         Maybe<ResolversTypes['UsersPermissionsCreateRolePayload']>,
         ParentType,
@@ -5603,6 +5773,12 @@ export type MutationResolvers<
         ParentType,
         ContextType,
         RequireFields<MutationDeleteReviewWorkflowsWorkflowStageArgs, 'documentId'>
+    >;
+    deleteTheme?: Resolver<
+        Maybe<ResolversTypes['DeleteMutationResponse']>,
+        ParentType,
+        ContextType,
+        RequireFields<MutationDeleteThemeArgs, 'documentId'>
     >;
     deleteUploadFile?: Resolver<
         Maybe<ResolversTypes['UploadFile']>,
@@ -5730,6 +5906,12 @@ export type MutationResolvers<
         ContextType,
         RequireFields<MutationUpdateReviewWorkflowsWorkflowStageArgs, 'data' | 'documentId' | 'status'>
     >;
+    updateTheme?: Resolver<
+        Maybe<ResolversTypes['Theme']>,
+        ParentType,
+        ContextType,
+        RequireFields<MutationUpdateThemeArgs, 'data' | 'documentId' | 'status'>
+    >;
     updateUploadFile?: Resolver<
         ResolversTypes['UploadFile'],
         ParentType,
@@ -5810,7 +5992,7 @@ export type PageResolvers<
     showBreadcrumbs?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
     slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     template?: Resolver<Array<Maybe<ResolversTypes['PageTemplateDynamicZone']>>, ParentType, ContextType>;
-    theme?: Resolver<ResolversTypes['ENUM_PAGE_THEME'], ParentType, ContextType>;
+    theme?: Resolver<Maybe<ResolversTypes['Theme']>, ParentType, ContextType>;
     updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -6083,6 +6265,24 @@ export type QueryResolvers<
         ContextType,
         RequireFields<QueryReviewWorkflowsWorkflows_ConnectionArgs, 'pagination' | 'sort' | 'status'>
     >;
+    theme?: Resolver<
+        Maybe<ResolversTypes['Theme']>,
+        ParentType,
+        ContextType,
+        RequireFields<QueryThemeArgs, 'documentId' | 'status'>
+    >;
+    themes?: Resolver<
+        Array<Maybe<ResolversTypes['Theme']>>,
+        ParentType,
+        ContextType,
+        RequireFields<QueryThemesArgs, 'pagination' | 'sort' | 'status'>
+    >;
+    themes_connection?: Resolver<
+        Maybe<ResolversTypes['ThemeEntityResponseCollection']>,
+        ParentType,
+        ContextType,
+        RequireFields<QueryThemes_ConnectionArgs, 'pagination' | 'sort' | 'status'>
+    >;
     uploadFile?: Resolver<
         Maybe<ResolversTypes['UploadFile']>,
         ParentType,
@@ -6207,6 +6407,38 @@ export type ReviewWorkflowsWorkflowStageRelationResponseCollectionResolvers<
         ResolversParentTypes['ReviewWorkflowsWorkflowStageRelationResponseCollection'] = ResolversParentTypes['ReviewWorkflowsWorkflowStageRelationResponseCollection'],
 > = {
     nodes?: Resolver<Array<ResolversTypes['ReviewWorkflowsWorkflowStage']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ThemeResolvers<
+    ContextType = any,
+    ParentType extends ResolversParentTypes['Theme'] = ResolversParentTypes['Theme'],
+> = {
+    createdAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
+    documentId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    logo?: Resolver<Maybe<ResolversTypes['UploadFile']>, ParentType, ContextType>;
+    name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+    publishedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
+    updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ThemeEntityResponseCollectionResolvers<
+    ContextType = any,
+    ParentType extends
+        ResolversParentTypes['ThemeEntityResponseCollection'] = ResolversParentTypes['ThemeEntityResponseCollection'],
+> = {
+    nodes?: Resolver<Array<ResolversTypes['Theme']>, ParentType, ContextType>;
+    pageInfo?: Resolver<ResolversTypes['Pagination'], ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ThemeRelationResponseCollectionResolvers<
+    ContextType = any,
+    ParentType extends
+        ResolversParentTypes['ThemeRelationResponseCollection'] = ResolversParentTypes['ThemeRelationResponseCollection'],
+> = {
+    nodes?: Resolver<Array<ResolversTypes['Theme']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -6501,6 +6733,7 @@ export type Resolvers<ContextType = any> = {
     ComponentLabelsMedia?: ComponentLabelsMediaResolvers<ContextType>;
     ComponentLabelsValidation?: ComponentLabelsValidationResolvers<ContextType>;
     ComponentLayoutSection?: ComponentLayoutSectionResolvers<ContextType>;
+    ComponentLayoutTheme?: ComponentLayoutThemeResolvers<ContextType>;
     ComponentRelationResponseCollection?: ComponentRelationResponseCollectionResolvers<ContextType>;
     ComponentSeoMetadata?: ComponentSeoMetadataResolvers<ContextType>;
     ComponentSeoSeo?: ComponentSeoSeoResolvers<ContextType>;
@@ -6544,6 +6777,9 @@ export type Resolvers<ContextType = any> = {
     ReviewWorkflowsWorkflowStage?: ReviewWorkflowsWorkflowStageResolvers<ContextType>;
     ReviewWorkflowsWorkflowStageEntityResponseCollection?: ReviewWorkflowsWorkflowStageEntityResponseCollectionResolvers<ContextType>;
     ReviewWorkflowsWorkflowStageRelationResponseCollection?: ReviewWorkflowsWorkflowStageRelationResponseCollectionResolvers<ContextType>;
+    Theme?: ThemeResolvers<ContextType>;
+    ThemeEntityResponseCollection?: ThemeEntityResponseCollectionResolvers<ContextType>;
+    ThemeRelationResponseCollection?: ThemeRelationResponseCollectionResolvers<ContextType>;
     UploadFile?: UploadFileResolvers<ContextType>;
     UploadFileEntityResponseCollection?: UploadFileEntityResponseCollectionResolvers<ContextType>;
     UploadFileRelationResponseCollection?: UploadFileRelationResponseCollectionResolvers<ContextType>;
@@ -6762,6 +6998,10 @@ export type AppConfigFragment = {
     documentId: string;
     header?: { documentId: string };
     footer?: { documentId: string };
+    themes: Array<{
+        name: string;
+        logo?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+    }>;
 };
 
 export type ComponentFragment = {
@@ -6771,7 +7011,7 @@ export type ComponentFragment = {
         spacing: Enum_Componentlayoutsection_Spacing;
         background: Enum_Componentlayoutsection_Background;
         variant: Enum_Componentlayoutsection_Variant;
-        theme?: Enum_Componentlayoutsection_Theme;
+        theme?: { name: string };
     };
     content: Array<
         | { __typename: 'ComponentComponentsArticle' }
@@ -6875,7 +7115,6 @@ export type PageFragment = {
     publishedAt?: any;
     hasOwnTitle: boolean;
     showBreadcrumbs: boolean;
-    theme: Enum_Page_Theme;
     permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any };
     SEO: {
         title: string;
@@ -6885,6 +7124,7 @@ export type PageFragment = {
         keywords?: Array<{ keyword: string }>;
         image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
     };
+    theme?: { name: string };
     parent?: {
         slug: string;
         SEO: { title: string };
@@ -6900,7 +7140,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
-                      theme?: Enum_Componentlayoutsection_Theme;
+                      theme?: { name: string };
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6931,7 +7171,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
-                      theme?: Enum_Componentlayoutsection_Theme;
+                      theme?: { name: string };
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6959,7 +7199,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
-                      theme?: Enum_Componentlayoutsection_Theme;
+                      theme?: { name: string };
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6987,7 +7227,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
-                      theme?: Enum_Componentlayoutsection_Theme;
+                      theme?: { name: string };
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -7015,7 +7255,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
-                      theme?: Enum_Componentlayoutsection_Theme;
+                      theme?: { name: string };
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -7052,7 +7292,7 @@ type Template_ComponentTemplatesOneColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
-            theme?: Enum_Componentlayoutsection_Theme;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7084,7 +7324,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
-            theme?: Enum_Componentlayoutsection_Theme;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7112,7 +7352,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
-            theme?: Enum_Componentlayoutsection_Theme;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7140,7 +7380,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
-            theme?: Enum_Componentlayoutsection_Theme;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7168,7 +7408,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
-            theme?: Enum_Componentlayoutsection_Theme;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7252,7 +7492,7 @@ export type CategoryComponentFragment = {
                 spacing: Enum_Componentlayoutsection_Spacing;
                 background: Enum_Componentlayoutsection_Background;
                 variant: Enum_Componentlayoutsection_Variant;
-                theme?: Enum_Componentlayoutsection_Theme;
+                theme?: { name: string };
             };
             content: Array<
                 | { __typename: 'ComponentComponentsArticle' }
@@ -7571,7 +7811,7 @@ export type LayoutSectionFragment = {
     spacing: Enum_Componentlayoutsection_Spacing;
     background: Enum_Componentlayoutsection_Background;
     variant: Enum_Componentlayoutsection_Variant;
-    theme?: Enum_Componentlayoutsection_Theme;
+    theme?: { name: string };
 };
 
 export type OneColumnTemplateFragment = {
@@ -7582,7 +7822,7 @@ export type OneColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
-            theme?: Enum_Componentlayoutsection_Theme;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7613,7 +7853,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
-            theme?: Enum_Componentlayoutsection_Theme;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7641,7 +7881,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
-            theme?: Enum_Componentlayoutsection_Theme;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7669,7 +7909,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
-            theme?: Enum_Componentlayoutsection_Theme;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7697,7 +7937,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
-            theme?: Enum_Componentlayoutsection_Theme;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7725,7 +7965,15 @@ export type GetAppConfigQueryVariables = Exact<{
 }>;
 
 export type GetAppConfigQuery = {
-    appConfig?: { documentId: string; header?: { documentId: string }; footer?: { documentId: string } };
+    appConfig?: {
+        documentId: string;
+        header?: { documentId: string };
+        footer?: { documentId: string };
+        themes: Array<{
+            name: string;
+            logo?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+        }>;
+    };
     configurableTexts?: {
         errors: { requestError: { title: string; content?: string } };
         dates: { today: string; yesterday: string };
@@ -7808,7 +8056,7 @@ export type GetComponentQuery = {
                               spacing: Enum_Componentlayoutsection_Spacing;
                               background: Enum_Componentlayoutsection_Background;
                               variant: Enum_Componentlayoutsection_Variant;
-                              theme?: Enum_Componentlayoutsection_Theme;
+                              theme?: { name: string };
                           };
                           content: Array<
                               | { __typename: 'ComponentComponentsArticle' }
@@ -8135,7 +8383,6 @@ export type GetPageQuery = {
         publishedAt?: any;
         hasOwnTitle: boolean;
         showBreadcrumbs: boolean;
-        theme: Enum_Page_Theme;
         permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any };
         SEO: {
             title: string;
@@ -8145,6 +8392,7 @@ export type GetPageQuery = {
             keywords?: Array<{ keyword: string }>;
             image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
         };
+        theme?: { name: string };
         parent?: {
             slug: string;
             SEO: { title: string };
@@ -8160,7 +8408,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
-                          theme?: Enum_Componentlayoutsection_Theme;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8191,7 +8439,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
-                          theme?: Enum_Componentlayoutsection_Theme;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8219,7 +8467,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
-                          theme?: Enum_Componentlayoutsection_Theme;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8247,7 +8495,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
-                          theme?: Enum_Componentlayoutsection_Theme;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8275,7 +8523,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
-                          theme?: Enum_Componentlayoutsection_Theme;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8316,7 +8564,6 @@ export type GetPagesQuery = {
         publishedAt?: any;
         hasOwnTitle: boolean;
         showBreadcrumbs: boolean;
-        theme: Enum_Page_Theme;
         permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any };
         SEO: {
             title: string;
@@ -8326,6 +8573,7 @@ export type GetPagesQuery = {
             keywords?: Array<{ keyword: string }>;
             image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
         };
+        theme?: { name: string };
         parent?: {
             slug: string;
             SEO: { title: string };
@@ -8341,7 +8589,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
-                          theme?: Enum_Componentlayoutsection_Theme;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8372,7 +8620,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
-                          theme?: Enum_Componentlayoutsection_Theme;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8400,7 +8648,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
-                          theme?: Enum_Componentlayoutsection_Theme;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8428,7 +8676,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
-                          theme?: Enum_Componentlayoutsection_Theme;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8456,7 +8704,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
-                          theme?: Enum_Componentlayoutsection_Theme;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8608,7 +8856,14 @@ export const AppConfigFragmentDoc = gql`
         footer: signedInFooter {
             documentId
         }
+        themes {
+            name
+            logo {
+                ...Media
+            }
+        }
     }
+    ${MediaFragmentDoc}
 `;
 export const NavigationItemFragmentDoc = gql`
     fragment NavigationItem on ComponentContentNavigationItem {
@@ -8713,7 +8968,9 @@ export const LayoutSectionFragmentDoc = gql`
         spacing
         background
         variant
-        theme
+        theme {
+            name
+        }
     }
 `;
 export const ComponentFragmentDoc = gql`
@@ -8771,7 +9028,9 @@ export const PageFragmentDoc = gql`
         SEO {
             ...Seo
         }
-        theme
+        theme {
+            name
+        }
         parent {
             slug
             SEO {

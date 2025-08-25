@@ -1,6 +1,8 @@
 fragment LayoutSection on ComponentLayoutSection {
-    spacing,
-    background,
-    variant,
-    theme,
+    spacing
+    background
+    variant
+    theme {
+        name
+    }
 }

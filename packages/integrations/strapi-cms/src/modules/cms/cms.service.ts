@@ -95,7 +95,7 @@ export class CmsService implements CMS.Service {
                 locale: options.locale,
             });
 
-            return forkJoin([appConfig]).pipe(map(([appConfig]) => mapAppConfig(appConfig.data)));
+            return forkJoin([appConfig]).pipe(map(([appConfig]) => mapAppConfig(appConfig.data, this.baseUrl)));
         });
     }
 

@@ -64,7 +64,7 @@ export default async function NotFound() {
     });
 
     return (
-        <GlobalProvider config={init} labels={init.labels} locale={locale}>
+        <GlobalProvider config={init} labels={init.labels} locale={locale} themes={init.themes}>
             <div className="flex flex-col min-h-dvh">
                 <Header data={init.common.header} />
                 <div className="flex flex-col grow">

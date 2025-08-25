@@ -32,7 +32,7 @@ export const mapPage = (data: PageFragment): CMS.Model.Page.Page => {
                   }
                 : undefined,
         },
-        theme: data.theme,
+        theme: data.theme?.name,
         hasOwnTitle: data.hasOwnTitle,
         showBreadcrumbs: data.showBreadcrumbs,
         parent: {
@@ -153,7 +153,7 @@ const mapLayout = (layout: LayoutSectionFragment): CMS.Model.Page.LayoutSection 
         spacing: layout.spacing,
         background: layout.background,
         variant: layout.variant,
-        theme: layout.theme,
+        theme: layout.theme?.name,
     };
 };
 
