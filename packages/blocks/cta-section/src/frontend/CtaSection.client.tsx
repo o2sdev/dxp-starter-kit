@@ -5,12 +5,10 @@ import React from 'react';
 
 import { cn } from '@dxp/ui/lib/utils';
 
-import { ActionList } from '@dxp/ui/components/ActionList';
-import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
+import { LinkList } from '@dxp/ui/components/LinkList';
 import { RichText } from '@dxp/ui/components/RichText';
 
-import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { CtaSectionPureProps } from './CtaSection.types';
@@ -18,14 +16,14 @@ import { CtaSectionPureProps } from './CtaSection.types';
 export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessToken, routing, ...component }) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
-    const { title, description, image, links, preTitle, inverted, labels } = component;
+    const { title, description, image, links, preTitle, inverted } = component;
 
     const isImageAvailable = image && image.url;
 
     return (
         <div
             className={cn(
-                'h-full w-full flex flex-col pt-6 lg:pt-16 rounded-xl shadow-lg bg-primary text-primary-foreground',
+                'theme-business h-full w-full flex flex-col pt-6 lg:pt-16 rounded-xl shadow-lg bg-black text-primary-foreground',
                 inverted ? 'lg:flex-row-reverse pr-6 lg:pr-16' : 'lg:flex-row pl-6 lg:pl-16',
             )}
         >
@@ -62,37 +60,11 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
                         )}
                     </div>
 
-                    {links && links.length > 0 && (
-                        <ActionList
-                            className={cn(
-                                'sm:flex-row align-start justify-center lg:justify-start',
-                                !isImageAvailable && 'justify-center lg:justify-center',
-                            )}
-                            actions={links.map(
-                                (link, index) =>
-                                    link.label && (
-                                        <Link
-                                            asChild
-                                            variant={link.variant}
-                                            key={`${link.label}-${index}`}
-                                            className={
-                                                link.variant === 'primary'
-                                                    ? 'bg-primary-foreground text-primary hover:bg-primary-foreground/90'
-                                                    : 'text-primary-foreground'
-                                            }
-                                        >
-                                            <LinkComponent href={link.url}>
-                                                <>
-                                                    {link.label}
-                                                    {link.icon && <DynamicIcon name={link.icon} size={16} />}
-                                                </>
-                                            </LinkComponent>
-                                        </Link>
-                                    ),
-                            )}
-                            showMoreLabel={labels.showMore}
-                        />
-                    )}
+                    <LinkList
+                        className={cn('justify-center lg:justify-start', !isImageAvailable && 'lg:justify-center')}
+                        links={links}
+                        LinkComponent={LinkComponent}
+                    />
                 </div>
             </div>
 

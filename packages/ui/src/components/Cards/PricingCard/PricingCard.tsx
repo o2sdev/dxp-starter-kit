@@ -12,8 +12,9 @@ import { TooltipHover } from '@dxp/ui/components/TooltipHover';
 
 import { Badge } from '@dxp/ui/elements/badge';
 import { Button } from '@dxp/ui/elements/button';
-import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
+
+import { LinkList } from '../../LinkList';
 
 import { FeatureItemProps, PricingCardProps } from './PricingCard.types';
 
@@ -100,24 +101,7 @@ export const PricingCard: React.FC<Readonly<PricingCardProps>> = (props) => {
                         </Typography>
                     )}
 
-                    {links && links.length > 0 && (
-                        <ul className="flex flex-col gap-2 w-full items-center">
-                            {links.map((link, index) => (
-                                <li key={`${link.label}-${index}`} className="w-full">
-                                    {link.label && (
-                                        <Link asChild variant={link.variant} key={link.label} className="w-full">
-                                            <LinkComponent href={link.url}>
-                                                <>
-                                                    {link.label}
-                                                    {link.icon && <DynamicIcon name={link.icon} size={16} />}
-                                                </>
-                                            </LinkComponent>
-                                        </Link>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+                    <LinkList className="justify-center sm:flex-col" links={links} LinkComponent={LinkComponent} />
                 </div>
 
                 <div className="flex flex-col gap-4">
