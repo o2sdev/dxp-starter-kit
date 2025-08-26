@@ -1,5 +1,16 @@
 # @dxp/ui
 
+## 1.2.4
+
+### Patch Changes
+
+- 94a984c: fix: center links on mobile
+
+    Add dedicated LinkList component to handle this case.
+
+- Updated dependencies [b35e813]
+    - @dxp/framework@0.1.3
+
 ## 1.2.3
 
 ### Patch Changes
