@@ -1,14 +1,14 @@
 import { CMS } from '@dxp/framework/modules';
 
-export const PAGE_DASHBOARD_EN: CMS.Model.Page.Page = {
-    id: 'dashboard',
-    slug: '/',
+export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
+    id: 'personal-1',
+    slug: '/personal',
     locale: 'en',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Dashboard',
-        description: 'Dashboard',
+        title: 'Personal',
+        description: 'Personal',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -85,15 +85,15 @@ export const PAGE_DASHBOARD_EN: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_DASHBOARD_DE: CMS.Model.Page.Page = {
-    id: 'dashboard',
-    slug: '/',
+export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
+    id: 'personal-1',
+    slug: '/persönlich',
     locale: 'de',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Dashboard',
-        description: 'Dashboard',
+        title: 'Personal',
+        description: 'Personal',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -170,15 +170,15 @@ export const PAGE_DASHBOARD_DE: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_DASHBOARD_PL: CMS.Model.Page.Page = {
-    id: 'dashboard',
-    slug: '/',
+export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
+    id: 'personal-1',
+    slug: '/indywidualny',
     locale: 'pl',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Dashboard',
-        description: 'Dashboard',
+        title: 'Personal',
+        description: 'Personal',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',

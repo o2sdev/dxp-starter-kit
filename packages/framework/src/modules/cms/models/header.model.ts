@@ -5,6 +5,7 @@ export class Header {
     id!: string;
     title?: string;
     logo?: Media.Media;
+    logoLabel!: string;
     notification?: {
         url: string;
         label: string;

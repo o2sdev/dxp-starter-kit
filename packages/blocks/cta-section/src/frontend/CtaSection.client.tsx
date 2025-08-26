@@ -5,10 +5,12 @@ import React from 'react';
 
 import { cn } from '@dxp/ui/lib/utils';
 
+import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
 import { LinkList } from '@dxp/ui/components/LinkList';
 import { RichText } from '@dxp/ui/components/RichText';
 
+import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { CtaSectionPureProps } from './CtaSection.types';
@@ -23,7 +25,7 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
     return (
         <div
             className={cn(
-                'theme-business h-full w-full flex flex-col pt-6 lg:pt-16 rounded-xl shadow-lg bg-black text-primary-foreground',
+                'h-full w-full flex flex-col pt-6 lg:pt-16 rounded-xl shadow-lg bg-primary text-primary-foreground',
                 inverted ? 'lg:flex-row-reverse pr-6 lg:pr-16' : 'lg:flex-row pl-6 lg:pl-16',
             )}
         >
@@ -42,11 +44,7 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
                         )}
                     >
                         <div className="flex flex-col gap-5 md:gap-4">
-                            {preTitle && (
-                                <Typography variant="body" className="text-primary-foreground">
-                                    {preTitle}
-                                </Typography>
-                            )}
+                            {preTitle && <Typography variant="body">{preTitle}</Typography>}
 
                             {title && (
                                 <Typography variant="highlightedMedium" asChild>
@@ -55,16 +53,36 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
                             )}
                         </div>
 
-                        {description && (
-                            <RichText content={description} baseFontSize="body" className="text-primary-foreground" />
-                        )}
+                        {description && <RichText content={description} baseFontSize="body" className="text-muted" />}
                     </div>
 
                     <LinkList
                         className={cn('justify-center lg:justify-start', !isImageAvailable && 'lg:justify-center')}
-                        links={links}
                         LinkComponent={LinkComponent}
-                    />
+                    >
+                        {links?.map(
+                            (link) =>
+                                link.label && (
+                                    <Link
+                                        asChild
+                                        variant={link.variant}
+                                        key={link.label}
+                                        className={cn(
+                                            link.variant === 'primary' &&
+                                                'text-primary bg-primary-foreground hover:bg-primary-foreground/90',
+                                            link.variant === 'link' && 'text-link bg-link-foreground',
+                                        )}
+                                    >
+                                        <LinkComponent href={link.url}>
+                                            <>
+                                                {link.label}
+                                                {link.icon && <DynamicIcon name={link.icon} size={16} />}
+                                            </>
+                                        </LinkComponent>
+                                    </Link>
+                                ),
+                        )}
+                    </LinkList>
                 </div>
             </div>
 

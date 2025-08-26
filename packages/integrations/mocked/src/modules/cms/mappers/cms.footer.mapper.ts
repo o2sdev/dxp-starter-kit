@@ -9,45 +9,40 @@ const MOCK_FOOTER_EN: CMS.Model.Footer.Footer = {
         width: 92,
         height: 24,
     },
+    logoLabel: 'Go to home',
     items: [
         {
             __typename: 'NavigationGroup',
-            title: 'Privacy Policy',
+            title: 'Personal',
+            url: '/personal',
             items: [
                 {
-                    label: 'Privacy Policy 1',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Accounts',
+                    url: '/personal/accounts',
                 },
                 {
-                    label: 'Privacy Policy 2',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Cards',
+                    url: '/personal/cards',
                 },
             ],
         },
         {
             __typename: 'NavigationGroup',
-            title: 'Terms of Service',
+            title: 'Business',
+            url: '/business',
             items: [
                 {
-                    label: 'Terms of Service 1',
-                    url: 'https://hycom.digital/terms-and-conditions',
                     __typename: 'NavigationItem',
+                    label: 'Accounts',
+                    url: '/business/accounts',
                 },
                 {
-                    label: 'Terms of Service 2',
-                    url: 'https://hycom.digital/terms-and-conditions',
                     __typename: 'NavigationItem',
+                    label: 'Cards',
+                    url: '/business/cards',
                 },
-            ],
-        },
-        {
-            __typename: 'NavigationGroup',
-            title: 'Cookies Settings',
-            items: [
-                { label: 'Cookies Settings 1', url: '/', __typename: 'NavigationItem' },
-                { label: 'Cookies Settings 2', url: '/', __typename: 'NavigationItem' },
             ],
         },
     ],
@@ -63,52 +58,34 @@ const MOCK_FOOTER_PL: CMS.Model.Footer.Footer = {
         width: 92,
         height: 24,
     },
+    logoLabel: 'Przejdź do strony głównej',
     items: [
         {
             __typename: 'NavigationGroup',
-            title: 'Polityka Prywatności',
+            title: 'Indywidualny',
+            url: '/indywidualny',
             items: [
                 {
-                    label: 'Polityka Prywatności 1',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Konta',
+                    url: '/indywidualny/konta',
                 },
                 {
-                    label: 'Polityka Prywatności 2',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Karty',
+                    url: '/indywidualny/karty',
                 },
             ],
         },
         {
             __typename: 'NavigationGroup',
-            title: 'Warunki Korzystania',
+            title: 'Firma',
+            url: '/firma',
             items: [
                 {
-                    label: 'Warunki Korzystania 1',
-                    url: 'https://hycom.digital/terms-and-conditions',
                     __typename: 'NavigationItem',
-                },
-                {
-                    label: 'Warunki Korzystania 2',
-                    url: 'https://hycom.digital/terms-and-conditions',
-                    __typename: 'NavigationItem',
-                },
-            ],
-        },
-        {
-            __typename: 'NavigationGroup',
-            title: 'Ustawienia Plików Cookie',
-            items: [
-                {
-                    label: 'Ustawienia Plików Cookie 1',
-                    url: '/',
-                    __typename: 'NavigationItem',
-                },
-                {
-                    label: 'Ustawienia Plików Cookie 2',
-                    url: '/',
-                    __typename: 'NavigationItem',
+                    label: 'Konta',
+                    url: '/firma/konta',
                 },
             ],
         },
@@ -125,45 +102,35 @@ const MOCK_FOOTER_DE: CMS.Model.Footer.Footer = {
         width: 92,
         height: 24,
     },
+    logoLabel: 'Zur Startseite',
     items: [
         {
             __typename: 'NavigationGroup',
-            title: 'Datenschutzrichtlinie',
+            title: 'Kunden Portal',
+            url: '/persönlich',
             items: [
                 {
-                    label: 'Datenschutzrichtlinie 1',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Konten',
+                    url: '/persönlich/konten',
                 },
                 {
-                    label: 'Datenschutzrichtlinie 2',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Karten',
+                    url: '/persönlich/karten',
                 },
             ],
         },
         {
             __typename: 'NavigationGroup',
-            title: 'Nutzungsbedingungen',
+            title: 'Geschäftlich',
+            url: '/geschäftlich',
             items: [
                 {
-                    label: 'Nutzungsbedingungen 1',
-                    url: 'https://hycom.digital/terms-and-conditions',
                     __typename: 'NavigationItem',
+                    label: 'Konten',
+                    url: '/geschäftlich/konten',
                 },
-                {
-                    label: 'Nutzungsbedingungen 2',
-                    url: 'https://hycom.digital/terms-and-conditions',
-                    __typename: 'NavigationItem',
-                },
-            ],
-        },
-        {
-            __typename: 'NavigationGroup',
-            title: 'Cookie-Einstellungen',
-            items: [
-                { label: 'Cookie-Einstellungen 1', url: '/', __typename: 'NavigationItem' },
-                { label: 'Cookie-Einstellungen 2', url: '/', __typename: 'NavigationItem' },
             ],
         },
     ],

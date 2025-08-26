@@ -4,6 +4,7 @@ fragment Footer on Footer {
     logo {
         ...Media
     }
+    logoLabel
     items {
         ... on ComponentContentNavigationGroup {
             ...NavigationGroup

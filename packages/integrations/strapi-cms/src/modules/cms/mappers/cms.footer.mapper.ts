@@ -20,6 +20,7 @@ export const mapFooter = (data: GetFooterQuery, baseURL?: string): CMS.Model.Foo
             width: component.logo.width,
             height: component.logo.height,
         },
+        logoLabel: component.logoLabel,
         items: component.items
             .filter((item) => Object.keys(item).length !== 0)
             .map((item) => mapNaviagation(item as NavigationGroupFragment | NavigationItemFragment)),
@@ -36,6 +37,7 @@ const mapNaviagation = (
                 __typename: 'NavigationGroup',
                 title: item.title,
                 items: item.items?.map((item) => mapFooterItem(item)),
+                url: item.url || item.page?.slug || '/',
             };
         case 'ComponentContentNavigationItem':
             return mapFooterItem(item);
