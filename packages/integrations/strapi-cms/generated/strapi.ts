@@ -2125,6 +2125,7 @@ export type Page = {
     parent?: Maybe<Page>;
     permissions?: Maybe<ComponentSeoUserRoles>;
     publishedAt?: Maybe<Scalars['DateTime']['output']>;
+    redirect?: Maybe<Page>;
     showBreadcrumbs: Scalars['Boolean']['output'];
     slug: Scalars['String']['output'];
     template: Array<Maybe<PageTemplateDynamicZone>>;
@@ -2175,6 +2176,7 @@ export type PageFiltersInput = {
     parent?: InputMaybe<PageFiltersInput>;
     permissions?: InputMaybe<ComponentSeoUserRolesFiltersInput>;
     publishedAt?: InputMaybe<DateTimeFilterInput>;
+    redirect?: InputMaybe<PageFiltersInput>;
     showBreadcrumbs?: InputMaybe<BooleanFilterInput>;
     slug?: InputMaybe<StringFilterInput>;
     theme?: InputMaybe<ThemeFiltersInput>;
@@ -2188,6 +2190,7 @@ export type PageInput = {
     parent?: InputMaybe<Scalars['ID']['input']>;
     permissions?: InputMaybe<ComponentSeoUserRolesInput>;
     publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+    redirect?: InputMaybe<Scalars['ID']['input']>;
     showBreadcrumbs?: InputMaybe<Scalars['Boolean']['input']>;
     slug?: InputMaybe<Scalars['String']['input']>;
     template?: InputMaybe<Array<Scalars['PageTemplateDynamicZoneInput']['input']>>;
@@ -3317,6 +3320,7 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               | 'localizations'
               | 'localizations_connection'
               | 'parent'
+              | 'redirect'
               | 'template'
               | 'theme'
           > & {
@@ -3326,6 +3330,7 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               localizations: Array<Maybe<_RefType['Page']>>;
               localizations_connection?: Maybe<_RefType['PageRelationResponseCollection']>;
               parent?: Maybe<_RefType['Page']>;
+              redirect?: Maybe<_RefType['Page']>;
               template: Array<Maybe<_RefType['PageTemplateDynamicZone']>>;
               theme?: Maybe<_RefType['Theme']>;
           })
@@ -3764,6 +3769,7 @@ export type ResolversTypes = {
             | 'localizations'
             | 'localizations_connection'
             | 'parent'
+            | 'redirect'
             | 'template'
             | 'theme'
         > & {
@@ -3773,6 +3779,7 @@ export type ResolversTypes = {
             localizations: Array<Maybe<ResolversTypes['Page']>>;
             localizations_connection?: Maybe<ResolversTypes['PageRelationResponseCollection']>;
             parent?: Maybe<ResolversTypes['Page']>;
+            redirect?: Maybe<ResolversTypes['Page']>;
             template: Array<Maybe<ResolversTypes['PageTemplateDynamicZone']>>;
             theme?: Maybe<ResolversTypes['Theme']>;
         }
@@ -4177,6 +4184,7 @@ export type ResolversParentTypes = {
         | 'localizations'
         | 'localizations_connection'
         | 'parent'
+        | 'redirect'
         | 'template'
         | 'theme'
     > & {
@@ -4186,6 +4194,7 @@ export type ResolversParentTypes = {
         localizations: Array<Maybe<ResolversParentTypes['Page']>>;
         localizations_connection?: Maybe<ResolversParentTypes['PageRelationResponseCollection']>;
         parent?: Maybe<ResolversParentTypes['Page']>;
+        redirect?: Maybe<ResolversParentTypes['Page']>;
         template: Array<Maybe<ResolversParentTypes['PageTemplateDynamicZone']>>;
         theme?: Maybe<ResolversParentTypes['Theme']>;
     };
@@ -6057,6 +6066,7 @@ export type PageResolvers<
     parent?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     permissions?: Resolver<Maybe<ResolversTypes['ComponentSeoUserRoles']>, ParentType, ContextType>;
     publishedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
+    redirect?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     showBreadcrumbs?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
     slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     template?: Resolver<Array<Maybe<ResolversTypes['PageTemplateDynamicZone']>>, ParentType, ContextType>;
@@ -7204,6 +7214,7 @@ export type PageFragment = {
         SEO: { title: string };
         parent?: { slug: string; SEO: { title: string }; parent?: { slug: string; SEO: { title: string } } };
     };
+    redirect?: { slug: string };
     template: Array<
         | {
               __typename: 'ComponentTemplatesOneColumn';
@@ -8480,6 +8491,7 @@ export type GetPageQuery = {
             SEO: { title: string };
             parent?: { slug: string; SEO: { title: string }; parent?: { slug: string; SEO: { title: string } } };
         };
+        redirect?: { slug: string };
         template: Array<
             | {
                   __typename: 'ComponentTemplatesOneColumn';
@@ -8661,6 +8673,7 @@ export type GetPagesQuery = {
             SEO: { title: string };
             parent?: { slug: string; SEO: { title: string }; parent?: { slug: string; SEO: { title: string } } };
         };
+        redirect?: { slug: string };
         template: Array<
             | {
                   __typename: 'ComponentTemplatesOneColumn';
@@ -9142,6 +9155,9 @@ export const PageFragmentDoc = gql`
                     }
                 }
             }
+        }
+        redirect {
+            slug
         }
         template {
             __typename

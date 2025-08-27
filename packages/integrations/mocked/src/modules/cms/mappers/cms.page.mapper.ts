@@ -6,6 +6,7 @@ import {
     PAGE_BUSINESS_ACCOUNTS_PL,
 } from './mocks/pages/business-accounts.page';
 import { PAGE_BUSINESS_DE, PAGE_BUSINESS_EN, PAGE_BUSINESS_PL } from './mocks/pages/business.page';
+import { PAGE_HOME_DE, PAGE_HOME_EN, PAGE_HOME_PL } from './mocks/pages/home.page';
 import {
     PAGE_HELP_AND_SUPPORT_DE,
     PAGE_HELP_AND_SUPPORT_EN,
@@ -26,7 +27,7 @@ import { PAGE_PERSONAL_DE, PAGE_PERSONAL_EN, PAGE_PERSONAL_PL } from './mocks/pa
 export const mapPage = (slug: string, locale: string): CMS.Model.Page.Page | undefined => {
     switch (slug) {
         case '/':
-            return locale === 'pl' ? PAGE_PERSONAL_EN : locale === 'de' ? PAGE_PERSONAL_DE : PAGE_PERSONAL_PL;
+            return locale === 'en' ? PAGE_HOME_EN : locale === 'de' ? PAGE_HOME_DE : PAGE_HOME_PL;
 
         case '/personal':
             return PAGE_PERSONAL_EN;

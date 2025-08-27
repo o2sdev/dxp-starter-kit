@@ -53,6 +53,7 @@ export const mapPage = (data: PageFragment): CMS.Model.Page.Page => {
                 },
             },
         },
+        redirect: data.redirect?.slug,
     };
 };
 

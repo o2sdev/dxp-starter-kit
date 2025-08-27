@@ -35,6 +35,9 @@ fragment Page on Page {
             }
         }
     }
+    redirect {
+        slug
+    }
     template {
         __typename
         ... on ComponentTemplatesOneColumn {
