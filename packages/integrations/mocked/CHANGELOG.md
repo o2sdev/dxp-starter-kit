@@ -1,5 +1,18 @@
 # @dxp/integrations.mocked
 
+## 0.3.0
+
+### Minor Changes
+
+- 049bc15: feat: make navigationGroup selectable in navbar
+
+### Patch Changes
+
+- 78d5f26: added an options to configure page redirects via CMS
+- Updated dependencies [049bc15]
+- Updated dependencies [78d5f26]
+    - @dxp/framework@0.2.0
+
 ## 0.2.2
 
 ### Patch Changes

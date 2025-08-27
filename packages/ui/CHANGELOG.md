@@ -1,5 +1,17 @@
 # @dxp/ui
 
+## 1.3.0
+
+### Minor Changes
+
+- 049bc15: feat: make navigationGroup selectable in navbar
+
+### Patch Changes
+
+- Updated dependencies [049bc15]
+- Updated dependencies [78d5f26]
+    - @dxp/framework@0.2.0
+
 ## 1.2.4
 
 ### Patch Changes

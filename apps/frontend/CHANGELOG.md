@@ -1,5 +1,21 @@
 # @dxp/frontend
 
+## 1.10.0
+
+### Minor Changes
+
+- 049bc15: feat: make navigationGroup selectable in navbar
+
+### Patch Changes
+
+- 78d5f26: added an options to configure page redirects via CMS
+- Updated dependencies [049bc15]
+- Updated dependencies [78d5f26]
+    - @dxp/integrations.mocked@0.3.0
+    - @dxp/framework@0.2.0
+    - @dxp/ui@1.3.0
+    - @dxp/api-harmonization@1.9.3
+
 ## 1.9.2
 
 ### Patch Changes
