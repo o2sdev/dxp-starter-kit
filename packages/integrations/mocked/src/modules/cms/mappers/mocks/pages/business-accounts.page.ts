@@ -1,7 +1,7 @@
 import { CMS } from '@dxp/framework/modules';
 
 export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
-    id: 'accounts',
+    id: 'business-accounts-1',
     slug: '/business/accounts',
     locale: 'en',
     seo: {
@@ -74,7 +74,7 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
 };
 
 export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
-    id: 'accounts',
+    id: 'business-accounts-1',
     slug: '/geschäftlich/konten',
     locale: 'de',
     seo: {
@@ -141,7 +141,7 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
 };
 
 export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
-    id: 'accounts',
+    id: 'business-accounts-1',
     slug: '/firma/konta',
     locale: 'pl',
     seo: {

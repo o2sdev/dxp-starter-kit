@@ -1,14 +1,14 @@
 import { CMS } from '@dxp/framework/modules';
 
-export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
-    id: 'personal-accounts-1',
-    slug: '/personal/accounts',
+export const PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_EN: CMS.Model.Page.Page = {
+    id: 'personal-accounts-everyday-account-1',
+    slug: '/personal/accounts/everyday-account',
     locale: 'en',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Everyday Account',
+        description: 'Everyday Account',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -18,9 +18,15 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/personal',
+        slug: '/personal/accounts',
         seo: {
-            title: 'Personal',
+            title: 'Accounts',
+        },
+        parent: {
+            slug: '/personal',
+            seo: {
+                title: 'Personal',
+            },
         },
     },
     permissions: [],
@@ -31,8 +37,8 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'small',
@@ -41,7 +47,7 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-3',
+                    id: 'feature-section-4',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -49,8 +55,8 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-5',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -59,7 +65,16 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-8',
+                    id: 'feature-section-6',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'CtaSectionBlock',
+                    id: 'cta-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -68,7 +83,7 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',
@@ -82,21 +97,33 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
-    id: 'personal-accounts-1',
-    slug: '/persönlich/konten',
+export const PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_DE: CMS.Model.Page.Page = {
+    id: 'personal-accounts-everyday-account-1',
+    slug: '/persönlich/konten/tageskonto',
     locale: 'de',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Tageskonto',
+        description: 'Tageskonto',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
             width: 150,
             height: 150,
             alt: 'Placeholder',
+        },
+    },
+    parent: {
+        slug: '/persönlich/konten',
+        seo: {
+            title: 'Konten',
+        },
+        parent: {
+            slug: '/persönlich',
+            seo: {
+                title: 'Persönlich',
+            },
         },
     },
     permissions: [],
@@ -107,8 +134,8 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'small',
@@ -117,7 +144,7 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-3',
+                    id: 'feature-section-4',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -125,8 +152,8 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-5',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -135,7 +162,16 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-8',
+                    id: 'feature-section-6',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'CtaSectionBlock',
+                    id: 'cta-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -144,7 +180,7 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',
@@ -158,21 +194,33 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
-    id: 'personal-accounts-1',
-    slug: '/indywidualny/konta',
+export const PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_PL: CMS.Model.Page.Page = {
+    id: 'personal-accounts-everyday-account-1',
+    slug: '/indywidualny/konta/konto-codzienne',
     locale: 'pl',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Konto Codzienne',
+        description: 'Konto Codzienne',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
             width: 150,
             height: 150,
             alt: 'Placeholder',
+        },
+    },
+    parent: {
+        slug: '/indywidualny/konta',
+        seo: {
+            title: 'Konten',
+        },
+        parent: {
+            slug: '/indywidualny',
+            seo: {
+                title: 'Indywidualny',
+            },
         },
     },
     permissions: [],
@@ -183,8 +231,8 @@ export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'small',
@@ -193,7 +241,7 @@ export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-3',
+                    id: 'feature-section-4',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -201,8 +249,8 @@ export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-5',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -211,7 +259,16 @@ export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-8',
+                    id: 'feature-section-6',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'CtaSectionBlock',
+                    id: 'cta-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -220,7 +277,7 @@ export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',

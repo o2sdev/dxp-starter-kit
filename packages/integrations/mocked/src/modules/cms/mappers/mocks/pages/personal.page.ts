@@ -29,7 +29,7 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
                     id: 'hero-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -47,8 +47,8 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
                     id: 'media-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
@@ -56,7 +56,16 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
                     id: 'feature-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -65,7 +74,7 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
                     id: 'cta-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -74,7 +83,7 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
                     id: 'bento-grid-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -114,7 +123,7 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
                     id: 'hero-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -132,7 +141,7 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
                     id: 'media-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'brand',
                     },
                 },
@@ -141,7 +150,7 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
                     id: 'feature-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -150,7 +159,7 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
                     id: 'cta-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -159,7 +168,7 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
                     id: 'bento-grid-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -199,7 +208,7 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
                     id: 'hero-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -217,7 +226,7 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
                     id: 'media-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'brand',
                     },
                 },
@@ -226,7 +235,7 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
                     id: 'feature-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -235,7 +244,7 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
                     id: 'cta-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -244,7 +253,7 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
                     id: 'bento-grid-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },

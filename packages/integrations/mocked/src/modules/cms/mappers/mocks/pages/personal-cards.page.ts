@@ -1,7 +1,7 @@
 import { CMS } from '@dxp/framework/modules';
 
 export const PAGE_PERSONAL_CARDS_EN: CMS.Model.Page.Page = {
-    id: 'cards',
+    id: 'personal-cards-1',
     slug: '/personal/cards',
     locale: 'en',
     seo: {
@@ -74,7 +74,7 @@ export const PAGE_PERSONAL_CARDS_EN: CMS.Model.Page.Page = {
 };
 
 export const PAGE_PERSONAL_CARDS_DE: CMS.Model.Page.Page = {
-    id: 'cards',
+    id: 'personal-cards-1',
     slug: '/persönlich/karten',
     locale: 'de',
     seo: {
@@ -141,7 +141,7 @@ export const PAGE_PERSONAL_CARDS_DE: CMS.Model.Page.Page = {
 };
 
 export const PAGE_PERSONAL_CARDS_PL: CMS.Model.Page.Page = {
-    id: 'cards',
+    id: 'personal-cards-1',
     slug: '/indywidualny/karty',
     locale: 'pl',
     seo: {

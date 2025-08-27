@@ -64,7 +64,10 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                         <ul
                             className={cn(
                                 'grid grid-rows-1 gap-8 md:gap-4',
-                                !isImageAvailable && 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6',
+                                !isImageAvailable && 'grid-cols-1 gap-6',
+                                !isImageAvailable && featureList.length === 2 && 'md:grid-cols-2',
+                                !isImageAvailable && featureList.length === 3 && 'md:grid-cols-3',
+                                !isImageAvailable && featureList.length >= 4 && 'md:grid-cols-2 lg:grid-cols-4',
                             )}
                         >
                             {featureList.map((feature, index) => (

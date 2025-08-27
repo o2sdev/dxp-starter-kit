@@ -1,25 +1,20 @@
 import { CMS } from '@dxp/framework/modules';
 
-const MOCK_PRICING_SECTION_BLOCK_EN: CMS.Model.PricingSectionBlock.PricingSectionBlock = {
+const MOCK_PRICING_SECTION_BLOCK_1_EN: CMS.Model.PricingSectionBlock.PricingSectionBlock = {
     id: 'pricing-section-1',
     title: 'Accounts',
-    subtitle: 'Subtitle',
     description: 'Choose the right account for your needs and enjoy simple, secure banking every day.',
     headingType: 'h1',
     pricingList: [
         {
-            title: 'Everyday account',
+            title: 'Everyday Account',
             description: 'A flexible account for daily banking, designed to managing your money effortless.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
-                width: 1920,
-                height: 1080,
+                url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/Frame-9.jpg',
+                width: 351,
+                height: 233,
                 alt: 'Pricing section image',
                 priority: true,
-            },
-            price: {
-                currency: 'USD',
-                value: 0.99,
             },
             isPromoted: false,
             links: [
@@ -27,14 +22,14 @@ const MOCK_PRICING_SECTION_BLOCK_EN: CMS.Model.PricingSectionBlock.PricingSectio
                     label: 'Get started',
                     icon: '',
                     description: 'Learn more about our pricing',
-                    url: '/',
+                    url: '/personal/accounts/everyday-account',
                     variant: 'secondary',
                 },
                 {
                     label: 'Learn more',
                     description: 'Learn more about our pricing',
                     icon: 'ArrowRight',
-                    url: '/',
+                    url: '/personal/accounts/everyday-account',
                     variant: 'link',
                 },
             ],
@@ -58,93 +53,30 @@ const MOCK_PRICING_SECTION_BLOCK_EN: CMS.Model.PricingSectionBlock.PricingSectio
             title: 'Savings Account',
             description: 'Grow your wealth with an account built for easy saving and smart financial planning',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
-                width: 1920,
-                height: 1080,
+                url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/Frame-9.jpg',
+                width: 351,
+                height: 233,
                 alt: 'Pricing section image',
                 priority: true,
             },
-            price: {
-                currency: 'USD',
-                value: 999.99,
-            },
-            tags: [
-                {
-                    label: 'Most popular',
-                    variant: 'default',
-                },
-            ],
             links: [
                 {
                     label: 'Get started',
                     icon: '',
                     description: 'Learn more about our pricing',
-                    url: '/',
+                    url: '/personal/accounts/savings-account',
                     variant: 'primary',
                 },
                 {
                     label: 'Learn more',
                     description: 'Learn more about our pricing',
                     icon: 'ArrowRight',
-                    url: '/',
+                    url: '/personal/accounts/savings-account',
                     variant: 'link',
                 },
             ],
             isPromoted: true,
-            featureListTitle: 'Everything in Everyday account, plus:',
-            featureList: [
-                {
-                    title: 'Automated savings tools to help you reach your goals',
-                    description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
-                    icon: 'Check',
-                },
-                {
-                    title: 'Higher interest rates than everyday accounts',
-                    description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
-                    icon: 'Check',
-                },
-                {
-                    title: 'Personalized budgeting and spending insights',
-                    description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
-                    icon: 'Check',
-                },
-            ],
-        },
-        {
-            title: 'Savings Account',
-            description: 'Grow your wealth with an account built for easy saving and smart financial planning',
-            image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/sign-in.jpg',
-                width: 1920,
-                height: 1080,
-                alt: 'Pricing section image',
-                priority: true,
-            },
-            price: {
-                currency: 'USD',
-                value: 10.0,
-            },
-            links: [
-                {
-                    label: 'Get started',
-                    icon: '',
-                    description: 'Learn more about our pricing',
-                    url: '/',
-                    variant: 'secondary',
-                },
-                {
-                    label: 'Learn more',
-                    description: 'Learn more about our pricing',
-                    icon: 'ArrowRight',
-                    url: '/',
-                    variant: 'link',
-                },
-            ],
-            isPromoted: false,
-            featureListTitle: 'Everything in Everyday account, plus:',
+            featureListTitle: 'Everything in Everyday Account, plus:',
             featureList: [
                 {
                     title: 'Automated savings tools to help you reach your goals',
@@ -169,115 +101,102 @@ const MOCK_PRICING_SECTION_BLOCK_EN: CMS.Model.PricingSectionBlock.PricingSectio
     ],
 };
 
-const MOCK_PRICING_SECTION_BLOCK_DE: CMS.Model.PricingSectionBlock.PricingSectionBlock = {
+const MOCK_PRICING_SECTION_BLOCK_1_DE: CMS.Model.PricingSectionBlock.PricingSectionBlock = {
     id: 'pricing-section-1',
-    title: 'Accounts',
-    subtitle: 'Subtitle',
-    description: 'Choose the right account for your needs and enjoy simple, secure banking every day.',
+    title: 'Konten',
+    description:
+        'Wählen Sie das richtige Konto für Ihre Bedürfnisse und genießen Sie jeden Tag einfaches, sicheres Banking.',
     headingType: 'h1',
     pricingList: [
         {
-            title: 'Everyday account',
-            description: 'A flexible account for daily banking, designed to managing your money effortless.',
+            title: 'Alltagskonto',
+            description: 'Ein flexibles Konto für das tägliche Banking, entwickelt, um Ihr Geld mühelos zu verwalten.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
-                width: 1920,
-                height: 1080,
-                alt: 'Pricing section image',
+                url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/Frame-9.jpg',
+                width: 351,
+                height: 233,
+                alt: 'Bild der Preissektion',
                 priority: true,
-            },
-            price: {
-                currency: 'USD',
-                value: 0.99,
             },
             isPromoted: false,
             links: [
                 {
-                    label: 'Get started',
+                    label: 'Loslegen',
                     icon: '',
-                    description: 'Learn more about our pricing',
-                    url: '/',
+                    description: 'Erfahren Sie mehr über unsere Preise',
+                    url: '/persönlich/konten/tageskonto',
                     variant: 'secondary',
                 },
                 {
-                    label: 'Learn more',
-                    description: 'Learn more about our pricing',
+                    label: 'Erfahren Sie mehr',
+                    description: 'Erfahren Sie mehr über unsere Preise',
                     icon: 'ArrowRight',
-                    url: '/',
+                    url: '/persönlich/konten/tageskonto',
                     variant: 'link',
                 },
             ],
-            featureListTitle: 'What’s included:',
+            featureListTitle: 'Was ist enthalten:',
             featureList: [
                 {
-                    title: 'Instant account opening with no paperwork.',
+                    title: 'Sofortige Kontoeröffnung ohne Papierkram.',
                     description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
+                        'Beschreiben Sie kurz, wie diese Funktion ein spezifisches Benutzerproblem löst. Konzentrieren Sie sich auf die Vorteile, nicht auf technische Details.',
                     icon: 'Check',
                 },
                 {
-                    title: '24/7 in-app support from banking experts',
+                    title: '24/7 In-App-Support von Bankexperten',
                     description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
+                        'Beschreiben Sie kurz, wie diese Funktion ein spezifisches Benutzerproblem löst. Konzentrieren Sie sich auf die Vorteile, nicht auf technische Details.',
                     icon: 'Check',
                 },
             ],
         },
         {
-            title: 'Savings Account',
-            description: 'Grow your wealth with an account built for easy saving and smart financial planning',
+            title: 'Sparkonto',
+            description:
+                'Vermehren Sie Ihr Vermögen mit einem Konto, das für einfaches Sparen und intelligente Finanzplanung entwickelt wurde',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
-                width: 1920,
-                height: 1080,
-                alt: 'Pricing section image',
+                url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/Frame-9.jpg',
+                width: 351,
+                height: 233,
+                alt: 'Bild der Preissektion',
                 priority: true,
             },
-            price: {
-                currency: 'USD',
-                value: 999.99,
-            },
-            tags: [
-                {
-                    label: 'Recommended',
-                    variant: 'secondary',
-                },
-            ],
             links: [
                 {
-                    label: 'Get started',
+                    label: 'Loslegen',
                     icon: '',
-                    description: 'Learn more about our pricing',
-                    url: '/',
+                    description: 'Erfahren Sie mehr über unsere Preise',
+                    url: '/persönlich/konten/sparen-konto',
                     variant: 'primary',
                 },
                 {
-                    label: 'Learn more',
-                    description: 'Learn more about our pricing',
+                    label: 'Erfahren Sie mehr',
+                    description: 'Erfahren Sie mehr über unsere Preise',
                     icon: 'ArrowRight',
-                    url: '/',
+                    url: '/persönlich/konten/sparen-konto',
                     variant: 'link',
                 },
             ],
             isPromoted: true,
-            featureListTitle: 'Everything in Everyday account, plus:',
+            featureListTitle: 'Alles im Alltagskonto, plus:',
             featureList: [
                 {
-                    title: 'Automated savings tools to help you reach your goals',
+                    title: 'Automatisierte Sparwerkzeuge, die Ihnen helfen, Ihre Ziele zu erreichen',
                     description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
+                        'Beschreiben Sie kurz, wie diese Funktion ein spezifisches Benutzerproblem löst. Konzentrieren Sie sich auf die Vorteile, nicht auf technische Details.',
                     icon: 'Check',
                 },
                 {
-                    title: 'Higher interest rates than everyday accounts',
+                    title: 'Höhere Zinssätze als Alltagskonten',
                     description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
+                        'Beschreiben Sie kurz, wie diese Funktion ein spezifisches Benutzerproblem löst. Konzentrieren Sie sich auf die Vorteile, nicht auf technische Details.',
                     icon: 'Check',
                 },
                 {
-                    title: 'Personalized budgeting and spending insights',
+                    title: 'Personalisierte Budgetierung und Ausgabenanalysen',
                     description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
+                        'Beschreiben Sie kurz, wie diese Funktion ein spezifisches Benutzerproblem löst. Konzentrieren Sie sich auf die Vorteile, nicht auf technische Details.',
                     icon: 'Check',
                 },
             ],
@@ -285,115 +204,103 @@ const MOCK_PRICING_SECTION_BLOCK_DE: CMS.Model.PricingSectionBlock.PricingSectio
     ],
 };
 
-const MOCK_PRICING_SECTION_BLOCK_PL: CMS.Model.PricingSectionBlock.PricingSectionBlock = {
+const MOCK_PRICING_SECTION_BLOCK_1_PL: CMS.Model.PricingSectionBlock.PricingSectionBlock = {
     id: 'pricing-section-1',
-    title: "Headline that shows solution's impact on user success",
-    subtitle: 'Subtitle',
-    description: 'Description',
+    title: 'Konta',
+    description:
+        'Wybierz odpowiednie konto dla swoich potrzeb i ciesz się prostym, bezpiecznym bankowaniem każdego dnia.',
     headingType: 'h1',
     pricingList: [
         {
-            title: 'Everyday account',
-            description: 'A flexible account for daily banking, designed to managing your money effortless.',
+            title: 'Konto codzienne',
+            description:
+                'Elastyczne konto do codziennego bankowania, zaprojektowane tak, aby zarządzanie pieniędzmi było bezwysiłkowe.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
-                width: 1920,
-                height: 1080,
-                alt: 'Pricing section image',
+                url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/Frame-9.jpg',
+                width: 351,
+                height: 233,
+                alt: 'Obraz sekcji cenowej',
                 priority: true,
             },
-            price: {
-                currency: 'USD',
-                value: 0.99,
-            },
             isPromoted: false,
-            tags: [
-                {
-                    label: 'Recommended',
-                    variant: 'secondary',
-                },
-            ],
             links: [
                 {
-                    label: 'Get started',
+                    label: 'Rozpocznij',
                     icon: '',
-                    description: 'Learn more about our pricing',
-                    url: '/',
+                    description: 'Dowiedz się więcej o naszych cenach',
+                    url: '/indywidualny/konta/konto-codzienne',
                     variant: 'secondary',
                 },
                 {
-                    label: 'Learn more',
-                    description: 'Learn more about our pricing',
+                    label: 'Dowiedz się więcej',
+                    description: 'Dowiedz się więcej o naszych cenach',
                     icon: 'ArrowRight',
-                    url: '/',
+                    url: '/indywidualny/konta/konto-codzienne',
                     variant: 'link',
                 },
             ],
-            featureListTitle: 'What’s included:',
+            featureListTitle: 'Co jest w zestawie:',
             featureList: [
                 {
-                    title: 'Instant account opening with no paperwork.',
+                    title: 'Natychmiastowe otwarcie konta bez papierkowej roboty.',
                     description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
+                        'Krótko opisz, jak ta funkcja rozwiązuje konkretny problem użytkownika. Skup się na korzyściach, a nie na szczegółach technicznych.',
                     icon: 'Check',
                 },
                 {
-                    title: '24/7 in-app support from banking experts',
+                    title: 'Całodobowe wsparcie w aplikacji od ekspertów bankowych',
                     description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
+                        'Krótko opisz, jak ta funkcja rozwiązuje konkretny problem użytkownika. Skup się na korzyściach, a nie na szczegółach technicznych.',
                     icon: 'Check',
                 },
             ],
         },
         {
-            title: 'Savings Account',
-            description: 'Grow your wealth with an account built for easy saving and smart financial planning',
+            title: 'Konto oszczędnościowe',
+            description:
+                'Pomnażaj swoje bogactwo dzięki kontu stworzonym do łatwego oszczędzania i inteligentnego planowania finansowego',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
-                width: 1920,
-                height: 1080,
-                alt: 'Pricing section image',
+                url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/Frame-9.jpg',
+                width: 351,
+                height: 233,
+                alt: 'Obraz sekcji cenowej',
                 priority: true,
-            },
-            price: {
-                currency: 'USD',
-                value: 999.99,
             },
             links: [
                 {
-                    label: 'Get started',
+                    label: 'Rozpocznij',
                     icon: '',
-                    description: 'Learn more about our pricing',
-                    url: '/',
+                    description: 'Dowiedz się więcej o naszych cenach',
+                    url: '/indywidualny/konta/konto-oszczędnościowe',
                     variant: 'primary',
                 },
                 {
-                    label: 'Learn more',
-                    description: 'Learn more about our pricing',
+                    label: 'Dowiedz się więcej',
+                    description: 'Dowiedz się więcej o naszych cenach',
                     icon: 'ArrowRight',
-                    url: '/',
+                    url: '/indywidualny/konta/konto-oszczędnościowe',
                     variant: 'link',
                 },
             ],
             isPromoted: true,
-            featureListTitle: 'Everything in Everyday account, plus:',
+            featureListTitle: 'Wszystko w koncie codziennym, plus:',
             featureList: [
                 {
-                    title: 'Automated savings tools to help you reach your goals',
+                    title: 'Zautomatyzowane narzędzia oszczędnościowe, które pomogą Ci osiągnąć cele',
                     description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
+                        'Krótko opisz, jak ta funkcja rozwiązuje konkretny problem użytkownika. Skup się na korzyściach, a nie na szczegółach technicznych.',
                     icon: 'Check',
                 },
                 {
-                    title: 'Higher interest rates than everyday accounts',
+                    title: 'Wyższe oprocentowanie niż w kontach codziennych',
                     description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
+                        'Krótko opisz, jak ta funkcja rozwiązuje konkretny problem użytkownika. Skup się na korzyściach, a nie na szczegółach technicznych.',
                     icon: 'Check',
                 },
                 {
-                    title: 'Personalized budgeting and spending insights',
+                    title: 'Spersonalizowane budżetowanie i wgląd w wydatki',
                     description:
-                        'Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.',
+                        'Krótko opisz, jak ta funkcja rozwiązuje konkretny problem użytkownika. Skup się na korzyściach, a nie na szczegółach technicznych.',
                     icon: 'Check',
                 },
             ],
@@ -401,13 +308,20 @@ const MOCK_PRICING_SECTION_BLOCK_PL: CMS.Model.PricingSectionBlock.PricingSectio
     ],
 };
 
-export const mapPricingSectionBlock = (locale: string): CMS.Model.PricingSectionBlock.PricingSectionBlock => {
+const MOCK_PRICING_SECTION_BLOCKS_EN = [MOCK_PRICING_SECTION_BLOCK_1_EN];
+const MOCK_PRICING_SECTION_BLOCKS_DE = [MOCK_PRICING_SECTION_BLOCK_1_DE];
+const MOCK_PRICING_SECTION_BLOCKS_PL = [MOCK_PRICING_SECTION_BLOCK_1_PL];
+
+export const mapPricingSectionBlock = ({
+    locale,
+    id,
+}: CMS.Request.GetCmsEntryParams): CMS.Model.PricingSectionBlock.PricingSectionBlock | undefined => {
     switch (locale) {
         case 'de':
-            return MOCK_PRICING_SECTION_BLOCK_DE;
+            return MOCK_PRICING_SECTION_BLOCKS_DE.find((block) => block.id === id);
         case 'pl':
-            return MOCK_PRICING_SECTION_BLOCK_PL;
+            return MOCK_PRICING_SECTION_BLOCKS_PL.find((block) => block.id === id);
         default:
-            return MOCK_PRICING_SECTION_BLOCK_EN;
+            return MOCK_PRICING_SECTION_BLOCKS_EN.find((block) => block.id === id);
     }
 };

@@ -29,52 +29,7 @@ export const PAGE_BUSINESS_EN: CMS.Model.Page.Page = {
                     id: 'hero-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'QuickLinksBlock',
-                    id: 'quick-links-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'small',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'MediaSectionBlock',
-                    id: 'media-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
-                    },
-                },
-                {
-                    __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'CtaSectionBlock',
-                    id: 'cta-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'BentoGridBlock',
-                    id: 'bento-grid-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -118,51 +73,6 @@ export const PAGE_BUSINESS_DE: CMS.Model.Page.Page = {
                         background: 'none',
                     },
                 },
-                {
-                    __typename: 'QuickLinksBlock',
-                    id: 'quick-links-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'small',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'MediaSectionBlock',
-                    id: 'media-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
-                    },
-                },
-                {
-                    __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'CtaSectionBlock',
-                    id: 'cta-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'BentoGridBlock',
-                    id: 'bento-grid-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
             ],
         },
     },
@@ -197,51 +107,6 @@ export const PAGE_BUSINESS_PL: CMS.Model.Page.Page = {
                 {
                     __typename: 'HeroSectionBlock',
                     id: 'hero-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'QuickLinksBlock',
-                    id: 'quick-links-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'small',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'MediaSectionBlock',
-                    id: 'media-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
-                    },
-                },
-                {
-                    __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'CtaSectionBlock',
-                    id: 'cta-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'BentoGridBlock',
-                    id: 'bento-grid-1',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',

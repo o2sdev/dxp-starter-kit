@@ -12,6 +12,16 @@ import {
     PAGE_HELP_AND_SUPPORT_PL,
 } from './mocks/pages/knowledge-base.page';
 import {
+    PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_DE,
+    PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_EN,
+    PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_PL,
+} from './mocks/pages/personal-accounts-everyday-account.page';
+import {
+    PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE,
+    PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_EN,
+    PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL,
+} from './mocks/pages/personal-accounts-savings-account.page';
+import {
     PAGE_PERSONAL_ACCOUNTS_DE,
     PAGE_PERSONAL_ACCOUNTS_EN,
     PAGE_PERSONAL_ACCOUNTS_PL,
@@ -24,6 +34,8 @@ import {
 import { PAGE_PERSONAL_DE, PAGE_PERSONAL_EN, PAGE_PERSONAL_PL } from './mocks/pages/personal.page';
 
 export const mapPage = (slug: string, locale: string): CMS.Model.Page.Page | undefined => {
+    console.log('mapPage slug', slug);
+    console.log('mapPage locale', locale);
     switch (slug) {
         case '/':
             return locale === 'pl' ? PAGE_PERSONAL_EN : locale === 'de' ? PAGE_PERSONAL_DE : PAGE_PERSONAL_PL;
@@ -45,6 +57,24 @@ export const mapPage = (slug: string, locale: string): CMS.Model.Page.Page | und
 
         case '/indywidualny/konta':
             return PAGE_PERSONAL_ACCOUNTS_PL;
+
+        case '/personal/accounts/savings-account':
+            return PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_EN;
+
+        case '/persönlich/konten/sparen-konto':
+            return PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE;
+
+        case '/indywidualny/konta/konto-oszczędnościowe':
+            return PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL;
+
+        case '/personal/accounts/everyday-account':
+            return PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_EN;
+
+        case '/persönlich/konten/tageskonto':
+            return PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_DE;
+
+        case '/indywidualny/konta/konto-codzienne':
+            return PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_PL;
 
         case '/personal/cards':
             return PAGE_PERSONAL_CARDS_EN;
@@ -96,6 +126,8 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
                 PAGE_PERSONAL_ACCOUNTS_PL,
                 PAGE_BUSINESS_ACCOUNTS_PL,
                 PAGE_PERSONAL_PL,
+                PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_PL,
+                PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL,
                 PAGE_PERSONAL_CARDS_PL,
             ];
         case 'de':
@@ -105,6 +137,8 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
                 PAGE_PERSONAL_ACCOUNTS_DE,
                 PAGE_BUSINESS_ACCOUNTS_DE,
                 PAGE_PERSONAL_DE,
+                PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_DE,
+                PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE,
                 PAGE_PERSONAL_CARDS_DE,
             ];
         case 'en':
@@ -114,6 +148,8 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
                 PAGE_PERSONAL_ACCOUNTS_EN,
                 PAGE_BUSINESS_ACCOUNTS_EN,
                 PAGE_PERSONAL_EN,
+                PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_EN,
+                PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_EN,
                 PAGE_PERSONAL_CARDS_EN,
             ];
         default:
@@ -122,6 +158,9 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
 };
 
 export const getAlternativePages = (id: string, slug: string, locale: string): CMS.Model.Page.Page[] => {
+    console.log('id', id);
+    console.log('slug', slug);
+    console.log('locale', locale);
     return [
         PAGE_BUSINESS_DE,
         PAGE_BUSINESS_EN,
@@ -141,9 +180,18 @@ export const getAlternativePages = (id: string, slug: string, locale: string): C
         PAGE_PERSONAL_CARDS_DE,
         PAGE_PERSONAL_CARDS_EN,
         PAGE_PERSONAL_CARDS_PL,
+        PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_DE,
+        PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_EN,
+        PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_PL,
+        PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE,
+        PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_EN,
+        PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL,
     ]
         .filter((page) => page.id === id)
-        .map((page) => mapPage(page.slug, locale)!)
+        .map((page) => {
+            console.log('page1: ', page, mapPage(page.slug, locale));
+            return mapPage(page.slug, locale)!;
+        })
         .map((page) => {
             return {
                 ...page,

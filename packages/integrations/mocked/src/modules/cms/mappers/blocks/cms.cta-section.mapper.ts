@@ -1,33 +1,24 @@
 import { CMS } from '@dxp/framework/modules';
 
-const MOCK_CTA_SECTION_BLOCK_EN: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
+const MOCK_CTA_SECTION_BLOCK_1_EN: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
     id: 'cta-section-1',
-    preTitle: 'CTA section',
-    title: 'Action-driving headline that creates urgency',
-    description:
-        'Add one or two compelling sentences that reinforce your main value proposition and overcome final objections.',
+    preTitle: 'PREMIUM MEMBERS',
+    title: 'Future-Ready Investments',
+    description: 'A personal advisor who will help you buy stocks, funds, or crypto directly from your app.',
     inverted: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
-        width: 1920,
-        height: 1080,
-        alt: 'Hero Banner Image',
+        url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/Frame-5.jpg',
+        width: 612,
+        height: 436,
+        alt: 'CTA Section Image',
         priority: true,
     },
     links: [
         {
-            label: 'Get started',
+            label: 'Get premium',
             icon: 'ArrowRight',
-            description: 'Button 1 description',
             url: '/',
             variant: 'primary',
-        },
-        {
-            label: 'Explore',
-            description: 'Button 2 description',
-            icon: 'ArrowRight',
-            url: '/',
-            variant: 'link',
         },
     ],
     labels: {
@@ -35,45 +26,52 @@ const MOCK_CTA_SECTION_BLOCK_EN: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
     },
 };
 
-const MOCK_CTA_SECTION_BLOCK_DE: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
-    id: 'cta-section-1',
-    title: 'Action-driving headline that creates urgency',
+const MOCK_CTA_SECTION_BLOCK_1_DE: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
+    id: 'cta-section-2',
+    preTitle: 'PREMIUMMITGLIEDER',
+    title: 'Zukunftssichere Investitionen',
     description:
-        'Add one or two compelling sentences that reinforce your main value proposition and overcome final objections.',
+        'Ein persönlicher Berater, der Ihnen hilft, Aktien, Fonds oder Kryptowährungen direkt über Ihre App zu kaufen.',
     inverted: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/article-maintenance-thumb.jpg',
-        width: 1920,
-        height: 1080,
-        alt: 'Hero Banner Image',
+        url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/Frame-5.jpg',
+        width: 612,
+        height: 436,
+        alt: 'CTA Section Image',
         priority: true,
-    },
-    labels: {
-        showMore: 'Mehr anzeigen',
     },
     links: [
         {
-            label: 'Get started',
+            label: 'Premium erhalten',
             icon: 'ArrowRight',
             url: '/',
-            description: 'Button 1 description',
             variant: 'primary',
         },
     ],
+    labels: {
+        showMore: 'Mehr anzeigen',
+    },
 };
 
-const MOCK_CTA_SECTION_BLOCK_PL: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
+const MOCK_CTA_SECTION_BLOCK_1_PL: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
     id: 'cta-section-1',
-    title: 'Action-driving headline that creates urgency',
+    preTitle: 'CZŁONKOWIE PREMIUM',
+    title: 'Inwestycje gotowe na przyszłość',
     description:
-        'Add one or two compelling sentences that reinforce your main value proposition and overcome final objections.',
+        'Osobisty doradca, który pomoże Ci kupować akcje, fundusze lub kryptowaluty bezpośrednio z Twojej aplikacji.',
+    image: {
+        url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/Frame-5.jpg',
+        width: 612,
+        height: 436,
+        alt: 'CTA Section Image',
+        priority: true,
+    },
     inverted: false,
     links: [
         {
-            label: 'Get started',
+            label: 'Uzyskaj premium',
             icon: 'ArrowRight',
             url: '/',
-            description: 'Button 1 description',
             variant: 'primary',
         },
     ],
@@ -82,13 +80,77 @@ const MOCK_CTA_SECTION_BLOCK_PL: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
     },
 };
 
-export const mapCtaSectionBlock = (locale: string): CMS.Model.CtaSectionBlock.CtaSectionBlock => {
+const MOCK_CTA_SECTION_BLOCK_2_EN: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
+    id: 'cta-section-2',
+    title: 'Ready to simplify your banking?',
+    description:
+        'Open your Everyday Account today and experience effortless money management, instant access, and security you can trust.',
+    inverted: false,
+    links: [
+        {
+            label: 'Get started',
+            icon: 'ArrowRight',
+            url: '/personal/accounts/everyday-account',
+            variant: 'primary',
+        },
+    ],
+    labels: {
+        showMore: 'Show more',
+    },
+};
+
+const MOCK_CTA_SECTION_BLOCK_2_DE: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
+    id: 'cta-section-2',
+    title: 'Bereit, Ihr Banking zu vereinfachen?',
+    description:
+        'Eröffnen Sie noch heute Ihr Alltagskonto und erleben Sie mühelose Geldverwaltung, sofortigen Zugriff und Sicherheit, der Sie vertrauen können.',
+    inverted: false,
+    links: [
+        {
+            label: 'Loslegen',
+            icon: 'ArrowRight',
+            url: '/personal/accounts/everyday-account',
+            variant: 'primary',
+        },
+    ],
+    labels: {
+        showMore: 'Mehr anzeigen',
+    },
+};
+
+const MOCK_CTA_SECTION_BLOCK_2_PL: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
+    id: 'cta-section-2',
+    title: 'Gotowy, aby uprościć swoje bankowanie?',
+    description:
+        'Otwórz swoje Konto Codzienne już dziś i doświadcz bezproblemowego zarządzania pieniędzmi, natychmiastowego dostępu i bezpieczeństwa, któremu możesz zaufać.',
+    inverted: false,
+    links: [
+        {
+            label: 'Rozpocznij',
+            icon: 'ArrowRight',
+            url: '/personal/accounts/everyday-account',
+            variant: 'primary',
+        },
+    ],
+    labels: {
+        showMore: 'Pokaż więcej',
+    },
+};
+
+const FEATURE_SECTION_BLOCKS_EN = [MOCK_CTA_SECTION_BLOCK_1_EN, MOCK_CTA_SECTION_BLOCK_2_EN];
+const FEATURE_SECTION_BLOCKS_DE = [MOCK_CTA_SECTION_BLOCK_1_DE, MOCK_CTA_SECTION_BLOCK_2_DE];
+const FEATURE_SECTION_BLOCKS_PL = [MOCK_CTA_SECTION_BLOCK_1_PL, MOCK_CTA_SECTION_BLOCK_2_PL];
+
+export const mapCtaSectionBlock = ({
+    locale,
+    id,
+}: CMS.Request.GetCmsEntryParams): CMS.Model.CtaSectionBlock.CtaSectionBlock | undefined => {
     switch (locale) {
         case 'de':
-            return MOCK_CTA_SECTION_BLOCK_DE;
+            return FEATURE_SECTION_BLOCKS_DE.find((block) => block.id === id);
         case 'pl':
-            return MOCK_CTA_SECTION_BLOCK_PL;
+            return FEATURE_SECTION_BLOCKS_PL.find((block) => block.id === id);
         default:
-            return MOCK_CTA_SECTION_BLOCK_EN;
+            return FEATURE_SECTION_BLOCKS_EN.find((block) => block.id === id);
     }
 };

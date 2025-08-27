@@ -1,126 +1,28 @@
 import { CMS } from '@dxp/framework/modules';
 
-const MOCK_FAQ_LIST_BLOCK_EN: CMS.Model.FaqBlock.FaqBlock = {
+const MOCK_FAQ_LIST_BLOCK_1_EN: CMS.Model.FaqBlock.FaqBlock = {
     id: 'faq-1',
-    preTitle: 'FAQ section',
     title: 'Frequently asked questions',
     oneColumn: true,
     description:
         "We've compiled the most important information to help you get the most out of your experience. Can't find what you're looking for? <a href='/contact-us'>Contact us</a>.",
     sections: [
         {
-            title: 'General',
             items: [
                 {
-                    title: 'How do I manage my PowerPro devices?',
+                    title: 'How do I open an account?',
                     content:
-                        'You can view and manage all your PowerPro devices through our online self-service portal. Navigate to "Device Management" where you will find your devices categorized as purchased devices or fleet service devices. From there, you can request repairs, track repair status, or report lost devices.',
+                        'You can open any account online or through our mobile app in just a few minutes—no paperwork required.',
                 },
                 {
-                    title: 'How do I report a stolen or lost tool?',
-                    content: `
-        ### Reporting Stolen or Lost Fleet Devices
-        
-        If your fleet device has been stolen or lost, follow these steps:
-        1. Log in to your PowerPro account
-        2. Navigate to "Device Management"
-        3. Select "Report theft/loss"
-        4. Complete the form with all relevant information
-        5. Submit your report
-        
-        Our team will process your report and contact you with further instructions within 1-2 business days.
-        `,
-                },
-                {
-                    title: 'How can I request a device repair?',
-                    content: `
-        ## Device Repair Process
-        
-        To request a repair for your PowerPro device:
-        
-        1. Log in to your PowerPro account
-        2. Go to "Device Management" > "Request Repair"
-        3. Select the device that needs repair
-        4. Describe the issue with the device
-        5. Indicate if you need a replacement device during repair
-        6. Select delivery address
-        7. Submit your repair request
-        
-        You can track the status of your repair by visiting "Track Repairs" in the Device Management section.
-        `,
-                },
-                {
-                    title: 'What mobile applications does PowerPro offer?',
+                    title: 'What security features protect my account?',
                     content:
-                        'PowerPro offers several mobile applications to help manage your tools and projects more efficiently. These include the PowerPro Service for tool information and service requests, the PowerPro Manager for asset management, and various technical applications for specific construction tasks like anchor design and firestop documentation. All applications can be downloaded from the App Store or Google Play Store.',
+                        'We use the latest security features to protect your account. We also have a team of experts who are always available to help you with any questions you may have.',
                 },
                 {
-                    title: 'How do I change my fleet service billing location?',
+                    title: 'Can I switch between account types later?',
                     content:
-                        'If your company is expanding and you need to change the cost center for your fleet devices, you can easily update this information. Go to "Device Management" section, select "Change cost center location", choose the devices you want to reassign, and select the new cost center. This helps you manage costs across different project sites more effectively.',
-                },
-                {
-                    title: 'How can I track my equipment repair status?',
-                    content:
-                        'After requesting a repair, you can track its status through our online portal. Go to "Device Management" and select "Track Repair Status". You\'ll see a visual dashboard showing where your device is in the repair process, from pickup to delivery of the repaired tool. This feature allows you to plan your work accordingly while waiting for your tool to be returned.',
-                },
-            ],
-        },
-        {
-            title: 'Billing',
-            items: [
-                {
-                    title: 'How do I manage my PowerPro devices?',
-                    content:
-                        'You can view and manage all your PowerPro devices through our online self-service portal. Navigate to "Device Management" where you will find your devices categorized as purchased devices or fleet service devices. From there, you can request repairs, track repair status, or report lost devices.',
-                },
-                {
-                    title: 'How do I report a stolen or lost tool?',
-                    content: `
-        ### Reporting Stolen or Lost Fleet Devices
-        
-        If your fleet device has been stolen or lost, follow these steps:
-        1. Log in to your PowerPro account
-        2. Navigate to "Device Management"
-        3. Select "Report theft/loss"
-        4. Complete the form with all relevant information
-        5. Submit your report
-        
-        Our team will process your report and contact you with further instructions within 1-2 business days.
-        `,
-                },
-                {
-                    title: 'How can I request a device repair?',
-                    content: `
-        ## Device Repair Process
-        
-        To request a repair for your PowerPro device:
-        
-        1. Log in to your PowerPro account
-        2. Go to "Device Management" > "Request Repair"
-        3. Select the device that needs repair
-        4. Describe the issue with the device
-        5. Indicate if you need a replacement device during repair
-        6. Select delivery address
-        7. Submit your repair request
-        
-        You can track the status of your repair by visiting "Track Repairs" in the Device Management section.
-        `,
-                },
-                {
-                    title: 'What mobile applications does PowerPro offer?',
-                    content:
-                        'PowerPro offers several mobile applications to help manage your tools and projects more efficiently. These include the PowerPro Service for tool information and service requests, the PowerPro Manager for asset management, and various technical applications for specific construction tasks like anchor design and firestop documentation. All applications can be downloaded from the App Store or Google Play Store.',
-                },
-                {
-                    title: 'How do I change my fleet service billing location?',
-                    content:
-                        'If your company is expanding and you need to change the cost center for your fleet devices, you can easily update this information. Go to "Device Management" section, select "Change cost center location", choose the devices you want to reassign, and select the new cost center. This helps you manage costs across different project sites more effectively.',
-                },
-                {
-                    title: 'How can I track my equipment repair status?',
-                    content:
-                        'After requesting a repair, you can track its status through our online portal. Go to "Device Management" and select "Track Repair Status". You\'ll see a visual dashboard showing where your device is in the repair process, from pickup to delivery of the repaired tool. This feature allows you to plan your work accordingly while waiting for your tool to be returned.',
+                        'Yes, you can switch between account types later. You can also switch between different accounts within the same type.',
                 },
             ],
         },
@@ -132,261 +34,187 @@ const MOCK_FAQ_LIST_BLOCK_EN: CMS.Model.FaqBlock.FaqBlock = {
     },
 };
 
-const MOCK_FAQ_LIST_BLOCK_DE: CMS.Model.FaqBlock.FaqBlock = {
+const MOCK_FAQ_LIST_BLOCK_1_DE: CMS.Model.FaqBlock.FaqBlock = {
     id: 'faq-1',
-    title: 'FAQ',
-    oneColumn: false,
+    title: 'Häufig gestellte Fragen',
+    oneColumn: true,
+    description:
+        "Wir haben die wichtigsten Informationen zusammengestellt, um Ihnen zu helfen, das Beste aus Ihrer Erfahrung herauszuholen. Können Sie nicht finden, wonach Sie suchen? <a href='/contact-us'>Kontaktieren Sie uns</a>.",
     sections: [
         {
-            title: 'Allgemein',
             items: [
                 {
-                    title: 'Wie verwalte ich meine PowerPro-Geräte?',
+                    title: 'Wie eröffne ich ein Konto?',
                     content:
-                        'Sie können alle Ihre PowerPro-Geräte über unser Online-Selbstbedienungsportal einsehen und verwalten. Navigieren Sie zu "Geräteverwaltung", wo Sie Ihre Geräte kategorisiert als gekaufte Geräte oder Flottendienstgeräte finden. Von dort aus können Sie Reparaturen anfordern, den Reparaturstatus verfolgen oder verlorene Geräte melden.',
+                        'Sie können jedes Konto online oder über unsere mobile App in nur wenigen Minuten eröffnen – ohne Papierkram.',
                 },
                 {
-                    title: 'Wie melde ich ein gestohlenes oder verlorenes Werkzeug?',
-                    content: `
-        ### Meldung gestohlener oder verlorener Flottengeräte
-        
-        Wenn Ihr Flottengerät gestohlen wurde oder verloren gegangen ist, folgen Sie diesen Schritten:
-        1. Melden Sie sich bei Ihrem PowerPro-Konto an
-        2. Navigieren Sie zu "Geräteverwaltung"
-        3. Wählen Sie "Diebstahl/Verlust melden"
-        4. Füllen Sie das Formular mit allen relevanten Informationen aus
-        5. Reichen Sie Ihren Bericht ein
-        
-        Unser Team wird Ihren Bericht bearbeiten und Sie innerhalb von 1-2 Werktagen mit weiteren Anweisungen kontaktieren.
-        `,
-                },
-                {
-                    title: 'Wie kann ich eine Gerätereparatur anfordern?',
-                    content: `
-        ## Gerätereparaturprozess
-        
-        Um eine Reparatur für Ihr PowerPro-Gerät anzufordern:
-        
-        1. Melden Sie sich bei Ihrem PowerPro-Konto an
-        2. Gehen Sie zu "Geräteverwaltung" > "Reparatur anfordern"
-        3. Wählen Sie das Gerät aus, das repariert werden muss
-        4. Beschreiben Sie das Problem mit dem Gerät
-        5. Geben Sie an, ob Sie während der Reparatur ein Ersatzgerät benötigen
-        6. Wählen Sie die Lieferadresse
-        7. Reichen Sie Ihre Reparaturanfrage ein
-        
-        Sie können den Status Ihrer Reparatur verfolgen, indem Sie "Reparaturen verfolgen" im Bereich Geräteverwaltung besuchen.
-        `,
-                },
-                {
-                    title: 'Welche mobilen Anwendungen bietet PowerPro an?',
+                    title: 'Welche Sicherheitsfunktionen schützen mein Konto?',
                     content:
-                        'PowerPro bietet mehrere mobile Anwendungen, um Ihre Werkzeuge und Projekte effizienter zu verwalten. Dazu gehören der PowerPro Service für Werkzeuginformationen und Serviceanfragen, der PowerPro Manager für die Anlagenverwaltung und verschiedene technische Anwendungen für spezifische Bauaufgaben wie Ankerdesign und Brandschutzdokumentation. Alle Anwendungen können aus dem App Store oder Google Play Store heruntergeladen werden.',
+                        'Wir verwenden die neuesten Sicherheitsfunktionen, um Ihr Konto zu schützen. Wir haben auch ein Expertenteam, das Ihnen bei Fragen jederzeit zur Verfügung steht.',
                 },
                 {
-                    title: 'Wie ändere ich meinen Flottendienst-Abrechnungsstandort?',
+                    title: 'Kann ich später zwischen Kontotypen wechseln?',
                     content:
-                        'Wenn Ihr Unternehmen expandiert und Sie die Kostenstelle für Ihre Flottengeräte ändern müssen, können Sie diese Informationen einfach aktualisieren. Gehen Sie zum Bereich "Geräteverwaltung", wählen Sie "Kostenstellenstandort ändern", wählen Sie die Geräte aus, die Sie neu zuordnen möchten, und wählen Sie die neue Kostenstelle. Dies hilft Ihnen, Kosten über verschiedene Projektstandorte hinweg effektiver zu verwalten.',
-                },
-                {
-                    title: 'Wie kann ich den Reparaturstatus meiner Ausrüstung verfolgen?',
-                    content:
-                        'Nach der Anforderung einer Reparatur können Sie deren Status über unser Online-Portal verfolgen. Gehen Sie zu "Geräteverwaltung" und wählen Sie "Reparaturstatus verfolgen". Sie sehen ein visuelles Dashboard, das zeigt, wo sich Ihr Gerät im Reparaturprozess befindet, von der Abholung bis zur Lieferung des reparierten Werkzeugs. Diese Funktion ermöglicht es Ihnen, Ihre Arbeit entsprechend zu planen, während Sie auf die Rückgabe Ihres Werkzeugs warten.',
-                },
-            ],
-        },
-        {
-            title: 'Rechnung',
-            items: [
-                {
-                    title: 'Wie verwalte ich meine PowerPro-Geräte?',
-                    content:
-                        'Sie können alle Ihre PowerPro-Geräte über unser Online-Selbstbedienungsportal einsehen und verwalten. Navigieren Sie zu "Geräteverwaltung", wo Sie Ihre Geräte kategorisiert als gekaufte Geräte oder Flottendienstgeräte finden. Von dort aus können Sie Reparaturen anfordern, den Reparaturstatus verfolgen oder verlorene Geräte melden.',
-                },
-                {
-                    title: 'Wie melde ich ein gestohlenes oder verlorenes Werkzeug?',
-                    content: `
-        ### Meldung gestohlener oder verlorener Flottengeräte
-        
-        Wenn Ihr Flottengerät gestohlen wurde oder verloren gegangen ist, folgen Sie diesen Schritten:
-        1. Melden Sie sich bei Ihrem PowerPro-Konto an
-        2. Navigieren Sie zu "Geräteverwaltung"
-        3. Wählen Sie "Diebstahl/Verlust melden"
-        4. Füllen Sie das Formular mit allen relevanten Informationen aus
-        5. Reichen Sie Ihren Bericht ein
-        
-        Unser Team wird Ihren Bericht bearbeiten und Sie innerhalb von 1-2 Werktagen mit weiteren Anweisungen kontaktieren.
-        `,
-                },
-                {
-                    title: 'Wie kann ich eine Gerätereparatur anfordern?',
-                    content: `
-        ## Gerätereparaturprozess
-        
-        Um eine Reparatur für Ihr PowerPro-Gerät anzufordern:
-        
-        1. Melden Sie sich bei Ihrem PowerPro-Konto an
-        2. Gehen Sie zu "Geräteverwaltung" > "Reparatur anfordern"
-        3. Wählen Sie das Gerät aus, das repariert werden muss
-        4. Beschreiben Sie das Problem mit dem Gerät
-        5. Geben Sie an, ob Sie während der Reparatur ein Ersatzgerät benötigen
-        6. Wählen Sie die Lieferadresse
-        7. Reichen Sie Ihre Reparaturanfrage ein
-        
-        Sie können den Status Ihrer Reparatur verfolgen, indem Sie "Reparaturen verfolgen" im Bereich Geräteverwaltung besuchen.
-        `,
-                },
-                {
-                    title: 'Welche mobilen Anwendungen bietet PowerPro an?',
-                    content:
-                        'PowerPro bietet mehrere mobile Anwendungen, um Ihre Werkzeuge und Projekte effizienter zu verwalten. Dazu gehören der PowerPro Service für Werkzeuginformationen und Serviceanfragen, der PowerPro Manager für die Anlagenverwaltung und verschiedene technische Anwendungen für spezifische Bauaufgaben wie Ankerdesign und Brandschutzdokumentation. Alle Anwendungen können aus dem App Store oder Google Play Store heruntergeladen werden.',
-                },
-                {
-                    title: 'Wie ändere ich meinen Flottendienst-Abrechnungsstandort?',
-                    content:
-                        'Wenn Ihr Unternehmen expandiert und Sie die Kostenstelle für Ihre Flottengeräte ändern müssen, können Sie diese Informationen einfach aktualisieren. Gehen Sie zum Bereich "Geräteverwaltung", wählen Sie "Kostenstellenstandort ändern", wählen Sie die Geräte aus, die Sie neu zuordnen möchten, und wählen Sie die neue Kostenstelle. Dies hilft Ihnen, Kosten über verschiedene Projektstandorte hinweg effektiver zu verwalten.',
-                },
-                {
-                    title: 'Wie kann ich den Reparaturstatus meiner Ausrüstung verfolgen?',
-                    content:
-                        'Nach der Anforderung einer Reparatur können Sie deren Status über unser Online-Portal verfolgen. Gehen Sie zu "Geräteverwaltung" und wählen Sie "Reparaturstatus verfolgen". Sie sehen ein visuelles Dashboard, das zeigt, wo sich Ihr Gerät im Reparaturprozess befindet, von der Abholung bis zur Lieferung des reparierten Werkzeugs. Diese Funktion ermöglicht es Ihnen, Ihre Arbeit entsprechend zu planen, während Sie auf die Rückgabe Ihres Werkzeugs warten.',
+                        'Ja, Sie können später zwischen Kontotypen wechseln. Sie können auch zwischen verschiedenen Konten innerhalb desselben Typs wechseln.',
                 },
             ],
         },
     ],
+    banner: {
+        title: 'Haben Sie noch Fragen?',
+        description: 'Haben Sie Fragen oder benötigen Sie Unterstützung? Unser Team ist hier, um zu helfen!',
+        link: { label: 'Kontaktieren Sie uns', url: '/', variant: 'primary' },
+    },
 };
 
-const MOCK_FAQ_LIST_BLOCK_PL: CMS.Model.FaqBlock.FaqBlock = {
+const MOCK_FAQ_LIST_BLOCK_1_PL: CMS.Model.FaqBlock.FaqBlock = {
     id: 'faq-1',
-    title: 'FAQ',
-    oneColumn: false,
+    title: 'Często zadawane pytania',
+    oneColumn: true,
+    description:
+        "Zebraliśmy najważniejsze informacje, aby pomóc Ci w pełni wykorzystać Twoje doświadczenie. Nie możesz znaleźć tego, czego szukasz? <a href='/contact-us'>Skontaktuj się z nami</a>.",
     sections: [
         {
-            title: 'Ogólne',
             items: [
                 {
-                    title: 'Jak zarządzać moimi urządzeniami PowerPro?',
+                    title: 'Jak otworzyć konto?',
                     content:
-                        'Możesz przeglądać i zarządzać wszystkimi swoimi urządzeniami PowerPro za pośrednictwem naszego portalu samoobsługowego online. Przejdź do "Zarządzania urządzeniami", gdzie znajdziesz swoje urządzenia skategoryzowane jako zakupione urządzenia lub urządzenia flotowe. Stamtąd możesz zlecić naprawy, śledzić status naprawy lub zgłosić zgubione urządzenia.',
+                        'Możesz otworzyć dowolne konto online lub za pośrednictwem naszej aplikacji mobilnej w zaledwie kilka minut – bez papierkowej roboty.',
                 },
                 {
-                    title: 'Jak zgłosić kradzież lub zgubienie narzędzia?',
-                    content: `
-        ### Zgłaszanie skradzionych lub zgubionych urządzeń flotowych
-        
-        Jeśli Twoje urządzenie flotowe zostało skradzione lub zgubione, wykonaj następujące kroki:
-        1. Zaloguj się na swoje konto PowerPro
-        2. Przejdź do "Zarządzania urządzeniami"
-        3. Wybierz "Zgłoś kradzież/zgubienie"
-        4. Wypełnij formularz ze wszystkimi istotnymi informacjami
-        5. Prześlij swoje zgłoszenie
-        
-        Nasz zespół przetworzy Twoje zgłoszenie i skontaktuje się z Tobą z dalszymi instrukcjami w ciągu 1-2 dni roboczych.
-        `,
-                },
-                {
-                    title: 'Jak mogę zlecić naprawę urządzenia?',
-                    content: `
-        ## Proces naprawy urządzenia
-        
-        Aby zlecić naprawę swojego urządzenia PowerPro:
-        
-        1. Zaloguj się na swoje konto PowerPro
-        2. Przejdź do "Zarządzanie urządzeniami" > "Zlecenie naprawy"
-        3. Wybierz urządzenie wymagające naprawy
-        4. Opisz problem z urządzeniem
-        5. Wskaż, czy potrzebujesz urządzenia zastępczego na czas naprawy
-        6. Wybierz adres dostawy
-        7. Prześlij swoje zlecenie naprawy
-        
-        Możesz śledzić status swojej naprawy, odwiedzając "Śledź naprawy" w sekcji Zarządzanie urządzeniami.
-        `,
-                },
-                {
-                    title: 'Jakie aplikacje mobilne oferuje PowerPro?',
+                    title: 'Jakie funkcje bezpieczeństwa chronią moje konto?',
                     content:
-                        'PowerPro oferuje kilka aplikacji mobilnych, które pomagają efektywniej zarządzać narzędziami i projektami. Obejmują one PowerPro Service do informacji o narzędziach i zgłoszeń serwisowych, PowerPro Manager do zarządzania zasobami oraz różne aplikacje techniczne do konkretnych zadań budowlanych, takich jak projektowanie kotew i dokumentacja przeciwpożarowa. Wszystkie aplikacje można pobrać z App Store lub Google Play Store.',
+                        'Używamy najnowszych funkcji bezpieczeństwa, aby chronić Twoje konto. Mamy również zespół ekspertów, którzy są zawsze dostępni, aby pomóc Ci w razie pytań.',
                 },
                 {
-                    title: 'Jak zmienić lokalizację rozliczeniową usługi flotowej?',
+                    title: 'Czy mogę później zmienić typ konta?',
                     content:
-                        'Jeśli Twoja firma się rozwija i musisz zmienić centrum kosztów dla swoich urządzeń flotowych, możesz łatwo zaktualizować te informacje. Przejdź do sekcji "Zarządzanie urządzeniami", wybierz "Zmień lokalizację centrum kosztów", wybierz urządzenia, które chcesz przypisać na nowo, i wybierz nowe centrum kosztów. Pomaga to skuteczniej zarządzać kosztami w różnych lokalizacjach projektów.',
-                },
-                {
-                    title: 'Jak mogę śledzić status naprawy mojego sprzętu?',
-                    content:
-                        'Po zleceniu naprawy możesz śledzić jej status za pośrednictwem naszego portalu online. Przejdź do "Zarządzanie urządzeniami" i wybierz "Śledź status naprawy". Zobaczysz wizualny pulpit pokazujący, gdzie znajduje się Twoje urządzenie w procesie naprawy, od odbioru do dostawy naprawionego narzędzia. Ta funkcja pozwala odpowiednio planować pracę podczas oczekiwania na zwrot narzędzia.',
-                },
-            ],
-        },
-        {
-            title: 'Rozliczenia',
-            items: [
-                {
-                    title: 'Jak zarządzać moimi urządzeniami PowerPro?',
-                    content:
-                        'Możesz przeglądać i zarządzać wszystkimi swoimi urządzeniami PowerPro za pośrednictwem naszego portalu samoobsługowego online. Przejdź do "Zarządzania urządzeniami", gdzie znajdziesz swoje urządzenia skategoryzowane jako zakupione urządzenia lub urządzenia flotowe. Stamtąd możesz zlecić naprawy, śledzić status naprawy lub zgłosić zgubione urządzenia.',
-                },
-                {
-                    title: 'Jak zgłosić kradzież lub zgubienie narzędzia?',
-                    content: `
-        ### Zgłaszanie skradzionych lub zgubionych urządzeń flotowych
-        
-        Jeśli Twoje urządzenie flotowe zostało skradzione lub zgubione, wykonaj następujące kroki:
-        1. Zaloguj się na swoje konto PowerPro
-        2. Przejdź do "Zarządzania urządzeniami"
-        3. Wybierz "Zgłoś kradzież/zgubienie"
-        4. Wypełnij formularz ze wszystkimi istotnymi informacjami
-        5. Prześlij swoje zgłoszenie
-        
-        Nasz zespół przetworzy Twoje zgłoszenie i skontaktuje się z Tobą z dalszymi instrukcjami w ciągu 1-2 dni roboczych.
-        `,
-                },
-                {
-                    title: 'Jak mogę zlecić naprawę urządzenia?',
-                    content: `
-        ## Proces naprawy urządzenia
-        
-        Aby zlecić naprawę swojego urządzenia PowerPro:
-        
-        1. Zaloguj się na swoje konto PowerPro
-        2. Przejdź do "Zarządzanie urządzeniami" > "Zlecenie naprawy"
-        3. Wybierz urządzenie wymagające naprawy
-        4. Opisz problem z urządzeniem
-        5. Wskaż, czy potrzebujesz urządzenia zastępczego na czas naprawy
-        6. Wybierz adres dostawy
-        7. Prześlij swoje zlecenie naprawy
-        
-        Możesz śledzić status swojej naprawy, odwiedzając "Śledź naprawy" w sekcji Zarządzanie urządzeniami.
-        `,
-                },
-                {
-                    title: 'Jakie aplikacje mobilne oferuje PowerPro?',
-                    content:
-                        'PowerPro oferuje kilka aplikacji mobilnych, które pomagają efektywniej zarządzać narzędziami i projektami. Obejmują one PowerPro Service do informacji o narzędziach i zgłoszeń serwisowych, PowerPro Manager do zarządzania zasobami oraz różne aplikacje techniczne do konkretnych zadań budowlanych, takich jak projektowanie kotew i dokumentacja przeciwpożarowa. Wszystkie aplikacje można pobrać z App Store lub Google Play Store.',
-                },
-                {
-                    title: 'Jak zmienić lokalizację rozliczeniową usługi flotowej?',
-                    content:
-                        'Jeśli Twoja firma się rozwija i musisz zmienić centrum kosztów dla swoich urządzeń flotowych, możesz łatwo zaktualizować te informacje. Przejdź do sekcji "Zarządzanie urządzeniami", wybierz "Zmień lokalizację centrum kosztów", wybierz urządzenia, które chcesz przypisać na nowo, i wybierz nowe centrum kosztów. Pomaga to skuteczniej zarządzać kosztami w różnych lokalizacjach projektów.',
-                },
-                {
-                    title: 'Jak mogę śledzić status naprawy mojego sprzętu?',
-                    content:
-                        'Po zleceniu naprawy możesz śledzić jej status za pośrednictwem naszego portalu online. Przejdź do "Zarządzanie urządzeniami" i wybierz "Śledź status naprawy". Zobaczysz wizualny pulpit pokazujący, gdzie znajduje się Twoje urządzenie w procesie naprawy, od odbioru do dostawy naprawionego narzędzia. Ta funkcja pozwala odpowiednio planować pracę podczas oczekiwania na zwrot narzędzia.',
+                        'Tak, możesz później zmienić typ konta. Możesz również przełączać się między różnymi kontami w ramach tego samego typu.',
                 },
             ],
         },
     ],
+    banner: {
+        title: 'Masz jeszcze pytania?',
+        description: 'Masz pytania lub potrzebujesz pomocy? Nasz zespół jest tutaj, aby pomóc!',
+        link: { label: 'Skontaktuj się z nami', url: '/', variant: 'primary' },
+    },
 };
 
-export const mapFaqBlock = (locale: string): CMS.Model.FaqBlock.FaqBlock => {
+const MOCK_FAQ_LIST_BLOCK_2_EN: CMS.Model.FaqBlock.FaqBlock = {
+    id: 'faq-2',
+    title: 'Frequently asked questions',
+    oneColumn: true,
+    description:
+        "We've compiled the most important information to help you get the most out of your experience. Can't find what you're looking for? <a href='/contact-us'>Contact us</a>.",
+    sections: [
+        {
+            items: [
+                {
+                    title: 'How do I open an Everyday Account?',
+                    content:
+                        'You can open any account online or through our mobile app in just a few minutes—no paperwork required.',
+                },
+                {
+                    title: 'What security features are included?',
+                    content:
+                        'We use the latest security features to protect your account. We also have a team of experts who are always available to help you with any questions you may have.',
+                },
+                {
+                    title: 'Is there a minimum balance required?',
+                    content:
+                        'Yes, you can switch between account types later. You can also switch between different accounts within the same type.',
+                },
+            ],
+        },
+    ],
+    banner: {
+        title: 'Still have questions?',
+        description: 'Have questions or need assistance? Our team is here to help! ',
+        link: { label: 'Contact us', url: '/', variant: 'primary' },
+    },
+};
+
+const MOCK_FAQ_LIST_BLOCK_2_DE: CMS.Model.FaqBlock.FaqBlock = {
+    id: 'faq-2',
+    title: 'Häufig gestellte Fragen',
+    oneColumn: true,
+    description:
+        "Wir haben die wichtigsten Informationen zusammengestellt, um Ihnen zu helfen, das Beste aus Ihrer Erfahrung herauszuholen. Können Sie nicht finden, wonach Sie suchen? <a href='/contact-us'>Kontaktieren Sie uns</a>.",
+    sections: [
+        {
+            items: [
+                {
+                    title: 'Wie eröffne ich ein Alltagskonto?',
+                    content:
+                        'Sie können jedes Konto online oder über unsere mobile App in nur wenigen Minuten eröffnen – ohne Papierkram.',
+                },
+                {
+                    title: 'Welche Sicherheitsfunktionen sind enthalten?',
+                    content:
+                        'Wir verwenden die neuesten Sicherheitsfunktionen, um Ihr Konto zu schützen. Wir haben auch ein Expertenteam, das Ihnen bei Fragen jederzeit zur Verfügung steht.',
+                },
+                {
+                    title: 'Ist ein Mindestguthaben erforderlich?',
+                    content:
+                        'Ja, Sie können später zwischen Kontotypen wechseln. Sie können auch zwischen verschiedenen Konten innerhalb desselben Typs wechseln.',
+                },
+            ],
+        },
+    ],
+    banner: {
+        title: 'Haben Sie noch Fragen?',
+        description: 'Haben Sie Fragen oder benötigen Sie Unterstützung? Unser Team ist hier, um zu helfen!',
+        link: { label: 'Kontaktieren Sie uns', url: '/', variant: 'primary' },
+    },
+};
+
+const MOCK_FAQ_LIST_BLOCK_2_PL: CMS.Model.FaqBlock.FaqBlock = {
+    id: 'faq-2',
+    title: 'Często zadawane pytania',
+    oneColumn: true,
+    description:
+        "Zebraliśmy najważniejsze informacje, aby pomóc Ci w pełni wykorzystać Twoje doświadczenie. Nie możesz znaleźć tego, czego szukasz? <a href='/contact-us'>Skontaktuj się z nami</a>.",
+    sections: [
+        {
+            items: [
+                {
+                    title: 'Jak otworzyć Konto Codzienne?',
+                    content:
+                        'Możesz otworzyć dowolne konto online lub za pośrednictwem naszej aplikacji mobilnej w zaledwie kilka minut – bez papierkowej roboty.',
+                },
+                {
+                    title: 'Jakie funkcje bezpieczeństwa są wliczone?',
+                    content:
+                        'Używamy najnowszych funkcji bezpieczeństwa, aby chronić Twoje konto. Mamy również zespół ekspertów, którzy są zawsze dostępni, aby pomóc Ci w razie pytań.',
+                },
+                {
+                    title: 'Czy wymagane jest minimalne saldo?',
+                    content:
+                        'Tak, możesz później zmienić typ konta. Możesz również przełączać się między różnymi kontami w ramach tego samego typu.',
+                },
+            ],
+        },
+    ],
+    banner: {
+        title: 'Masz jeszcze pytania?',
+        description: 'Masz pytania lub potrzebujesz pomocy? Nasz zespół jest tutaj, aby pomóc!',
+        link: { label: 'Skontaktuj się z nami', url: '/', variant: 'primary' },
+    },
+};
+
+const MOCK_FAQ_LIST_BLOCKS_EN = [MOCK_FAQ_LIST_BLOCK_1_EN, MOCK_FAQ_LIST_BLOCK_2_EN];
+const MOCK_FAQ_LIST_BLOCKS_DE = [MOCK_FAQ_LIST_BLOCK_1_DE, MOCK_FAQ_LIST_BLOCK_2_DE];
+const MOCK_FAQ_LIST_BLOCKS_PL = [MOCK_FAQ_LIST_BLOCK_1_PL, MOCK_FAQ_LIST_BLOCK_2_PL];
+
+export const mapFaqBlock = ({ locale, id }: CMS.Request.GetCmsEntryParams): CMS.Model.FaqBlock.FaqBlock | undefined => {
     switch (locale) {
         case 'de':
-            return MOCK_FAQ_LIST_BLOCK_DE;
+            return MOCK_FAQ_LIST_BLOCKS_DE.find((block) => block.id === id);
         case 'pl':
-            return MOCK_FAQ_LIST_BLOCK_PL;
+            return MOCK_FAQ_LIST_BLOCKS_PL.find((block) => block.id === id);
         default:
-            return MOCK_FAQ_LIST_BLOCK_EN;
+            return MOCK_FAQ_LIST_BLOCKS_EN.find((block) => block.id === id);
     }
 };
