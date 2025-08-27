@@ -8,8 +8,8 @@ import { DynamicIcon } from '../DynamicIcon';
 
 import { LinkListProps } from './LinkList.types';
 
-export const LinkList: React.FC<Readonly<LinkListProps>> = ({ className, links, LinkComponent }) => {
-    if (!links) {
+export const LinkList: React.FC<Readonly<LinkListProps>> = ({ className, links, LinkComponent, children }) => {
+    if (!links && !children) {
         return null;
     }
 
@@ -28,6 +28,7 @@ export const LinkList: React.FC<Readonly<LinkListProps>> = ({ className, links, 
                         </Link>
                     ),
             )}
+            {children}
         </div>
     );
 };

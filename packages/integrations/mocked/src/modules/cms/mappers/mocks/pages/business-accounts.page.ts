@@ -1,8 +1,8 @@
 import { CMS } from '@dxp/framework/modules';
 
-export const PAGE_ACCOUNTS_EN: CMS.Model.Page.Page = {
+export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
     id: 'accounts',
-    slug: '/',
+    slug: '/business/accounts',
     locale: 'en',
     seo: {
         noIndex: false,
@@ -15,6 +15,12 @@ export const PAGE_ACCOUNTS_EN: CMS.Model.Page.Page = {
             width: 150,
             height: 150,
             alt: 'Placeholder',
+        },
+    },
+    parent: {
+        slug: '/business',
+        seo: {
+            title: 'Business',
         },
     },
     permissions: [],
@@ -67,9 +73,9 @@ export const PAGE_ACCOUNTS_EN: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_ACCOUNTS_DE: CMS.Model.Page.Page = {
+export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
     id: 'accounts',
-    slug: '/',
+    slug: '/geschäftlich/konten',
     locale: 'de',
     seo: {
         noIndex: false,
@@ -134,9 +140,9 @@ export const PAGE_ACCOUNTS_DE: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_ACCOUNTS_PL: CMS.Model.Page.Page = {
+export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
     id: 'accounts',
-    slug: '/',
+    slug: '/firma/konta',
     locale: 'pl',
     seo: {
         noIndex: false,

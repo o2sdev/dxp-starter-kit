@@ -15,6 +15,7 @@
     --accent-foreground: hsl(240 6% 10%);
     --destructive: hsl(346 100% 41%);
     --destructive-foreground: hsl(0 0% 100%);
+    --success: hsl(141 71% 48%);
     --border: hsl(232 12% 87%);
     --input: hsl(230 6% 81%);
     --ring: hsl(240 6% 10%);
@@ -66,6 +67,7 @@
     --primary-foreground: hsl(0 0% 100%);
     --secondary: hsl(165.9, 100%, 41%);
     --secondary-foreground: hsl(0 0% 0%);
+    --success: hsl(141 71% 48%);
     --navbar-background: hsl(234 25% 92%);
     --navbar-foreground: hsl(215 28% 17%);
     --navbar-primary: hsl(228 100% 19%);
@@ -96,6 +98,7 @@
     --accent-foreground: hsl(0 0% 100%);
     --destructive: hsl(0 63% 31%);
     --destructive-foreground: hsl(0 86% 97%);
+    --success: hsl(141 71% 48%);
     --border: hsl(226 71% 40%);
     --input: hsl(226 71% 40%);
     --ring: hsl(240 5% 84%);

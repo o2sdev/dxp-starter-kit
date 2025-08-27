@@ -23,7 +23,7 @@ export const FeatureItem: React.FC<FeatureItemProps> = ({ title, description, ic
         <div className="flex flex-row gap-3 w-full justify-between">
             <div className="flex flex-row gap-3">
                 <div className="mt-0.5">
-                    <DynamicIcon name={icon || 'Check'} size={20} className="text-primary" />
+                    <DynamicIcon name={icon || 'Check'} size={20} className="text-success" />
                 </div>
 
                 <Typography variant="small">{title}</Typography>

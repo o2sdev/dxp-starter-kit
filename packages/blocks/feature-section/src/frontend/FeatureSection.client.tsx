@@ -83,7 +83,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                                         <DynamicIcon
                                             name={feature.icon || 'Check'}
                                             size={20}
-                                            className="text-primary"
+                                            className="text-success"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">

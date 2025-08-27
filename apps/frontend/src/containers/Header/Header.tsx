@@ -27,8 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ data, alternativeUrls, children 
 
     const LogoSlot = (
         <Link asChild>
-            {/*TODO: get label from API*/}
-            <NextLink href="/" aria-label={'go to home'}>
+            <NextLink href="/" aria-label={data.logoLabel}>
                 {logo?.url && <Image src={logo.url} alt={logo.alt} width={logo.width} height={logo.height} />}
             </NextLink>
         </Link>

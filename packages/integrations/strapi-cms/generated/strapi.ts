@@ -845,7 +845,9 @@ export type ComponentContentMessageSimpleInput = {
 export type ComponentContentNavigationGroup = {
     id: Scalars['ID']['output'];
     items: Array<Maybe<ComponentContentNavigationItem>>;
+    page?: Maybe<Page>;
     title: Scalars['String']['output'];
+    url?: Maybe<Scalars['String']['output']>;
 };
 
 export type ComponentContentNavigationGroupItemsArgs = {
@@ -1406,6 +1408,7 @@ export type Footer = {
     localizations: Array<Maybe<Footer>>;
     localizations_connection?: Maybe<FooterRelationResponseCollection>;
     logo: UploadFile;
+    logoLabel?: Maybe<Scalars['String']['output']>;
     publishedAt?: Maybe<Scalars['DateTime']['output']>;
     title: Scalars['String']['output'];
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -1435,6 +1438,7 @@ export type FooterFiltersInput = {
     documentId?: InputMaybe<IdFilterInput>;
     locale?: InputMaybe<StringFilterInput>;
     localizations?: InputMaybe<FooterFiltersInput>;
+    logoLabel?: InputMaybe<StringFilterInput>;
     not?: InputMaybe<FooterFiltersInput>;
     or?: InputMaybe<Array<InputMaybe<FooterFiltersInput>>>;
     publishedAt?: InputMaybe<DateTimeFilterInput>;
@@ -1446,6 +1450,7 @@ export type FooterInput = {
     copyright?: InputMaybe<Scalars['String']['input']>;
     items?: InputMaybe<Array<Scalars['FooterItemsDynamicZoneInput']['input']>>;
     logo?: InputMaybe<Scalars['ID']['input']>;
+    logoLabel?: InputMaybe<Scalars['String']['input']>;
     publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
     title?: InputMaybe<Scalars['String']['input']>;
 };
@@ -1536,6 +1541,7 @@ export type Header = {
     localizations: Array<Maybe<Header>>;
     localizations_connection?: Maybe<HeaderRelationResponseCollection>;
     logo: UploadFile;
+    logoLabel: Scalars['String']['output'];
     notification?: Maybe<Page>;
     openMobileMenuLabel: Scalars['String']['output'];
     publishedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -1570,6 +1576,7 @@ export type HeaderFiltersInput = {
     languageSwitcherLabel?: InputMaybe<StringFilterInput>;
     locale?: InputMaybe<StringFilterInput>;
     localizations?: InputMaybe<HeaderFiltersInput>;
+    logoLabel?: InputMaybe<StringFilterInput>;
     not?: InputMaybe<HeaderFiltersInput>;
     notification?: InputMaybe<PageFiltersInput>;
     openMobileMenuLabel?: InputMaybe<StringFilterInput>;
@@ -1586,6 +1593,7 @@ export type HeaderInput = {
     items?: InputMaybe<Array<Scalars['HeaderItemsDynamicZoneInput']['input']>>;
     languageSwitcherLabel?: InputMaybe<Scalars['String']['input']>;
     logo?: InputMaybe<Scalars['ID']['input']>;
+    logoLabel?: InputMaybe<Scalars['String']['input']>;
     notification?: InputMaybe<Scalars['ID']['input']>;
     openMobileMenuLabel?: InputMaybe<Scalars['String']['input']>;
     publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -2106,7 +2114,8 @@ export type NotFoundPageRelationResponseCollection = {
 
 export type Page = {
     SEO: ComponentSeoSeo;
-    child?: Maybe<Page>;
+    children: Array<Maybe<Page>>;
+    children_connection?: Maybe<PageRelationResponseCollection>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     documentId: Scalars['ID']['output'];
     hasOwnTitle: Scalars['Boolean']['output'];
@@ -2121,6 +2130,18 @@ export type Page = {
     template: Array<Maybe<PageTemplateDynamicZone>>;
     theme?: Maybe<Theme>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type PageChildrenArgs = {
+    filters?: InputMaybe<PageFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type PageChildren_ConnectionArgs = {
+    filters?: InputMaybe<PageFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type PageLocalizationsArgs = {
@@ -2143,7 +2164,7 @@ export type PageEntityResponseCollection = {
 export type PageFiltersInput = {
     SEO?: InputMaybe<ComponentSeoSeoFiltersInput>;
     and?: InputMaybe<Array<InputMaybe<PageFiltersInput>>>;
-    child?: InputMaybe<PageFiltersInput>;
+    children?: InputMaybe<PageFiltersInput>;
     createdAt?: InputMaybe<DateTimeFilterInput>;
     documentId?: InputMaybe<IdFilterInput>;
     hasOwnTitle?: InputMaybe<BooleanFilterInput>;
@@ -2162,7 +2183,7 @@ export type PageFiltersInput = {
 
 export type PageInput = {
     SEO?: InputMaybe<ComponentSeoSeoInput>;
-    child?: InputMaybe<Scalars['ID']['input']>;
+    children?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
     hasOwnTitle?: InputMaybe<Scalars['Boolean']['input']>;
     parent?: InputMaybe<Scalars['ID']['input']>;
     permissions?: InputMaybe<ComponentSeoUserRolesInput>;
@@ -3094,8 +3115,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | (Omit<ComponentComponentsQuickLinks, 'items'> & { items: Array<Maybe<_RefType['ComponentContentLink']>> })
         | Error;
     FooterItemsDynamicZone:
-        | (Omit<ComponentContentNavigationGroup, 'items'> & {
+        | (Omit<ComponentContentNavigationGroup, 'items' | 'page'> & {
               items: Array<Maybe<_RefType['ComponentContentNavigationItem']>>;
+              page?: Maybe<_RefType['Page']>;
           })
         | (Omit<ComponentContentNavigationItem, 'page'> & { page?: Maybe<_RefType['Page']> })
         | Error;
@@ -3217,8 +3239,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | ComponentContentListWithIcons
         | ComponentContentMessage
         | ComponentContentMessageSimple
-        | (Omit<ComponentContentNavigationGroup, 'items'> & {
+        | (Omit<ComponentContentNavigationGroup, 'items' | 'page'> & {
               items: Array<Maybe<_RefType['ComponentContentNavigationItem']>>;
+              page?: Maybe<_RefType['Page']>;
           })
         | (Omit<ComponentContentNavigationItem, 'page'> & { page?: Maybe<_RefType['Page']> })
         | ComponentContentPrice
@@ -3288,10 +3311,18 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
           })
         | (Omit<
               Page,
-              'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template' | 'theme'
+              | 'SEO'
+              | 'children'
+              | 'children_connection'
+              | 'localizations'
+              | 'localizations_connection'
+              | 'parent'
+              | 'template'
+              | 'theme'
           > & {
               SEO: _RefType['ComponentSeoSeo'];
-              child?: Maybe<_RefType['Page']>;
+              children: Array<Maybe<_RefType['Page']>>;
+              children_connection?: Maybe<_RefType['PageRelationResponseCollection']>;
               localizations: Array<Maybe<_RefType['Page']>>;
               localizations_connection?: Maybe<_RefType['PageRelationResponseCollection']>;
               parent?: Maybe<_RefType['Page']>;
@@ -3306,8 +3337,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | UsersPermissionsRole
         | UsersPermissionsUser;
     HeaderItemsDynamicZone:
-        | (Omit<ComponentContentNavigationGroup, 'items'> & {
+        | (Omit<ComponentContentNavigationGroup, 'items' | 'page'> & {
               items: Array<Maybe<_RefType['ComponentContentNavigationItem']>>;
+              page?: Maybe<_RefType['Page']>;
           })
         | (Omit<ComponentContentNavigationItem, 'page'> & { page?: Maybe<_RefType['Page']> })
         | Error;
@@ -3557,8 +3589,9 @@ export type ResolversTypes = {
     ComponentContentMessageSimple: ResolverTypeWrapper<ComponentContentMessageSimple>;
     ComponentContentMessageSimpleInput: ComponentContentMessageSimpleInput;
     ComponentContentNavigationGroup: ResolverTypeWrapper<
-        Omit<ComponentContentNavigationGroup, 'items'> & {
+        Omit<ComponentContentNavigationGroup, 'items' | 'page'> & {
             items: Array<Maybe<ResolversTypes['ComponentContentNavigationItem']>>;
+            page?: Maybe<ResolversTypes['Page']>;
         }
     >;
     ComponentContentNavigationItem: ResolverTypeWrapper<
@@ -3723,9 +3756,20 @@ export type ResolversTypes = {
         Omit<NotFoundPageRelationResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['NotFoundPage']> }
     >;
     Page: ResolverTypeWrapper<
-        Omit<Page, 'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template' | 'theme'> & {
+        Omit<
+            Page,
+            | 'SEO'
+            | 'children'
+            | 'children_connection'
+            | 'localizations'
+            | 'localizations_connection'
+            | 'parent'
+            | 'template'
+            | 'theme'
+        > & {
             SEO: ResolversTypes['ComponentSeoSeo'];
-            child?: Maybe<ResolversTypes['Page']>;
+            children: Array<Maybe<ResolversTypes['Page']>>;
+            children_connection?: Maybe<ResolversTypes['PageRelationResponseCollection']>;
             localizations: Array<Maybe<ResolversTypes['Page']>>;
             localizations_connection?: Maybe<ResolversTypes['PageRelationResponseCollection']>;
             parent?: Maybe<ResolversTypes['Page']>;
@@ -3984,8 +4028,9 @@ export type ResolversParentTypes = {
     ComponentContentMessageFiltersInput: ComponentContentMessageFiltersInput;
     ComponentContentMessageSimple: ComponentContentMessageSimple;
     ComponentContentMessageSimpleInput: ComponentContentMessageSimpleInput;
-    ComponentContentNavigationGroup: Omit<ComponentContentNavigationGroup, 'items'> & {
+    ComponentContentNavigationGroup: Omit<ComponentContentNavigationGroup, 'items' | 'page'> & {
         items: Array<Maybe<ResolversParentTypes['ComponentContentNavigationItem']>>;
+        page?: Maybe<ResolversParentTypes['Page']>;
     };
     ComponentContentNavigationItem: Omit<ComponentContentNavigationItem, 'page'> & {
         page?: Maybe<ResolversParentTypes['Page']>;
@@ -4126,10 +4171,18 @@ export type ResolversParentTypes = {
     };
     Page: Omit<
         Page,
-        'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template' | 'theme'
+        | 'SEO'
+        | 'children'
+        | 'children_connection'
+        | 'localizations'
+        | 'localizations_connection'
+        | 'parent'
+        | 'template'
+        | 'theme'
     > & {
         SEO: ResolversParentTypes['ComponentSeoSeo'];
-        child?: Maybe<ResolversParentTypes['Page']>;
+        children: Array<Maybe<ResolversParentTypes['Page']>>;
+        children_connection?: Maybe<ResolversParentTypes['PageRelationResponseCollection']>;
         localizations: Array<Maybe<ResolversParentTypes['Page']>>;
         localizations_connection?: Maybe<ResolversParentTypes['PageRelationResponseCollection']>;
         parent?: Maybe<ResolversParentTypes['Page']>;
@@ -4990,7 +5043,9 @@ export type ComponentContentNavigationGroupResolvers<
         ContextType,
         RequireFields<ComponentContentNavigationGroupItemsArgs, 'pagination' | 'sort'>
     >;
+    page?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+    url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -5368,6 +5423,7 @@ export type FooterResolvers<
         RequireFields<FooterLocalizations_ConnectionArgs, 'pagination' | 'sort'>
     >;
     logo?: Resolver<ResolversTypes['UploadFile'], ParentType, ContextType>;
+    logoLabel?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
     publishedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
     title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
@@ -5510,6 +5566,7 @@ export type HeaderResolvers<
         RequireFields<HeaderLocalizations_ConnectionArgs, 'pagination' | 'sort'>
     >;
     logo?: Resolver<ResolversTypes['UploadFile'], ParentType, ContextType>;
+    logoLabel?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     notification?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     openMobileMenuLabel?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     publishedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
@@ -5969,7 +6026,18 @@ export type PageResolvers<
     ParentType extends ResolversParentTypes['Page'] = ResolversParentTypes['Page'],
 > = {
     SEO?: Resolver<ResolversTypes['ComponentSeoSeo'], ParentType, ContextType>;
-    child?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
+    children?: Resolver<
+        Array<Maybe<ResolversTypes['Page']>>,
+        ParentType,
+        ContextType,
+        RequireFields<PageChildrenArgs, 'pagination' | 'sort'>
+    >;
+    children_connection?: Resolver<
+        Maybe<ResolversTypes['PageRelationResponseCollection']>,
+        ParentType,
+        ContextType,
+        RequireFields<PageChildren_ConnectionArgs, 'pagination' | 'sort'>
+    >;
     createdAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
     documentId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
     hasOwnTitle?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
@@ -7036,12 +7104,14 @@ export type ComponentFragment = {
 export type FooterFragment = {
     documentId: string;
     title: string;
+    logoLabel?: string;
     copyright: string;
     logo: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
     items: Array<
         | {
               __typename: 'ComponentContentNavigationGroup';
               title: string;
+              url?: string;
               items: Array<{
                   __typename: 'ComponentContentNavigationItem';
                   id: string;
@@ -7050,6 +7120,7 @@ export type FooterFragment = {
                   description?: string;
                   page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
               }>;
+              page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
           }
         | {
               __typename: 'ComponentContentNavigationItem';
@@ -7066,6 +7137,7 @@ export type FooterFragment = {
 export type HeaderFragment = {
     documentId: string;
     title: string;
+    logoLabel: string;
     showContextSwitcher?: boolean;
     languageSwitcherLabel: string;
     openMobileMenuLabel: string;
@@ -7075,6 +7147,7 @@ export type HeaderFragment = {
         | {
               __typename: 'ComponentContentNavigationGroup';
               title: string;
+              url?: string;
               items: Array<{
                   __typename: 'ComponentContentNavigationItem';
                   id: string;
@@ -7083,6 +7156,7 @@ export type HeaderFragment = {
                   description?: string;
                   page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
               }>;
+              page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
           }
         | {
               __typename: 'ComponentContentNavigationItem';
@@ -7758,6 +7832,7 @@ export type MediaFragment = { url: string; alternativeText?: string; width?: num
 export type NavigationGroupFragment = {
     __typename: 'ComponentContentNavigationGroup';
     title: string;
+    url?: string;
     items: Array<{
         __typename: 'ComponentContentNavigationItem';
         id: string;
@@ -7766,6 +7841,7 @@ export type NavigationGroupFragment = {
         description?: string;
         page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
     }>;
+    page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
 };
 
 export type NavigationItemFragment = {
@@ -8285,12 +8361,14 @@ export type GetFooterQuery = {
     footer?: {
         documentId: string;
         title: string;
+        logoLabel?: string;
         copyright: string;
         logo: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
         items: Array<
             | {
                   __typename: 'ComponentContentNavigationGroup';
                   title: string;
+                  url?: string;
                   items: Array<{
                       __typename: 'ComponentContentNavigationItem';
                       id: string;
@@ -8299,6 +8377,7 @@ export type GetFooterQuery = {
                       description?: string;
                       page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
                   }>;
+                  page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
               }
             | {
                   __typename: 'ComponentContentNavigationItem';
@@ -8322,6 +8401,7 @@ export type GetHeaderQuery = {
     header?: {
         documentId: string;
         title: string;
+        logoLabel: string;
         showContextSwitcher?: boolean;
         languageSwitcherLabel: string;
         openMobileMenuLabel: string;
@@ -8331,6 +8411,7 @@ export type GetHeaderQuery = {
             | {
                   __typename: 'ComponentContentNavigationGroup';
                   title: string;
+                  url?: string;
                   items: Array<{
                       __typename: 'ComponentContentNavigationItem';
                       id: string;
@@ -8339,6 +8420,7 @@ export type GetHeaderQuery = {
                       description?: string;
                       page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
                   }>;
+                  page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
               }
             | {
                   __typename: 'ComponentContentNavigationItem';
@@ -8892,8 +8974,18 @@ export const NavigationGroupFragmentDoc = gql`
                 ...NavigationItem
             }
         }
+        url
+        page {
+            ... on Page {
+                slug
+                permissions {
+                    ...Roles
+                }
+            }
+        }
     }
     ${NavigationItemFragmentDoc}
+    ${RolesFragmentDoc}
 `;
 export const FooterFragmentDoc = gql`
     fragment Footer on Footer {
@@ -8902,6 +8994,7 @@ export const FooterFragmentDoc = gql`
         logo {
             ...Media
         }
+        logoLabel
         items {
             ... on ComponentContentNavigationGroup {
                 ...NavigationGroup
@@ -8923,6 +9016,7 @@ export const HeaderFragmentDoc = gql`
         logo {
             ...Media
         }
+        logoLabel
         items {
             ... on ComponentContentNavigationGroup {
                 ...NavigationGroup
