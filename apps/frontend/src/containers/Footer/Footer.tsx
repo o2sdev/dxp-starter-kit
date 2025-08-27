@@ -110,8 +110,8 @@ export const Footer: React.FC<FooterProps> = ({ data }) => {
                         <NextLink href={item.url || '/'}>{item.title}</NextLink>
                     </Link>
 
-                    <CollapsibleTrigger className="p-4 data-[state=open]:rotate-180 transition-transform duration-200">
-                        <ChevronDownIcon className="h-4 w-4" />
+                    <CollapsibleTrigger className="p-1.5 data-[state=open]:rotate-180 transition-transform duration-200 border border-border">
+                        <ChevronDownIcon className="h-6 w-6" />
                     </CollapsibleTrigger>
                 </div>
                 <CollapsibleContent className="p-0 overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up flex flex-col gap-2">
@@ -151,8 +151,8 @@ export const Footer: React.FC<FooterProps> = ({ data }) => {
                                                         <NextLink href={item.url || '/'}>{item.title}</NextLink>
                                                     </Link>
 
-                                                    <CollapsibleTrigger className="p-4 data-[state=open]:rotate-180 transition-transform duration-200">
-                                                        <ChevronDownIcon className="h-4 w-4" />
+                                                    <CollapsibleTrigger className="p-1.5 data-[state=open]:rotate-180 transition-transform duration-200 border border-border">
+                                                        <ChevronDownIcon className="h-6 w-6" />
                                                     </CollapsibleTrigger>
                                                 </div>
                                                 <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up flex flex-col gap-2 p-0">

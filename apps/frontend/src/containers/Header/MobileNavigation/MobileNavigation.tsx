@@ -52,8 +52,8 @@ export function MobileNavigation({ logoSlot, localeSlot, items, title, mobileMen
                             <NextLink href={item.url || '/'}>{item.title}</NextLink>
                         </Link>
 
-                        <CollapsibleTrigger className="p-4 data-[state=open]:rotate-180 transition-transform duration-200">
-                            <ChevronDownIcon className="h-4 w-4" />
+                        <CollapsibleTrigger className="p-1.5 data-[state=open]:rotate-180 transition-transform duration-200 border border-border">
+                            <ChevronDownIcon className="h-6 w-6" />
                         </CollapsibleTrigger>
                     </div>
 
@@ -72,8 +72,8 @@ export function MobileNavigation({ logoSlot, localeSlot, items, title, mobileMen
                                                             <NextLink href={item.url || '/'}>{item.title}</NextLink>
                                                         </Link>
 
-                                                        <CollapsibleTrigger className="p-4 data-[state=open]:rotate-180 transition-transform duration-200">
-                                                            <ChevronDownIcon className="h-4 w-4" />
+                                                        <CollapsibleTrigger className="p-1.5 data-[state=open]:rotate-180 transition-transform duration-200 border border-border">
+                                                            <ChevronDownIcon className="h-6 w-6" />
                                                         </CollapsibleTrigger>
                                                     </div>
 
@@ -145,20 +145,18 @@ export function MobileNavigation({ logoSlot, localeSlot, items, title, mobileMen
 
                                 <Separator />
 
-                                <div className="flex flex-col gap-4">
-                                    <Collapsible className="flex flex-col gap-2">
-                                        <ul className="flex flex-col items-stretch gap-2 w-full">
-                                            {items.map((item) => {
-                                                switch (item.__typename) {
-                                                    case 'NavigationGroup':
-                                                        return <NavigationGroup key={item.title} item={item} />;
-                                                    case 'NavigationItem':
-                                                        return <NavigationItem key={item.label} item={item} />;
-                                                }
-                                            })}
-                                        </ul>
-                                    </Collapsible>
-                                </div>
+                                <Collapsible>
+                                    <ul className="flex flex-col items-stretch gap-4 w-full">
+                                        {items.map((item) => {
+                                            switch (item.__typename) {
+                                                case 'NavigationGroup':
+                                                    return <NavigationGroup key={item.title} item={item} />;
+                                                case 'NavigationItem':
+                                                    return <NavigationItem key={item.label} item={item} />;
+                                            }
+                                        })}
+                                    </ul>
+                                </Collapsible>
                             </div>
                         </SheetContent>
                     </Sheet>
