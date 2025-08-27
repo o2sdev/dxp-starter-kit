@@ -20,7 +20,7 @@ import { generateSeo } from '@/utils/seo';
 
 import { auth, signIn } from '@/auth';
 
-import { Link } from '@/i18n';
+import { Link, redirect } from '@/i18n';
 
 import { PageTemplate } from '@/templates/PageTemplate/PageTemplate';
 
@@ -95,6 +95,13 @@ export default async function Page({ params }: Props) {
             { 'x-locale': locale },
             session?.accessToken,
         );
+
+        if (meta.redirect) {
+            redirect({
+                href: meta.redirect,
+                locale,
+            });
+        }
 
         if (session?.user && session?.error === 'RefreshTokenError') {
             return await signIn();
