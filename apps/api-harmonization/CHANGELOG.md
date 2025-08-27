@@ -1,5 +1,16 @@
 # @dxp/api-harmonization
 
+## 1.9.3
+
+### Patch Changes
+
+- 78d5f26: added an options to configure page redirects via CMS
+- Updated dependencies [049bc15]
+- Updated dependencies [78d5f26]
+    - @dxp/integrations.strapi-cms@0.3.0
+    - @dxp/integrations.mocked@0.3.0
+    - @dxp/framework@0.2.0
+
 ## 1.9.2
 
 ### Patch Changes
