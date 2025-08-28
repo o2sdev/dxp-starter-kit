@@ -3,6 +3,8 @@
 import { createNavigation } from 'next-intl/navigation';
 import React from 'react';
 
+import { cn } from '@dxp/ui/lib/utils';
+
 import { PricingCard } from '@dxp/ui/components/Cards/PricingCard';
 import { RichText } from '@dxp/ui/components/RichText';
 
@@ -40,7 +42,10 @@ export const PricingSectionPure: React.FC<PricingSectionPureProps> = ({
             {pricingList && pricingList.length > 0 && (
                 <ul className="flex flex-col lg:flex-row gap-8 lg:gap-4 items-center lg:items-stretch lg:justify-center ">
                     {pricingList.map((card, index) => (
-                        <li key={`${card.title}-${index}`} className="flex-1 max-w-[400px]">
+                        <li
+                            key={`${card.title}-${index}`}
+                            className={cn('flex-1 max-w-[400px]', card.isPromoted && 'order-first lg:order-none')}
+                        >
                             <PricingCard {...card} LinkComponent={LinkComponent} />
                         </li>
                     ))}

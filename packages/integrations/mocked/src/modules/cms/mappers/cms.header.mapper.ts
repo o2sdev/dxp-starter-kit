@@ -35,6 +35,16 @@ const MOCK_HEADER_EN: CMS.Model.Header.Header = {
                     label: 'Cards',
                     url: '/personal/cards',
                 },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Insurance',
+                    url: '/personal/insurance',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Help and Support',
+                    url: '/help-and-support',
+                },
             ],
         },
         {
@@ -51,6 +61,11 @@ const MOCK_HEADER_EN: CMS.Model.Header.Header = {
                     __typename: 'NavigationItem',
                     label: 'Cards',
                     url: '/business/cards',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Help and Support',
+                    url: '/help-and-support',
                 },
             ],
         },
@@ -91,6 +106,16 @@ const MOCK_HEADER_DE: CMS.Model.Header.Header = {
                     label: 'Karten',
                     url: '/personlich/karten',
                 },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Versicherungen',
+                    url: '/personlich/versicherungen',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Hilfe und Support',
+                    url: '/hilfe-und-support',
+                },
             ],
         },
         {
@@ -102,6 +127,16 @@ const MOCK_HEADER_DE: CMS.Model.Header.Header = {
                     __typename: 'NavigationItem',
                     label: 'Konten',
                     url: '/geschaftlich/konten',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Karten',
+                    url: '/geschaftlich/karten',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Hilfe und Support',
+                    url: '/hilfe-und-support',
                 },
             ],
         },
@@ -142,6 +177,16 @@ const MOCK_HEADER_PL: CMS.Model.Header.Header = {
                     label: 'Karty',
                     url: '/indywidualny/karty',
                 },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Ubezpieczenia',
+                    url: '/indywidualny/ubezpieczenia',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Pomoc i wsparcie',
+                    url: '/pomoc-i-wsparcie',
+                },
             ],
         },
         {
@@ -153,6 +198,16 @@ const MOCK_HEADER_PL: CMS.Model.Header.Header = {
                     __typename: 'NavigationItem',
                     label: 'Konta',
                     url: '/firma/konta',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Karty',
+                    url: '/firma/karten',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Pomoc i wsparcie',
+                    url: '/pomoc-i-wsparcie',
                 },
             ],
         },

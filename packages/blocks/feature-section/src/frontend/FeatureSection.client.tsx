@@ -74,7 +74,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                                 <li
                                     key={`${feature.title}-${index}`}
                                     className={cn(
-                                        'flex flex-col md:flex-row gap-3 items-start',
+                                        'flex flex-row gap-3 items-start',
                                         !isImageAvailable && '!flex-col gap-5 items-center text-center',
                                     )}
                                 >
@@ -99,7 +99,14 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                     )}
 
                     <LinkList
-                        className={cn(!isImageAvailable && 'justify-center')}
+                        className={cn(
+                            !isImageAvailable && 'justify-center',
+                            isImageAvailable &&
+                                links &&
+                                links.length === 1 &&
+                                links[0]?.variant === 'link' &&
+                                'items-start',
+                        )}
                         links={links}
                         LinkComponent={LinkComponent}
                     />

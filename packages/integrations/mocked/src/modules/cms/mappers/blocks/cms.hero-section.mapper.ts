@@ -2,8 +2,7 @@ import { CMS } from '@dxp/framework/modules';
 
 const MOCK_HERO_SECTION_BLOCK_1_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock = {
     id: 'hero-section-1',
-    title: 'Your Money, {highlightedText}',
-    highlightedText: 'Your Way.',
+    title: 'Your Money, Your Way.',
     description: 'Modern banking that adapts to your lifestyle  — anytime, anywhere.',
     inverted: false,
     headingType: 'h1',
@@ -29,8 +28,7 @@ const MOCK_HERO_SECTION_BLOCK_1_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock 
 
 const MOCK_HERO_SECTION_BLOCK_1_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock = {
     id: 'hero-section-1',
-    title: 'Ihr Geld, {highlightedText}',
-    highlightedText: 'Ihre Art.',
+    title: 'Ihr Geld, Ihre Art.',
     description: 'Modernes Banking, das Ihrem Leben entspricht — jederzeit, überall.',
     inverted: true,
     headingType: 'h1',
@@ -56,8 +54,7 @@ const MOCK_HERO_SECTION_BLOCK_1_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
 
 const MOCK_HERO_SECTION_BLOCK_1_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock = {
     id: 'hero-section-1',
-    title: 'Twoje pieniądze, {highlightedText}',
-    highlightedText: 'Twoja droga.',
+    title: 'Twoje pieniądze, Twoja droga.',
     description:
         'Nowoczesne bankowanie, które dostosowuje się do Twojego stylu życia — w każdej chwili, w każdym miejscu.',
     inverted: false,
@@ -650,8 +647,7 @@ const MOCK_HERO_SECTION_BLOCK_7_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock 
 
 const MOCK_HERO_SECTION_BLOCK_50_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock = {
     id: 'hero-section-50',
-    title: 'Business Banking, {highlightedText}',
-    highlightedText: 'Reimagined.',
+    title: 'Business Banking, Reimagined.',
     description: 'Manage your finances with speed, flexibility, and total security—wherever work takes you.',
     inverted: false,
     headingType: 'h1',
@@ -677,8 +673,7 @@ const MOCK_HERO_SECTION_BLOCK_50_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock
 
 const MOCK_HERO_SECTION_BLOCK_50_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock = {
     id: 'hero-section-50',
-    title: 'Geschäftsbanking, {highlightedText}',
-    highlightedText: 'Neu gedacht.',
+    title: 'Geschäftsbanking, Neu gedacht.',
     description:
         'Verwalten Sie Ihre Finanzen mit Geschwindigkeit, Flexibilität und absoluter Sicherheit – egal, wohin die Arbeit Sie führt.',
     inverted: false,
@@ -705,8 +700,7 @@ const MOCK_HERO_SECTION_BLOCK_50_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock
 
 const MOCK_HERO_SECTION_BLOCK_50_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock = {
     id: 'hero-section-50',
-    title: 'Bankowość biznesowa, {highlightedText}',
-    highlightedText: 'Na nowo.',
+    title: 'Bankowość biznesowa, Na nowo.',
     description:
         'Zarządzaj swoimi finansami z szybkością, elastycznością i pełnym bezpieczeństwem – gdziekolwiek praca Cię zaprowadzi.',
     inverted: false,

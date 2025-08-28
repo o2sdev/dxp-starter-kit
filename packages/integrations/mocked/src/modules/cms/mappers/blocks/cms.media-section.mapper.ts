@@ -62,6 +62,72 @@ const MOCK_MEDIA_SECTION_BLOCK_1_PL: CMS.Model.MediaSectionBlock.MediaSectionBlo
     },
 };
 
+const MOCK_MEDIA_SECTION_BLOCK_2_EN: CMS.Model.MediaSectionBlock.MediaSectionBlock = {
+    id: 'media-section-2',
+    title: 'Ready to simplify your banking?',
+    description:
+        'Open your Everyday Account today and experience effortless money management, instant access, and security you can trust.',
+    links: [
+        {
+            label: 'Get started',
+            icon: 'ArrowRight',
+            url: '/',
+            variant: 'primary',
+        },
+    ],
+    labels: {
+        play: 'Play',
+        pause: 'Pause',
+        mute: 'Mute',
+        unmute: 'Unmute',
+        showMore: 'Show more',
+    },
+};
+
+const MOCK_MEDIA_SECTION_BLOCK_2_DE: CMS.Model.MediaSectionBlock.MediaSectionBlock = {
+    id: 'media-section-2',
+    title: 'Bereit, Ihr Banking zu vereinfachen?',
+    description:
+        'Eröffnen Sie noch heute Ihr Alltagskonto und erleben Sie mühelose Geldverwaltung, sofortigen Zugriff und Sicherheit, der Sie vertrauen können.',
+    links: [
+        {
+            label: 'Loslegen',
+            icon: 'ArrowRight',
+            url: '/',
+            variant: 'primary',
+        },
+    ],
+    labels: {
+        play: 'Abspielen',
+        pause: 'Pause',
+        mute: 'Stummschalten',
+        unmute: 'Stummschaltung aufheben',
+        showMore: 'Mehr anzeigen',
+    },
+};
+
+const MOCK_MEDIA_SECTION_BLOCK_2_PL: CMS.Model.MediaSectionBlock.MediaSectionBlock = {
+    id: 'media-section-2',
+    title: 'Gotowy, aby uprościć swoje bankowanie?',
+    description:
+        'Otwórz swoje Konto Codzienne już dziś i doświadcz bezproblemowego zarządzania pieniędzmi, natychmiastowego dostępu i bezpieczeństwa, któremu możesz zaufać.',
+    links: [
+        {
+            label: 'Rozpocznij',
+            icon: 'ArrowRight',
+            url: '/',
+            variant: 'primary',
+        },
+    ],
+    labels: {
+        play: 'Odtwórz',
+        pause: 'Pauza',
+        mute: 'Wycisz',
+        unmute: 'Wyłącz wyciszenie',
+        showMore: 'Pokaż więcej',
+    },
+};
+
 const MOCK_MEDIA_SECTION_BLOCK_50_EN: CMS.Model.MediaSectionBlock.MediaSectionBlock = {
     id: 'media-section-50',
     title: 'Business growth tools',
@@ -125,9 +191,21 @@ const MOCK_MEDIA_SECTION_BLOCK_50_PL: CMS.Model.MediaSectionBlock.MediaSectionBl
     },
 };
 
-const MEDIA_SECTION_BLOCKS_EN = [MOCK_MEDIA_SECTION_BLOCK_1_EN, MOCK_MEDIA_SECTION_BLOCK_50_EN];
-const MEDIA_SECTION_BLOCKS_DE = [MOCK_MEDIA_SECTION_BLOCK_1_DE, MOCK_MEDIA_SECTION_BLOCK_50_DE];
-const MEDIA_SECTION_BLOCKS_PL = [MOCK_MEDIA_SECTION_BLOCK_1_PL, MOCK_MEDIA_SECTION_BLOCK_50_PL];
+const MEDIA_SECTION_BLOCKS_EN = [
+    MOCK_MEDIA_SECTION_BLOCK_1_EN,
+    MOCK_MEDIA_SECTION_BLOCK_2_EN,
+    MOCK_MEDIA_SECTION_BLOCK_50_EN,
+];
+const MEDIA_SECTION_BLOCKS_DE = [
+    MOCK_MEDIA_SECTION_BLOCK_1_DE,
+    MOCK_MEDIA_SECTION_BLOCK_2_DE,
+    MOCK_MEDIA_SECTION_BLOCK_50_DE,
+];
+const MEDIA_SECTION_BLOCKS_PL = [
+    MOCK_MEDIA_SECTION_BLOCK_1_PL,
+    MOCK_MEDIA_SECTION_BLOCK_2_PL,
+    MOCK_MEDIA_SECTION_BLOCK_50_PL,
+];
 
 export const mapMediaSectionBlock = ({
     locale,

@@ -76,6 +76,12 @@ const MOCK_PRICING_SECTION_BLOCK_1_EN: CMS.Model.PricingSectionBlock.PricingSect
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Everything in Everyday Account, plus:',
             featureList: [
                 {
@@ -179,6 +185,12 @@ const MOCK_PRICING_SECTION_BLOCK_1_DE: CMS.Model.PricingSectionBlock.PricingSect
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Alles in Everyday Account, plus:',
             featureList: [
                 {
@@ -283,6 +295,12 @@ const MOCK_PRICING_SECTION_BLOCK_1_PL: CMS.Model.PricingSectionBlock.PricingSect
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Wszystko w koncie codziennym, plus:',
             featureList: [
                 {
@@ -384,6 +402,12 @@ const MOCK_PRICING_SECTION_BLOCK_2_EN: CMS.Model.PricingSectionBlock.PricingSect
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Everything in Debit Card, plus:',
             featureList: [
                 {
@@ -487,6 +511,12 @@ const MOCK_PRICING_SECTION_BLOCK_2_DE: CMS.Model.PricingSectionBlock.PricingSect
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Alles in Debit-Karte, plus:',
             featureList: [
                 {
@@ -591,6 +621,12 @@ const MOCK_PRICING_SECTION_BLOCK_2_PL: CMS.Model.PricingSectionBlock.PricingSect
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Wszystko w koncie codziennym, plus:',
             featureList: [
                 {
@@ -692,6 +728,12 @@ const MOCK_PRICING_SECTION_BLOCK_3_EN: CMS.Model.PricingSectionBlock.PricingSect
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'What’s included:',
             featureList: [
                 {
@@ -794,6 +836,12 @@ const MOCK_PRICING_SECTION_BLOCK_3_DE: CMS.Model.PricingSectionBlock.PricingSect
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Was ist enthalten:',
             featureList: [
                 {
@@ -896,6 +944,12 @@ const MOCK_PRICING_SECTION_BLOCK_3_PL: CMS.Model.PricingSectionBlock.PricingSect
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Co jest wliczone:',
             featureList: [
                 {
@@ -999,6 +1053,12 @@ const MOCK_PRICING_SECTION_BLOCK_50_EN: CMS.Model.PricingSectionBlock.PricingSec
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Everything in Standard, plus:',
             featureList: [
                 {
@@ -1103,6 +1163,12 @@ const MOCK_PRICING_SECTION_BLOCK_50_DE: CMS.Model.PricingSectionBlock.PricingSec
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Alles im Standard, plus:',
             featureList: [
                 {
@@ -1207,6 +1273,12 @@ const MOCK_PRICING_SECTION_BLOCK_50_PL: CMS.Model.PricingSectionBlock.PricingSec
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Wszystko w Standardzie, plus:',
             featureList: [
                 {
@@ -1309,6 +1381,12 @@ const MOCK_PRICING_SECTION_BLOCK_51_EN: CMS.Model.PricingSectionBlock.PricingSec
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Everything in Standard, plus:',
             featureList: [
                 {
@@ -1410,6 +1488,12 @@ const MOCK_PRICING_SECTION_BLOCK_51_DE: CMS.Model.PricingSectionBlock.PricingSec
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Alles im Standard, plus:',
             featureList: [
                 {
@@ -1511,6 +1595,12 @@ const MOCK_PRICING_SECTION_BLOCK_51_PL: CMS.Model.PricingSectionBlock.PricingSec
                 },
             ],
             isPromoted: true,
+            tags: [
+                {
+                    label: 'RECOMMENDED',
+                    variant: 'default',
+                },
+            ],
             featureListTitle: 'Wszystko w Standardzie, plus:',
             featureList: [
                 {

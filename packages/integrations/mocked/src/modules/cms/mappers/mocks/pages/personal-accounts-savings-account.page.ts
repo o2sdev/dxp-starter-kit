@@ -74,7 +74,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'CtaSectionBlock',
-                    id: 'cta-section-2',
+                    id: 'media-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -171,7 +171,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'CtaSectionBlock',
-                    id: 'cta-section-2',
+                    id: 'media-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -268,7 +268,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'CtaSectionBlock',
-                    id: 'cta-section-2',
+                    id: 'media-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',

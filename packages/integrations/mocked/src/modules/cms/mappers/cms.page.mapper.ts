@@ -67,6 +67,11 @@ import {
     PAGE_PERSONAL_CARDS_PL,
 } from './mocks/pages/personal-cards.page';
 import {
+    PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_DE,
+    PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_EN,
+    PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_PL,
+} from './mocks/pages/personal-insurance-home-insurance.page';
+import {
     PAGE_PERSONAL_INSURANCE_TRAVEL_INSURANCE_DE,
     PAGE_PERSONAL_INSURANCE_TRAVEL_INSURANCE_EN,
     PAGE_PERSONAL_INSURANCE_TRAVEL_INSURANCE_PL,
@@ -79,8 +84,6 @@ import {
 import { PAGE_PERSONAL_DE, PAGE_PERSONAL_EN, PAGE_PERSONAL_PL } from './mocks/pages/personal.page';
 
 export const mapPage = (slug: string, locale: string): CMS.Model.Page.Page | undefined => {
-    console.log('mapPage slug', slug);
-    console.log('mapPage locale', locale);
     switch (slug) {
         case '/':
             return locale === 'pl' ? PAGE_PERSONAL_EN : locale === 'de' ? PAGE_PERSONAL_DE : PAGE_PERSONAL_PL;
@@ -167,14 +170,14 @@ export const mapPage = (slug: string, locale: string): CMS.Model.Page.Page | und
             return PAGE_PERSONAL_INSURANCE_TRAVEL_INSURANCE_PL;
 
         case '/personal/insurance/home-insurance':
-            return PAGE_PERSONAL_INSURANCE_EN;
+            return PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_EN;
 
         case '/personlich/versicherungen/hausversicherung':
-            return PAGE_PERSONAL_INSURANCE_DE;
+            return PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_DE;
 
         case '/indywidualny/ubezpieczenia/ubezpieczenie-domu':
-            return PAGE_PERSONAL_INSURANCE_PL;
-        ////////////////////////////////////////////////////
+            return PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_PL;
+
         case '/business':
             return PAGE_BUSINESS_EN;
 
@@ -296,9 +299,6 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
 };
 
 export const getAlternativePages = (id: string, slug: string, locale: string): CMS.Model.Page.Page[] => {
-    console.log('id', id);
-    console.log('slug', slug);
-    console.log('locale', locale);
     return [
         PAGE_BUSINESS_DE,
         PAGE_BUSINESS_EN,
@@ -330,7 +330,6 @@ export const getAlternativePages = (id: string, slug: string, locale: string): C
     ]
         .filter((page) => page.id === id)
         .map((page) => {
-            console.log('page1: ', page, mapPage(page.slug, locale));
             return mapPage(page.slug, locale)!;
         })
         .map((page) => {
