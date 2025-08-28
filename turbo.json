@@ -44,6 +44,11 @@
         "start": {
             "cache": false,
             "persistent": true
+        },
+        "build-storybook": {
+            "dependsOn": [
+                "^build"
+            ]
         }
     }
 }
