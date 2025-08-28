@@ -36,19 +36,19 @@ const MOCK_QUICK_LINKS_BLOCK_1_DE: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
         {
             label: 'Konto öffnen',
             icon: 'CircleUser',
-            url: '/persönlich/konten',
+            url: '/personlich/konten',
             variant: 'link',
         },
         {
             label: 'Karten',
             icon: 'CreditCard',
-            url: '/persönlich/karten',
+            url: '/personlich/karten',
             variant: 'link',
         },
         {
             label: 'App herunterladen',
             icon: 'ArrowDownToLine',
-            url: '/persönlich',
+            url: '/personlich',
             variant: 'link',
         },
         {
@@ -90,9 +90,99 @@ const MOCK_QUICK_LINKS_BLOCK_1_PL: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
     ],
 };
 
-const QUICK_LINKS_BLOCKS_EN = [MOCK_QUICK_LINKS_BLOCK_1_EN];
-const QUICK_LINKS_BLOCKS_DE = [MOCK_QUICK_LINKS_BLOCK_1_DE];
-const QUICK_LINKS_BLOCKS_PL = [MOCK_QUICK_LINKS_BLOCK_1_PL];
+const MOCK_QUICK_LINKS_BLOCK_50_EN: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
+    id: 'quick-links-50',
+    items: [
+        {
+            label: 'Open account',
+            icon: 'CircleUser',
+            url: '/business/accounts',
+            variant: 'link',
+        },
+        {
+            label: 'Cards',
+            icon: 'CreditCard',
+            url: '/business/cards',
+            variant: 'link',
+        },
+        {
+            label: 'Download app',
+            icon: 'ArrowDownToLine',
+            url: '/business',
+            variant: 'link',
+        },
+        {
+            label: 'Support',
+            icon: 'HandHelping',
+            url: '/',
+            variant: 'link',
+        },
+    ],
+};
+
+const MOCK_QUICK_LINKS_BLOCK_50_DE: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
+    id: 'quick-links-50',
+    items: [
+        {
+            label: 'Konto öffnen',
+            icon: 'CircleUser',
+            url: '/geschaftlich/konten',
+            variant: 'link',
+        },
+        {
+            label: 'Karten',
+            icon: 'CreditCard',
+            url: '/geschaftlich/karten',
+            variant: 'link',
+        },
+        {
+            label: 'App herunterladen',
+            icon: 'ArrowDownToLine',
+            url: '/geschaftlich',
+            variant: 'link',
+        },
+        {
+            label: 'Hilfe',
+            icon: 'HandHelping',
+            url: '/',
+            variant: 'link',
+        },
+    ],
+};
+
+const MOCK_QUICK_LINKS_BLOCK_50_PL: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
+    id: 'quick-links-50',
+    items: [
+        {
+            label: 'Otwórz konto',
+            icon: 'CircleUser',
+            url: '/firma/konta',
+            variant: 'link',
+        },
+        {
+            label: 'Karty',
+            icon: 'CreditCard',
+            url: '/firma/karty',
+            variant: 'link',
+        },
+        {
+            label: 'Pobierz aplikację',
+            icon: 'ArrowDownToLine',
+            url: '/firma',
+            variant: 'link',
+        },
+        {
+            label: 'Wsparcie',
+            icon: 'HandHelping',
+            url: '/',
+            variant: 'link',
+        },
+    ],
+};
+
+const QUICK_LINKS_BLOCKS_EN = [MOCK_QUICK_LINKS_BLOCK_1_EN, MOCK_QUICK_LINKS_BLOCK_50_EN];
+const QUICK_LINKS_BLOCKS_DE = [MOCK_QUICK_LINKS_BLOCK_1_DE, MOCK_QUICK_LINKS_BLOCK_50_DE];
+const QUICK_LINKS_BLOCKS_PL = [MOCK_QUICK_LINKS_BLOCK_1_PL, MOCK_QUICK_LINKS_BLOCK_50_PL];
 
 export const mapQuickLinksBlock = ({
     locale,

@@ -5,7 +5,7 @@ const MOCK_MEDIA_SECTION_BLOCK_1_EN: CMS.Model.MediaSectionBlock.MediaSectionBlo
     title: 'All-in-One Banking',
     description: 'See how every feature works together to give you a seamless, secure, and modern banking experience.',
     media: {
-        url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/video-placeholder.jpg',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/video-placeholder.png',
         width: 1024,
         height: 640,
         alt: 'Video placeholder',
@@ -26,7 +26,7 @@ const MOCK_MEDIA_SECTION_BLOCK_1_DE: CMS.Model.MediaSectionBlock.MediaSectionBlo
     description:
         'Sehen Sie sich an, wie jede Funktion zusammenarbeitet, um Ihnen eine reibungslose, sichere und moderne Bankerfahrung zu bieten.',
     media: {
-        url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/video-placeholder.jpg',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/video-placeholder.png',
         width: 1024,
         height: 640,
         alt: 'Video placeholder',
@@ -47,7 +47,7 @@ const MOCK_MEDIA_SECTION_BLOCK_1_PL: CMS.Model.MediaSectionBlock.MediaSectionBlo
     description:
         'Zobacz, jak każda funkcja współpracuje, aby dać Ci płynny, bezpieczny i nowoczesny doświadczenie bankowości.',
     media: {
-        url: 'https://github.com/o2sdev/dxp-starter-kit/tree/main/packages/integrations/mocked/public/images/demo/video-placeholder.jpg',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/video-placeholder.png',
         width: 1024,
         height: 640,
         alt: 'Video placeholder',
@@ -62,9 +62,72 @@ const MOCK_MEDIA_SECTION_BLOCK_1_PL: CMS.Model.MediaSectionBlock.MediaSectionBlo
     },
 };
 
-const MEDIA_SECTION_BLOCKS_EN = [MOCK_MEDIA_SECTION_BLOCK_1_EN];
-const MEDIA_SECTION_BLOCKS_DE = [MOCK_MEDIA_SECTION_BLOCK_1_DE];
-const MEDIA_SECTION_BLOCKS_PL = [MOCK_MEDIA_SECTION_BLOCK_1_PL];
+const MOCK_MEDIA_SECTION_BLOCK_50_EN: CMS.Model.MediaSectionBlock.MediaSectionBlock = {
+    id: 'media-section-50',
+    title: 'Business growth tools',
+    description:
+        'Integrate with leading accounting tools, access personalized financial analytics, and get expert business support whenever you need it.',
+    media: {
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-51.png',
+        width: 1024,
+        height: 683,
+        alt: 'Media Section Image',
+        priority: true,
+    },
+    labels: {
+        play: 'Play',
+        pause: 'Pause',
+        mute: 'Mute',
+        unmute: 'Unmute',
+        showMore: 'Show more',
+    },
+};
+
+const MOCK_MEDIA_SECTION_BLOCK_50_DE: CMS.Model.MediaSectionBlock.MediaSectionBlock = {
+    id: 'media-section-50',
+    title: 'Werkzeuge für das Unternehmenswachstum',
+    description:
+        'Integrieren Sie führende Buchhaltungstools, greifen Sie auf personalisierte Finanzanalysen zu und erhalten Sie jederzeit fachkundige Unterstützung für Ihr Unternehmen.',
+    media: {
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-51.png',
+        width: 1024,
+        height: 683,
+        alt: 'Media Section Image',
+        priority: true,
+    },
+    labels: {
+        play: 'Wiedergabe',
+        pause: 'Pause',
+        mute: 'Stummschalten',
+        unmute: 'Stummschaltung aufheben',
+        showMore: 'Mehr erfahren',
+    },
+};
+
+const MOCK_MEDIA_SECTION_BLOCK_50_PL: CMS.Model.MediaSectionBlock.MediaSectionBlock = {
+    id: 'media-section-50',
+    title: 'Narzędzia do rozwoju biznesu',
+    description:
+        'Integruj się z wiodącymi narzędziami księgowymi, uzyskuj dostęp do spersonalizowanych analiz finansowych i otrzymuj fachowe wsparcie biznesowe, kiedy tylko tego potrzebujesz.',
+    media: {
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-51.png',
+        width: 1024,
+        height: 683,
+        alt: 'Media Section Image',
+        priority: true,
+    },
+    labels: {
+        play: 'Odtwórz',
+        pause: 'Pauza',
+        mute: 'Wycisz',
+        unmute: 'Wyłącz wyciszenie',
+        showMore: 'Więcej',
+    },
+};
+
+const MEDIA_SECTION_BLOCKS_EN = [MOCK_MEDIA_SECTION_BLOCK_1_EN, MOCK_MEDIA_SECTION_BLOCK_50_EN];
+const MEDIA_SECTION_BLOCKS_DE = [MOCK_MEDIA_SECTION_BLOCK_1_DE, MOCK_MEDIA_SECTION_BLOCK_50_DE];
+const MEDIA_SECTION_BLOCKS_PL = [MOCK_MEDIA_SECTION_BLOCK_1_PL, MOCK_MEDIA_SECTION_BLOCK_50_PL];
 
 export const mapMediaSectionBlock = ({
     locale,

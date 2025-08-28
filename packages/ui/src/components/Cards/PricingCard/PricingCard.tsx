@@ -59,19 +59,19 @@ export const PricingCard: React.FC<Readonly<PricingCardProps>> = (props) => {
                 isPromoted && 'border-2 border-primary shadow-lg',
             )}
         >
-            {image?.url && (
-                <div className="relative overflow-hidden h-[264px] flex-shrink-0 rounded-t-md">
-                    <Image
-                        src={image.url}
-                        alt={image.alt}
-                        width={image.width}
-                        height={image.height}
-                        className="object-cover object-center w-full h-full"
-                    />
-                </div>
-            )}
-
             <div className="flex flex-col gap-8 p-6 h-full">
+                {image?.url && (
+                    <div className="relative overflow-hidden h-[264px] flex-shrink-0 rounded-md">
+                        <Image
+                            src={image.url}
+                            alt={image.alt}
+                            width={image.width}
+                            height={image.height}
+                            className="object-cover object-center w-full h-full"
+                        />
+                    </div>
+                )}
+
                 <div className="flex flex-col gap-6">
                     <div className="flex flex-col gap-3">
                         <div className="flex flex-row gap-2 justify-between items-center flex-wrap">

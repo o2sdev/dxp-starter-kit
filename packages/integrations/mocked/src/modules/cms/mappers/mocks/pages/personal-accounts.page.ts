@@ -84,7 +84,7 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
 
 export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
     id: 'personal-accounts-1',
-    slug: '/persönlich/konten',
+    slug: '/personlich/konten',
     locale: 'de',
     seo: {
         noIndex: false,

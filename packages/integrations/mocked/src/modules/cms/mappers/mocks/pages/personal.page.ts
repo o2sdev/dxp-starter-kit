@@ -96,7 +96,7 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
 
 export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
     id: 'personal-1',
-    slug: '/persönlich',
+    slug: '/personlich',
     locale: 'de',
     seo: {
         noIndex: false,

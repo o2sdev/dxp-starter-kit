@@ -83,7 +83,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-2',
+                    id: 'faq-1',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',
@@ -99,7 +99,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_EN: CMS.Model.Page.Page = {
 
 export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE: CMS.Model.Page.Page = {
     id: 'personal-accounts-savings-account-1',
-    slug: '/persönlich/konten/sparen-konto',
+    slug: '/personlich/konten/sparen-konto',
     locale: 'de',
     seo: {
         noIndex: false,
@@ -115,12 +115,12 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/persönlich/konten',
+        slug: '/personlich/konten',
         seo: {
             title: 'Konten',
         },
         parent: {
-            slug: '/persönlich',
+            slug: '/personlich',
             seo: {
                 title: 'Persönlich',
             },
@@ -180,7 +180,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-2',
+                    id: 'faq-1',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',
@@ -196,7 +196,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE: CMS.Model.Page.Page = {
 
 export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL: CMS.Model.Page.Page = {
     id: 'personal-accounts-savings-account-1',
-    slug: '/indywidualny/konta/konto-oszczędnościowe',
+    slug: '/indywidualny/konta/konto-oszczednosciowe',
     locale: 'pl',
     seo: {
         noIndex: false,
@@ -277,7 +277,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-2',
+                    id: 'faq-1',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',

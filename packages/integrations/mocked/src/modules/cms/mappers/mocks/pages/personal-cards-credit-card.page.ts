@@ -1,14 +1,14 @@
 import { CMS } from '@dxp/framework/modules';
 
-export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
-    id: 'business-accounts-1',
-    slug: '/business/accounts',
+export const PAGE_PERSONAL_CARDS_CREDIT_CARD_EN: CMS.Model.Page.Page = {
+    id: 'personal-cards-credit-card-1',
+    slug: '/personal/cards/credit-card',
     locale: 'en',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Credit Card',
+        description: 'Credit Card',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -18,9 +18,15 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/business',
+        slug: '/personal/cards',
         seo: {
-            title: 'Business',
+            title: 'Cards',
+        },
+        parent: {
+            slug: '/personal',
+            seo: {
+                title: 'Personal',
+            },
         },
     },
     permissions: [],
@@ -31,8 +37,8 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-50',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-5',
                     layout: {
                         variant: 'wide',
                         spacing: 'small',
@@ -41,25 +47,25 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-3',
+                    id: 'feature-section-5',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'large',
                         background: 'none',
                     },
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-51',
+                    id: 'feature-section-7',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'CtaSectionBlock',
+                    id: 'cta-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -68,7 +74,7 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',
@@ -82,15 +88,15 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
-    id: 'business-accounts-1',
-    slug: '/geschaftlich/konten',
+export const PAGE_PERSONAL_CARDS_CREDIT_CARD_DE: CMS.Model.Page.Page = {
+    id: 'personal-cards-credit-card-1',
+    slug: '/personlich/karten/kredit-karte',
     locale: 'de',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Credit Card',
+        description: 'Credit Card',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -100,9 +106,15 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/geschaftlich',
+        slug: '/personlich/karten',
         seo: {
-            title: 'Geschäftlich',
+            title: 'Karten',
+        },
+        parent: {
+            slug: '/personlich',
+            seo: {
+                title: 'Personlich',
+            },
         },
     },
     permissions: [],
@@ -113,8 +125,17 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-5',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-5',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -122,29 +143,29 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-7',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'CtaSectionBlock',
+                    id: 'cta-section-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -155,15 +176,15 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
-    id: 'business-accounts-1',
-    slug: '/firma/konta',
+export const PAGE_PERSONAL_CARDS_CREDIT_CARD_PL: CMS.Model.Page.Page = {
+    id: 'personal-cards-credit-card-1',
+    slug: '/indywidualny/karty/karta-kredytowa',
     locale: 'pl',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Credit Card',
+        description: 'Credit Card',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -173,9 +194,15 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/firma',
+        slug: '/indywidualny/karty',
         seo: {
-            title: 'Firma',
+            title: 'Karty',
+        },
+        parent: {
+            slug: '/indywidualny',
+            seo: {
+                title: 'Indywidualny',
+            },
         },
     },
     permissions: [],
@@ -186,8 +213,17 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-5',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-5',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -195,29 +231,29 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-7',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'CtaSectionBlock',
+                    id: 'cta-section-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
