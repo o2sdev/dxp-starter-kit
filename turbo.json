@@ -44,13 +44,6 @@
         "start": {
             "cache": false,
             "persistent": true
-        },
-        "build-storybook": {
-            "dependsOn": [
-                "^build-storybook",
-                "^build"
-            ],
-            "outputs": ["storybook-static/**"]
         }
     }
 }
