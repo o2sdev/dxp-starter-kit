@@ -2,7 +2,10 @@ import type { StorybookConfig } from '@storybook/nextjs';
 import * as dotenv from 'dotenv';
 import { dirname, join } from 'path';
 
-const env = {};
+const env: {
+    NEXT_PUBLIC_API_URL?: string;
+} = {};
+
 dotenv.config({
     path: 'apps/frontend/.env.development',
     processEnv: env,
@@ -33,6 +36,7 @@ const config: StorybookConfig = {
     env: (config) => ({
         ...config,
         ...env,
+        NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || env.NEXT_PUBLIC_API_URL || '',
     }),
 };
 export default config;
