@@ -32,6 +32,7 @@ export const mapPage = (
             },
             locales,
             theme: page.theme,
+            redirect: page.redirect,
         },
         data: {
             alternativeUrls,

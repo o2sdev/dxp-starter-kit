@@ -1,3 +1,4 @@
+import { execSync } from 'child_process';
 import cliProgress from 'cli-progress';
 import * as fs from 'fs-extra';
 import * as os from 'os';
@@ -6,12 +7,14 @@ import prompts, { PromptObject } from 'prompts';
 import simpleGit from 'simple-git';
 
 // Constants
-const PROJECT_NAME = 'dxp-starter-kit';
+const PROJECT_PREFIX = 'dxp';
+const PROJECT_NAME = `${PROJECT_PREFIX}-starter-kit`;
 const GITHUB_REPO_URL = `https://github.com/o2sdev/${PROJECT_NAME}.git`;
 const BRANCH = 'main';
 const BLOCKS_PATH = 'packages/blocks'; // Path to blocks directory in the repo relative to the branch
 const PROJECT_ROOT = path.resolve(__dirname, '../..'); // Adjust to project root
 const OUTPUT_DIR = path.join(PROJECT_ROOT, 'packages/blocks'); // Local target folder
+const FRONTEND_DIR = path.join(PROJECT_ROOT, 'apps/frontend'); // Frontend app directory
 const TEMP_DIR = path.join(os.tmpdir(), `${PROJECT_NAME}-${Date.now()}`); // Temporary directory for cloning
 
 // Types
@@ -29,6 +32,8 @@ const cloneRepository = async (): Promise<string> => {
         const git = simpleGit();
         await git.clone(GITHUB_REPO_URL, TEMP_DIR, ['--branch', BRANCH, '--single-branch', '--depth', '1']);
         console.log('Repository cloned successfully');
+        console.log();
+
         return TEMP_DIR;
     } catch (error) {
         console.error('Error cloning repository:', error);
@@ -180,6 +185,9 @@ export const ejectBlockCommand = async () => {
             await copyBlock(block, path.join(OUTPUT_DIR, blockName));
 
             console.log(`Block "${blockName}" ejected successfully.`);
+
+            // Install the ejected block in the frontend app
+            await installBlockInFrontend(blockName);
         }
 
         console.log();
@@ -190,6 +198,32 @@ export const ejectBlockCommand = async () => {
         // Clean up temporary directory
         await cleanupTempDir();
     }
+};
+
+// Run npm install for an ejected block in the frontend directory
+const installBlockInFrontend = async (blockName: string): Promise<void> => {
+    return new Promise<void>((resolve, reject) => {
+        console.log(`Installing block "${blockName}"...`);
+
+        // Construct the package name (assuming it follows the @dxp/blocks.{blockName} pattern)
+        const packageName = `@${PROJECT_PREFIX}/blocks.${blockName}`;
+
+        try {
+            execSync(
+                `npm install ${packageName}@* --workspace=@${PROJECT_PREFIX}/frontend  --workspace=@${PROJECT_PREFIX}/api-harmonization`,
+                {
+                    cwd: PROJECT_ROOT,
+                },
+            );
+        } catch (error) {
+            console.error(`Error installing block "${blockName}":`, error);
+            reject(error);
+            return;
+        }
+
+        console.log(`Block "${blockName}" installed successfully.`);
+        resolve();
+    });
 };
 
 // Clean up the temporary directory

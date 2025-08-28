@@ -22,6 +22,7 @@ export class Page {
             };
         };
     };
+    redirect?: string;
     permissions?: Auth.Constants.Roles[];
     theme?: string;
 }
