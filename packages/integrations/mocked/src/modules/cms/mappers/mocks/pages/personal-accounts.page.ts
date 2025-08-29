@@ -1,7 +1,7 @@
 import { CMS } from '@dxp/framework/modules';
 
 export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
-    id: 'accounts',
+    id: 'personal-accounts-1',
     slug: '/personal/accounts',
     locale: 'en',
     seo: {
@@ -35,6 +35,15 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
                     id: 'pricing-section-1',
                     layout: {
                         variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-3',
+                    layout: {
+                        variant: 'wide',
                         spacing: 'medium',
                         background: 'none',
                     },
@@ -44,8 +53,17 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
                     id: 'feature-section-grid-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-8',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
@@ -53,16 +71,7 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
                     id: 'faq-1',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -74,8 +83,8 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
 };
 
 export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
-    id: 'accounts',
-    slug: '/persönlich/konten',
+    id: 'personal-accounts-1',
+    slug: '/personlich/konten',
     locale: 'de',
     seo: {
         noIndex: false,
@@ -102,6 +111,15 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     id: 'pricing-section-1',
                     layout: {
                         variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-3',
+                    layout: {
+                        variant: 'wide',
                         spacing: 'medium',
                         background: 'none',
                     },
@@ -111,8 +129,17 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     id: 'feature-section-grid-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-8',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
@@ -120,16 +147,7 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     id: 'faq-1',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -141,7 +159,7 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
 };
 
 export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
-    id: 'accounts',
+    id: 'personal-accounts-1',
     slug: '/indywidualny/konta',
     locale: 'pl',
     seo: {
@@ -169,6 +187,15 @@ export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     id: 'pricing-section-1',
                     layout: {
                         variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-3',
+                    layout: {
+                        variant: 'wide',
                         spacing: 'medium',
                         background: 'none',
                     },
@@ -178,8 +205,17 @@ export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     id: 'feature-section-grid-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-8',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
@@ -187,16 +223,7 @@ export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     id: 'faq-1',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },

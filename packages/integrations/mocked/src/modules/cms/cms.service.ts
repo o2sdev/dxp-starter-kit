@@ -58,40 +58,40 @@ export class CmsService implements CMS.Service {
         return of(mapFooter(options.locale));
     }
 
-    getFaqBlock(_options: CMS.Request.GetCmsEntryParams) {
-        return of(mapFaqBlock(_options.locale)).pipe(responseDelay());
+    getFaqBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapFaqBlock(options)).pipe(responseDelay());
     }
 
-    getHeroSectionBlock(_options: CMS.Request.GetCmsEntryParams) {
-        return of(mapHeroSectionBlock(_options.locale)).pipe(responseDelay());
+    getHeroSectionBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapHeroSectionBlock(options)).pipe(responseDelay());
     }
 
-    getFeatureSectionBlock(_options: CMS.Request.GetCmsEntryParams) {
-        return of(mapFeatureSectionBlock(_options.locale)).pipe(responseDelay());
+    getFeatureSectionBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapFeatureSectionBlock(options)).pipe(responseDelay());
     }
 
-    getCtaSectionBlock(_options: CMS.Request.GetCmsEntryParams) {
-        return of(mapCtaSectionBlock(_options.locale)).pipe(responseDelay());
+    getCtaSectionBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapCtaSectionBlock(options)).pipe(responseDelay());
     }
 
-    getBentoGridBlock(_options: CMS.Request.GetCmsEntryParams) {
-        return of(mapBentoGridBlock(_options.locale)).pipe(responseDelay());
+    getBentoGridBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapBentoGridBlock(options)).pipe(responseDelay());
     }
 
-    getMediaSectionBlock(_options: CMS.Request.GetCmsEntryParams) {
-        return of(mapMediaSectionBlock(_options.locale)).pipe(responseDelay());
+    getMediaSectionBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapMediaSectionBlock(options)).pipe(responseDelay());
     }
 
-    getQuickLinksBlock(_options: CMS.Request.GetCmsEntryParams) {
-        return of(mapQuickLinksBlock(_options.locale)).pipe(responseDelay());
+    getQuickLinksBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapQuickLinksBlock(options)).pipe(responseDelay());
     }
 
-    getFeatureSectionGridBlock(_options: CMS.Request.GetCmsEntryParams) {
-        return of(mapFeatureSectionGridBlock(_options.locale)).pipe(responseDelay());
+    getFeatureSectionGridBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapFeatureSectionGridBlock(options)).pipe(responseDelay());
     }
 
-    getPricingSectionBlock(_options: CMS.Request.GetCmsEntryParams) {
-        return of(mapPricingSectionBlock(_options.locale)).pipe(responseDelay());
+    getPricingSectionBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapPricingSectionBlock(options)).pipe(responseDelay());
     }
 
     getDocumentListBlock(_options: CMS.Request.GetCmsEntryParams) {

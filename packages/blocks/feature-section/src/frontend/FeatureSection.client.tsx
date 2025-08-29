@@ -64,14 +64,17 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                         <ul
                             className={cn(
                                 'grid grid-rows-1 gap-8 md:gap-4',
-                                !isImageAvailable && 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6',
+                                !isImageAvailable && 'grid-cols-1 gap-6',
+                                !isImageAvailable && featureList.length === 2 && 'md:grid-cols-2',
+                                !isImageAvailable && featureList.length === 3 && 'md:grid-cols-3',
+                                !isImageAvailable && featureList.length >= 4 && 'md:grid-cols-2 lg:grid-cols-4',
                             )}
                         >
                             {featureList.map((feature, index) => (
                                 <li
                                     key={`${feature.title}-${index}`}
                                     className={cn(
-                                        'flex flex-col md:flex-row gap-3 items-start',
+                                        'flex flex-row gap-3 items-start',
                                         !isImageAvailable && '!flex-col gap-5 items-center text-center',
                                     )}
                                 >
@@ -83,7 +86,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                                         <DynamicIcon
                                             name={feature.icon || 'Check'}
                                             size={20}
-                                            className="text-success"
+                                            className="text-primary"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">
@@ -96,7 +99,14 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                     )}
 
                     <LinkList
-                        className={cn(!isImageAvailable && 'justify-center')}
+                        className={cn(
+                            !isImageAvailable && 'justify-center',
+                            isImageAvailable &&
+                                links &&
+                                links.length === 1 &&
+                                links[0]?.variant === 'link' &&
+                                'items-start',
+                        )}
                         links={links}
                         LinkComponent={LinkComponent}
                     />

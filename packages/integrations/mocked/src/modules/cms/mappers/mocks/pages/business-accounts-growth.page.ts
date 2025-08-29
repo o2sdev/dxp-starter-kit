@@ -1,14 +1,14 @@
 import { CMS } from '@dxp/framework/modules';
 
-export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
-    id: 'business-accounts-1',
-    slug: '/business/accounts',
+export const PAGE_BUSINESS_ACCOUNTS_GROWTH_EN: CMS.Model.Page.Page = {
+    id: 'business-accounts-growth-1',
+    slug: '/business/accounts/growth',
     locale: 'en',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Growth account',
+        description: 'Growth account',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -18,9 +18,15 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/business',
+        slug: '/business/accounts',
         seo: {
-            title: 'Business',
+            title: 'Accounts',
+        },
+        parent: {
+            slug: '/business',
+            seo: {
+                title: 'Business',
+            },
         },
     },
     permissions: [],
@@ -31,8 +37,8 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-50',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-52',
                     layout: {
                         variant: 'wide',
                         spacing: 'small',
@@ -41,7 +47,7 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-3',
+                    id: 'feature-section-52',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -49,8 +55,8 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-53',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -59,7 +65,7 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-51',
+                    id: 'feature-section-54',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -75,6 +81,15 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
                         background: 'none',
                     },
                 },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
             ],
         },
     },
@@ -82,15 +97,15 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
-    id: 'business-accounts-1',
-    slug: '/geschaftlich/konten',
+export const PAGE_BUSINESS_ACCOUNTS_GROWTH_DE: CMS.Model.Page.Page = {
+    id: 'business-accounts-growth-1',
+    slug: '/geschaftlich/konten/growth',
     locale: 'de',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Wachstumskonto',
+        description: 'Wachstumskonto',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -100,9 +115,15 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/geschaftlich',
+        slug: '/geschaftlich/konten',
         seo: {
-            title: 'Geschäftlich',
+            title: 'Konten',
+        },
+        parent: {
+            slug: '/geschaftlich',
+            seo: {
+                title: 'Geschäftlich',
+            },
         },
     },
     permissions: [],
@@ -113,8 +134,17 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-52',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-52',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -122,12 +152,21 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-53',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-54',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
@@ -135,7 +174,7 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     id: 'faq-1',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -144,7 +183,7 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     id: 'document-list-1',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -155,15 +194,15 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
-    id: 'business-accounts-1',
-    slug: '/firma/konta',
+export const PAGE_BUSINESS_ACCOUNTS_GROWTH_PL: CMS.Model.Page.Page = {
+    id: 'business-accounts-growth-1',
+    slug: '/firma/konta/growth',
     locale: 'pl',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Wzrostowe konto',
+        description: 'Wzrostowe konto',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -173,9 +212,15 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/firma',
+        slug: '/firma/konta',
         seo: {
-            title: 'Firma',
+            title: 'Konta',
+        },
+        parent: {
+            slug: '/firma',
+            seo: {
+                title: 'Firma',
+            },
         },
     },
     permissions: [],
@@ -186,8 +231,17 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    __typename: 'HeroSectionBlock',
+                    id: 'hero-section-52',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-52',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -195,12 +249,21 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-53',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-54',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
@@ -208,7 +271,7 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     id: 'faq-1',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -217,7 +280,7 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     id: 'document-list-1',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },

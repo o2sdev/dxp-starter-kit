@@ -1,41 +1,44 @@
 import { CMS } from '@dxp/framework/modules';
 
-export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
-    id: 'personal-1',
-    slug: '/personal',
+export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_EN: CMS.Model.Page.Page = {
+    id: 'personal-accounts-savings-account-1',
+    slug: '/personal/accounts/savings-account',
     locale: 'en',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Personal',
-        description: 'Personal',
+        title: 'Savings Account',
+        description: 'Savings Account',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
             width: 150,
             height: 150,
             alt: 'Placeholder',
+        },
+    },
+    parent: {
+        slug: '/personal/accounts',
+        seo: {
+            title: 'Accounts',
+        },
+        parent: {
+            slug: '/personal',
+            seo: {
+                title: 'Personal',
+            },
         },
     },
     permissions: [],
     hasOwnTitle: true,
-    showBreadcrumbs: false,
+    showBreadcrumbs: true,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
             main: [
                 {
                     __typename: 'HeroSectionBlock',
-                    id: 'hero-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'large',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'QuickLinksBlock',
-                    id: 'quick-links-1',
+                    id: 'hero-section-3',
                     layout: {
                         variant: 'wide',
                         spacing: 'small',
@@ -43,8 +46,17 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'MediaSectionBlock',
-                    id: 'media-section-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-4',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-5',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -53,16 +65,7 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'large',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-2',
+                    id: 'feature-section-6',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -71,7 +74,7 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'CtaSectionBlock',
-                    id: 'cta-section-1',
+                    id: 'media-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -79,10 +82,19 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'BentoGridBlock',
-                    id: 'bento-grid-1',
+                    __typename: 'FaqBlock',
+                    id: 'faq-1',
                     layout: {
-                        variant: 'wide',
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
                         spacing: 'large',
                         background: 'none',
                     },
@@ -94,15 +106,15 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
-    id: 'personal-1',
-    slug: '/personlich',
+export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE: CMS.Model.Page.Page = {
+    id: 'personal-accounts-savings-account-1',
+    slug: '/personlich/konten/sparen-konto',
     locale: 'de',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Personal',
-        description: 'Personal',
+        title: 'Sparen Konto',
+        description: 'Sparen Konto',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -111,25 +123,28 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    parent: {
+        slug: '/personlich/konten',
+        seo: {
+            title: 'Konten',
+        },
+        parent: {
+            slug: '/personlich',
+            seo: {
+                title: 'Persönlich',
+            },
+        },
+    },
     permissions: [],
-    hasOwnTitle: false,
-    showBreadcrumbs: false,
+    hasOwnTitle: true,
+    showBreadcrumbs: true,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
             main: [
                 {
                     __typename: 'HeroSectionBlock',
-                    id: 'hero-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'large',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'QuickLinksBlock',
-                    id: 'quick-links-1',
+                    id: 'hero-section-3',
                     layout: {
                         variant: 'wide',
                         spacing: 'small',
@@ -137,17 +152,26 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'MediaSectionBlock',
-                    id: 'media-section-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-4',
                     layout: {
                         variant: 'wide',
-                        spacing: 'large',
-                        background: 'brand',
+                        spacing: 'medium',
+                        background: 'none',
                     },
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-1',
+                    id: 'feature-section-5',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-6',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -156,7 +180,7 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'CtaSectionBlock',
-                    id: 'cta-section-1',
+                    id: 'media-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -164,10 +188,19 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'BentoGridBlock',
-                    id: 'bento-grid-1',
+                    __typename: 'FaqBlock',
+                    id: 'faq-1',
                     layout: {
-                        variant: 'wide',
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
                         spacing: 'large',
                         background: 'none',
                     },
@@ -179,15 +212,15 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
-    id: 'personal-1',
-    slug: '/indywidualny',
+export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL: CMS.Model.Page.Page = {
+    id: 'personal-accounts-savings-account-1',
+    slug: '/indywidualny/konta/konto-oszczednosciowe',
     locale: 'pl',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Personal',
-        description: 'Personal',
+        title: 'Konto Oszczędnościowe',
+        description: 'Konto Oszczędnościowe',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -196,25 +229,28 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    parent: {
+        slug: '/indywidualny/konta',
+        seo: {
+            title: 'Konta',
+        },
+        parent: {
+            slug: '/indywidualny',
+            seo: {
+                title: 'Indywidualny',
+            },
+        },
+    },
     permissions: [],
-    hasOwnTitle: false,
-    showBreadcrumbs: false,
+    hasOwnTitle: true,
+    showBreadcrumbs: true,
     template: {
         __typename: 'OneColumnTemplate',
         slots: {
             main: [
                 {
                     __typename: 'HeroSectionBlock',
-                    id: 'hero-section-1',
-                    layout: {
-                        variant: 'wide',
-                        spacing: 'large',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'QuickLinksBlock',
-                    id: 'quick-links-1',
+                    id: 'hero-section-3',
                     layout: {
                         variant: 'wide',
                         spacing: 'small',
@@ -222,17 +258,26 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'MediaSectionBlock',
-                    id: 'media-section-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-4',
                     layout: {
                         variant: 'wide',
-                        spacing: 'large',
-                        background: 'brand',
+                        spacing: 'medium',
+                        background: 'none',
                     },
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-1',
+                    id: 'feature-section-5',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-6',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -241,7 +286,7 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'CtaSectionBlock',
-                    id: 'cta-section-1',
+                    id: 'media-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -249,10 +294,19 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'BentoGridBlock',
-                    id: 'bento-grid-1',
+                    __typename: 'FaqBlock',
+                    id: 'faq-1',
                     layout: {
-                        variant: 'wide',
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
                         spacing: 'large',
                         background: 'none',
                     },

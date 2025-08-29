@@ -7,8 +7,8 @@ export const PAGE_HELP_AND_SUPPORT_EN: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Welcome Hub',
-        description: 'Welcome Hub',
+        title: 'Help and Support',
+        description: 'Help and Support',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -27,6 +27,11 @@ export const PAGE_HELP_AND_SUPPORT_EN: CMS.Model.Page.Page = {
                 {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
             ],
         },
@@ -42,8 +47,8 @@ export const PAGE_HELP_AND_SUPPORT_DE: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Willkommen Hub',
-        description: 'Willkommen Hub',
+        title: 'Hilfe und Support',
+        description: 'Hilfe und Support',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -62,6 +67,11 @@ export const PAGE_HELP_AND_SUPPORT_DE: CMS.Model.Page.Page = {
                 {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
             ],
         },
@@ -77,8 +87,8 @@ export const PAGE_HELP_AND_SUPPORT_PL: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Centrum powitalne',
-        description: 'Centrum powitalne',
+        title: 'Pomoc i wsparcie',
+        description: 'Pomoc i wsparcie',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -97,6 +107,11 @@ export const PAGE_HELP_AND_SUPPORT_PL: CMS.Model.Page.Page = {
                 {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
                 },
             ],
         },

@@ -1,14 +1,14 @@
 import { CMS } from '@dxp/framework/modules';
 
-export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
-    id: 'business-accounts-1',
-    slug: '/business/accounts',
+export const PAGE_BUSINESS_CARDS_EN: CMS.Model.Page.Page = {
+    id: 'business-cards-1',
+    slug: '/business/cards',
     locale: 'en',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Cards',
+        description: 'Cards',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -32,7 +32,7 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
             main: [
                 {
                     __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-50',
+                    id: 'pricing-section-51',
                     layout: {
                         variant: 'wide',
                         spacing: 'small',
@@ -41,7 +41,7 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-3',
+                    id: 'feature-section-55',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -49,8 +49,8 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-56',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -59,7 +59,7 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionBlock',
-                    id: 'feature-section-51',
+                    id: 'feature-section-57',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -68,7 +68,7 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',
@@ -82,15 +82,15 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
-    id: 'business-accounts-1',
-    slug: '/geschaftlich/konten',
+export const PAGE_BUSINESS_CARDS_DE: CMS.Model.Page.Page = {
+    id: 'business-cards-1',
+    slug: '/geschaftlich/karten',
     locale: 'de',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Karten',
+        description: 'Karten',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -114,7 +114,16 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
             main: [
                 {
                     __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    id: 'pricing-section-51',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-55',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -123,28 +132,28 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    id: 'feature-section-grid-56',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
-                    },
-                },
-                {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
                 {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-57',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FaqBlock',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -155,15 +164,15 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
-    id: 'business-accounts-1',
-    slug: '/firma/konta',
+export const PAGE_BUSINESS_CARDS_PL: CMS.Model.Page.Page = {
+    id: 'business-cards-1',
+    slug: '/firma/karty',
     locale: 'pl',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Karty',
+        description: 'Karty',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -187,7 +196,16 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
             main: [
                 {
                     __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    id: 'pricing-section-51',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-55',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -196,28 +214,28 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
                 },
                 {
                     __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    id: 'feature-section-grid-56',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
-                    },
-                },
-                {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
                 {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-57',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FaqBlock',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },

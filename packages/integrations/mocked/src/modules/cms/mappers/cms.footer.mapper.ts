@@ -107,29 +107,29 @@ const MOCK_FOOTER_DE: CMS.Model.Footer.Footer = {
         {
             __typename: 'NavigationGroup',
             title: 'Kunden Portal',
-            url: '/persönlich',
+            url: '/personlich',
             items: [
                 {
                     __typename: 'NavigationItem',
                     label: 'Konten',
-                    url: '/persönlich/konten',
+                    url: '/personlich/konten',
                 },
                 {
                     __typename: 'NavigationItem',
                     label: 'Karten',
-                    url: '/persönlich/karten',
+                    url: '/personlich/karten',
                 },
             ],
         },
         {
             __typename: 'NavigationGroup',
             title: 'Geschäftlich',
-            url: '/geschäftlich',
+            url: '/geschaftlich',
             items: [
                 {
                     __typename: 'NavigationItem',
                     label: 'Konten',
-                    url: '/geschäftlich/konten',
+                    url: '/geschaftlich/konten',
                 },
             ],
         },

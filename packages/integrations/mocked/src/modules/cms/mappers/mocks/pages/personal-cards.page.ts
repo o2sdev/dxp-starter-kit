@@ -1,7 +1,7 @@
 import { CMS } from '@dxp/framework/modules';
 
 export const PAGE_PERSONAL_CARDS_EN: CMS.Model.Page.Page = {
-    id: 'cards',
+    id: 'personal-cards-1',
     slug: '/personal/cards',
     locale: 'en',
     seo: {
@@ -32,7 +32,16 @@ export const PAGE_PERSONAL_CARDS_EN: CMS.Model.Page.Page = {
             main: [
                 {
                     __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    id: 'pricing-section-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-3',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -40,29 +49,29 @@ export const PAGE_PERSONAL_CARDS_EN: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-5',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -74,8 +83,8 @@ export const PAGE_PERSONAL_CARDS_EN: CMS.Model.Page.Page = {
 };
 
 export const PAGE_PERSONAL_CARDS_DE: CMS.Model.Page.Page = {
-    id: 'cards',
-    slug: '/persönlich/karten',
+    id: 'personal-cards-1',
+    slug: '/personlich/karten',
     locale: 'de',
     seo: {
         noIndex: false,
@@ -90,6 +99,12 @@ export const PAGE_PERSONAL_CARDS_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    parent: {
+        slug: '/personlich',
+        seo: {
+            title: 'Persönlich',
+        },
+    },
     permissions: [],
     hasOwnTitle: true,
     showBreadcrumbs: true,
@@ -99,7 +114,16 @@ export const PAGE_PERSONAL_CARDS_DE: CMS.Model.Page.Page = {
             main: [
                 {
                     __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    id: 'pricing-section-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-3',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -107,29 +131,29 @@ export const PAGE_PERSONAL_CARDS_DE: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-5',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -141,20 +165,26 @@ export const PAGE_PERSONAL_CARDS_DE: CMS.Model.Page.Page = {
 };
 
 export const PAGE_PERSONAL_CARDS_PL: CMS.Model.Page.Page = {
-    id: 'cards',
+    id: 'personal-cards-1',
     slug: '/indywidualny/karty',
     locale: 'pl',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Cards',
-        description: 'Cards',
+        title: 'Karty',
+        description: 'Karty',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
             width: 150,
             height: 150,
             alt: 'Placeholder',
+        },
+    },
+    parent: {
+        slug: '/indywidualny',
+        seo: {
+            title: 'Indywidualny',
         },
     },
     permissions: [],
@@ -166,7 +196,16 @@ export const PAGE_PERSONAL_CARDS_PL: CMS.Model.Page.Page = {
             main: [
                 {
                     __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    id: 'pricing-section-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-3',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -174,29 +213,29 @@ export const PAGE_PERSONAL_CARDS_PL: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-1',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-5',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
                     __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    id: 'faq-2',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
