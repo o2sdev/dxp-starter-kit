@@ -72,6 +72,15 @@ export const PAGE_BUSINESS_CARDS_BUSINESS_DEBIT_EN: CMS.Model.Page.Page = {
                         background: 'none',
                     },
                 },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
             ],
         },
     },
@@ -151,6 +160,15 @@ export const PAGE_BUSINESS_CARDS_BUSINESS_DEBIT_DE: CMS.Model.Page.Page = {
                         background: 'none',
                     },
                 },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
             ],
         },
     },
@@ -224,6 +242,15 @@ export const PAGE_BUSINESS_CARDS_BUSINESS_DEBIT_PL: CMS.Model.Page.Page = {
                 {
                     __typename: 'FaqBlock',
                     id: 'faq-2',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',

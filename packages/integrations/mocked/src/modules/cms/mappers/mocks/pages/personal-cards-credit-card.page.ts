@@ -81,6 +81,15 @@ export const PAGE_PERSONAL_CARDS_CREDIT_CARD_EN: CMS.Model.Page.Page = {
                         background: 'none',
                     },
                 },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
             ],
         },
     },
@@ -169,6 +178,15 @@ export const PAGE_PERSONAL_CARDS_CREDIT_CARD_DE: CMS.Model.Page.Page = {
                         background: 'none',
                     },
                 },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
             ],
         },
     },
@@ -251,6 +269,15 @@ export const PAGE_PERSONAL_CARDS_CREDIT_CARD_PL: CMS.Model.Page.Page = {
                 {
                     __typename: 'FaqBlock',
                     id: 'faq-2',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',

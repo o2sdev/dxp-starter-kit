@@ -2,39 +2,39 @@ import { CMS } from '@dxp/framework/modules';
 
 const MOCK_DOCUMENT_LIST_BLOCK_EN: CMS.Model.DocumentListBlock.DocumentListBlock = {
     id: 'document-list-1',
-    title: 'Document List',
+    title: 'Documents',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'A list of documents that can be downloaded and reviewed. The content of the documents is exemplary and is not related to actual agreements made with the client.',
     documents: [
         {
-            title: 'Tariff of commissions and fees for natural persons lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum',
+            title: "Regulations for opening and maintaining bank accounts for individuals within the bank's retail banking",
             file: {
-                url: 'https://www.google.com',
-                alt: 'Tariff of commissions and fees for natural persons',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Sample document',
             },
             icon: 'FileText',
         },
         {
-            title: 'Tariff of commissions and fees for natural persons lorem ipsum',
+            title: 'Statement of acceptance of the principles collected by the insurer for the benefit of the fund',
             file: {
-                url: 'https://www.google.com',
-                alt: 'Tariff of commissions and fees for natural persons',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Sample document',
             },
             icon: 'FileText',
         },
         {
-            title: 'Tariff of commissions and fees for natural persons lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum',
+            title: 'Regulations for accepting and handling complaints',
             file: {
-                url: 'https://www.google.com',
-                alt: 'Tariff of commissions and fees for natural persons',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Sample document',
             },
             icon: 'FileText',
         },
         {
-            title: 'Tariff of commissions and fees for natural persons',
+            title: 'For which period, with an interest rate of 0%, i.e., a zero rate, was the interest rate volatility adjustment made?',
             file: {
-                url: 'https://www.google.com',
-                alt: 'Tariff of commissions and fees for natural persons',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Sample document',
             },
             icon: 'FileText',
         },
@@ -43,15 +43,39 @@ const MOCK_DOCUMENT_LIST_BLOCK_EN: CMS.Model.DocumentListBlock.DocumentListBlock
 
 const MOCK_DOCUMENT_LIST_BLOCK_DE: CMS.Model.DocumentListBlock.DocumentListBlock = {
     id: 'document-list-1',
-    title: 'Document List',
+    title: 'Dokumente',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Eine Liste von Dokumenten, die heruntergeladen und überprüft werden können. Der Inhalt der Dokumente ist beispielhaft und steht nicht im Zusammenhang mit tatsächlichen Vereinbarungen mit dem Kunden.',
     documents: [
         {
-            title: 'Tariff of commissions and fees for natural persons',
+            title: 'Vorschriften für die Eröffnung und Führung von Bankkonten für Privatpersonen im Rahmen des Retail-Bankings der Bank',
             file: {
-                url: 'https://www.google.com',
-                alt: 'Tariff of commissions and fees for natural persons',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Beispieldokument',
+            },
+            icon: 'FileText',
+        },
+        {
+            title: 'Erklärung zur Annahme der vom Versicherer zugunsten des Fonds erhobenen Grundsätze',
+            file: {
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Beispieldokument',
+            },
+            icon: 'FileText',
+        },
+        {
+            title: 'Vorschriften für die Annahme und Bearbeitung von Beschwerden',
+            file: {
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Beispieldokument',
+            },
+            icon: 'FileText',
+        },
+        {
+            title: 'Für welchen Zeitraum wurde bei einem Zinssatz von 0%, also einem Nullsatz, die Zinsvolatilitätsanpassung vorgenommen?',
+            file: {
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Beispieldokument',
             },
             icon: 'FileText',
         },
@@ -60,15 +84,39 @@ const MOCK_DOCUMENT_LIST_BLOCK_DE: CMS.Model.DocumentListBlock.DocumentListBlock
 
 const MOCK_DOCUMENT_LIST_BLOCK_PL: CMS.Model.DocumentListBlock.DocumentListBlock = {
     id: 'document-list-1',
-    title: 'Document List',
+    title: 'Dokumenty',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Lista dokumentów, które można pobrać i zapoznać się z nimi. Treść dokumentów jest przykładowa i nie ma związku z rzeczywistymi umowami zawartymi z klientem.',
     documents: [
         {
-            title: 'Tariff of commissions and fees for natural persons',
+            title: 'Regulamin otwierania i prowadzenia bankowych rachunków dla osób fizycznych w ramach bankowości detalicznej Banku',
             file: {
-                url: 'https://www.google.com',
-                alt: 'Tariff of commissions and fees for natural persons',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Dokument przykładowy',
+            },
+            icon: 'FileText',
+        },
+        {
+            title: 'Oświadczenie o przyjęciu zasad, które pobiera ubezpieczyciel na rzecz funduszu',
+            file: {
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Dokument przykładowy',
+            },
+            icon: 'FileText',
+        },
+        {
+            title: 'Regulamin przyjmowania i rozpatrywania reklamacji',
+            file: {
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Dokument przykładowy',
+            },
+            icon: 'FileText',
+        },
+        {
+            title: 'Którego okresu, przy stopie procentowej wynoszącej 0% czyli przyzerowa stawka, dokonano korekty stopy procentowej wyrażającej zmienność?',
+            file: {
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/docs/example.pdf',
+                alt: 'Dokument przykładowy',
             },
             icon: 'FileText',
         },

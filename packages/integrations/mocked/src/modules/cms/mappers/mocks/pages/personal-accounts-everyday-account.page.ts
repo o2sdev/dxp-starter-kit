@@ -90,6 +90,15 @@ export const PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_EN: CMS.Model.Page.Page = {
                         background: 'none',
                     },
                 },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
             ],
         },
     },
@@ -187,6 +196,15 @@ export const PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_DE: CMS.Model.Page.Page = {
                         background: 'none',
                     },
                 },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
             ],
         },
     },
@@ -278,6 +296,15 @@ export const PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_PL: CMS.Model.Page.Page = {
                 {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
+                    layout: {
+                        variant: 'narrow',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'DocumentListBlock',
+                    id: 'document-list-1',
                     layout: {
                         variant: 'narrow',
                         spacing: 'large',
