@@ -64,7 +64,7 @@ const MOCK_FEATURE_SECTION_BLOCK_1_DE: CMS.Model.FeatureSectionBlock.FeatureSect
             icon: 'Check',
         },
     ],
-    inverted: true,
+    inverted: false,
     iconBorder: false,
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-3.png',
@@ -1160,6 +1160,20 @@ const MOCK_FEATURE_SECTION_BLOCK_50_EN: CMS.Model.FeatureSectionBlock.FeatureSec
             variant: 'primary',
         },
     ],
+    featureList: [
+        {
+            title: 'Smart Payments & Invoicing',
+            icon: 'Check',
+        },
+        {
+            title: 'Real-Time Cash Flow Tracking',
+            icon: 'Check',
+        },
+        {
+            title: 'Multi-User Access',
+            icon: 'Check',
+        },
+    ],
     labels: {
         showMore: 'Show more',
     },
@@ -1185,6 +1199,20 @@ const MOCK_FEATURE_SECTION_BLOCK_50_DE: CMS.Model.FeatureSectionBlock.FeatureSec
             variant: 'primary',
         },
     ],
+    featureList: [
+        {
+            title: 'Intelligente Zahlungen & Rechnungsstellung',
+            icon: 'Check',
+        },
+        {
+            title: 'Echtzeit-Cashflow-Überwachung',
+            icon: 'Check',
+        },
+        {
+            title: 'Mehrbenutzerzugriff',
+            icon: 'Check',
+        },
+    ],
     labels: {
         showMore: 'Mehr anzeigen',
     },
@@ -1208,6 +1236,20 @@ const MOCK_FEATURE_SECTION_BLOCK_50_PL: CMS.Model.FeatureSectionBlock.FeatureSec
             label: 'Zarejestruj się',
             url: '/',
             variant: 'primary',
+        },
+    ],
+    featureList: [
+        {
+            title: 'Inteligentne płatności i fakturowanie',
+            icon: 'Check',
+        },
+        {
+            title: 'Śledzenie przepływów pieniężnych w czasie rzeczywistym',
+            icon: 'Check',
+        },
+        {
+            title: 'Dostęp dla wielu użytkowników',
+            icon: 'Check',
         },
     ],
     labels: {

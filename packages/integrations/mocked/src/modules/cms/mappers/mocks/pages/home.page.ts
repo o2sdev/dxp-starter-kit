@@ -4,6 +4,7 @@ export const PAGE_HOME_EN: CMS.Model.Page.Page = {
     id: 'personal-1',
     slug: '/',
     locale: 'en',
+    theme: 'personal',
     seo: {
         noIndex: false,
         noFollow: false,
@@ -35,6 +36,7 @@ export const PAGE_HOME_DE: CMS.Model.Page.Page = {
     id: 'personal-1',
     slug: '/',
     locale: 'de',
+    theme: 'personal',
     seo: {
         noIndex: false,
         noFollow: false,
@@ -66,6 +68,7 @@ export const PAGE_HOME_PL: CMS.Model.Page.Page = {
     id: 'personal-1',
     slug: '/',
     locale: 'pl',
+    theme: 'personal',
     seo: {
         noIndex: false,
         noFollow: false,

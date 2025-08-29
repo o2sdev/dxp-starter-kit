@@ -17,6 +17,7 @@ export const PAGE_PERSONAL_CARDS_DEBIT_CARD_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/personal/cards',
         seo: {
@@ -64,12 +65,12 @@ export const PAGE_PERSONAL_CARDS_DEBIT_CARD_EN: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'CtaSectionBlock',
+                    __typename: 'MediaSectionBlock',
                     id: 'media-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
-                        background: 'none',
+                        background: 'brand',
                     },
                 },
                 {
@@ -114,6 +115,7 @@ export const PAGE_PERSONAL_CARDS_DEBIT_CARD_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/personlich/karten',
         seo: {
@@ -161,12 +163,12 @@ export const PAGE_PERSONAL_CARDS_DEBIT_CARD_DE: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'CtaSectionBlock',
+                    __typename: 'MediaSectionBlock',
                     id: 'media-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
-                        background: 'none',
+                        background: 'brand',
                     },
                 },
                 {
@@ -211,6 +213,7 @@ export const PAGE_PERSONAL_CARDS_DEBIT_CARD_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/indywidualny/karty',
         seo: {
@@ -258,12 +261,12 @@ export const PAGE_PERSONAL_CARDS_DEBIT_CARD_PL: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'CtaSectionBlock',
+                    __typename: 'MediaSectionBlock',
                     id: 'media-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
-                        background: 'none',
+                        background: 'brand',
                     },
                 },
                 {

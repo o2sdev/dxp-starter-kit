@@ -1,8 +1,8 @@
 import { CMS } from '@dxp/framework/modules';
 
-export const PAGE_HELP_AND_SUPPORT_EN: CMS.Model.Page.Page = {
-    id: 'help-and-support',
-    slug: '/help-and-support',
+export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_EN: CMS.Model.Page.Page = {
+    id: 'business-help-and-support-1',
+    slug: '/personal/help-and-support',
     locale: 'en',
     seo: {
         noIndex: false,
@@ -17,6 +17,7 @@ export const PAGE_HELP_AND_SUPPORT_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     permissions: [],
     hasOwnTitle: false,
     showBreadcrumbs: true,
@@ -28,8 +29,8 @@ export const PAGE_HELP_AND_SUPPORT_EN: CMS.Model.Page.Page = {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
                     layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
+                        variant: 'narrow',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -40,9 +41,9 @@ export const PAGE_HELP_AND_SUPPORT_EN: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_HELP_AND_SUPPORT_DE: CMS.Model.Page.Page = {
-    id: 'help-and-support',
-    slug: '/hilfe-und-support',
+export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_DE: CMS.Model.Page.Page = {
+    id: 'business-help-and-support-1',
+    slug: '/personlich/hilfe-und-support',
     locale: 'de',
     seo: {
         noIndex: false,
@@ -57,6 +58,7 @@ export const PAGE_HELP_AND_SUPPORT_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     permissions: [],
     hasOwnTitle: false,
     showBreadcrumbs: true,
@@ -68,8 +70,8 @@ export const PAGE_HELP_AND_SUPPORT_DE: CMS.Model.Page.Page = {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
                     layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
+                        variant: 'narrow',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -80,9 +82,9 @@ export const PAGE_HELP_AND_SUPPORT_DE: CMS.Model.Page.Page = {
     createdAt: '2025-01-01',
 };
 
-export const PAGE_HELP_AND_SUPPORT_PL: CMS.Model.Page.Page = {
-    id: 'help-and-support',
-    slug: '/pomoc-i-wsparcie',
+export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL: CMS.Model.Page.Page = {
+    id: 'business-help-and-support-1',
+    slug: '/indywidualny/pomoc-i-wsparcie',
     locale: 'pl',
     seo: {
         noIndex: false,
@@ -97,6 +99,7 @@ export const PAGE_HELP_AND_SUPPORT_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     permissions: [],
     hasOwnTitle: false,
     showBreadcrumbs: true,
@@ -108,8 +111,8 @@ export const PAGE_HELP_AND_SUPPORT_PL: CMS.Model.Page.Page = {
                     __typename: 'FaqBlock',
                     id: 'faq-1',
                     layout: {
-                        variant: 'wide',
-                        spacing: 'medium',
+                        variant: 'narrow',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },

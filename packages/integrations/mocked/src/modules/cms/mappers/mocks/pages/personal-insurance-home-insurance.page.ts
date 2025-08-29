@@ -17,6 +17,7 @@ export const PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/personal/insurance',
         seo: {
@@ -105,6 +106,7 @@ export const PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/personlich/versicherungen',
         seo: {
@@ -193,6 +195,7 @@ export const PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/indywidualny/ubezpieczenia',
         seo: {

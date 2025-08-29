@@ -17,6 +17,7 @@ export const PAGE_BUSINESS_CARDS_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/business',
         seo: {
@@ -99,6 +100,7 @@ export const PAGE_BUSINESS_CARDS_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/geschaftlich',
         seo: {
@@ -131,8 +133,8 @@ export const PAGE_BUSINESS_CARDS_DE: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-56',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-56',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -181,6 +183,7 @@ export const PAGE_BUSINESS_CARDS_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/firma',
         seo: {
@@ -213,8 +216,8 @@ export const PAGE_BUSINESS_CARDS_PL: CMS.Model.Page.Page = {
                     },
                 },
                 {
-                    __typename: 'FeatureSectionGridBlock',
-                    id: 'feature-section-grid-56',
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-56',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
