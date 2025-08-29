@@ -23,6 +23,7 @@ export const PAGE_PERSONAL_INSURANCE_EN: CMS.Model.Page.Page = {
             title: 'Personal',
         },
     },
+    theme: 'personal',
     permissions: [],
     hasOwnTitle: true,
     showBreadcrumbs: true,
@@ -96,6 +97,7 @@ export const PAGE_PERSONAL_INSURANCE_DE: CMS.Model.Page.Page = {
             title: 'Persönlich',
         },
     },
+    theme: 'personal',
     permissions: [],
     hasOwnTitle: true,
     showBreadcrumbs: true,
@@ -163,6 +165,7 @@ export const PAGE_PERSONAL_INSURANCE_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/indywidualny',
         seo: {

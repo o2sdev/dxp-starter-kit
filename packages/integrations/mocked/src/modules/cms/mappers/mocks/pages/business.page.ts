@@ -17,6 +17,7 @@ export const PAGE_BUSINESS_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     permissions: [],
     hasOwnTitle: true,
     showBreadcrumbs: false,
@@ -67,6 +68,7 @@ export const PAGE_BUSINESS_EN: CMS.Model.Page.Page = {
                         variant: 'wide',
                         spacing: 'large',
                         background: 'none',
+                        theme: 'premium',
                     },
                 },
                 {
@@ -92,8 +94,8 @@ export const PAGE_BUSINESS_DE: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Business',
-        description: 'Business',
+        title: 'Geschäft',
+        description: 'Geschäft',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -102,8 +104,9 @@ export const PAGE_BUSINESS_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     permissions: [],
-    hasOwnTitle: false,
+    hasOwnTitle: true,
     showBreadcrumbs: false,
     template: {
         __typename: 'OneColumnTemplate',
@@ -152,6 +155,7 @@ export const PAGE_BUSINESS_DE: CMS.Model.Page.Page = {
                         variant: 'wide',
                         spacing: 'large',
                         background: 'none',
+                        theme: 'premium',
                     },
                 },
                 {
@@ -187,8 +191,9 @@ export const PAGE_BUSINESS_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     permissions: [],
-    hasOwnTitle: false,
+    hasOwnTitle: true,
     showBreadcrumbs: false,
     template: {
         __typename: 'OneColumnTemplate',
@@ -237,6 +242,7 @@ export const PAGE_BUSINESS_PL: CMS.Model.Page.Page = {
                         variant: 'wide',
                         spacing: 'large',
                         background: 'none',
+                        theme: 'premium',
                     },
                 },
                 {

@@ -66,9 +66,9 @@ const MOCK_BENTO_GRID_BLOCK_1_DE: CMS.Model.BentoGridBlock.BentoGridBlock = {
     title: 'Funktionsreiche Gestaltung, die Aufmerksamkeit erregt',
     items: [
         {
-            title: 'Everyday Banking Essentials',
+            title: 'Alltägliche Bankgeschäfte',
             description:
-                'Master the basics of managing accounts, payments, and digital tools for confident day-to-day banking.',
+                'Beherrschen Sie die Grundlagen der Kontoführung, Zahlungen und digitalen Werkzeuge für ein sicheres tägliches Banking.',
             image: {
                 url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-6.png',
                 width: 402,
@@ -77,16 +77,16 @@ const MOCK_BENTO_GRID_BLOCK_1_DE: CMS.Model.BentoGridBlock.BentoGridBlock = {
                 priority: true,
             },
             link: {
-                label: 'Learn more',
+                label: 'Mehr erfahren',
                 url: '/',
                 icon: 'ArrowRight',
                 variant: 'link',
             },
         },
         {
-            title: 'Smarter Saving & Investing',
+            title: 'Intelligentes Sparen & Investieren',
             description:
-                'Learn how to grow your money with automated savings, budgeting, and accessible investment strategies.',
+                'Erfahren Sie, wie Sie Ihr Geld mit automatisierten Sparplänen, Budgetierung und zugänglichen Anlagestrategien vermehren können.',
             image: {
                 url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-7.png',
                 width: 402,
@@ -95,16 +95,16 @@ const MOCK_BENTO_GRID_BLOCK_1_DE: CMS.Model.BentoGridBlock.BentoGridBlock = {
                 priority: true,
             },
             link: {
-                label: 'Learn more',
+                label: 'Mehr erfahren',
                 url: '/',
                 icon: 'ArrowRight',
                 variant: 'link',
             },
         },
         {
-            title: 'Security & Digital Wellbeing',
+            title: 'Sicherheit & Digitales Wohlbefinden',
             description:
-                'Stay safe online with practical tips on protecting your finances and making the most of secure banking features.',
+                'Bleiben Sie online sicher mit praktischen Tipps zum Schutz Ihrer Finanzen und zur optimalen Nutzung sicherer Bankfunktionen.',
             image: {
                 url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-8.png',
                 width: 402,
@@ -113,7 +113,7 @@ const MOCK_BENTO_GRID_BLOCK_1_DE: CMS.Model.BentoGridBlock.BentoGridBlock = {
                 priority: true,
             },
             link: {
-                label: 'Learn more',
+                label: 'Mehr erfahren',
                 url: '/',
                 icon: 'ArrowRight',
                 variant: 'link',

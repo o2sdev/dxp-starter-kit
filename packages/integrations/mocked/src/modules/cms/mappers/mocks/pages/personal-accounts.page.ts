@@ -17,6 +17,7 @@ export const PAGE_PERSONAL_ACCOUNTS_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/personal',
         seo: {
@@ -89,8 +90,8 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Konten',
+        description: 'Konten',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -99,6 +100,7 @@ export const PAGE_PERSONAL_ACCOUNTS_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     permissions: [],
     hasOwnTitle: true,
     showBreadcrumbs: true,
@@ -165,8 +167,8 @@ export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Konta',
+        description: 'Konta',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -175,6 +177,7 @@ export const PAGE_PERSONAL_ACCOUNTS_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     permissions: [],
     hasOwnTitle: true,
     showBreadcrumbs: true,

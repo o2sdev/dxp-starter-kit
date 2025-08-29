@@ -30,13 +30,13 @@ import {
     PAGE_BUSINESS_CARDS_EN,
     PAGE_BUSINESS_CARDS_PL,
 } from './mocks/pages/business-cards.page';
+import {
+    PAGE_BUSINESS_HELP_AND_SUPPORT_1_DE,
+    PAGE_BUSINESS_HELP_AND_SUPPORT_1_EN,
+    PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL,
+} from './mocks/pages/business-help-and-support.page';
 import { PAGE_BUSINESS_DE, PAGE_BUSINESS_EN, PAGE_BUSINESS_PL } from './mocks/pages/business.page';
 import { PAGE_HOME_DE, PAGE_HOME_EN, PAGE_HOME_PL } from './mocks/pages/home.page';
-import {
-    PAGE_HELP_AND_SUPPORT_DE,
-    PAGE_HELP_AND_SUPPORT_EN,
-    PAGE_HELP_AND_SUPPORT_PL,
-} from './mocks/pages/knowledge-base.page';
 import {
     PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_DE,
     PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_EN,
@@ -67,6 +67,11 @@ import {
     PAGE_PERSONAL_CARDS_EN,
     PAGE_PERSONAL_CARDS_PL,
 } from './mocks/pages/personal-cards.page';
+import {
+    PAGE_PERSONAL_HELP_AND_SUPPORT_1_DE,
+    PAGE_PERSONAL_HELP_AND_SUPPORT_1_EN,
+    PAGE_PERSONAL_HELP_AND_SUPPORT_1_PL,
+} from './mocks/pages/personal-help-and-support.page';
 import {
     PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_DE,
     PAGE_PERSONAL_INSURANCE_HOME_INSURANCE_EN,
@@ -242,14 +247,23 @@ export const mapPage = (slug: string, locale: string): CMS.Model.Page.Page | und
         case '/firma/karty/business-expense':
             return PAGE_BUSINESS_CARDS_BUSINESS_EXPENSE_PL;
 
-        case '/help-and-support':
-            return PAGE_HELP_AND_SUPPORT_EN;
+        case '/personal/help-and-support':
+            return PAGE_PERSONAL_HELP_AND_SUPPORT_1_EN;
 
-        case '/hilfe-und-support':
-            return PAGE_HELP_AND_SUPPORT_DE;
+        case '/personlich/hilfe-und-support':
+            return PAGE_PERSONAL_HELP_AND_SUPPORT_1_DE;
 
-        case '/pomoc-i-wsparcie':
-            return PAGE_HELP_AND_SUPPORT_PL;
+        case '/indywidualny/pomoc-i-wsparcie':
+            return PAGE_PERSONAL_HELP_AND_SUPPORT_1_PL;
+
+        case '/business/help-and-support':
+            return PAGE_BUSINESS_HELP_AND_SUPPORT_1_EN;
+
+        case '/geschaftlich/hilfe-und-support':
+            return PAGE_BUSINESS_HELP_AND_SUPPORT_1_DE;
+
+        case '/firma/pomoc-i-wsparcie':
+            return PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL;
 
         default:
             return undefined;
@@ -261,7 +275,8 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
         case 'pl':
             return [
                 PAGE_BUSINESS_PL,
-                PAGE_HELP_AND_SUPPORT_PL,
+                PAGE_PERSONAL_HELP_AND_SUPPORT_1_PL,
+                PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL,
                 PAGE_PERSONAL_ACCOUNTS_PL,
                 PAGE_BUSINESS_ACCOUNTS_PL,
                 PAGE_PERSONAL_PL,
@@ -273,7 +288,8 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
         case 'de':
             return [
                 PAGE_BUSINESS_DE,
-                PAGE_HELP_AND_SUPPORT_DE,
+                PAGE_PERSONAL_HELP_AND_SUPPORT_1_DE,
+                PAGE_BUSINESS_HELP_AND_SUPPORT_1_DE,
                 PAGE_PERSONAL_ACCOUNTS_DE,
                 PAGE_BUSINESS_ACCOUNTS_DE,
                 PAGE_PERSONAL_DE,
@@ -285,7 +301,8 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
         case 'en':
             return [
                 PAGE_BUSINESS_EN,
-                PAGE_HELP_AND_SUPPORT_EN,
+                PAGE_PERSONAL_HELP_AND_SUPPORT_1_EN,
+                PAGE_BUSINESS_HELP_AND_SUPPORT_1_EN,
                 PAGE_PERSONAL_ACCOUNTS_EN,
                 PAGE_BUSINESS_ACCOUNTS_EN,
                 PAGE_PERSONAL_EN,
@@ -313,9 +330,9 @@ export const getAlternativePages = (id: string, slug: string, locale: string): C
         PAGE_BUSINESS_ACCOUNTS_DE,
         PAGE_BUSINESS_ACCOUNTS_EN,
         PAGE_BUSINESS_ACCOUNTS_PL,
-        PAGE_HELP_AND_SUPPORT_DE,
-        PAGE_HELP_AND_SUPPORT_EN,
-        PAGE_HELP_AND_SUPPORT_PL,
+        PAGE_PERSONAL_HELP_AND_SUPPORT_1_DE,
+        PAGE_PERSONAL_HELP_AND_SUPPORT_1_EN,
+        PAGE_PERSONAL_HELP_AND_SUPPORT_1_PL,
         PAGE_PERSONAL_CARDS_DE,
         PAGE_PERSONAL_CARDS_EN,
         PAGE_PERSONAL_CARDS_PL,

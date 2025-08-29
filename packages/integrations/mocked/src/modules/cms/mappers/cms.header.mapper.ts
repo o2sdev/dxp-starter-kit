@@ -43,7 +43,7 @@ const MOCK_HEADER_EN: CMS.Model.Header.Header = {
                 {
                     __typename: 'NavigationItem',
                     label: 'Help and Support',
-                    url: '/help-and-support',
+                    url: '/personal/help-and-support',
                 },
             ],
         },
@@ -65,7 +65,7 @@ const MOCK_HEADER_EN: CMS.Model.Header.Header = {
                 {
                     __typename: 'NavigationItem',
                     label: 'Help and Support',
-                    url: '/help-and-support',
+                    url: '/business/help-and-support',
                 },
             ],
         },
@@ -93,7 +93,7 @@ const MOCK_HEADER_DE: CMS.Model.Header.Header = {
     items: [
         {
             __typename: 'NavigationGroup',
-            title: 'Kunden Portal',
+            title: 'Persönlich',
             url: '/personlich',
             items: [
                 {
@@ -114,7 +114,7 @@ const MOCK_HEADER_DE: CMS.Model.Header.Header = {
                 {
                     __typename: 'NavigationItem',
                     label: 'Hilfe und Support',
-                    url: '/hilfe-und-support',
+                    url: '/personlich/hilfe-und-support',
                 },
             ],
         },
@@ -136,12 +136,13 @@ const MOCK_HEADER_DE: CMS.Model.Header.Header = {
                 {
                     __typename: 'NavigationItem',
                     label: 'Hilfe und Support',
-                    url: '/hilfe-und-support',
+                    url: '/geschaftlich/hilfe-und-support',
                 },
             ],
         },
     ],
 };
+
 const MOCK_HEADER_PL: CMS.Model.Header.Header = {
     id: 'fqj6nnyk4irqq5b7rnc4ogsj',
     title: 'MOCK_HEADER_PL',
@@ -185,7 +186,7 @@ const MOCK_HEADER_PL: CMS.Model.Header.Header = {
                 {
                     __typename: 'NavigationItem',
                     label: 'Pomoc i wsparcie',
-                    url: '/pomoc-i-wsparcie',
+                    url: '/indywidualny/pomoc-i-wsparcie',
                 },
             ],
         },
@@ -207,7 +208,7 @@ const MOCK_HEADER_PL: CMS.Model.Header.Header = {
                 {
                     __typename: 'NavigationItem',
                     label: 'Pomoc i wsparcie',
-                    url: '/pomoc-i-wsparcie',
+                    url: '/firma/pomoc-i-wsparcie',
                 },
             ],
         },

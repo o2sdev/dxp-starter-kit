@@ -17,6 +17,7 @@ export const PAGE_BUSINESS_CARDS_BUSINESS_EXPENSE_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/business/cards',
         seo: {
@@ -105,6 +106,7 @@ export const PAGE_BUSINESS_CARDS_BUSINESS_EXPENSE_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/geschaftlich/karten',
         seo: {
@@ -193,6 +195,7 @@ export const PAGE_BUSINESS_CARDS_BUSINESS_EXPENSE_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/firma/karty',
         seo: {

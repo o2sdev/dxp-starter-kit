@@ -27,7 +27,7 @@ const MOCK_CTA_SECTION_BLOCK_1_EN: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
 };
 
 const MOCK_CTA_SECTION_BLOCK_1_DE: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
-    id: 'cta-section-2',
+    id: 'cta-section-1',
     preTitle: 'PREMIUMMITGLIEDER',
     title: 'Zukunftssichere Investitionen',
     description:

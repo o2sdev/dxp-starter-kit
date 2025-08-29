@@ -30,7 +30,7 @@ const MOCK_HERO_SECTION_BLOCK_1_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     id: 'hero-section-1',
     title: 'Ihr Geld, Ihre Art.',
     description: 'Modernes Banking, das Ihrem Leben entspricht — jederzeit, überall.',
-    inverted: true,
+    inverted: false,
     headingType: 'h1',
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-1.png',
@@ -115,7 +115,7 @@ const MOCK_HERO_SECTION_BLOCK_2_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     title: 'Tageskonto',
     description:
         'Vereinfachen Sie Ihr tägliches Bankwesen mit einem Konto, das für Bequemlichkeit, Kontrolle und Ruhe sorgt.',
-    inverted: true,
+    inverted: false,
     headingType: 'h1',
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-2.png',
@@ -396,7 +396,7 @@ const MOCK_HERO_SECTION_BLOCK_5_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     title: 'Kreditkarte',
     description:
         'Vermehren Sie Ihr Vermögen mit einer Karte, die für einfaches Sparen und intelligente Finanzplanung entwickelt wurde',
-    inverted: true,
+    inverted: false,
     headingType: 'h1',
     image: {
         url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-17.png',

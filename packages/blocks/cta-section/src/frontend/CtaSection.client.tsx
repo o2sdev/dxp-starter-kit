@@ -47,7 +47,7 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
                             {preTitle && <Typography variant="body">{preTitle}</Typography>}
 
                             {title && (
-                                <Typography variant="highlightedMedium" asChild>
+                                <Typography variant="highlightedMedium" asChild className="text-secondary">
                                     <h2>{title}</h2>
                                 </Typography>
                             )}

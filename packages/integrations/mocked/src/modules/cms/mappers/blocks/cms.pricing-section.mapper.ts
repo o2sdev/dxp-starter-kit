@@ -1465,7 +1465,7 @@ const MOCK_PRICING_SECTION_BLOCK_51_DE: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Ermöglichen Sie Ihrem Team kontrollierte Ausgabenlimits und Echtzeit-Tracking für Unternehmenskäufe.',
             image: {
-                url: 'https://raw.githubusercontent.com/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-66.png',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-66.png',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1528,7 +1528,7 @@ const MOCK_PRICING_SECTION_BLOCK_51_PL: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Wygodny, bezpieczny sposób na codzienne wydatki firmowe i zarządzanie płatnościami na całym świecie.',
             image: {
-                url: 'https://raw.githubusercontent.com/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-65.png',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-65.png',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1572,7 +1572,7 @@ const MOCK_PRICING_SECTION_BLOCK_51_PL: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Daj swojemu zespołowi kontrolowane limity wydatków i śledzenie w czasie rzeczywistym zakupów firmowych.',
             image: {
-                url: 'https://raw.githubusercontent.com/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-66.png',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-66.png',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
