@@ -1,5 +1,11 @@
 # @dxp/ui
 
+## 1.3.1
+
+### Patch Changes
+
+- 5654a4b: added Storybook support for blocks
+
 ## 1.3.0
 
 ### Minor Changes

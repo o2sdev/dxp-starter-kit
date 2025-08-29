@@ -1,5 +1,13 @@
 # @dxp/blocks.quick-links
 
+## 0.1.1
+
+### Patch Changes
+
+- 5654a4b: added Storybook support for blocks
+- Updated dependencies [5654a4b]
+  - @dxp/ui@1.3.1
+
 ## 0.1.0
 
 ### Minor Changes
