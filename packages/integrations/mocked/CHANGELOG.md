@@ -1,5 +1,11 @@
 # @dxp/integrations.mocked
 
+## 0.4.0
+
+### Minor Changes
+
+- e54aecb: upload mocked data for demo
+
 ## 0.3.0
 
 ### Minor Changes

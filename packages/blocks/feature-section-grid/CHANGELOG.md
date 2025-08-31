@@ -1,5 +1,14 @@
 # @dxp/blocks.feature-section-grid
 
+## 0.0.7
+
+### Patch Changes
+
+- 5654a4b: added Storybook support for blocks
+- Updated dependencies [5654a4b]
+- Updated dependencies [e8c3d7d]
+  - @dxp/ui@1.4.0
+
 ## 0.0.6
 
 ### Patch Changes
