@@ -17,6 +17,7 @@ export const PAGE_PERSONAL_CARDS_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/personal',
         seo: {
@@ -89,8 +90,8 @@ export const PAGE_PERSONAL_CARDS_DE: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Cards',
-        description: 'Cards',
+        title: 'Karten',
+        description: 'Karten',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -99,6 +100,7 @@ export const PAGE_PERSONAL_CARDS_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/personlich',
         seo: {
@@ -181,6 +183,7 @@ export const PAGE_PERSONAL_CARDS_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     parent: {
         slug: '/indywidualny',
         seo: {

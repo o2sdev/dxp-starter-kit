@@ -17,6 +17,7 @@ export const PAGE_BUSINESS_ACCOUNTS_GROWTH_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/business/accounts',
         seo: {
@@ -114,6 +115,7 @@ export const PAGE_BUSINESS_ACCOUNTS_GROWTH_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/geschaftlich/konten',
         seo: {
@@ -211,6 +213,7 @@ export const PAGE_BUSINESS_ACCOUNTS_GROWTH_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/firma/konta',
         seo: {

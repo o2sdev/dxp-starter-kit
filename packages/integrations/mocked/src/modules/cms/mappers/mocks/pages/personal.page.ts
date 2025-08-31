@@ -17,6 +17,7 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     permissions: [],
     hasOwnTitle: true,
     showBreadcrumbs: false,
@@ -76,6 +77,7 @@ export const PAGE_PERSONAL_EN: CMS.Model.Page.Page = {
                         variant: 'wide',
                         spacing: 'large',
                         background: 'none',
+                        theme: 'premium',
                     },
                 },
                 {
@@ -101,8 +103,8 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Personal',
-        description: 'Personal',
+        title: 'Persönlich',
+        description: 'Persönlich',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -111,8 +113,9 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     permissions: [],
-    hasOwnTitle: false,
+    hasOwnTitle: true,
     showBreadcrumbs: false,
     template: {
         __typename: 'OneColumnTemplate',
@@ -142,12 +145,21 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
-                        background: 'brand',
+                        background: 'none',
                     },
                 },
                 {
                     __typename: 'FeatureSectionBlock',
                     id: 'feature-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -161,6 +173,7 @@ export const PAGE_PERSONAL_DE: CMS.Model.Page.Page = {
                         variant: 'wide',
                         spacing: 'large',
                         background: 'none',
+                        theme: 'premium',
                     },
                 },
                 {
@@ -196,6 +209,7 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'personal',
     permissions: [],
     hasOwnTitle: false,
     showBreadcrumbs: false,
@@ -227,12 +241,21 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
-                        background: 'brand',
+                        background: 'none',
                     },
                 },
                 {
                     __typename: 'FeatureSectionBlock',
                     id: 'feature-section-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-2',
                     layout: {
                         variant: 'wide',
                         spacing: 'large',
@@ -246,6 +269,7 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
                         variant: 'wide',
                         spacing: 'large',
                         background: 'none',
+                        theme: 'premium',
                     },
                 },
                 {

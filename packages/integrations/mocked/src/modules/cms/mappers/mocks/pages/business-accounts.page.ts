@@ -17,6 +17,7 @@ export const PAGE_BUSINESS_ACCOUNTS_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/business',
         seo: {
@@ -89,8 +90,8 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Konten',
+        description: 'Konten',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -99,6 +100,7 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/geschaftlich',
         seo: {
@@ -114,7 +116,16 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
             main: [
                 {
                     __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    id: 'pricing-section-50',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-3',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -126,8 +137,17 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     id: 'feature-section-grid-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-51',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
@@ -135,16 +155,7 @@ export const PAGE_BUSINESS_ACCOUNTS_DE: CMS.Model.Page.Page = {
                     id: 'faq-1',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
@@ -162,8 +173,8 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Accounts',
-        description: 'Accounts',
+        title: 'Konta',
+        description: 'Konta',
         keywords: [],
         image: {
             url: 'https://picsum.photos/150',
@@ -172,6 +183,7 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    theme: 'business',
     parent: {
         slug: '/firma',
         seo: {
@@ -187,7 +199,16 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
             main: [
                 {
                     __typename: 'PricingSectionBlock',
-                    id: 'pricing-section-1',
+                    id: 'pricing-section-50',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'small',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-3',
                     layout: {
                         variant: 'wide',
                         spacing: 'medium',
@@ -199,8 +220,17 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     id: 'feature-section-grid-1',
                     layout: {
                         variant: 'wide',
-                        spacing: 'medium',
-                        background: 'brand',
+                        spacing: 'large',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FeatureSectionBlock',
+                    id: 'feature-section-51',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'large',
+                        background: 'none',
                     },
                 },
                 {
@@ -208,16 +238,7 @@ export const PAGE_BUSINESS_ACCOUNTS_PL: CMS.Model.Page.Page = {
                     id: 'faq-1',
                     layout: {
                         variant: 'narrow',
-                        spacing: 'medium',
-                        background: 'none',
-                    },
-                },
-                {
-                    __typename: 'DocumentListBlock',
-                    id: 'document-list-1',
-                    layout: {
-                        variant: 'narrow',
-                        spacing: 'medium',
+                        spacing: 'large',
                         background: 'none',
                     },
                 },
