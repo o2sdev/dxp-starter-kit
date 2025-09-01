@@ -1,3 +1,5 @@
+import { NotFoundException } from '@nestjs/common';
+
 import { CMS } from '@dxp/framework/modules';
 
 const MOCK_FAQ_LIST_BLOCK_1_EN: CMS.Model.FaqBlock.FaqBlock = {
@@ -339,13 +341,15 @@ const MOCK_FAQ_LIST_BLOCKS_EN = [MOCK_FAQ_LIST_BLOCK_1_EN, MOCK_FAQ_LIST_BLOCK_2
 const MOCK_FAQ_LIST_BLOCKS_DE = [MOCK_FAQ_LIST_BLOCK_1_DE, MOCK_FAQ_LIST_BLOCK_2_DE, MOCK_FAQ_LIST_BLOCK_3_DE];
 const MOCK_FAQ_LIST_BLOCKS_PL = [MOCK_FAQ_LIST_BLOCK_1_PL, MOCK_FAQ_LIST_BLOCK_2_PL, MOCK_FAQ_LIST_BLOCK_3_PL];
 
-export const mapFaqBlock = ({ locale, id }: CMS.Request.GetCmsEntryParams): CMS.Model.FaqBlock.FaqBlock | undefined => {
+export const mapFaqBlock = ({ locale, id }: CMS.Request.GetCmsEntryParams): CMS.Model.FaqBlock.FaqBlock => {
     switch (locale) {
         case 'de':
-            return MOCK_FAQ_LIST_BLOCKS_DE.find((block) => block.id === id);
+            return MOCK_FAQ_LIST_BLOCKS_DE.find((block) => block.id === id)!;
         case 'pl':
-            return MOCK_FAQ_LIST_BLOCKS_PL.find((block) => block.id === id);
+            return MOCK_FAQ_LIST_BLOCKS_PL.find((block) => block.id === id)!;
+        case 'en':
+            return MOCK_FAQ_LIST_BLOCKS_EN.find((block) => block.id === id)!;
         default:
-            return MOCK_FAQ_LIST_BLOCKS_EN.find((block) => block.id === id);
+            throw new NotFoundException();
     }
 };

@@ -1,3 +1,5 @@
+import { NotFoundException } from '@nestjs/common';
+
 import { CMS } from '@dxp/framework/modules';
 
 const MOCK_MEDIA_SECTION_BLOCK_1_EN: CMS.Model.MediaSectionBlock.MediaSectionBlock = {
@@ -210,13 +212,15 @@ const MEDIA_SECTION_BLOCKS_PL = [
 export const mapMediaSectionBlock = ({
     locale,
     id,
-}: CMS.Request.GetCmsEntryParams): CMS.Model.MediaSectionBlock.MediaSectionBlock | undefined => {
+}: CMS.Request.GetCmsEntryParams): CMS.Model.MediaSectionBlock.MediaSectionBlock => {
     switch (locale) {
         case 'de':
-            return MEDIA_SECTION_BLOCKS_DE.find((block) => block.id === id);
+            return MEDIA_SECTION_BLOCKS_DE.find((block) => block.id === id)!;
         case 'pl':
-            return MEDIA_SECTION_BLOCKS_PL.find((block) => block.id === id);
+            return MEDIA_SECTION_BLOCKS_PL.find((block) => block.id === id)!;
+        case 'en':
+            return MEDIA_SECTION_BLOCKS_EN.find((block) => block.id === id)!;
         default:
-            return MEDIA_SECTION_BLOCKS_EN.find((block) => block.id === id);
+            throw new NotFoundException();
     }
 };

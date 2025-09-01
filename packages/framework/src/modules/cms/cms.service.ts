@@ -26,4 +26,42 @@ export abstract class CmsService {
     abstract getHeader(options: CMS.Request.GetCmsHeaderParams): Observable<CMS.Model.Header.Header>;
 
     abstract getFooter(options: CMS.Request.GetCmsEntryParams): Observable<CMS.Model.Footer.Footer>;
+
+    abstract getFaqBlock(options: CMS.Request.GetCmsEntryParams): Observable<CMS.Model.FaqBlock.FaqBlock>;
+
+    abstract getHeroSectionBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.HeroSectionBlock.HeroSectionBlock>;
+
+    abstract getFeatureSectionBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.FeatureSectionBlock.FeatureSectionBlock>;
+
+    abstract getCtaSectionBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.CtaSectionBlock.CtaSectionBlock>;
+
+    abstract getBentoGridBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.BentoGridBlock.BentoGridBlock>;
+
+    abstract getMediaSectionBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.MediaSectionBlock.MediaSectionBlock>;
+
+    abstract getQuickLinksBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.QuickLinksBlock.QuickLinksBlock>;
+
+    abstract getFeatureSectionGridBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.FeatureSectionGridBlock.FeatureSectionGridBlock>;
+
+    abstract getPricingSectionBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.PricingSectionBlock.PricingSectionBlock>;
+
+    abstract getDocumentListBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.DocumentListBlock.DocumentListBlock>;
 }

@@ -1,3 +1,5 @@
+import { NotFoundException } from '@nestjs/common';
+
 import { CMS } from '@dxp/framework/modules';
 
 const MOCK_PRICING_SECTION_BLOCK_1_EN: CMS.Model.PricingSectionBlock.PricingSectionBlock = {
@@ -1648,13 +1650,15 @@ const MOCK_PRICING_SECTION_BLOCKS_PL = [
 export const mapPricingSectionBlock = ({
     locale,
     id,
-}: CMS.Request.GetCmsEntryParams): CMS.Model.PricingSectionBlock.PricingSectionBlock | undefined => {
+}: CMS.Request.GetCmsEntryParams): CMS.Model.PricingSectionBlock.PricingSectionBlock => {
     switch (locale) {
         case 'de':
-            return MOCK_PRICING_SECTION_BLOCKS_DE.find((block) => block.id === id);
+            return MOCK_PRICING_SECTION_BLOCKS_DE.find((block) => block.id === id)!;
         case 'pl':
-            return MOCK_PRICING_SECTION_BLOCKS_PL.find((block) => block.id === id);
+            return MOCK_PRICING_SECTION_BLOCKS_PL.find((block) => block.id === id)!;
+        case 'en':
+            return MOCK_PRICING_SECTION_BLOCKS_EN.find((block) => block.id === id)!;
         default:
-            return MOCK_PRICING_SECTION_BLOCKS_EN.find((block) => block.id === id);
+            throw new NotFoundException();
     }
 };

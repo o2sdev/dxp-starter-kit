@@ -1,3 +1,5 @@
+import { NotFoundException } from '@nestjs/common';
+
 import { CMS } from '@dxp/framework/modules';
 
 const MOCK_BENTO_GRID_BLOCK_1_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
@@ -373,13 +375,15 @@ const MOCK_BENTO_GRID_BLOCKS_PL = [MOCK_BENTO_GRID_BLOCK_1_PL, MOCK_BENTO_GRID_B
 export const mapBentoGridBlock = ({
     locale,
     id,
-}: CMS.Request.GetCmsEntryParams): CMS.Model.BentoGridBlock.BentoGridBlock | undefined => {
+}: CMS.Request.GetCmsEntryParams): CMS.Model.BentoGridBlock.BentoGridBlock => {
     switch (locale) {
         case 'de':
-            return MOCK_BENTO_GRID_BLOCKS_DE.find((block) => block.id === id);
+            return MOCK_BENTO_GRID_BLOCKS_DE.find((block) => block.id === id)!;
         case 'pl':
-            return MOCK_BENTO_GRID_BLOCKS_PL.find((block) => block.id === id);
+            return MOCK_BENTO_GRID_BLOCKS_PL.find((block) => block.id === id)!;
+        case 'en':
+            return MOCK_BENTO_GRID_BLOCKS_EN.find((block) => block.id === id)!;
         default:
-            return MOCK_BENTO_GRID_BLOCKS_EN.find((block) => block.id === id);
+            throw new NotFoundException();
     }
 };

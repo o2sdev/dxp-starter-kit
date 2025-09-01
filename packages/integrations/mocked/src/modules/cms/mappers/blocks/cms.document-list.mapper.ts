@@ -1,3 +1,5 @@
+import { NotFoundException } from '@nestjs/common';
+
 import { CMS } from '@dxp/framework/modules';
 
 const MOCK_DOCUMENT_LIST_BLOCK_EN: CMS.Model.DocumentListBlock.DocumentListBlock = {
@@ -129,7 +131,9 @@ export const mapDocumentListBlock = (locale: string): CMS.Model.DocumentListBloc
             return MOCK_DOCUMENT_LIST_BLOCK_DE;
         case 'pl':
             return MOCK_DOCUMENT_LIST_BLOCK_PL;
-        default:
+        case 'en':
             return MOCK_DOCUMENT_LIST_BLOCK_EN;
+        default:
+            throw new NotFoundException();
     }
 };

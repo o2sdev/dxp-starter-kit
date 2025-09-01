@@ -1,3 +1,5 @@
+import { NotFoundException } from '@nestjs/common';
+
 import { CMS } from '@dxp/framework/modules';
 
 const MOCK_CTA_SECTION_BLOCK_1_EN: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
@@ -144,13 +146,15 @@ const FEATURE_SECTION_BLOCKS_PL = [MOCK_CTA_SECTION_BLOCK_1_PL, MOCK_CTA_SECTION
 export const mapCtaSectionBlock = ({
     locale,
     id,
-}: CMS.Request.GetCmsEntryParams): CMS.Model.CtaSectionBlock.CtaSectionBlock | undefined => {
+}: CMS.Request.GetCmsEntryParams): CMS.Model.CtaSectionBlock.CtaSectionBlock => {
     switch (locale) {
         case 'de':
-            return FEATURE_SECTION_BLOCKS_DE.find((block) => block.id === id);
+            return FEATURE_SECTION_BLOCKS_DE.find((block) => block.id === id)!;
         case 'pl':
-            return FEATURE_SECTION_BLOCKS_PL.find((block) => block.id === id);
+            return FEATURE_SECTION_BLOCKS_PL.find((block) => block.id === id)!;
+        case 'en':
+            return FEATURE_SECTION_BLOCKS_EN.find((block) => block.id === id)!;
         default:
-            return FEATURE_SECTION_BLOCKS_EN.find((block) => block.id === id);
+            throw new NotFoundException();
     }
 };

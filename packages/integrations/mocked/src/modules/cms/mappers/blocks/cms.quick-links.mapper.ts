@@ -1,3 +1,5 @@
+import { NotFoundException } from '@nestjs/common';
+
 import { CMS } from '@dxp/framework/modules';
 
 const MOCK_QUICK_LINKS_BLOCK_1_EN: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
@@ -187,13 +189,15 @@ const QUICK_LINKS_BLOCKS_PL = [MOCK_QUICK_LINKS_BLOCK_1_PL, MOCK_QUICK_LINKS_BLO
 export const mapQuickLinksBlock = ({
     locale,
     id,
-}: CMS.Request.GetCmsEntryParams): CMS.Model.QuickLinksBlock.QuickLinksBlock | undefined => {
+}: CMS.Request.GetCmsEntryParams): CMS.Model.QuickLinksBlock.QuickLinksBlock => {
     switch (locale) {
         case 'de':
-            return QUICK_LINKS_BLOCKS_DE.find((block) => block.id === id);
+            return QUICK_LINKS_BLOCKS_DE.find((block) => block.id === id)!;
         case 'pl':
-            return QUICK_LINKS_BLOCKS_PL.find((block) => block.id === id);
+            return QUICK_LINKS_BLOCKS_PL.find((block) => block.id === id)!;
+        case 'en':
+            return QUICK_LINKS_BLOCKS_EN.find((block) => block.id === id)!;
         default:
-            return QUICK_LINKS_BLOCKS_EN.find((block) => block.id === id);
+            throw new NotFoundException();
     }
 };

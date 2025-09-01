@@ -1,3 +1,5 @@
+import { NotFoundException } from '@nestjs/common';
+
 import { CMS } from '@dxp/framework/modules';
 
 const MOCK_FEATURE_SECTION_GRID_BLOCK_1_EN: CMS.Model.FeatureSectionGridBlock.FeatureSectionGridBlock = {
@@ -146,7 +148,9 @@ export const mapFeatureSectionGridBlock = ({
             return MOCK_FEATURE_SECTION_GRID_BLOCKS_DE.find((block) => block.id === id)!;
         case 'pl':
             return MOCK_FEATURE_SECTION_GRID_BLOCKS_PL.find((block) => block.id === id)!;
-        default:
+        case 'en':
             return MOCK_FEATURE_SECTION_GRID_BLOCKS_EN.find((block) => block.id === id)!;
+        default:
+            throw new NotFoundException();
     }
 };

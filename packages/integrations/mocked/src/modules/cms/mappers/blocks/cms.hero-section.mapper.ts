@@ -1,3 +1,5 @@
+import { NotFoundException } from '@nestjs/common';
+
 import { CMS } from '@dxp/framework/modules';
 
 const MOCK_HERO_SECTION_BLOCK_1_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock = {
@@ -1151,13 +1153,15 @@ const HERO_SECTION_BLOCKS_PL = [
 export const mapHeroSectionBlock = ({
     locale,
     id,
-}: CMS.Request.GetCmsEntryParams): CMS.Model.HeroSectionBlock.HeroSectionBlock | undefined => {
+}: CMS.Request.GetCmsEntryParams): CMS.Model.HeroSectionBlock.HeroSectionBlock => {
     switch (locale) {
         case 'de':
-            return HERO_SECTION_BLOCKS_DE.find((block) => block.id === id);
+            return HERO_SECTION_BLOCKS_DE.find((block) => block.id === id)!;
         case 'pl':
-            return HERO_SECTION_BLOCKS_PL.find((block) => block.id === id);
+            return HERO_SECTION_BLOCKS_PL.find((block) => block.id === id)!;
+        case 'en':
+            return HERO_SECTION_BLOCKS_EN.find((block) => block.id === id)!;
         default:
-            return HERO_SECTION_BLOCKS_EN.find((block) => block.id === id);
+            throw new NotFoundException();
     }
 };
