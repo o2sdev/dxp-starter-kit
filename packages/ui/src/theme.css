@@ -1,17 +1,17 @@
 :root {
     --background: hsl(0 0% 100%);
     --foreground: hsl(225 9% 9%);
-    --card: hsl(220 13% 95%);
-    --card-foreground: hsl(240 10% 4%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(0, 0%, 100%);
     --popover: hsl(0 0% 100%);
     --popover-foreground: hsl(240 10% 4%);
-    --primary: hsl(228 66% 50%);
+    --primary: hsl(114 95.2% 32.4%);
     --primary-foreground: hsl(0 0% 100%);
-    --secondary: hsl(228 71% 91%);
+    --secondary: hsla(114, 95%, 32%, 0.1);
     --secondary-foreground: hsl(0 0% 0%);
     --muted: hsl(232 12% 87%);
     --muted-foreground: hsl(217 19% 27%);
-    --accent: hsl(214 95% 93%);
+    --accent: hsl(115, 94%, 93%);
     --accent-foreground: hsl(240 6% 10%);
     --destructive: hsl(346 100% 41%);
     --destructive-foreground: hsl(0 0% 100%);
@@ -33,48 +33,6 @@
     --sidebar-accent-foreground: hsl(240 6% 10%);
     --sidebar-border: hsl(220 13% 91%);
     --sidebar-ring: hsl(240 5% 65%);
-    --navbar-background: hsl(234 25% 92%);
-    --navbar-foreground: hsl(215 28% 17%);
-    --navbar-primary: hsl(228 100% 19%);
-    --navbar-primary-foreground: hsl(0 0% 100%);
-    --navbar-border: hsl(232 12% 87%);
-    --navbar-muted: hsl(228 100% 19%);
-    --navbar-accent-background: hsl(214 95% 93%);
-    --navbar-accent-foreground: hsl(224 64% 33%);
-    --navbar-sub-background: hsl(228 32% 15%);
-    --navbar-sub-foreground: hsl(0 0% 100%);
-    --navbar-sub-accent: hsl(228 96% 29%);
-    --footer-background: hsl(234 25% 92%);
-    --footer-foreground: hsl(228 100% 19%);
-    --footer-muted: hsl(240 2% 20%);
-    --footer-border: hsl(230 6% 81%);
-    --navbar-sub-muted: hsl(228 78% 35%);
-    --tertiary: hsl(0 0% 100%);
-    --tertiary-foreground: hsl(228 100% 19%);
-    --tertiary-border: hsl(230 6% 81%);
-    --badge-default-background: hsl(186 100% 28%);
-    --badge-secondary-background: hsl(31 97% 72%);
-    --badge-default-foreground: hsl(0 0% 100%);
-    --badge-secondary-foreground: hsl(0 0% 0%);
-    --tertiary-hover: hsl(220 13% 95%);
-}
-
-.theme-personal {
-    --background: hsl(0 0% 100%);
-    --foreground: hsl(225 9% 9%);
-    --card: hsl(0, 0%, 100%);
-    --card-foreground: hsl(0, 0%, 100%);
-    --popover: hsl(0 0% 100%);
-    --popover-foreground: hsl(240 10% 4%);
-    --primary: hsl(114 95.2% 32.4%);
-    --primary-foreground: hsl(0 0% 100%);
-    --secondary: hsla(114, 95%, 32%, 0.1);
-    --secondary-foreground: hsl(0 0% 0%);
-    --success: hsl(141 71% 48%);
-    --accent: hsl(115, 94%, 93%);
-    --accent-foreground: hsl(240 6% 10%);
-    --muted: hsl(232 12% 87%);
-    --muted-foreground: hsl(217 19% 27%);
     --navbar-background: hsl(0 100% 100%);
     --navbar-foreground: hsl(215 28% 17%);
     --navbar-primary: hsl(0 0% 0%);
@@ -85,13 +43,23 @@
     --navbar-accent-foreground: hsl(224 64% 33%);
     --navbar-sub-background: hsl(0 0% 100%);
     --navbar-sub-foreground: hsl(0 0% 0%);
-    --navbar-sub-accent: hsl(0 0% 100%);
-    --navbar-sub-muted: hsl(0, 0%, 0%);
+    --navbar-sub-accent: hsl(228 96% 29%);
     --footer-background: hsl(240 4.8% 95.9%);
     --footer-foreground: hsl(0, 0%, 0%);
     --footer-muted: hsl(240 2% 20%);
     --footer-border: hsl(230 6% 81%);
+    --navbar-sub-muted: hsl(0, 0%, 0%);
+    --tertiary: hsl(0 0% 100%);
+    --tertiary-foreground: hsl(228 100% 19%);
+    --tertiary-border: hsl(230 6% 81%);
     --badge-default-background: hsl(31 100% 63.9%);
+    --badge-secondary-background: hsl(31 97% 72%);
+    --badge-default-foreground: hsl(0 0% 100%);
+    --badge-secondary-foreground: hsl(0 0% 0%);
+    --tertiary-hover: hsl(220 13% 95%);
+}
+
+.theme-personal {
 }
 
 .theme-business {

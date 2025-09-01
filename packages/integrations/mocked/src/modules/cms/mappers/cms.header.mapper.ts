@@ -5,7 +5,7 @@ const MOCK_HEADER_EN: CMS.Model.Header.Header = {
     title: 'MOCK_HEADER_EN',
     logoLabel: 'Go to home',
     logo: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
+        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
         alt: 'Logo',
         width: 92,
         height: 24,
@@ -76,7 +76,7 @@ const MOCK_HEADER_DE: CMS.Model.Header.Header = {
     title: 'MOCK_HEADER_DE',
     logoLabel: 'Zur Startseite',
     logo: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
+        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
         alt: 'Logo',
         width: 92,
         height: 24,
@@ -148,7 +148,7 @@ const MOCK_HEADER_PL: CMS.Model.Header.Header = {
     title: 'MOCK_HEADER_PL',
     logoLabel: 'Przejdź do strony głównej',
     logo: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
+        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
         alt: 'Logo',
         width: 92,
         height: 24,
