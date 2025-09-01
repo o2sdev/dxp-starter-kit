@@ -4,7 +4,7 @@ const MOCK_FOOTER_EN: CMS.Model.Footer.Footer = {
     id: 'laee0xa1zmm9uraev3hpruho',
     title: 'Legal and privacy',
     logo: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
         alt: 'Logo',
         width: 92,
         height: 24,
@@ -68,7 +68,7 @@ const MOCK_FOOTER_PL: CMS.Model.Footer.Footer = {
     id: 'laee0xa1zmm9uraev3hpruho',
     title: 'Informacje prawne i prywatność',
     logo: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
         alt: 'Logo',
         width: 92,
         height: 24,
@@ -132,7 +132,7 @@ const MOCK_FOOTER_DE: CMS.Model.Footer.Footer = {
     id: 'laee0xa1zmm9uraev3hpruho',
     title: 'Rechtliches und Datenschutz',
     logo: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
         alt: 'Logo',
         width: 92,
         height: 24,

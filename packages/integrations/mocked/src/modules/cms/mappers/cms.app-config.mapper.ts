@@ -47,7 +47,7 @@ const APP_CONFIG_EN: CMS.Model.AppConfig.AppConfig = {
         default: {
             name: 'default',
             logo: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
                 alt: 'Logo',
                 width: 92,
                 height: 24,
@@ -56,7 +56,7 @@ const APP_CONFIG_EN: CMS.Model.AppConfig.AppConfig = {
         personal: {
             name: 'personal',
             logo: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
                 alt: 'Logo',
                 width: 92,
                 height: 24,
@@ -65,7 +65,7 @@ const APP_CONFIG_EN: CMS.Model.AppConfig.AppConfig = {
         business: {
             name: 'business',
             logo: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_business.svg',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo_business.svg',
                 alt: 'Logo',
                 width: 92,
                 height: 24,
@@ -121,7 +121,7 @@ const APP_CONFIG_DE: CMS.Model.AppConfig.AppConfig = {
         default: {
             name: 'default',
             logo: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
                 alt: 'Logo',
                 width: 92,
                 height: 24,
@@ -130,7 +130,7 @@ const APP_CONFIG_DE: CMS.Model.AppConfig.AppConfig = {
         personal: {
             name: 'personal',
             logo: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
                 alt: 'Logo',
                 width: 92,
                 height: 24,
@@ -139,7 +139,7 @@ const APP_CONFIG_DE: CMS.Model.AppConfig.AppConfig = {
         business: {
             name: 'business',
             logo: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_business.svg',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo_business.svg',
                 alt: 'Logo',
                 width: 92,
                 height: 24,
@@ -195,7 +195,7 @@ const APP_CONFIG_PL: CMS.Model.AppConfig.AppConfig = {
         default: {
             name: 'default',
             logo: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
                 alt: 'Logo',
                 width: 92,
                 height: 24,
@@ -204,7 +204,7 @@ const APP_CONFIG_PL: CMS.Model.AppConfig.AppConfig = {
         personal: {
             name: 'personal',
             logo: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo_personal.svg',
                 alt: 'Logo',
                 width: 92,
                 height: 24,
@@ -213,7 +213,7 @@ const APP_CONFIG_PL: CMS.Model.AppConfig.AppConfig = {
         business: {
             name: 'business',
             logo: {
-                url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo_business.svg',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo_business.svg',
                 alt: 'Logo',
                 width: 92,
                 height: 24,
