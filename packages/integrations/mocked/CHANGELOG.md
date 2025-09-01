@@ -1,5 +1,13 @@
 # @dxp/integrations.mocked
 
+## 0.4.1
+
+### Patch Changes
+
+- ff7fba7: fixed incorrect typings in CMS blocks
+- Updated dependencies [ff7fba7]
+    - @dxp/framework@0.2.1
+
 ## 0.4.0
 
 ### Minor Changes

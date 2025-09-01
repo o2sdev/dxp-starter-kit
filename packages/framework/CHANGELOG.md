@@ -1,5 +1,11 @@
 # @dxp/framework
 
+## 0.2.1
+
+### Patch Changes
+
+- ff7fba7: fixed incorrect typings in CMS blocks
+
 ## 0.2.0
 
 ### Minor Changes
