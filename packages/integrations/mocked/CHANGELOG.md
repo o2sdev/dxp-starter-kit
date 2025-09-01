@@ -1,5 +1,11 @@
 # @dxp/integrations.mocked
 
+## 0.4.3
+
+### Patch Changes
+
+- aff949a: updated theme logos
+
 ## 0.4.2
 
 ### Patch Changes
