@@ -1,5 +1,11 @@
 # @dxp/integrations.mocked
 
+## 0.4.2
+
+### Patch Changes
+
+- 915d6b5: updated theme colors & updated theme logos
+
 ## 0.4.1
 
 ### Patch Changes
