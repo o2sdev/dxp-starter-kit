@@ -1,5 +1,11 @@
 # @dxp/ui
 
+## 1.4.1
+
+### Patch Changes
+
+- 915d6b5: updated theme colors & updated theme logos
+
 ## 1.4.0
 
 ### Minor Changes
