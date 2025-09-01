@@ -28,24 +28,36 @@ export function DesktopNavigation({ logoSlot, localeSlot, items }: DesktopNaviga
     const itemClassNames =
         'data-active:bg-transparent data-active:underline underline-offset-4 hover:!bg-transparent hover:underline';
 
+    // Find all path segments from the current pathname
+    const pathSegments = pathname
+        .split('/')
+        .filter(Boolean)
+        .map((_segment, index, segments) => '/' + segments.slice(0, index + 1).join('/'));
+
+    // Add root path if not already included
+    if (!pathSegments.includes('/')) {
+        pathSegments.unshift('/');
+    }
+
+    // Find the active navigation group that matches the deepest path segment
     const activeNavigationGroup = items.find((item) => {
         if (item.__typename === 'NavigationGroup') {
             if (item.url) {
-                return item.url && pathname.startsWith(item.url);
+                return pathSegments.includes(item.url);
             }
 
             return item.items
                 .filter((item) => item.__typename === 'NavigationItem')
                 .some((item) => {
                     if (pathname !== '/') {
-                        return item.url !== '/' && item.url && pathname.startsWith(item.url);
+                        return item.url !== '/' && item.url && pathSegments.includes(item.url);
                     }
 
-                    return item.url && pathname.startsWith(item.url);
+                    return item.url && pathSegments.includes(item.url);
                 });
         }
 
-        return item.url && pathname.includes(item.url);
+        return item.url && pathSegments.includes(item.url);
     });
 
     const navigationItemClass = cn(navigationMenuTriggerStyle(), '!text-sm', itemClassNames);
@@ -155,23 +167,25 @@ export function DesktopNavigation({ logoSlot, localeSlot, items }: DesktopNaviga
                                                 <NavigationItem
                                                     item={item}
                                                     key={item.label}
-                                                    active={activeNavigationGroup?.url === item.url}
+                                                    active={item.url ? pathSegments.includes(item.url) : false}
                                                     className={cn(itemClassNames, 'hover:!text-navbar-primary')}
                                                 />
                                             );
-                                        case 'NavigationGroup':
+                                        case 'NavigationGroup': {
+                                            const url = getUrl(item);
                                             return (
                                                 <NavigationItem
                                                     item={{
                                                         label: item.title,
-                                                        url: getUrl(item),
+                                                        url: url,
                                                         __typename: 'NavigationItem',
                                                     }}
                                                     key={item.title}
-                                                    active={activeNavigationGroup?.url === getUrl(item)}
+                                                    active={url ? pathSegments.includes(url) : false}
                                                     className={cn(itemClassNames, 'hover:!text-navbar-primary')}
                                                 />
                                             );
+                                        }
                                     }
                                 })}
                             </NavigationMenuList>
@@ -202,7 +216,7 @@ export function DesktopNavigation({ logoSlot, localeSlot, items }: DesktopNaviga
                                                     <NavigationItem
                                                         item={item}
                                                         key={item.label}
-                                                        active={pathname === item.url}
+                                                        active={item.url ? pathSegments.includes(item.url) : false}
                                                         className="!text-sm !text-navbar-sub-foreground hover:!text-navbar-sub-foreground"
                                                     />
                                                 );
