@@ -140,13 +140,13 @@ const MOCK_FEATURE_SECTION_GRID_BLOCKS_PL = [MOCK_FEATURE_SECTION_GRID_BLOCK_1_P
 export const mapFeatureSectionGridBlock = ({
     locale,
     id,
-}: CMS.Request.GetCmsEntryParams): CMS.Model.FeatureSectionGridBlock.FeatureSectionGridBlock | undefined => {
+}: CMS.Request.GetCmsEntryParams): CMS.Model.FeatureSectionGridBlock.FeatureSectionGridBlock => {
     switch (locale) {
         case 'de':
-            return MOCK_FEATURE_SECTION_GRID_BLOCKS_DE.find((block) => block.id === id);
+            return MOCK_FEATURE_SECTION_GRID_BLOCKS_DE.find((block) => block.id === id)!;
         case 'pl':
-            return MOCK_FEATURE_SECTION_GRID_BLOCKS_PL.find((block) => block.id === id);
+            return MOCK_FEATURE_SECTION_GRID_BLOCKS_PL.find((block) => block.id === id)!;
         default:
-            return MOCK_FEATURE_SECTION_GRID_BLOCKS_EN.find((block) => block.id === id);
+            return MOCK_FEATURE_SECTION_GRID_BLOCKS_EN.find((block) => block.id === id)!;
     }
 };
