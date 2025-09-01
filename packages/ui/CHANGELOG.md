@@ -1,5 +1,15 @@
 # @dxp/ui
 
+## 1.4.0
+
+### Minor Changes
+
+- e8c3d7d: add themes: premium, personal, business
+
+### Patch Changes
+
+- 5654a4b: added Storybook support for blocks
+
 ## 1.3.0
 
 ### Minor Changes

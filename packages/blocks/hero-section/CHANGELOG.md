@@ -1,5 +1,14 @@
 # @dxp/blocks.hero-section
 
+## 0.1.2
+
+### Patch Changes
+
+- 5654a4b: added Storybook support for blocks
+- Updated dependencies [5654a4b]
+- Updated dependencies [e8c3d7d]
+  - @dxp/ui@1.4.0
+
 ## 0.1.1
 
 ### Patch Changes
