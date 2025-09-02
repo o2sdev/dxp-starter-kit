@@ -79,7 +79,7 @@ export const HeroSectionPure: React.FC<HeroSectionPureProps> = ({ locale, access
                         alt={image.alt}
                         width={image.width}
                         height={image.height}
-                        className="object-cover h-auto w-full rounded-xl"
+                        className="object-scale-down rounded-xl"
                     />
                 </div>
             )}
