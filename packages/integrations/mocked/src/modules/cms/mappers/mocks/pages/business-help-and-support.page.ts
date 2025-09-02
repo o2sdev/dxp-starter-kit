@@ -17,6 +17,18 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    parent: {
+        slug: '/business/cards',
+        seo: {
+            title: 'Cards',
+        },
+        parent: {
+            slug: '/business',
+            seo: {
+                title: 'Business',
+            },
+        },
+    },
     theme: 'business',
     permissions: [],
     hasOwnTitle: false,
@@ -58,6 +70,18 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    parent: {
+        slug: '/geschaftlich/karten',
+        seo: {
+            title: 'Karten',
+        },
+        parent: {
+            slug: '/geschaftlich',
+            seo: {
+                title: 'Geschäftlich',
+            },
+        },
+    },
     theme: 'business',
     permissions: [],
     hasOwnTitle: false,
@@ -97,6 +121,18 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL: CMS.Model.Page.Page = {
             width: 150,
             height: 150,
             alt: 'Placeholder',
+        },
+    },
+    parent: {
+        slug: '/firma/karty',
+        seo: {
+            title: 'Karty',
+        },
+        parent: {
+            slug: '/firma',
+            seo: {
+                title: 'Firma',
+            },
         },
     },
     theme: 'business',

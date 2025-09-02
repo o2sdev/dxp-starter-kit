@@ -15,7 +15,7 @@ program
     .argument('[name]', 'Name of the new project')
     .option('--directory [directory]', 'Specify the destination directory', 'my-dxp-project')
     .action(async (name, options) => {
-        telemetry.sendEvent('create-dxp-app', 'create-project');
+        telemetry.sendEvent('dxp', 'create-o2s-app', 'create-project');
         await telemetry.flushEvents();
 
         const projectName = name

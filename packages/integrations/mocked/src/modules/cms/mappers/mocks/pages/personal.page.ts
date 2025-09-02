@@ -211,7 +211,7 @@ export const PAGE_PERSONAL_PL: CMS.Model.Page.Page = {
     },
     theme: 'personal',
     permissions: [],
-    hasOwnTitle: false,
+    hasOwnTitle: true,
     showBreadcrumbs: false,
     template: {
         __typename: 'OneColumnTemplate',
