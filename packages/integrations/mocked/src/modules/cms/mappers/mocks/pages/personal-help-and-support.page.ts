@@ -17,6 +17,12 @@ export const PAGE_PERSONAL_HELP_AND_SUPPORT_1_EN: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    parent: {
+        slug: '/personal',
+        seo: {
+            title: 'Personal',
+        },
+    },
     theme: 'personal',
     permissions: [],
     hasOwnTitle: false,
@@ -58,6 +64,12 @@ export const PAGE_PERSONAL_HELP_AND_SUPPORT_1_DE: CMS.Model.Page.Page = {
             alt: 'Placeholder',
         },
     },
+    parent: {
+        slug: '/personlich',
+        seo: {
+            title: 'Persönlich',
+        },
+    },
     theme: 'personal',
     permissions: [],
     hasOwnTitle: false,
@@ -97,6 +109,12 @@ export const PAGE_PERSONAL_HELP_AND_SUPPORT_1_PL: CMS.Model.Page.Page = {
             width: 150,
             height: 150,
             alt: 'Placeholder',
+        },
+    },
+    parent: {
+        slug: '/indywidualny',
+        seo: {
+            title: 'Indywidualny',
         },
     },
     theme: 'personal',
