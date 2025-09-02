@@ -1,5 +1,11 @@
 # @dxp/blocks.feature-section
 
+## 0.1.4
+
+### Patch Changes
+
+- 80cc815: fixed image sizing
+
 ## 0.1.3
 
 ### Patch Changes

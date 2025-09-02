@@ -1,5 +1,11 @@
 # @dxp/blocks.media-section
 
+## 0.1.3
+
+### Patch Changes
+
+- 80cc815: fixed image sizing
+
 ## 0.1.2
 
 ### Patch Changes
