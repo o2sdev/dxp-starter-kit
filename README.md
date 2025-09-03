@@ -1,4 +1,4 @@
-[![DXP Frontend Starter – Open Self Service]([apps/docs/static/img/o2s-gh-cover.png](https://raw.githubusercontent.com/o2sdev/openselfservice/420de04d09984a38122cd70dd666ea80e5493e29/apps/docs/static/img/dxp-gh-cover.png))](https://www.openselfservice.com/dxp)
+[![DXP Frontend Starter – Open Self Service](https://raw.githubusercontent.com/o2sdev/openselfservice/420de04d09984a38122cd70dd666ea80e5493e29/apps/docs/static/img/dxp-gh-cover.png)](https://www.openselfservice.com/dxp)
 
 # DXP Frontend Starter Kit
 
@@ -67,7 +67,7 @@ cd apps/api-harmonization && npm run dev # (Optional) Start the API server
 
 **Please remember that content presented on the demo is examplary - it can be fully managed from the integrated CMS, all blocks and components, as well as the UI theme can be customized.**
 
-[![O2S Demo]([apps/docs/static/img/o2s-gh-demo.png](https://raw.githubusercontent.com/o2sdev/openselfservice/420de04d09984a38122cd70dd666ea80e5493e29/apps/docs/static/img/dxp-gh-demo.png))](https://demo-dxp.openselfservice.com)
+[![O2S Demo](https://raw.githubusercontent.com/o2sdev/openselfservice/420de04d09984a38122cd70dd666ea80e5493e29/apps/docs/static/img/dxp-gh-demo.png)](https://demo-dxp.openselfservice.com)
 
 ---
 
