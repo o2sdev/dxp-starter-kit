@@ -1,4 +1,4 @@
-[![Open Self Service - open-source development kit for composable Customer Portals](https://raw.githubusercontent.com/o2sdev/openselfservice/main/apps/docs/static/img/dxp-gh-cover.png)](https://www.openselfservice.com)
+[![Open Self Service - open-source development kit for composable Customer Portals](https://raw.githubusercontent.com/o2sdev/openselfservice/main/apps/docs/static/img/dxp-gh-cover.png)](https://www.openselfservice.com/dxp)
 
 # Open Self Service (O2S)
 
