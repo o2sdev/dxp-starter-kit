@@ -39,7 +39,7 @@ More: [Project structure documentation](https://www.openselfservice.com/docs/get
 ## 📖 Documentation
 
 📚 **See full documentation:**  
-👉 https://www.openselfservice.com/docs
+👉 https://www.openselfservice.com/docs/app-starters/dxp/overview
 
 Includes guides for installation, configuration, content modeling, and extensibility.
 
