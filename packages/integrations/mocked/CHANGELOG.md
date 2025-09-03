@@ -1,5 +1,11 @@
 # @dxp/integrations.mocked
 
+## 0.4.4
+
+### Patch Changes
+
+- 00c26a7: updated SEO for mocked pages
+
 ## 0.4.3
 
 ### Patch Changes
