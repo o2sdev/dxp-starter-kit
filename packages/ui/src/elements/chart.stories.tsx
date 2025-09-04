@@ -20,8 +20,8 @@ const meta = {
     argTypes: {
         children: {
             table: {
-                disable: true
-            }
+                disable: true,
+            },
         },
     },
 } satisfies Meta<typeof ChartContainer>;

@@ -22,7 +22,9 @@ export const Default: Story = {
             <SheetContent closeLabel="Close">
                 <SheetHeader>
                     <SheetTitle>Edit Profile</SheetTitle>
-                    <SheetDescription>Make changes to your profile here. Click save when you're done.</SheetDescription>
+                    <SheetDescription>
+                        Make changes to your profile here. Click save when you are done.
+                    </SheetDescription>
                 </SheetHeader>
                 <div className="grid gap-4 py-4">
                     <div className="grid grid-cols-4 items-center gap-4">

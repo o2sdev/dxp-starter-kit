@@ -60,8 +60,8 @@ export const SpecialFormats: Story = {
             <Typography variant="blockquote">
                 This is a blockquote that can be used to highlight important information or quotes.
             </Typography>
-            <Typography variant="inlineCode">const example = "inline code";</Typography>
-            <Typography variant="code">const codeBlock = "code block";</Typography>
+            <Typography variant="inlineCode">const example = inline code;</Typography>
+            <Typography variant="code">const codeBlock = code block;</Typography>
         </div>
     ),
 };

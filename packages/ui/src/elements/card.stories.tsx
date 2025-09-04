@@ -29,7 +29,9 @@ export const Default: Story = {
                 </ul>
             </CardContent>
             <CardFooter className="flex justify-between">
-                <Button variant="outline" size="default">Cancel</Button>
+                <Button variant="outline" size="default">
+                    Cancel
+                </Button>
                 <Button>Create</Button>
             </CardFooter>
         </Card>

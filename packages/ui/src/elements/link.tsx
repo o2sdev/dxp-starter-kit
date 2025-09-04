@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { baseVariant, cn, linkVariants } from '@dxp/ui/lib/utils';
 
-interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof baseVariant> {
+export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof baseVariant> {
     asChild?: boolean;
 }
 
