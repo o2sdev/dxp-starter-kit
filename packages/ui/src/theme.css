@@ -2,10 +2,10 @@
     --background: hsl(0 0% 100%);
     --foreground: hsl(225 9% 9%);
     --card: hsl(0, 0%, 100%);
-    --card-foreground: hsl(0, 0%, 100%);
+    --card-foreground: hsl(240 10% 4%);
     --popover: hsl(0 0% 100%);
     --popover-foreground: hsl(240 10% 4%);
-    --primary: hsl(113.9,100%,27.1%);
+    --primary: hsl(113.9, 100%, 27.1%);
     --primary-foreground: hsl(0 0% 100%);
     --secondary: hsla(114, 95%, 32%, 0.1);
     --secondary-foreground: hsl(0 0% 0%);
