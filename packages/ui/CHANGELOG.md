@@ -1,5 +1,11 @@
 # @dxp/ui
 
+## 1.4.2
+
+### Patch Changes
+
+- d3f3ce1: added stories for UI components
+
 ## 1.4.1
 
 ### Patch Changes
