@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import React from 'react';
 
 import { ChartRoundedBarProps } from '../ChartRoundedBar';
 
@@ -73,6 +74,13 @@ export const Default: Story = {
         },
         unit: 'USD',
     },
+    decorators: [
+        (Story) => (
+            <div className="w-lg h-lg">
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export const WithEuroUnit: Story = {
@@ -80,6 +88,13 @@ export const WithEuroUnit: Story = {
         ...Default.args,
         unit: 'EUR',
     },
+    decorators: [
+        (Story) => (
+            <div className="w-lg h-lg">
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export const WithPriceTooltip: Story = {
@@ -87,6 +102,13 @@ export const WithPriceTooltip: Story = {
         ...Default.args,
         tooltipType: 'price',
     },
+    decorators: [
+        (Story) => (
+            <div className="w-lg h-lg">
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export const WithNumberTooltip: Story = {
@@ -94,6 +116,13 @@ export const WithNumberTooltip: Story = {
         ...Default.args,
         tooltipType: 'number',
     },
+    decorators: [
+        (Story) => (
+            <div className="w-lg h-lg">
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export const WithCustomMaxBarSize: Story = {
@@ -101,6 +130,13 @@ export const WithCustomMaxBarSize: Story = {
         ...Default.args,
         maxBarSize: 40,
     },
+    decorators: [
+        (Story) => (
+            <div className="w-lg h-lg">
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export const WithZeroValues: Story = {
@@ -130,6 +166,13 @@ export const WithZeroValues: Story = {
             },
         ],
     },
+    decorators: [
+        (Story) => (
+            <div className="w-lg h-lg">
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export const WithSingleSegment: Story = {
@@ -159,4 +202,11 @@ export const WithSingleSegment: Story = {
             },
         ],
     },
+    decorators: [
+        (Story) => (
+            <div className="w-lg h-lg">
+                <Story />
+            </div>
+        ),
+    ],
 };
