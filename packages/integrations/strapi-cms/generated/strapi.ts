@@ -41,7 +41,21 @@ export type AppConfig = {
     signedInHeader?: Maybe<Header>;
     signedOutFooter?: Maybe<Footer>;
     signedOutHeader?: Maybe<Header>;
+    themes: Array<Maybe<Theme>>;
+    themes_connection?: Maybe<ThemeRelationResponseCollection>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type AppConfigThemesArgs = {
+    filters?: InputMaybe<ThemeFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type AppConfigThemes_ConnectionArgs = {
+    filters?: InputMaybe<ThemeFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type AppConfigInput = {
@@ -50,6 +64,7 @@ export type AppConfigInput = {
     signedInHeader?: InputMaybe<Scalars['ID']['input']>;
     signedOutFooter?: InputMaybe<Scalars['ID']['input']>;
     signedOutHeader?: InputMaybe<Scalars['ID']['input']>;
+    themes?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
 };
 
 export type AppConfigRelationResponseCollection = {
@@ -433,6 +448,19 @@ export type ComponentComponentsCtaSectionLinksArgs = {
     sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type ComponentComponentsDocumentList = {
+    description?: Maybe<Scalars['String']['output']>;
+    documents?: Maybe<Array<Maybe<ComponentContentFile>>>;
+    id: Scalars['ID']['output'];
+    title?: Maybe<Scalars['String']['output']>;
+};
+
+export type ComponentComponentsDocumentListDocumentsArgs = {
+    filters?: InputMaybe<ComponentContentFileFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type ComponentComponentsFaq = {
     banner?: Maybe<ComponentContentBanner>;
     description?: Maybe<Scalars['String']['output']>;
@@ -594,9 +622,9 @@ export type ComponentContentBadgeFiltersInput = {
 
 export type ComponentContentBanner = {
     altDescription?: Maybe<Scalars['String']['output']>;
-    button?: Maybe<ComponentContentLink>;
     description?: Maybe<Scalars['String']['output']>;
     id: Scalars['ID']['output'];
+    link?: Maybe<ComponentContentLink>;
     title: Scalars['String']['output'];
 };
 
@@ -625,6 +653,7 @@ export type ComponentContentDynamicZone =
     | ComponentComponentsCategory
     | ComponentComponentsCategoryList
     | ComponentComponentsCtaSection
+    | ComponentComponentsDocumentList
     | ComponentComponentsFaq
     | ComponentComponentsFeatureSection
     | ComponentComponentsFeatureSectionGrid
@@ -680,6 +709,21 @@ export type ComponentContentFieldMappingValuesArgs = {
     filters?: InputMaybe<ComponentContentKeyValueFiltersInput>;
     pagination?: InputMaybe<PaginationArg>;
     sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentContentFile = {
+    file: UploadFile;
+    icon?: Maybe<Scalars['String']['output']>;
+    id: Scalars['ID']['output'];
+    title: Scalars['String']['output'];
+};
+
+export type ComponentContentFileFiltersInput = {
+    and?: InputMaybe<Array<InputMaybe<ComponentContentFileFiltersInput>>>;
+    icon?: InputMaybe<StringFilterInput>;
+    not?: InputMaybe<ComponentContentFileFiltersInput>;
+    or?: InputMaybe<Array<InputMaybe<ComponentContentFileFiltersInput>>>;
+    title?: InputMaybe<StringFilterInput>;
 };
 
 export type ComponentContentIconWithText = {
@@ -745,6 +789,7 @@ export type ComponentContentLink = {
     label: Scalars['String']['output'];
     page?: Maybe<Page>;
     url?: Maybe<Scalars['String']['output']>;
+    variant?: Maybe<Enum_Componentcontentlink_Variant>;
 };
 
 export type ComponentContentLinkFiltersInput = {
@@ -756,6 +801,7 @@ export type ComponentContentLinkFiltersInput = {
     or?: InputMaybe<Array<InputMaybe<ComponentContentLinkFiltersInput>>>;
     page?: InputMaybe<PageFiltersInput>;
     url?: InputMaybe<StringFilterInput>;
+    variant?: InputMaybe<StringFilterInput>;
 };
 
 export type ComponentContentListWithIcons = {
@@ -799,7 +845,9 @@ export type ComponentContentMessageSimpleInput = {
 export type ComponentContentNavigationGroup = {
     id: Scalars['ID']['output'];
     items: Array<Maybe<ComponentContentNavigationItem>>;
+    page?: Maybe<Page>;
     title: Scalars['String']['output'];
+    url?: Maybe<Scalars['String']['output']>;
 };
 
 export type ComponentContentNavigationGroupItemsArgs = {
@@ -1027,6 +1075,7 @@ export type ComponentLayoutSection = {
     background: Enum_Componentlayoutsection_Background;
     id: Scalars['ID']['output'];
     spacing: Enum_Componentlayoutsection_Spacing;
+    theme?: Maybe<Theme>;
     variant: Enum_Componentlayoutsection_Variant;
 };
 
@@ -1036,6 +1085,7 @@ export type ComponentLayoutSectionFiltersInput = {
     not?: InputMaybe<ComponentLayoutSectionFiltersInput>;
     or?: InputMaybe<Array<InputMaybe<ComponentLayoutSectionFiltersInput>>>;
     spacing?: InputMaybe<StringFilterInput>;
+    theme?: InputMaybe<ThemeFiltersInput>;
     variant?: InputMaybe<StringFilterInput>;
 };
 
@@ -1043,7 +1093,14 @@ export type ComponentLayoutSectionInput = {
     background?: InputMaybe<Enum_Componentlayoutsection_Background>;
     id?: InputMaybe<Scalars['ID']['input']>;
     spacing?: InputMaybe<Enum_Componentlayoutsection_Spacing>;
+    theme?: InputMaybe<Scalars['ID']['input']>;
     variant?: InputMaybe<Enum_Componentlayoutsection_Variant>;
+};
+
+export type ComponentLayoutTheme = {
+    id: Scalars['ID']['output'];
+    logo?: Maybe<UploadFile>;
+    name?: Maybe<Enum_Componentlayouttheme_Name>;
 };
 
 export type ComponentRelationResponseCollection = {
@@ -1263,6 +1320,16 @@ export enum Enum_Componentcontentbadge_Variant {
     Secondary = 'secondary',
 }
 
+export enum Enum_Componentcontentlink_Variant {
+    Destructive = 'destructive',
+    Ghost = 'ghost',
+    Link = 'link',
+    Outline = 'outline',
+    Primary = 'primary',
+    Secondary = 'secondary',
+    Tertiary = 'tertiary',
+}
+
 export enum Enum_Componentcontentprice_Currency {
     Eur = 'EUR',
     Gbp = 'GBP',
@@ -1288,6 +1355,12 @@ export enum Enum_Componentlayoutsection_Variant {
     Full = 'full',
     Narrow = 'narrow',
     Wide = 'wide',
+}
+
+export enum Enum_Componentlayouttheme_Name {
+    Business = 'business',
+    Default = 'default',
+    Personal = 'personal',
 }
 
 export type Error = {
@@ -1335,6 +1408,7 @@ export type Footer = {
     localizations: Array<Maybe<Footer>>;
     localizations_connection?: Maybe<FooterRelationResponseCollection>;
     logo: UploadFile;
+    logoLabel?: Maybe<Scalars['String']['output']>;
     publishedAt?: Maybe<Scalars['DateTime']['output']>;
     title: Scalars['String']['output'];
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -1364,6 +1438,7 @@ export type FooterFiltersInput = {
     documentId?: InputMaybe<IdFilterInput>;
     locale?: InputMaybe<StringFilterInput>;
     localizations?: InputMaybe<FooterFiltersInput>;
+    logoLabel?: InputMaybe<StringFilterInput>;
     not?: InputMaybe<FooterFiltersInput>;
     or?: InputMaybe<Array<InputMaybe<FooterFiltersInput>>>;
     publishedAt?: InputMaybe<DateTimeFilterInput>;
@@ -1375,6 +1450,7 @@ export type FooterInput = {
     copyright?: InputMaybe<Scalars['String']['input']>;
     items?: InputMaybe<Array<Scalars['FooterItemsDynamicZoneInput']['input']>>;
     logo?: InputMaybe<Scalars['ID']['input']>;
+    logoLabel?: InputMaybe<Scalars['String']['input']>;
     publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
     title?: InputMaybe<Scalars['String']['input']>;
 };
@@ -1398,6 +1474,7 @@ export type GenericMorph =
     | ComponentComponentsCategory
     | ComponentComponentsCategoryList
     | ComponentComponentsCtaSection
+    | ComponentComponentsDocumentList
     | ComponentComponentsFaq
     | ComponentComponentsFeatureSection
     | ComponentComponentsFeatureSectionGrid
@@ -1413,6 +1490,7 @@ export type GenericMorph =
     | ComponentContentFaqSection
     | ComponentContentFeatureItem
     | ComponentContentFieldMapping
+    | ComponentContentFile
     | ComponentContentIconWithText
     | ComponentContentInformationCard
     | ComponentContentKeyValue
@@ -1432,6 +1510,7 @@ export type GenericMorph =
     | ComponentLabelsMedia
     | ComponentLabelsValidation
     | ComponentLayoutSection
+    | ComponentLayoutTheme
     | ComponentSeoMetadata
     | ComponentSeoSeo
     | ComponentSeoUserRoles
@@ -1446,6 +1525,7 @@ export type GenericMorph =
     | Page
     | ReviewWorkflowsWorkflow
     | ReviewWorkflowsWorkflowStage
+    | Theme
     | UploadFile
     | UsersPermissionsPermission
     | UsersPermissionsRole
@@ -1461,6 +1541,7 @@ export type Header = {
     localizations: Array<Maybe<Header>>;
     localizations_connection?: Maybe<HeaderRelationResponseCollection>;
     logo: UploadFile;
+    logoLabel: Scalars['String']['output'];
     notification?: Maybe<Page>;
     openMobileMenuLabel: Scalars['String']['output'];
     publishedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -1495,6 +1576,7 @@ export type HeaderFiltersInput = {
     languageSwitcherLabel?: InputMaybe<StringFilterInput>;
     locale?: InputMaybe<StringFilterInput>;
     localizations?: InputMaybe<HeaderFiltersInput>;
+    logoLabel?: InputMaybe<StringFilterInput>;
     not?: InputMaybe<HeaderFiltersInput>;
     notification?: InputMaybe<PageFiltersInput>;
     openMobileMenuLabel?: InputMaybe<StringFilterInput>;
@@ -1511,6 +1593,7 @@ export type HeaderInput = {
     items?: InputMaybe<Array<Scalars['HeaderItemsDynamicZoneInput']['input']>>;
     languageSwitcherLabel?: InputMaybe<Scalars['String']['input']>;
     logo?: InputMaybe<Scalars['ID']['input']>;
+    logoLabel?: InputMaybe<Scalars['String']['input']>;
     notification?: InputMaybe<Scalars['ID']['input']>;
     openMobileMenuLabel?: InputMaybe<Scalars['String']['input']>;
     publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -1668,6 +1751,7 @@ export type Mutation = {
     createPage?: Maybe<Page>;
     createReviewWorkflowsWorkflow?: Maybe<ReviewWorkflowsWorkflow>;
     createReviewWorkflowsWorkflowStage?: Maybe<ReviewWorkflowsWorkflowStage>;
+    createTheme?: Maybe<Theme>;
     /** Create a new role */
     createUsersPermissionsRole?: Maybe<UsersPermissionsCreateRolePayload>;
     /** Create a new user */
@@ -1685,6 +1769,7 @@ export type Mutation = {
     deletePage?: Maybe<DeleteMutationResponse>;
     deleteReviewWorkflowsWorkflow?: Maybe<DeleteMutationResponse>;
     deleteReviewWorkflowsWorkflowStage?: Maybe<DeleteMutationResponse>;
+    deleteTheme?: Maybe<DeleteMutationResponse>;
     deleteUploadFile?: Maybe<UploadFile>;
     /** Delete an existing role */
     deleteUsersPermissionsRole?: Maybe<UsersPermissionsDeleteRolePayload>;
@@ -1712,6 +1797,7 @@ export type Mutation = {
     updatePage?: Maybe<Page>;
     updateReviewWorkflowsWorkflow?: Maybe<ReviewWorkflowsWorkflow>;
     updateReviewWorkflowsWorkflowStage?: Maybe<ReviewWorkflowsWorkflowStage>;
+    updateTheme?: Maybe<Theme>;
     updateUploadFile: UploadFile;
     /** Update an existing role */
     updateUsersPermissionsRole?: Maybe<UsersPermissionsUpdateRolePayload>;
@@ -1782,6 +1868,11 @@ export type MutationCreateReviewWorkflowsWorkflowStageArgs = {
     status?: InputMaybe<PublicationStatus>;
 };
 
+export type MutationCreateThemeArgs = {
+    data: ThemeInput;
+    status?: InputMaybe<PublicationStatus>;
+};
+
 export type MutationCreateUsersPermissionsRoleArgs = {
     data: UsersPermissionsRoleInput;
 };
@@ -1846,6 +1937,10 @@ export type MutationDeleteReviewWorkflowsWorkflowArgs = {
 };
 
 export type MutationDeleteReviewWorkflowsWorkflowStageArgs = {
+    documentId: Scalars['ID']['input'];
+};
+
+export type MutationDeleteThemeArgs = {
     documentId: Scalars['ID']['input'];
 };
 
@@ -1968,6 +2063,12 @@ export type MutationUpdateReviewWorkflowsWorkflowStageArgs = {
     status?: InputMaybe<PublicationStatus>;
 };
 
+export type MutationUpdateThemeArgs = {
+    data: ThemeInput;
+    documentId: Scalars['ID']['input'];
+    status?: InputMaybe<PublicationStatus>;
+};
+
 export type MutationUpdateUploadFileArgs = {
     id: Scalars['ID']['input'];
     info?: InputMaybe<FileInfoInput>;
@@ -2013,7 +2114,8 @@ export type NotFoundPageRelationResponseCollection = {
 
 export type Page = {
     SEO: ComponentSeoSeo;
-    child?: Maybe<Page>;
+    children: Array<Maybe<Page>>;
+    children_connection?: Maybe<PageRelationResponseCollection>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     documentId: Scalars['ID']['output'];
     hasOwnTitle: Scalars['Boolean']['output'];
@@ -2023,10 +2125,24 @@ export type Page = {
     parent?: Maybe<Page>;
     permissions?: Maybe<ComponentSeoUserRoles>;
     publishedAt?: Maybe<Scalars['DateTime']['output']>;
+    redirect?: Maybe<Page>;
     showBreadcrumbs: Scalars['Boolean']['output'];
     slug: Scalars['String']['output'];
     template: Array<Maybe<PageTemplateDynamicZone>>;
+    theme?: Maybe<Theme>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type PageChildrenArgs = {
+    filters?: InputMaybe<PageFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type PageChildren_ConnectionArgs = {
+    filters?: InputMaybe<PageFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type PageLocalizationsArgs = {
@@ -2049,7 +2165,7 @@ export type PageEntityResponseCollection = {
 export type PageFiltersInput = {
     SEO?: InputMaybe<ComponentSeoSeoFiltersInput>;
     and?: InputMaybe<Array<InputMaybe<PageFiltersInput>>>;
-    child?: InputMaybe<PageFiltersInput>;
+    children?: InputMaybe<PageFiltersInput>;
     createdAt?: InputMaybe<DateTimeFilterInput>;
     documentId?: InputMaybe<IdFilterInput>;
     hasOwnTitle?: InputMaybe<BooleanFilterInput>;
@@ -2060,21 +2176,25 @@ export type PageFiltersInput = {
     parent?: InputMaybe<PageFiltersInput>;
     permissions?: InputMaybe<ComponentSeoUserRolesFiltersInput>;
     publishedAt?: InputMaybe<DateTimeFilterInput>;
+    redirect?: InputMaybe<PageFiltersInput>;
     showBreadcrumbs?: InputMaybe<BooleanFilterInput>;
     slug?: InputMaybe<StringFilterInput>;
+    theme?: InputMaybe<ThemeFiltersInput>;
     updatedAt?: InputMaybe<DateTimeFilterInput>;
 };
 
 export type PageInput = {
     SEO?: InputMaybe<ComponentSeoSeoInput>;
-    child?: InputMaybe<Scalars['ID']['input']>;
+    children?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
     hasOwnTitle?: InputMaybe<Scalars['Boolean']['input']>;
     parent?: InputMaybe<Scalars['ID']['input']>;
     permissions?: InputMaybe<ComponentSeoUserRolesInput>;
     publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+    redirect?: InputMaybe<Scalars['ID']['input']>;
     showBreadcrumbs?: InputMaybe<Scalars['Boolean']['input']>;
     slug?: InputMaybe<Scalars['String']['input']>;
     template?: InputMaybe<Array<Scalars['PageTemplateDynamicZoneInput']['input']>>;
+    theme?: InputMaybe<Scalars['ID']['input']>;
 };
 
 export type PageRelationResponseCollection = {
@@ -2140,6 +2260,9 @@ export type Query = {
     reviewWorkflowsWorkflowStages_connection?: Maybe<ReviewWorkflowsWorkflowStageEntityResponseCollection>;
     reviewWorkflowsWorkflows: Array<Maybe<ReviewWorkflowsWorkflow>>;
     reviewWorkflowsWorkflows_connection?: Maybe<ReviewWorkflowsWorkflowEntityResponseCollection>;
+    theme?: Maybe<Theme>;
+    themes: Array<Maybe<Theme>>;
+    themes_connection?: Maybe<ThemeEntityResponseCollection>;
     uploadFile?: Maybe<UploadFile>;
     uploadFiles: Array<Maybe<UploadFile>>;
     uploadFiles_connection?: Maybe<UploadFileEntityResponseCollection>;
@@ -2396,6 +2519,25 @@ export type QueryReviewWorkflowsWorkflows_ConnectionArgs = {
     status?: InputMaybe<PublicationStatus>;
 };
 
+export type QueryThemeArgs = {
+    documentId: Scalars['ID']['input'];
+    status?: InputMaybe<PublicationStatus>;
+};
+
+export type QueryThemesArgs = {
+    filters?: InputMaybe<ThemeFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    status?: InputMaybe<PublicationStatus>;
+};
+
+export type QueryThemes_ConnectionArgs = {
+    filters?: InputMaybe<ThemeFiltersInput>;
+    pagination?: InputMaybe<PaginationArg>;
+    sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    status?: InputMaybe<PublicationStatus>;
+};
+
 export type QueryUploadFileArgs = {
     documentId: Scalars['ID']['input'];
     status?: InputMaybe<PublicationStatus>;
@@ -2566,6 +2708,41 @@ export type StringFilterInput = {
     null?: InputMaybe<Scalars['Boolean']['input']>;
     or?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     startsWith?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Theme = {
+    createdAt?: Maybe<Scalars['DateTime']['output']>;
+    documentId: Scalars['ID']['output'];
+    logo?: Maybe<UploadFile>;
+    name: Scalars['String']['output'];
+    publishedAt?: Maybe<Scalars['DateTime']['output']>;
+    updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type ThemeEntityResponseCollection = {
+    nodes: Array<Theme>;
+    pageInfo: Pagination;
+};
+
+export type ThemeFiltersInput = {
+    and?: InputMaybe<Array<InputMaybe<ThemeFiltersInput>>>;
+    createdAt?: InputMaybe<DateTimeFilterInput>;
+    documentId?: InputMaybe<IdFilterInput>;
+    name?: InputMaybe<StringFilterInput>;
+    not?: InputMaybe<ThemeFiltersInput>;
+    or?: InputMaybe<Array<InputMaybe<ThemeFiltersInput>>>;
+    publishedAt?: InputMaybe<DateTimeFilterInput>;
+    updatedAt?: InputMaybe<DateTimeFilterInput>;
+};
+
+export type ThemeInput = {
+    logo?: InputMaybe<Scalars['ID']['input']>;
+    name?: InputMaybe<Scalars['String']['input']>;
+    publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type ThemeRelationResponseCollection = {
+    nodes: Array<Theme>;
 };
 
 export type UploadFile = {
@@ -2918,6 +3095,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               image?: Maybe<_RefType['UploadFile']>;
               links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
           })
+        | (Omit<ComponentComponentsDocumentList, 'documents'> & {
+              documents?: Maybe<Array<Maybe<_RefType['ComponentContentFile']>>>;
+          })
         | (Omit<ComponentComponentsFaq, 'banner'> & { banner?: Maybe<_RefType['ComponentContentBanner']> })
         | (Omit<ComponentComponentsFeatureSection, 'image' | 'links'> & {
               image?: Maybe<_RefType['UploadFile']>;
@@ -2938,8 +3118,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | (Omit<ComponentComponentsQuickLinks, 'items'> & { items: Array<Maybe<_RefType['ComponentContentLink']>> })
         | Error;
     FooterItemsDynamicZone:
-        | (Omit<ComponentContentNavigationGroup, 'items'> & {
+        | (Omit<ComponentContentNavigationGroup, 'items' | 'page'> & {
               items: Array<Maybe<_RefType['ComponentContentNavigationItem']>>;
+              page?: Maybe<_RefType['Page']>;
           })
         | (Omit<ComponentContentNavigationItem, 'page'> & { page?: Maybe<_RefType['Page']> })
         | Error;
@@ -2952,6 +3133,8 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               | 'signedInHeader'
               | 'signedOutFooter'
               | 'signedOutHeader'
+              | 'themes'
+              | 'themes_connection'
           > & {
               localizations: Array<Maybe<_RefType['AppConfig']>>;
               localizations_connection?: Maybe<_RefType['AppConfigRelationResponseCollection']>;
@@ -2959,6 +3142,8 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               signedInHeader?: Maybe<_RefType['Header']>;
               signedOutFooter?: Maybe<_RefType['Footer']>;
               signedOutHeader?: Maybe<_RefType['Header']>;
+              themes: Array<Maybe<_RefType['Theme']>>;
+              themes_connection?: Maybe<_RefType['ThemeRelationResponseCollection']>;
           })
         | (Omit<Article, 'SEO' | 'content' | 'localizations' | 'localizations_connection' | 'parent'> & {
               SEO: _RefType['ComponentSeoSeo'];
@@ -2983,8 +3168,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               localizations_connection?: Maybe<_RefType['CategoryRelationResponseCollection']>;
               parent?: Maybe<_RefType['Page']>;
           })
-        | (Omit<Component, 'content' | 'localizations' | 'localizations_connection'> & {
+        | (Omit<Component, 'content' | 'layout' | 'localizations' | 'localizations_connection'> & {
               content: Array<Maybe<_RefType['ComponentContentDynamicZone']>>;
+              layout: _RefType['ComponentLayoutSection'];
               localizations: Array<Maybe<_RefType['Component']>>;
               localizations_connection?: Maybe<_RefType['ComponentRelationResponseCollection']>;
           })
@@ -3015,6 +3201,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               image?: Maybe<_RefType['UploadFile']>;
               links?: Maybe<Array<Maybe<_RefType['ComponentContentLink']>>>;
           })
+        | (Omit<ComponentComponentsDocumentList, 'documents'> & {
+              documents?: Maybe<Array<Maybe<_RefType['ComponentContentFile']>>>;
+          })
         | (Omit<ComponentComponentsFaq, 'banner'> & { banner?: Maybe<_RefType['ComponentContentBanner']> })
         | (Omit<ComponentComponentsFeatureSection, 'image' | 'links'> & {
               image?: Maybe<_RefType['UploadFile']>;
@@ -3036,7 +3225,7 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | ComponentContentAlertBox
         | ComponentContentArticleSection
         | ComponentContentBadge
-        | (Omit<ComponentContentBanner, 'button'> & { button?: Maybe<_RefType['ComponentContentLink']> })
+        | (Omit<ComponentContentBanner, 'link'> & { link?: Maybe<_RefType['ComponentContentLink']> })
         | (Omit<ComponentContentCardWithImage, 'image' | 'link'> & {
               image?: Maybe<_RefType['UploadFile']>;
               link?: Maybe<_RefType['ComponentContentLink']>;
@@ -3044,6 +3233,7 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | ComponentContentFaqSection
         | ComponentContentFeatureItem
         | ComponentContentFieldMapping
+        | (Omit<ComponentContentFile, 'file'> & { file: _RefType['UploadFile'] })
         | ComponentContentIconWithText
         | (Omit<ComponentContentInformationCard, 'link'> & { link?: Maybe<_RefType['ComponentContentLink']> })
         | ComponentContentKeyValue
@@ -3052,8 +3242,9 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | ComponentContentListWithIcons
         | ComponentContentMessage
         | ComponentContentMessageSimple
-        | (Omit<ComponentContentNavigationGroup, 'items'> & {
+        | (Omit<ComponentContentNavigationGroup, 'items' | 'page'> & {
               items: Array<Maybe<_RefType['ComponentContentNavigationItem']>>;
+              page?: Maybe<_RefType['Page']>;
           })
         | (Omit<ComponentContentNavigationItem, 'page'> & { page?: Maybe<_RefType['Page']> })
         | ComponentContentPrice
@@ -3067,7 +3258,8 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
         | ComponentLabelsErrors
         | ComponentLabelsMedia
         | ComponentLabelsValidation
-        | ComponentLayoutSection
+        | (Omit<ComponentLayoutSection, 'theme'> & { theme?: Maybe<_RefType['Theme']> })
+        | (Omit<ComponentLayoutTheme, 'logo'> & { logo?: Maybe<_RefType['UploadFile']> })
         | ComponentSeoMetadata
         | (Omit<ComponentSeoSeo, 'image'> & { image?: Maybe<_RefType['UploadFile']> })
         | ComponentSeoUserRoles
@@ -3120,23 +3312,39 @@ export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
               localizations_connection?: Maybe<_RefType['NotFoundPageRelationResponseCollection']>;
               page?: Maybe<_RefType['Page']>;
           })
-        | (Omit<Page, 'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template'> & {
+        | (Omit<
+              Page,
+              | 'SEO'
+              | 'children'
+              | 'children_connection'
+              | 'localizations'
+              | 'localizations_connection'
+              | 'parent'
+              | 'redirect'
+              | 'template'
+              | 'theme'
+          > & {
               SEO: _RefType['ComponentSeoSeo'];
-              child?: Maybe<_RefType['Page']>;
+              children: Array<Maybe<_RefType['Page']>>;
+              children_connection?: Maybe<_RefType['PageRelationResponseCollection']>;
               localizations: Array<Maybe<_RefType['Page']>>;
               localizations_connection?: Maybe<_RefType['PageRelationResponseCollection']>;
               parent?: Maybe<_RefType['Page']>;
+              redirect?: Maybe<_RefType['Page']>;
               template: Array<Maybe<_RefType['PageTemplateDynamicZone']>>;
+              theme?: Maybe<_RefType['Theme']>;
           })
         | ReviewWorkflowsWorkflow
         | ReviewWorkflowsWorkflowStage
+        | (Omit<Theme, 'logo'> & { logo?: Maybe<_RefType['UploadFile']> })
         | (Omit<UploadFile, 'related'> & { related?: Maybe<Array<Maybe<_RefType['GenericMorph']>>> })
         | UsersPermissionsPermission
         | UsersPermissionsRole
         | UsersPermissionsUser;
     HeaderItemsDynamicZone:
-        | (Omit<ComponentContentNavigationGroup, 'items'> & {
+        | (Omit<ComponentContentNavigationGroup, 'items' | 'page'> & {
               items: Array<Maybe<_RefType['ComponentContentNavigationItem']>>;
+              page?: Maybe<_RefType['Page']>;
           })
         | (Omit<ComponentContentNavigationItem, 'page'> & { page?: Maybe<_RefType['Page']> })
         | Error;
@@ -3179,6 +3387,8 @@ export type ResolversTypes = {
             | 'signedInHeader'
             | 'signedOutFooter'
             | 'signedOutHeader'
+            | 'themes'
+            | 'themes_connection'
         > & {
             localizations: Array<Maybe<ResolversTypes['AppConfig']>>;
             localizations_connection?: Maybe<ResolversTypes['AppConfigRelationResponseCollection']>;
@@ -3186,6 +3396,8 @@ export type ResolversTypes = {
             signedInHeader?: Maybe<ResolversTypes['Header']>;
             signedOutFooter?: Maybe<ResolversTypes['Footer']>;
             signedOutHeader?: Maybe<ResolversTypes['Header']>;
+            themes: Array<Maybe<ResolversTypes['Theme']>>;
+            themes_connection?: Maybe<ResolversTypes['ThemeRelationResponseCollection']>;
         }
     >;
     AppConfigInput: AppConfigInput;
@@ -3248,8 +3460,9 @@ export type ResolversTypes = {
         Omit<CategoryRelationResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['Category']> }
     >;
     Component: ResolverTypeWrapper<
-        Omit<Component, 'content' | 'localizations' | 'localizations_connection'> & {
+        Omit<Component, 'content' | 'layout' | 'localizations' | 'localizations_connection'> & {
             content: Array<Maybe<ResolversTypes['ComponentContentDynamicZone']>>;
+            layout: ResolversTypes['ComponentLayoutSection'];
             localizations: Array<Maybe<ResolversTypes['Component']>>;
             localizations_connection?: Maybe<ResolversTypes['ComponentRelationResponseCollection']>;
         }
@@ -3297,6 +3510,11 @@ export type ResolversTypes = {
             links?: Maybe<Array<Maybe<ResolversTypes['ComponentContentLink']>>>;
         }
     >;
+    ComponentComponentsDocumentList: ResolverTypeWrapper<
+        Omit<ComponentComponentsDocumentList, 'documents'> & {
+            documents?: Maybe<Array<Maybe<ResolversTypes['ComponentContentFile']>>>;
+        }
+    >;
     ComponentComponentsFaq: ResolverTypeWrapper<
         Omit<ComponentComponentsFaq, 'banner'> & { banner?: Maybe<ResolversTypes['ComponentContentBanner']> }
     >;
@@ -3334,7 +3552,7 @@ export type ResolversTypes = {
     ComponentContentBadge: ResolverTypeWrapper<ComponentContentBadge>;
     ComponentContentBadgeFiltersInput: ComponentContentBadgeFiltersInput;
     ComponentContentBanner: ResolverTypeWrapper<
-        Omit<ComponentContentBanner, 'button'> & { button?: Maybe<ResolversTypes['ComponentContentLink']> }
+        Omit<ComponentContentBanner, 'link'> & { link?: Maybe<ResolversTypes['ComponentContentLink']> }
     >;
     ComponentContentCardWithImage: ResolverTypeWrapper<
         Omit<ComponentContentCardWithImage, 'image' | 'link'> & {
@@ -3352,6 +3570,10 @@ export type ResolversTypes = {
     ComponentContentFeatureItem: ResolverTypeWrapper<ComponentContentFeatureItem>;
     ComponentContentFeatureItemFiltersInput: ComponentContentFeatureItemFiltersInput;
     ComponentContentFieldMapping: ResolverTypeWrapper<ComponentContentFieldMapping>;
+    ComponentContentFile: ResolverTypeWrapper<
+        Omit<ComponentContentFile, 'file'> & { file: ResolversTypes['UploadFile'] }
+    >;
+    ComponentContentFileFiltersInput: ComponentContentFileFiltersInput;
     ComponentContentIconWithText: ResolverTypeWrapper<ComponentContentIconWithText>;
     ComponentContentIconWithTextFiltersInput: ComponentContentIconWithTextFiltersInput;
     ComponentContentInformationCard: ResolverTypeWrapper<
@@ -3372,8 +3594,9 @@ export type ResolversTypes = {
     ComponentContentMessageSimple: ResolverTypeWrapper<ComponentContentMessageSimple>;
     ComponentContentMessageSimpleInput: ComponentContentMessageSimpleInput;
     ComponentContentNavigationGroup: ResolverTypeWrapper<
-        Omit<ComponentContentNavigationGroup, 'items'> & {
+        Omit<ComponentContentNavigationGroup, 'items' | 'page'> & {
             items: Array<Maybe<ResolversTypes['ComponentContentNavigationItem']>>;
+            page?: Maybe<ResolversTypes['Page']>;
         }
     >;
     ComponentContentNavigationItem: ResolverTypeWrapper<
@@ -3405,9 +3628,14 @@ export type ResolversTypes = {
     ComponentLabelsMediaInput: ComponentLabelsMediaInput;
     ComponentLabelsValidation: ResolverTypeWrapper<ComponentLabelsValidation>;
     ComponentLabelsValidationInput: ComponentLabelsValidationInput;
-    ComponentLayoutSection: ResolverTypeWrapper<ComponentLayoutSection>;
+    ComponentLayoutSection: ResolverTypeWrapper<
+        Omit<ComponentLayoutSection, 'theme'> & { theme?: Maybe<ResolversTypes['Theme']> }
+    >;
     ComponentLayoutSectionFiltersInput: ComponentLayoutSectionFiltersInput;
     ComponentLayoutSectionInput: ComponentLayoutSectionInput;
+    ComponentLayoutTheme: ResolverTypeWrapper<
+        Omit<ComponentLayoutTheme, 'logo'> & { logo?: Maybe<ResolversTypes['UploadFile']> }
+    >;
     ComponentRelationResponseCollection: ResolverTypeWrapper<
         Omit<ComponentRelationResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['Component']> }
     >;
@@ -3457,10 +3685,12 @@ export type ResolversTypes = {
     ENUM_COMPONENTCOMPONENTSHEROSECTION_HEADINGTYPE: Enum_Componentcomponentsherosection_Headingtype;
     ENUM_COMPONENTCOMPONENTSPRICINGSECTION_HEADINGTYPE: Enum_Componentcomponentspricingsection_Headingtype;
     ENUM_COMPONENTCONTENTBADGE_VARIANT: Enum_Componentcontentbadge_Variant;
+    ENUM_COMPONENTCONTENTLINK_VARIANT: Enum_Componentcontentlink_Variant;
     ENUM_COMPONENTCONTENTPRICE_CURRENCY: Enum_Componentcontentprice_Currency;
     ENUM_COMPONENTLAYOUTSECTION_BACKGROUND: Enum_Componentlayoutsection_Background;
     ENUM_COMPONENTLAYOUTSECTION_SPACING: Enum_Componentlayoutsection_Spacing;
     ENUM_COMPONENTLAYOUTSECTION_VARIANT: Enum_Componentlayoutsection_Variant;
+    ENUM_COMPONENTLAYOUTTHEME_NAME: Enum_Componentlayouttheme_Name;
     Error: ResolverTypeWrapper<Error>;
     FileInfoInput: FileInfoInput;
     Float: ResolverTypeWrapper<Scalars['Float']['output']>;
@@ -3531,13 +3761,27 @@ export type ResolversTypes = {
         Omit<NotFoundPageRelationResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['NotFoundPage']> }
     >;
     Page: ResolverTypeWrapper<
-        Omit<Page, 'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template'> & {
+        Omit<
+            Page,
+            | 'SEO'
+            | 'children'
+            | 'children_connection'
+            | 'localizations'
+            | 'localizations_connection'
+            | 'parent'
+            | 'redirect'
+            | 'template'
+            | 'theme'
+        > & {
             SEO: ResolversTypes['ComponentSeoSeo'];
-            child?: Maybe<ResolversTypes['Page']>;
+            children: Array<Maybe<ResolversTypes['Page']>>;
+            children_connection?: Maybe<ResolversTypes['PageRelationResponseCollection']>;
             localizations: Array<Maybe<ResolversTypes['Page']>>;
             localizations_connection?: Maybe<ResolversTypes['PageRelationResponseCollection']>;
             parent?: Maybe<ResolversTypes['Page']>;
+            redirect?: Maybe<ResolversTypes['Page']>;
             template: Array<Maybe<ResolversTypes['PageTemplateDynamicZone']>>;
+            theme?: Maybe<ResolversTypes['Theme']>;
         }
     >;
     PageEntityResponseCollection: ResolverTypeWrapper<
@@ -3565,6 +3809,15 @@ export type ResolversTypes = {
     ReviewWorkflowsWorkflowStageRelationResponseCollection: ResolverTypeWrapper<ReviewWorkflowsWorkflowStageRelationResponseCollection>;
     String: ResolverTypeWrapper<Scalars['String']['output']>;
     StringFilterInput: StringFilterInput;
+    Theme: ResolverTypeWrapper<Omit<Theme, 'logo'> & { logo?: Maybe<ResolversTypes['UploadFile']> }>;
+    ThemeEntityResponseCollection: ResolverTypeWrapper<
+        Omit<ThemeEntityResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['Theme']> }
+    >;
+    ThemeFiltersInput: ThemeFiltersInput;
+    ThemeInput: ThemeInput;
+    ThemeRelationResponseCollection: ResolverTypeWrapper<
+        Omit<ThemeRelationResponseCollection, 'nodes'> & { nodes: Array<ResolversTypes['Theme']> }
+    >;
     UploadFile: ResolverTypeWrapper<
         Omit<UploadFile, 'related'> & { related?: Maybe<Array<Maybe<ResolversTypes['GenericMorph']>>> }
     >;
@@ -3609,6 +3862,8 @@ export type ResolversParentTypes = {
         | 'signedInHeader'
         | 'signedOutFooter'
         | 'signedOutHeader'
+        | 'themes'
+        | 'themes_connection'
     > & {
         localizations: Array<Maybe<ResolversParentTypes['AppConfig']>>;
         localizations_connection?: Maybe<ResolversParentTypes['AppConfigRelationResponseCollection']>;
@@ -3616,6 +3871,8 @@ export type ResolversParentTypes = {
         signedInHeader?: Maybe<ResolversParentTypes['Header']>;
         signedOutFooter?: Maybe<ResolversParentTypes['Footer']>;
         signedOutHeader?: Maybe<ResolversParentTypes['Header']>;
+        themes: Array<Maybe<ResolversParentTypes['Theme']>>;
+        themes_connection?: Maybe<ResolversParentTypes['ThemeRelationResponseCollection']>;
     };
     AppConfigInput: AppConfigInput;
     AppConfigRelationResponseCollection: Omit<AppConfigRelationResponseCollection, 'nodes'> & {
@@ -3670,8 +3927,9 @@ export type ResolversParentTypes = {
     CategoryRelationResponseCollection: Omit<CategoryRelationResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['Category']>;
     };
-    Component: Omit<Component, 'content' | 'localizations' | 'localizations_connection'> & {
+    Component: Omit<Component, 'content' | 'layout' | 'localizations' | 'localizations_connection'> & {
         content: Array<Maybe<ResolversParentTypes['ComponentContentDynamicZone']>>;
+        layout: ResolversParentTypes['ComponentLayoutSection'];
         localizations: Array<Maybe<ResolversParentTypes['Component']>>;
         localizations_connection?: Maybe<ResolversParentTypes['ComponentRelationResponseCollection']>;
     };
@@ -3712,6 +3970,9 @@ export type ResolversParentTypes = {
         image?: Maybe<ResolversParentTypes['UploadFile']>;
         links?: Maybe<Array<Maybe<ResolversParentTypes['ComponentContentLink']>>>;
     };
+    ComponentComponentsDocumentList: Omit<ComponentComponentsDocumentList, 'documents'> & {
+        documents?: Maybe<Array<Maybe<ResolversParentTypes['ComponentContentFile']>>>;
+    };
     ComponentComponentsFaq: Omit<ComponentComponentsFaq, 'banner'> & {
         banner?: Maybe<ResolversParentTypes['ComponentContentBanner']>;
     };
@@ -3740,8 +4001,8 @@ export type ResolversParentTypes = {
     ComponentContentArticleSectionInput: ComponentContentArticleSectionInput;
     ComponentContentBadge: ComponentContentBadge;
     ComponentContentBadgeFiltersInput: ComponentContentBadgeFiltersInput;
-    ComponentContentBanner: Omit<ComponentContentBanner, 'button'> & {
-        button?: Maybe<ResolversParentTypes['ComponentContentLink']>;
+    ComponentContentBanner: Omit<ComponentContentBanner, 'link'> & {
+        link?: Maybe<ResolversParentTypes['ComponentContentLink']>;
     };
     ComponentContentCardWithImage: Omit<ComponentContentCardWithImage, 'image' | 'link'> & {
         image?: Maybe<ResolversParentTypes['UploadFile']>;
@@ -3755,6 +4016,8 @@ export type ResolversParentTypes = {
     ComponentContentFeatureItem: ComponentContentFeatureItem;
     ComponentContentFeatureItemFiltersInput: ComponentContentFeatureItemFiltersInput;
     ComponentContentFieldMapping: ComponentContentFieldMapping;
+    ComponentContentFile: Omit<ComponentContentFile, 'file'> & { file: ResolversParentTypes['UploadFile'] };
+    ComponentContentFileFiltersInput: ComponentContentFileFiltersInput;
     ComponentContentIconWithText: ComponentContentIconWithText;
     ComponentContentIconWithTextFiltersInput: ComponentContentIconWithTextFiltersInput;
     ComponentContentInformationCard: Omit<ComponentContentInformationCard, 'link'> & {
@@ -3772,8 +4035,9 @@ export type ResolversParentTypes = {
     ComponentContentMessageFiltersInput: ComponentContentMessageFiltersInput;
     ComponentContentMessageSimple: ComponentContentMessageSimple;
     ComponentContentMessageSimpleInput: ComponentContentMessageSimpleInput;
-    ComponentContentNavigationGroup: Omit<ComponentContentNavigationGroup, 'items'> & {
+    ComponentContentNavigationGroup: Omit<ComponentContentNavigationGroup, 'items' | 'page'> & {
         items: Array<Maybe<ResolversParentTypes['ComponentContentNavigationItem']>>;
+        page?: Maybe<ResolversParentTypes['Page']>;
     };
     ComponentContentNavigationItem: Omit<ComponentContentNavigationItem, 'page'> & {
         page?: Maybe<ResolversParentTypes['Page']>;
@@ -3802,9 +4066,10 @@ export type ResolversParentTypes = {
     ComponentLabelsMediaInput: ComponentLabelsMediaInput;
     ComponentLabelsValidation: ComponentLabelsValidation;
     ComponentLabelsValidationInput: ComponentLabelsValidationInput;
-    ComponentLayoutSection: ComponentLayoutSection;
+    ComponentLayoutSection: Omit<ComponentLayoutSection, 'theme'> & { theme?: Maybe<ResolversParentTypes['Theme']> };
     ComponentLayoutSectionFiltersInput: ComponentLayoutSectionFiltersInput;
     ComponentLayoutSectionInput: ComponentLayoutSectionInput;
+    ComponentLayoutTheme: Omit<ComponentLayoutTheme, 'logo'> & { logo?: Maybe<ResolversParentTypes['UploadFile']> };
     ComponentRelationResponseCollection: Omit<ComponentRelationResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['Component']>;
     };
@@ -3911,13 +4176,27 @@ export type ResolversParentTypes = {
     NotFoundPageRelationResponseCollection: Omit<NotFoundPageRelationResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['NotFoundPage']>;
     };
-    Page: Omit<Page, 'SEO' | 'child' | 'localizations' | 'localizations_connection' | 'parent' | 'template'> & {
+    Page: Omit<
+        Page,
+        | 'SEO'
+        | 'children'
+        | 'children_connection'
+        | 'localizations'
+        | 'localizations_connection'
+        | 'parent'
+        | 'redirect'
+        | 'template'
+        | 'theme'
+    > & {
         SEO: ResolversParentTypes['ComponentSeoSeo'];
-        child?: Maybe<ResolversParentTypes['Page']>;
+        children: Array<Maybe<ResolversParentTypes['Page']>>;
+        children_connection?: Maybe<ResolversParentTypes['PageRelationResponseCollection']>;
         localizations: Array<Maybe<ResolversParentTypes['Page']>>;
         localizations_connection?: Maybe<ResolversParentTypes['PageRelationResponseCollection']>;
         parent?: Maybe<ResolversParentTypes['Page']>;
+        redirect?: Maybe<ResolversParentTypes['Page']>;
         template: Array<Maybe<ResolversParentTypes['PageTemplateDynamicZone']>>;
+        theme?: Maybe<ResolversParentTypes['Theme']>;
     };
     PageEntityResponseCollection: Omit<PageEntityResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['Page']>;
@@ -3943,6 +4222,15 @@ export type ResolversParentTypes = {
     ReviewWorkflowsWorkflowStageRelationResponseCollection: ReviewWorkflowsWorkflowStageRelationResponseCollection;
     String: Scalars['String']['output'];
     StringFilterInput: StringFilterInput;
+    Theme: Omit<Theme, 'logo'> & { logo?: Maybe<ResolversParentTypes['UploadFile']> };
+    ThemeEntityResponseCollection: Omit<ThemeEntityResponseCollection, 'nodes'> & {
+        nodes: Array<ResolversParentTypes['Theme']>;
+    };
+    ThemeFiltersInput: ThemeFiltersInput;
+    ThemeInput: ThemeInput;
+    ThemeRelationResponseCollection: Omit<ThemeRelationResponseCollection, 'nodes'> & {
+        nodes: Array<ResolversParentTypes['Theme']>;
+    };
     UploadFile: Omit<UploadFile, 'related'> & { related?: Maybe<Array<Maybe<ResolversParentTypes['GenericMorph']>>> };
     UploadFileEntityResponseCollection: Omit<UploadFileEntityResponseCollection, 'nodes'> & {
         nodes: Array<ResolversParentTypes['UploadFile']>;
@@ -3993,6 +4281,18 @@ export type AppConfigResolvers<
     signedInHeader?: Resolver<Maybe<ResolversTypes['Header']>, ParentType, ContextType>;
     signedOutFooter?: Resolver<Maybe<ResolversTypes['Footer']>, ParentType, ContextType>;
     signedOutHeader?: Resolver<Maybe<ResolversTypes['Header']>, ParentType, ContextType>;
+    themes?: Resolver<
+        Array<Maybe<ResolversTypes['Theme']>>,
+        ParentType,
+        ContextType,
+        RequireFields<AppConfigThemesArgs, 'pagination' | 'sort'>
+    >;
+    themes_connection?: Resolver<
+        Maybe<ResolversTypes['ThemeRelationResponseCollection']>,
+        ParentType,
+        ContextType,
+        RequireFields<AppConfigThemes_ConnectionArgs, 'pagination' | 'sort'>
+    >;
     updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -4327,6 +4627,23 @@ export type ComponentComponentsCtaSectionResolvers<
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type ComponentComponentsDocumentListResolvers<
+    ContextType = any,
+    ParentType extends
+        ResolversParentTypes['ComponentComponentsDocumentList'] = ResolversParentTypes['ComponentComponentsDocumentList'],
+> = {
+    description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    documents?: Resolver<
+        Maybe<Array<Maybe<ResolversTypes['ComponentContentFile']>>>,
+        ParentType,
+        ContextType,
+        RequireFields<ComponentComponentsDocumentListDocumentsArgs, 'pagination' | 'sort'>
+    >;
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type ComponentComponentsFaqResolvers<
     ContextType = any,
     ParentType extends ResolversParentTypes['ComponentComponentsFaq'] = ResolversParentTypes['ComponentComponentsFaq'],
@@ -4517,9 +4834,9 @@ export type ComponentContentBannerResolvers<
     ParentType extends ResolversParentTypes['ComponentContentBanner'] = ResolversParentTypes['ComponentContentBanner'],
 > = {
     altDescription?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-    button?: Resolver<Maybe<ResolversTypes['ComponentContentLink']>, ParentType, ContextType>;
     description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
     id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    link?: Resolver<Maybe<ResolversTypes['ComponentContentLink']>, ParentType, ContextType>;
     title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -4550,6 +4867,7 @@ export type ComponentContentDynamicZoneResolvers<
         | 'ComponentComponentsCategory'
         | 'ComponentComponentsCategoryList'
         | 'ComponentComponentsCtaSection'
+        | 'ComponentComponentsDocumentList'
         | 'ComponentComponentsFaq'
         | 'ComponentComponentsFeatureSection'
         | 'ComponentComponentsFeatureSectionGrid'
@@ -4612,6 +4930,17 @@ export type ComponentContentFieldMappingResolvers<
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type ComponentContentFileResolvers<
+    ContextType = any,
+    ParentType extends ResolversParentTypes['ComponentContentFile'] = ResolversParentTypes['ComponentContentFile'],
+> = {
+    file?: Resolver<ResolversTypes['UploadFile'], ParentType, ContextType>;
+    icon?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type ComponentContentIconWithTextResolvers<
     ContextType = any,
     ParentType extends
@@ -4669,6 +4998,7 @@ export type ComponentContentLinkResolvers<
     label?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     page?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    variant?: Resolver<Maybe<ResolversTypes['ENUM_COMPONENTCONTENTLINK_VARIANT']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -4722,7 +5052,9 @@ export type ComponentContentNavigationGroupResolvers<
         ContextType,
         RequireFields<ComponentContentNavigationGroupItemsArgs, 'pagination' | 'sort'>
     >;
+    page?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+    url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -4884,7 +5216,18 @@ export type ComponentLayoutSectionResolvers<
     background?: Resolver<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_BACKGROUND'], ParentType, ContextType>;
     id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
     spacing?: Resolver<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_SPACING'], ParentType, ContextType>;
+    theme?: Resolver<Maybe<ResolversTypes['Theme']>, ParentType, ContextType>;
     variant?: Resolver<ResolversTypes['ENUM_COMPONENTLAYOUTSECTION_VARIANT'], ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ComponentLayoutThemeResolvers<
+    ContextType = any,
+    ParentType extends ResolversParentTypes['ComponentLayoutTheme'] = ResolversParentTypes['ComponentLayoutTheme'],
+> = {
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    logo?: Resolver<Maybe<ResolversTypes['UploadFile']>, ParentType, ContextType>;
+    name?: Resolver<Maybe<ResolversTypes['ENUM_COMPONENTLAYOUTTHEME_NAME']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -5089,6 +5432,7 @@ export type FooterResolvers<
         RequireFields<FooterLocalizations_ConnectionArgs, 'pagination' | 'sort'>
     >;
     logo?: Resolver<ResolversTypes['UploadFile'], ParentType, ContextType>;
+    logoLabel?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
     publishedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
     title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
@@ -5147,6 +5491,7 @@ export type GenericMorphResolvers<
         | 'ComponentComponentsCategory'
         | 'ComponentComponentsCategoryList'
         | 'ComponentComponentsCtaSection'
+        | 'ComponentComponentsDocumentList'
         | 'ComponentComponentsFaq'
         | 'ComponentComponentsFeatureSection'
         | 'ComponentComponentsFeatureSectionGrid'
@@ -5162,6 +5507,7 @@ export type GenericMorphResolvers<
         | 'ComponentContentFaqSection'
         | 'ComponentContentFeatureItem'
         | 'ComponentContentFieldMapping'
+        | 'ComponentContentFile'
         | 'ComponentContentIconWithText'
         | 'ComponentContentInformationCard'
         | 'ComponentContentKeyValue'
@@ -5181,6 +5527,7 @@ export type GenericMorphResolvers<
         | 'ComponentLabelsMedia'
         | 'ComponentLabelsValidation'
         | 'ComponentLayoutSection'
+        | 'ComponentLayoutTheme'
         | 'ComponentSeoMetadata'
         | 'ComponentSeoSeo'
         | 'ComponentSeoUserRoles'
@@ -5195,6 +5542,7 @@ export type GenericMorphResolvers<
         | 'Page'
         | 'ReviewWorkflowsWorkflow'
         | 'ReviewWorkflowsWorkflowStage'
+        | 'Theme'
         | 'UploadFile'
         | 'UsersPermissionsPermission'
         | 'UsersPermissionsRole'
@@ -5227,6 +5575,7 @@ export type HeaderResolvers<
         RequireFields<HeaderLocalizations_ConnectionArgs, 'pagination' | 'sort'>
     >;
     logo?: Resolver<ResolversTypes['UploadFile'], ParentType, ContextType>;
+    logoLabel?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     notification?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     openMobileMenuLabel?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     publishedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
@@ -5395,6 +5744,12 @@ export type MutationResolvers<
         ContextType,
         RequireFields<MutationCreateReviewWorkflowsWorkflowStageArgs, 'data' | 'status'>
     >;
+    createTheme?: Resolver<
+        Maybe<ResolversTypes['Theme']>,
+        ParentType,
+        ContextType,
+        RequireFields<MutationCreateThemeArgs, 'data' | 'status'>
+    >;
     createUsersPermissionsRole?: Resolver<
         Maybe<ResolversTypes['UsersPermissionsCreateRolePayload']>,
         ParentType,
@@ -5484,6 +5839,12 @@ export type MutationResolvers<
         ParentType,
         ContextType,
         RequireFields<MutationDeleteReviewWorkflowsWorkflowStageArgs, 'documentId'>
+    >;
+    deleteTheme?: Resolver<
+        Maybe<ResolversTypes['DeleteMutationResponse']>,
+        ParentType,
+        ContextType,
+        RequireFields<MutationDeleteThemeArgs, 'documentId'>
     >;
     deleteUploadFile?: Resolver<
         Maybe<ResolversTypes['UploadFile']>,
@@ -5611,6 +5972,12 @@ export type MutationResolvers<
         ContextType,
         RequireFields<MutationUpdateReviewWorkflowsWorkflowStageArgs, 'data' | 'documentId' | 'status'>
     >;
+    updateTheme?: Resolver<
+        Maybe<ResolversTypes['Theme']>,
+        ParentType,
+        ContextType,
+        RequireFields<MutationUpdateThemeArgs, 'data' | 'documentId' | 'status'>
+    >;
     updateUploadFile?: Resolver<
         ResolversTypes['UploadFile'],
         ParentType,
@@ -5668,7 +6035,18 @@ export type PageResolvers<
     ParentType extends ResolversParentTypes['Page'] = ResolversParentTypes['Page'],
 > = {
     SEO?: Resolver<ResolversTypes['ComponentSeoSeo'], ParentType, ContextType>;
-    child?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
+    children?: Resolver<
+        Array<Maybe<ResolversTypes['Page']>>,
+        ParentType,
+        ContextType,
+        RequireFields<PageChildrenArgs, 'pagination' | 'sort'>
+    >;
+    children_connection?: Resolver<
+        Maybe<ResolversTypes['PageRelationResponseCollection']>,
+        ParentType,
+        ContextType,
+        RequireFields<PageChildren_ConnectionArgs, 'pagination' | 'sort'>
+    >;
     createdAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
     documentId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
     hasOwnTitle?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
@@ -5688,9 +6066,11 @@ export type PageResolvers<
     parent?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     permissions?: Resolver<Maybe<ResolversTypes['ComponentSeoUserRoles']>, ParentType, ContextType>;
     publishedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
+    redirect?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType>;
     showBreadcrumbs?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
     slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     template?: Resolver<Array<Maybe<ResolversTypes['PageTemplateDynamicZone']>>, ParentType, ContextType>;
+    theme?: Resolver<Maybe<ResolversTypes['Theme']>, ParentType, ContextType>;
     updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -5963,6 +6343,24 @@ export type QueryResolvers<
         ContextType,
         RequireFields<QueryReviewWorkflowsWorkflows_ConnectionArgs, 'pagination' | 'sort' | 'status'>
     >;
+    theme?: Resolver<
+        Maybe<ResolversTypes['Theme']>,
+        ParentType,
+        ContextType,
+        RequireFields<QueryThemeArgs, 'documentId' | 'status'>
+    >;
+    themes?: Resolver<
+        Array<Maybe<ResolversTypes['Theme']>>,
+        ParentType,
+        ContextType,
+        RequireFields<QueryThemesArgs, 'pagination' | 'sort' | 'status'>
+    >;
+    themes_connection?: Resolver<
+        Maybe<ResolversTypes['ThemeEntityResponseCollection']>,
+        ParentType,
+        ContextType,
+        RequireFields<QueryThemes_ConnectionArgs, 'pagination' | 'sort' | 'status'>
+    >;
     uploadFile?: Resolver<
         Maybe<ResolversTypes['UploadFile']>,
         ParentType,
@@ -6087,6 +6485,38 @@ export type ReviewWorkflowsWorkflowStageRelationResponseCollectionResolvers<
         ResolversParentTypes['ReviewWorkflowsWorkflowStageRelationResponseCollection'] = ResolversParentTypes['ReviewWorkflowsWorkflowStageRelationResponseCollection'],
 > = {
     nodes?: Resolver<Array<ResolversTypes['ReviewWorkflowsWorkflowStage']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ThemeResolvers<
+    ContextType = any,
+    ParentType extends ResolversParentTypes['Theme'] = ResolversParentTypes['Theme'],
+> = {
+    createdAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
+    documentId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+    logo?: Resolver<Maybe<ResolversTypes['UploadFile']>, ParentType, ContextType>;
+    name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+    publishedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
+    updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ThemeEntityResponseCollectionResolvers<
+    ContextType = any,
+    ParentType extends
+        ResolversParentTypes['ThemeEntityResponseCollection'] = ResolversParentTypes['ThemeEntityResponseCollection'],
+> = {
+    nodes?: Resolver<Array<ResolversTypes['Theme']>, ParentType, ContextType>;
+    pageInfo?: Resolver<ResolversTypes['Pagination'], ParentType, ContextType>;
+    __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ThemeRelationResponseCollectionResolvers<
+    ContextType = any,
+    ParentType extends
+        ResolversParentTypes['ThemeRelationResponseCollection'] = ResolversParentTypes['ThemeRelationResponseCollection'],
+> = {
+    nodes?: Resolver<Array<ResolversTypes['Theme']>, ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -6342,6 +6772,7 @@ export type Resolvers<ContextType = any> = {
     ComponentComponentsCategory?: ComponentComponentsCategoryResolvers<ContextType>;
     ComponentComponentsCategoryList?: ComponentComponentsCategoryListResolvers<ContextType>;
     ComponentComponentsCtaSection?: ComponentComponentsCtaSectionResolvers<ContextType>;
+    ComponentComponentsDocumentList?: ComponentComponentsDocumentListResolvers<ContextType>;
     ComponentComponentsFaq?: ComponentComponentsFaqResolvers<ContextType>;
     ComponentComponentsFeatureSection?: ComponentComponentsFeatureSectionResolvers<ContextType>;
     ComponentComponentsFeatureSectionGrid?: ComponentComponentsFeatureSectionGridResolvers<ContextType>;
@@ -6359,6 +6790,7 @@ export type Resolvers<ContextType = any> = {
     ComponentContentFaqSection?: ComponentContentFaqSectionResolvers<ContextType>;
     ComponentContentFeatureItem?: ComponentContentFeatureItemResolvers<ContextType>;
     ComponentContentFieldMapping?: ComponentContentFieldMappingResolvers<ContextType>;
+    ComponentContentFile?: ComponentContentFileResolvers<ContextType>;
     ComponentContentIconWithText?: ComponentContentIconWithTextResolvers<ContextType>;
     ComponentContentInformationCard?: ComponentContentInformationCardResolvers<ContextType>;
     ComponentContentKeyValue?: ComponentContentKeyValueResolvers<ContextType>;
@@ -6379,6 +6811,7 @@ export type Resolvers<ContextType = any> = {
     ComponentLabelsMedia?: ComponentLabelsMediaResolvers<ContextType>;
     ComponentLabelsValidation?: ComponentLabelsValidationResolvers<ContextType>;
     ComponentLayoutSection?: ComponentLayoutSectionResolvers<ContextType>;
+    ComponentLayoutTheme?: ComponentLayoutThemeResolvers<ContextType>;
     ComponentRelationResponseCollection?: ComponentRelationResponseCollectionResolvers<ContextType>;
     ComponentSeoMetadata?: ComponentSeoMetadataResolvers<ContextType>;
     ComponentSeoSeo?: ComponentSeoSeoResolvers<ContextType>;
@@ -6422,6 +6855,9 @@ export type Resolvers<ContextType = any> = {
     ReviewWorkflowsWorkflowStage?: ReviewWorkflowsWorkflowStageResolvers<ContextType>;
     ReviewWorkflowsWorkflowStageEntityResponseCollection?: ReviewWorkflowsWorkflowStageEntityResponseCollectionResolvers<ContextType>;
     ReviewWorkflowsWorkflowStageRelationResponseCollection?: ReviewWorkflowsWorkflowStageRelationResponseCollectionResolvers<ContextType>;
+    Theme?: ThemeResolvers<ContextType>;
+    ThemeEntityResponseCollection?: ThemeEntityResponseCollectionResolvers<ContextType>;
+    ThemeRelationResponseCollection?: ThemeRelationResponseCollectionResolvers<ContextType>;
     UploadFile?: UploadFileResolvers<ContextType>;
     UploadFileEntityResponseCollection?: UploadFileEntityResponseCollectionResolvers<ContextType>;
     UploadFileRelationResponseCollection?: UploadFileRelationResponseCollectionResolvers<ContextType>;
@@ -6640,6 +7076,10 @@ export type AppConfigFragment = {
     documentId: string;
     header?: { documentId: string };
     footer?: { documentId: string };
+    themes: Array<{
+        name: string;
+        logo?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+    }>;
 };
 
 export type ComponentFragment = {
@@ -6649,6 +7089,7 @@ export type ComponentFragment = {
         spacing: Enum_Componentlayoutsection_Spacing;
         background: Enum_Componentlayoutsection_Background;
         variant: Enum_Componentlayoutsection_Variant;
+        theme?: { name: string };
     };
     content: Array<
         | { __typename: 'ComponentComponentsArticle' }
@@ -6658,6 +7099,7 @@ export type ComponentFragment = {
         | { __typename: 'ComponentComponentsCategory' }
         | { __typename: 'ComponentComponentsCategoryList' }
         | { __typename: 'ComponentComponentsCtaSection' }
+        | { __typename: 'ComponentComponentsDocumentList' }
         | { __typename: 'ComponentComponentsFaq' }
         | { __typename: 'ComponentComponentsFeatureSection' }
         | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6672,12 +7114,14 @@ export type ComponentFragment = {
 export type FooterFragment = {
     documentId: string;
     title: string;
+    logoLabel?: string;
     copyright: string;
     logo: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
     items: Array<
         | {
               __typename: 'ComponentContentNavigationGroup';
               title: string;
+              url?: string;
               items: Array<{
                   __typename: 'ComponentContentNavigationItem';
                   id: string;
@@ -6686,6 +7130,7 @@ export type FooterFragment = {
                   description?: string;
                   page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
               }>;
+              page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
           }
         | {
               __typename: 'ComponentContentNavigationItem';
@@ -6702,6 +7147,7 @@ export type FooterFragment = {
 export type HeaderFragment = {
     documentId: string;
     title: string;
+    logoLabel: string;
     showContextSwitcher?: boolean;
     languageSwitcherLabel: string;
     openMobileMenuLabel: string;
@@ -6711,6 +7157,7 @@ export type HeaderFragment = {
         | {
               __typename: 'ComponentContentNavigationGroup';
               title: string;
+              url?: string;
               items: Array<{
                   __typename: 'ComponentContentNavigationItem';
                   id: string;
@@ -6719,6 +7166,7 @@ export type HeaderFragment = {
                   description?: string;
                   page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
               }>;
+              page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
           }
         | {
               __typename: 'ComponentContentNavigationItem';
@@ -6760,11 +7208,13 @@ export type PageFragment = {
         keywords?: Array<{ keyword: string }>;
         image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
     };
+    theme?: { name: string };
     parent?: {
         slug: string;
         SEO: { title: string };
         parent?: { slug: string; SEO: { title: string }; parent?: { slug: string; SEO: { title: string } } };
     };
+    redirect?: { slug: string };
     template: Array<
         | {
               __typename: 'ComponentTemplatesOneColumn';
@@ -6775,6 +7225,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
+                      theme?: { name: string };
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6784,6 +7235,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCategory' }
                       | { __typename: 'ComponentComponentsCategoryList' }
                       | { __typename: 'ComponentComponentsCtaSection' }
+                      | { __typename: 'ComponentComponentsDocumentList' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6804,6 +7256,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
+                      theme?: { name: string };
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6813,6 +7266,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCategory' }
                       | { __typename: 'ComponentComponentsCategoryList' }
                       | { __typename: 'ComponentComponentsCtaSection' }
+                      | { __typename: 'ComponentComponentsDocumentList' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6830,6 +7284,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
+                      theme?: { name: string };
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6839,6 +7294,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCategory' }
                       | { __typename: 'ComponentComponentsCategoryList' }
                       | { __typename: 'ComponentComponentsCtaSection' }
+                      | { __typename: 'ComponentComponentsDocumentList' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6856,6 +7312,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
+                      theme?: { name: string };
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6865,6 +7322,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCategory' }
                       | { __typename: 'ComponentComponentsCategoryList' }
                       | { __typename: 'ComponentComponentsCtaSection' }
+                      | { __typename: 'ComponentComponentsDocumentList' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6882,6 +7340,7 @@ export type PageFragment = {
                       spacing: Enum_Componentlayoutsection_Spacing;
                       background: Enum_Componentlayoutsection_Background;
                       variant: Enum_Componentlayoutsection_Variant;
+                      theme?: { name: string };
                   };
                   content: Array<
                       | { __typename: 'ComponentComponentsArticle' }
@@ -6891,6 +7350,7 @@ export type PageFragment = {
                       | { __typename: 'ComponentComponentsCategory' }
                       | { __typename: 'ComponentComponentsCategoryList' }
                       | { __typename: 'ComponentComponentsCtaSection' }
+                      | { __typename: 'ComponentComponentsDocumentList' }
                       | { __typename: 'ComponentComponentsFaq' }
                       | { __typename: 'ComponentComponentsFeatureSection' }
                       | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6917,6 +7377,7 @@ type Template_ComponentTemplatesOneColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -6926,6 +7387,7 @@ type Template_ComponentTemplatesOneColumn_Fragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6947,6 +7409,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -6956,6 +7419,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6973,6 +7437,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -6982,6 +7447,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -6999,6 +7465,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7008,6 +7475,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7025,6 +7493,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7034,6 +7503,7 @@ type Template_ComponentTemplatesTwoColumn_Fragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7087,6 +7557,7 @@ export type BentoGridComponentFragment = {
             url?: string;
             description?: string;
             icon?: string;
+            variant?: Enum_Componentcontentlink_Variant;
             page?: { slug: string; SEO: { title: string; description: string } };
         };
     }>;
@@ -7106,6 +7577,7 @@ export type CategoryComponentFragment = {
                 spacing: Enum_Componentlayoutsection_Spacing;
                 background: Enum_Componentlayoutsection_Background;
                 variant: Enum_Componentlayoutsection_Variant;
+                theme?: { name: string };
             };
             content: Array<
                 | { __typename: 'ComponentComponentsArticle' }
@@ -7115,6 +7587,7 @@ export type CategoryComponentFragment = {
                 | { __typename: 'ComponentComponentsCategory' }
                 | { __typename: 'ComponentComponentsCategoryList' }
                 | { __typename: 'ComponentComponentsCtaSection' }
+                | { __typename: 'ComponentComponentsDocumentList' }
                 | { __typename: 'ComponentComponentsFaq' }
                 | { __typename: 'ComponentComponentsFeatureSection' }
                 | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7151,7 +7624,20 @@ export type CtaSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
+    }>;
+};
+
+export type DocumentListComponentFragment = {
+    __typename: 'ComponentComponentsDocumentList';
+    id: string;
+    title?: string;
+    description?: string;
+    documents?: Array<{
+        title: string;
+        icon?: string;
+        file: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
     }>;
 };
 
@@ -7163,7 +7649,19 @@ export type FaqComponentFragment = {
     description?: string;
     oneColumn: boolean;
     sections?: Array<{ title?: string; items: Array<{ title: string; description: string }> }>;
-    banner?: { title: string; description?: string; altDescription?: string; button?: { label: string; url?: string } };
+    banner?: {
+        title: string;
+        description?: string;
+        altDescription?: string;
+        link?: {
+            label: string;
+            url?: string;
+            description?: string;
+            icon?: string;
+            variant?: Enum_Componentcontentlink_Variant;
+            page?: { slug: string; SEO: { title: string; description: string } };
+        };
+    };
 };
 
 export type FeatureSectionComponentFragment = {
@@ -7181,6 +7679,7 @@ export type FeatureSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7212,6 +7711,7 @@ export type HeroSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7228,6 +7728,7 @@ export type MediaSectionComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7252,6 +7753,7 @@ export type PricingSectionComponentFragment = {
             url?: string;
             description?: string;
             icon?: string;
+            variant?: Enum_Componentcontentlink_Variant;
             page?: { slug: string; SEO: { title: string; description: string } };
         }>;
         featureList?: Array<{ title?: string; description?: string; icon?: string }>;
@@ -7269,6 +7771,7 @@ export type QuickLinksComponentFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
 };
@@ -7279,7 +7782,14 @@ export type BannerFragment = {
     title: string;
     description?: string;
     altDescription?: string;
-    button?: { label: string; url?: string };
+    link?: {
+        label: string;
+        url?: string;
+        description?: string;
+        icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
+        page?: { slug: string; SEO: { title: string; description: string } };
+    };
 };
 
 export type CardWithImageFragment = {
@@ -7291,11 +7801,18 @@ export type CardWithImageFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     };
 };
 
 export type FeatureItemFragment = { title?: string; description?: string; icon?: string };
+
+export type FileFragment = {
+    title: string;
+    icon?: string;
+    file: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+};
 
 export type InformationCardFragment = {
     title: string;
@@ -7307,6 +7824,7 @@ export type InformationCardFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     };
 };
@@ -7316,6 +7834,7 @@ export type LinkFragment = {
     url?: string;
     description?: string;
     icon?: string;
+    variant?: Enum_Componentcontentlink_Variant;
     page?: { slug: string; SEO: { title: string; description: string } };
 };
 
@@ -7324,6 +7843,7 @@ export type MediaFragment = { url: string; alternativeText?: string; width?: num
 export type NavigationGroupFragment = {
     __typename: 'ComponentContentNavigationGroup';
     title: string;
+    url?: string;
     items: Array<{
         __typename: 'ComponentContentNavigationItem';
         id: string;
@@ -7332,6 +7852,7 @@ export type NavigationGroupFragment = {
         description?: string;
         page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
     }>;
+    page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
 };
 
 export type NavigationItemFragment = {
@@ -7358,6 +7879,7 @@ export type PricingCardFragment = {
         url?: string;
         description?: string;
         icon?: string;
+        variant?: Enum_Componentcontentlink_Variant;
         page?: { slug: string; SEO: { title: string; description: string } };
     }>;
     featureList?: Array<{ title?: string; description?: string; icon?: string }>;
@@ -7376,6 +7898,7 @@ export type LayoutSectionFragment = {
     spacing: Enum_Componentlayoutsection_Spacing;
     background: Enum_Componentlayoutsection_Background;
     variant: Enum_Componentlayoutsection_Variant;
+    theme?: { name: string };
 };
 
 export type OneColumnTemplateFragment = {
@@ -7386,6 +7909,7 @@ export type OneColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7395,6 +7919,7 @@ export type OneColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7415,6 +7940,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7424,6 +7950,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7441,6 +7968,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7450,6 +7978,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7467,6 +7996,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7476,6 +8006,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7493,6 +8024,7 @@ export type TwoColumnTemplateFragment = {
             spacing: Enum_Componentlayoutsection_Spacing;
             background: Enum_Componentlayoutsection_Background;
             variant: Enum_Componentlayoutsection_Variant;
+            theme?: { name: string };
         };
         content: Array<
             | { __typename: 'ComponentComponentsArticle' }
@@ -7502,6 +8034,7 @@ export type TwoColumnTemplateFragment = {
             | { __typename: 'ComponentComponentsCategory' }
             | { __typename: 'ComponentComponentsCategoryList' }
             | { __typename: 'ComponentComponentsCtaSection' }
+            | { __typename: 'ComponentComponentsDocumentList' }
             | { __typename: 'ComponentComponentsFaq' }
             | { __typename: 'ComponentComponentsFeatureSection' }
             | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7519,7 +8052,15 @@ export type GetAppConfigQueryVariables = Exact<{
 }>;
 
 export type GetAppConfigQuery = {
-    appConfig?: { documentId: string; header?: { documentId: string }; footer?: { documentId: string } };
+    appConfig?: {
+        documentId: string;
+        header?: { documentId: string };
+        footer?: { documentId: string };
+        themes: Array<{
+            name: string;
+            logo?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
+        }>;
+    };
     configurableTexts?: {
         errors: { requestError: { title: string; content?: string } };
         dates: { today: string; yesterday: string };
@@ -7583,6 +8124,7 @@ export type GetComponentQuery = {
                           url?: string;
                           description?: string;
                           icon?: string;
+                          variant?: Enum_Componentcontentlink_Variant;
                           page?: { slug: string; SEO: { title: string; description: string } };
                       };
                   }>;
@@ -7601,6 +8143,7 @@ export type GetComponentQuery = {
                               spacing: Enum_Componentlayoutsection_Spacing;
                               background: Enum_Componentlayoutsection_Background;
                               variant: Enum_Componentlayoutsection_Variant;
+                              theme?: { name: string };
                           };
                           content: Array<
                               | { __typename: 'ComponentComponentsArticle' }
@@ -7610,6 +8153,7 @@ export type GetComponentQuery = {
                               | { __typename: 'ComponentComponentsCategory' }
                               | { __typename: 'ComponentComponentsCategoryList' }
                               | { __typename: 'ComponentComponentsCtaSection' }
+                              | { __typename: 'ComponentComponentsDocumentList' }
                               | { __typename: 'ComponentComponentsFaq' }
                               | { __typename: 'ComponentComponentsFeatureSection' }
                               | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7644,7 +8188,19 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
+                  }>;
+              }
+            | {
+                  __typename: 'ComponentComponentsDocumentList';
+                  id: string;
+                  title?: string;
+                  description?: string;
+                  documents?: Array<{
+                      title: string;
+                      icon?: string;
+                      file: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
                   }>;
               }
             | {
@@ -7659,7 +8215,14 @@ export type GetComponentQuery = {
                       title: string;
                       description?: string;
                       altDescription?: string;
-                      button?: { label: string; url?: string };
+                      link?: {
+                          label: string;
+                          url?: string;
+                          description?: string;
+                          icon?: string;
+                          variant?: Enum_Componentcontentlink_Variant;
+                          page?: { slug: string; SEO: { title: string; description: string } };
+                      };
                   };
               }
             | {
@@ -7677,6 +8240,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7706,6 +8270,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7721,6 +8286,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7744,6 +8310,7 @@ export type GetComponentQuery = {
                           url?: string;
                           description?: string;
                           icon?: string;
+                          variant?: Enum_Componentcontentlink_Variant;
                           page?: { slug: string; SEO: { title: string; description: string } };
                       }>;
                       featureList?: Array<{ title?: string; description?: string; icon?: string }>;
@@ -7760,6 +8327,7 @@ export type GetComponentQuery = {
                       url?: string;
                       description?: string;
                       icon?: string;
+                      variant?: Enum_Componentcontentlink_Variant;
                       page?: { slug: string; SEO: { title: string; description: string } };
                   }>;
               }
@@ -7804,12 +8372,14 @@ export type GetFooterQuery = {
     footer?: {
         documentId: string;
         title: string;
+        logoLabel?: string;
         copyright: string;
         logo: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
         items: Array<
             | {
                   __typename: 'ComponentContentNavigationGroup';
                   title: string;
+                  url?: string;
                   items: Array<{
                       __typename: 'ComponentContentNavigationItem';
                       id: string;
@@ -7818,6 +8388,7 @@ export type GetFooterQuery = {
                       description?: string;
                       page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
                   }>;
+                  page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
               }
             | {
                   __typename: 'ComponentContentNavigationItem';
@@ -7841,6 +8412,7 @@ export type GetHeaderQuery = {
     header?: {
         documentId: string;
         title: string;
+        logoLabel: string;
         showContextSwitcher?: boolean;
         languageSwitcherLabel: string;
         openMobileMenuLabel: string;
@@ -7850,6 +8422,7 @@ export type GetHeaderQuery = {
             | {
                   __typename: 'ComponentContentNavigationGroup';
                   title: string;
+                  url?: string;
                   items: Array<{
                       __typename: 'ComponentContentNavigationItem';
                       id: string;
@@ -7858,6 +8431,7 @@ export type GetHeaderQuery = {
                       description?: string;
                       page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
                   }>;
+                  page?: { slug: string; permissions?: { __typename: 'ComponentSeoUserRoles'; roles?: any } };
               }
             | {
                   __typename: 'ComponentContentNavigationItem';
@@ -7911,11 +8485,13 @@ export type GetPageQuery = {
             keywords?: Array<{ keyword: string }>;
             image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
         };
+        theme?: { name: string };
         parent?: {
             slug: string;
             SEO: { title: string };
             parent?: { slug: string; SEO: { title: string }; parent?: { slug: string; SEO: { title: string } } };
         };
+        redirect?: { slug: string };
         template: Array<
             | {
                   __typename: 'ComponentTemplatesOneColumn';
@@ -7926,6 +8502,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -7935,6 +8512,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7955,6 +8533,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -7964,6 +8543,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -7981,6 +8561,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -7990,6 +8571,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8007,6 +8589,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8016,6 +8599,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8033,6 +8617,7 @@ export type GetPageQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8042,6 +8627,7 @@ export type GetPageQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8081,11 +8667,13 @@ export type GetPagesQuery = {
             keywords?: Array<{ keyword: string }>;
             image?: { url: string; alternativeText?: string; width?: number; height?: number; name: string };
         };
+        theme?: { name: string };
         parent?: {
             slug: string;
             SEO: { title: string };
             parent?: { slug: string; SEO: { title: string }; parent?: { slug: string; SEO: { title: string } } };
         };
+        redirect?: { slug: string };
         template: Array<
             | {
                   __typename: 'ComponentTemplatesOneColumn';
@@ -8096,6 +8684,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8105,6 +8694,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8125,6 +8715,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8134,6 +8725,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8151,6 +8743,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8160,6 +8753,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8177,6 +8771,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8186,6 +8781,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8203,6 +8799,7 @@ export type GetPagesQuery = {
                           spacing: Enum_Componentlayoutsection_Spacing;
                           background: Enum_Componentlayoutsection_Background;
                           variant: Enum_Componentlayoutsection_Variant;
+                          theme?: { name: string };
                       };
                       content: Array<
                           | { __typename: 'ComponentComponentsArticle' }
@@ -8212,6 +8809,7 @@ export type GetPagesQuery = {
                           | { __typename: 'ComponentComponentsCategory' }
                           | { __typename: 'ComponentComponentsCategoryList' }
                           | { __typename: 'ComponentComponentsCtaSection' }
+                          | { __typename: 'ComponentComponentsDocumentList' }
                           | { __typename: 'ComponentComponentsFaq' }
                           | { __typename: 'ComponentComponentsFeatureSection' }
                           | { __typename: 'ComponentComponentsFeatureSectionGrid' }
@@ -8353,7 +8951,14 @@ export const AppConfigFragmentDoc = gql`
         footer: signedInFooter {
             documentId
         }
+        themes {
+            name
+            logo {
+                ...Media
+            }
+        }
     }
+    ${MediaFragmentDoc}
 `;
 export const NavigationItemFragmentDoc = gql`
     fragment NavigationItem on ComponentContentNavigationItem {
@@ -8382,8 +8987,18 @@ export const NavigationGroupFragmentDoc = gql`
                 ...NavigationItem
             }
         }
+        url
+        page {
+            ... on Page {
+                slug
+                permissions {
+                    ...Roles
+                }
+            }
+        }
     }
     ${NavigationItemFragmentDoc}
+    ${RolesFragmentDoc}
 `;
 export const FooterFragmentDoc = gql`
     fragment Footer on Footer {
@@ -8392,6 +9007,7 @@ export const FooterFragmentDoc = gql`
         logo {
             ...Media
         }
+        logoLabel
         items {
             ... on ComponentContentNavigationGroup {
                 ...NavigationGroup
@@ -8413,6 +9029,7 @@ export const HeaderFragmentDoc = gql`
         logo {
             ...Media
         }
+        logoLabel
         items {
             ... on ComponentContentNavigationGroup {
                 ...NavigationGroup
@@ -8458,6 +9075,9 @@ export const LayoutSectionFragmentDoc = gql`
         spacing
         background
         variant
+        theme {
+            name
+        }
     }
 `;
 export const ComponentFragmentDoc = gql`
@@ -8515,6 +9135,9 @@ export const PageFragmentDoc = gql`
         SEO {
             ...Seo
         }
+        theme {
+            name
+        }
         parent {
             slug
             SEO {
@@ -8532,6 +9155,9 @@ export const PageFragmentDoc = gql`
                     }
                 }
             }
+        }
+        redirect {
+            slug
         }
         template {
             __typename
@@ -8604,6 +9230,7 @@ export const LinkFragmentDoc = gql`
         }
         description
         icon
+        variant
     }
 `;
 export const CardWithImageFragmentDoc = gql`
@@ -8683,16 +9310,38 @@ export const CtaSectionComponentFragmentDoc = gql`
     ${MediaFragmentDoc}
     ${LinkFragmentDoc}
 `;
+export const FileFragmentDoc = gql`
+    fragment File on ComponentContentFile {
+        title
+        file {
+            ...Media
+        }
+        icon
+    }
+    ${MediaFragmentDoc}
+`;
+export const DocumentListComponentFragmentDoc = gql`
+    fragment DocumentListComponent on ComponentComponentsDocumentList {
+        __typename
+        id
+        title
+        description
+        documents {
+            ...File
+        }
+    }
+    ${FileFragmentDoc}
+`;
 export const BannerFragmentDoc = gql`
     fragment Banner on ComponentContentBanner {
         title
         description
         altDescription
-        button {
-            label
-            url
+        link {
+            ...Link
         }
     }
+    ${LinkFragmentDoc}
 `;
 export const FaqComponentFragmentDoc = gql`
     fragment FaqComponent on ComponentComponentsFaq {
@@ -9014,6 +9663,9 @@ export const GetComponentDocument = gql`
                 ... on ComponentComponentsPricingSection {
                     ...PricingSectionComponent
                 }
+                ... on ComponentComponentsDocumentList {
+                    ...DocumentListComponent
+                }
             }
         }
         configurableTexts(locale: $locale) {
@@ -9070,6 +9722,7 @@ export const GetComponentDocument = gql`
     ${CtaSectionComponentFragmentDoc}
     ${BentoGridComponentFragmentDoc}
     ${PricingSectionComponentFragmentDoc}
+    ${DocumentListComponentFragmentDoc}
 `;
 export const GetFooterDocument = gql`
     query getFooter($locale: I18NLocaleCode!, $id: ID!) {

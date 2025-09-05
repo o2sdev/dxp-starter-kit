@@ -1,5 +1,25 @@
 # @dxp/blocks.bento-grid
 
+## 0.1.1
+
+### Patch Changes
+
+- 5654a4b: added Storybook support for blocks
+- Updated dependencies [5654a4b]
+- Updated dependencies [e8c3d7d]
+  - @dxp/ui@1.4.0
+
+## 0.1.0
+
+### Minor Changes
+
+- 3d6afed: feat: add proper Bento grid layout for better responsiveness
+
+### Patch Changes
+
+- Updated dependencies [3d6afed]
+  - @dxp/ui@1.2.0
+
 ## 0.0.5
 
 ### Patch Changes

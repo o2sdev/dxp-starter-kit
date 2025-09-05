@@ -35,6 +35,7 @@ export const mapMediaSectionBlock = (
                     pause: configurableTexts.media.pause,
                     mute: configurableTexts.media.mute,
                     unmute: configurableTexts.media.unmute,
+                    showMore: configurableTexts.actions.showMore,
                 },
             };
     }

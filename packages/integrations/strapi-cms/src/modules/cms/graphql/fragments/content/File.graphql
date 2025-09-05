@@ -1,0 +1,7 @@
+fragment File on ComponentContentFile {
+    title
+    file {
+        ...Media
+    }
+    icon
+}

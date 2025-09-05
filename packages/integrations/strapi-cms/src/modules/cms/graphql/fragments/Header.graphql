@@ -4,6 +4,7 @@ fragment Header on Header {
     logo {
         ...Media
     }
+    logoLabel
     items {
         ... on ComponentContentNavigationGroup {
             ...NavigationGroup

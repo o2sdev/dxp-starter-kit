@@ -3,12 +3,10 @@
 import { createNavigation } from 'next-intl/navigation';
 import React from 'react';
 
-import { ActionList } from '@dxp/ui/components/ActionList';
-import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
+import { LinkList } from '@dxp/ui/components/LinkList';
 import { RichText } from '@dxp/ui/components/RichText';
 
-import { Button } from '@dxp/ui/elements/button';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { MediaSectionPureProps } from './MediaSection.types';
@@ -40,34 +38,7 @@ export const MediaSectionPure: React.FC<MediaSectionPureProps> = ({ locale, acce
                     )}
                 </div>
 
-                {links && links.length > 0 && (
-                    <ActionList
-                        className="sm:flex-row align-start justify-center"
-                        actions={links.map(
-                            (link, index) =>
-                                link.label && (
-                                    <Button
-                                        asChild
-                                        variant={index === 0 ? 'default' : 'link'}
-                                        key={link.label}
-                                        className={
-                                            index === 0
-                                                ? 'no-underline hover:no-underline'
-                                                : 'no-underline hover:no-underline flex-1'
-                                        }
-                                    >
-                                        <LinkComponent href={link.url}>
-                                            <>
-                                                {link.label}
-                                                {link.icon && <DynamicIcon name={link.icon} size={16} />}
-                                            </>
-                                        </LinkComponent>
-                                    </Button>
-                                ),
-                        )}
-                        showMoreLabel=""
-                    />
-                )}
+                <LinkList className="justify-center" links={links} LinkComponent={LinkComponent} />
             </div>
 
             {isMediaAvailable && (
@@ -78,7 +49,7 @@ export const MediaSectionPure: React.FC<MediaSectionPureProps> = ({ locale, acce
                             alt={media.alt}
                             width={media.width}
                             height={media.height}
-                            className="object-cover h-auto w-full rounded-xl shadow-xl/20"
+                            className="object-scale-down rounded-3xl shadow-xl/20"
                         />
                     </div>
                 </div>

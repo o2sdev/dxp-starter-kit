@@ -1,5 +1,11 @@
 # create-dxp-app
 
+## 0.0.6
+
+### Patch Changes
+
+- e0067e9: updated the process of removing symlinks to be automatic
+
 ## 0.0.5
 
 ### Patch Changes

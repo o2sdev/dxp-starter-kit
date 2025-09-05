@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import { useGlobalContext } from '@dxp/ui/providers/GlobalProvider';
+
 import { Image } from '@dxp/ui/components/Image';
 
 import { Link } from '@dxp/ui/elements/link';
@@ -15,13 +17,18 @@ import { HeaderProps } from './Header.types';
 import { MobileNavigation } from './MobileNavigation/MobileNavigation';
 
 export const Header: React.FC<HeaderProps> = ({ data, alternativeUrls, children }) => {
+    const { themes } = useGlobalContext();
+
+    let logo = data.logo;
+
+    if (themes.current) {
+        logo = themes.available[themes.current]?.logo;
+    }
+
     const LogoSlot = (
         <Link asChild>
-            {/*TODO: get label from API*/}
-            <NextLink href="/" aria-label={'go to home'}>
-                {data.logo?.url && (
-                    <Image src={data.logo.url} alt={data.logo.alt} width={data.logo.width} height={data.logo.height} />
-                )}
+            <NextLink href="/" aria-label={data.logoLabel}>
+                {logo?.url && <Image src={logo.url} alt={logo.alt} width={logo.width} height={logo.height} />}
             </NextLink>
         </Link>
     );

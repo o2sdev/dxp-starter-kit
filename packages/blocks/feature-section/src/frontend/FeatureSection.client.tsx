@@ -5,12 +5,11 @@ import React from 'react';
 
 import { cn } from '@dxp/ui/lib/utils';
 
-import { ActionList } from '@dxp/ui/components/ActionList';
 import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
+import { LinkList } from '@dxp/ui/components/LinkList';
 import { RichText } from '@dxp/ui/components/RichText';
 
-import { Button } from '@dxp/ui/elements/button';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { FeatureSectionPureProps } from './FeatureSection.types';
@@ -23,7 +22,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
 }) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
-    const { title, description, image, featureList, links, preTitle, inverted, labels, iconBorder } = component;
+    const { title, description, image, featureList, links, preTitle, inverted, iconBorder } = component;
 
     const isImageAvailable = image && image.url;
 
@@ -65,14 +64,17 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                         <ul
                             className={cn(
                                 'grid grid-rows-1 gap-8 md:gap-4',
-                                !isImageAvailable && 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6',
+                                !isImageAvailable && 'grid-cols-1 gap-6',
+                                !isImageAvailable && featureList.length === 2 && 'md:grid-cols-2',
+                                !isImageAvailable && featureList.length === 3 && 'md:grid-cols-3',
+                                !isImageAvailable && featureList.length >= 4 && 'md:grid-cols-2 lg:grid-cols-4',
                             )}
                         >
                             {featureList.map((feature, index) => (
                                 <li
                                     key={`${feature.title}-${index}`}
                                     className={cn(
-                                        'flex flex-col md:flex-row gap-3 items-start',
+                                        'flex flex-row gap-3 items-start',
                                         !isImageAvailable && '!flex-col gap-5 items-center text-center',
                                     )}
                                 >
@@ -89,41 +91,25 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                                     </div>
                                     <div className="flex flex-col gap-2">
                                         <Typography variant="subtitle">{feature.title}</Typography>
-                                        <Typography variant="body">{feature.description}</Typography>
+                                        <RichText content={feature.description} baseFontSize="body" />
                                     </div>
                                 </li>
                             ))}
                         </ul>
                     )}
 
-                    {links && links.length > 0 && (
-                        <ActionList
-                            className={cn('sm:flex-row align-start', !isImageAvailable && 'justify-center')}
-                            actions={links.map(
-                                (link, index) =>
-                                    link.label && (
-                                        <Button
-                                            asChild
-                                            variant={index === 0 ? 'default' : 'link'}
-                                            key={`${link.label}-${index}`}
-                                            className={
-                                                index === 0
-                                                    ? 'no-underline hover:no-underline'
-                                                    : 'no-underline hover:no-underline flex-1'
-                                            }
-                                        >
-                                            <LinkComponent href={link.url}>
-                                                <>
-                                                    {link.label}
-                                                    {link.icon && <DynamicIcon name={link.icon} size={16} />}
-                                                </>
-                                            </LinkComponent>
-                                        </Button>
-                                    ),
-                            )}
-                            showMoreLabel={labels.showMore}
-                        />
-                    )}
+                    <LinkList
+                        className={cn(
+                            !isImageAvailable && 'justify-center',
+                            isImageAvailable &&
+                                links &&
+                                links.length === 1 &&
+                                links[0]?.variant === 'link' &&
+                                'items-start',
+                        )}
+                        links={links}
+                        LinkComponent={LinkComponent}
+                    />
                 </div>
             </div>
 
@@ -134,7 +120,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                         alt={image.alt}
                         width={image.width}
                         height={image.height}
-                        className="object-cover h-auto w-full rounded-xl"
+                        className="object-scale-down rounded-xl"
                     />
                 </div>
             )}

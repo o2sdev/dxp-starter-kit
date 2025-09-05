@@ -18,6 +18,7 @@ import { mapBentoGridBlock } from './mappers/blocks/cms.bento-grid.mapper';
 import { mapCategoryListBlock } from './mappers/blocks/cms.category-list.mapper';
 import { mapCategoryBlock } from './mappers/blocks/cms.category.mapper';
 import { mapCtaSectionBlock } from './mappers/blocks/cms.cta-section.mapper';
+import { mapDocumentListBlock } from './mappers/blocks/cms.decument-list.mapper';
 import { mapFaqBlock } from './mappers/blocks/cms.faq.mapper';
 import { mapFeatureSectionGridBlock } from './mappers/blocks/cms.feature-section-grid.mapper';
 import { mapFeatureSectionBlock } from './mappers/blocks/cms.feature-section.mapper';
@@ -94,7 +95,7 @@ export class CmsService implements CMS.Service {
                 locale: options.locale,
             });
 
-            return forkJoin([appConfig]).pipe(map(([appConfig]) => mapAppConfig(appConfig.data)));
+            return forkJoin([appConfig]).pipe(map(([appConfig]) => mapAppConfig(appConfig.data, this.baseUrl)));
         });
     }
 
@@ -127,7 +128,7 @@ export class CmsService implements CMS.Service {
                     });
 
                     if (!page) {
-                        throw new NotFoundException();
+                        return undefined;
                     }
 
                     return mapPage(page);
@@ -330,6 +331,13 @@ export class CmsService implements CMS.Service {
         const key = `pricing-section-component-${options.id}-${options.locale}`;
         return this.getCachedBlock(key, () =>
             this.getBlock(options).pipe(map((data) => mapPricingSectionBlock(data, this.baseUrl))),
+        );
+    }
+
+    getDocumentListBlock(options: CMS.Request.GetCmsEntryParams) {
+        const key = `document-list-component-${options.id}-${options.locale}`;
+        return this.getCachedBlock(key, () =>
+            this.getBlock(options).pipe(map((data) => mapDocumentListBlock(data, this.baseUrl))),
         );
     }
 }

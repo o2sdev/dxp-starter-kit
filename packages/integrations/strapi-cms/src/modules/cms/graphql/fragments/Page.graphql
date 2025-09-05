@@ -14,6 +14,9 @@ fragment Page on Page {
     SEO {
         ...Seo
     }
+    theme {
+        name
+    }
     parent {
         slug
         SEO {
@@ -31,6 +34,9 @@ fragment Page on Page {
                 }
             }
         }
+    }
+    redirect {
+        slug
     }
     template {
         __typename

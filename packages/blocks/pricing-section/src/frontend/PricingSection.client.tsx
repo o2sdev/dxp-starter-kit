@@ -3,6 +3,8 @@
 import { createNavigation } from 'next-intl/navigation';
 import React from 'react';
 
+import { cn } from '@dxp/ui/lib/utils';
+
 import { PricingCard } from '@dxp/ui/components/Cards/PricingCard';
 import { RichText } from '@dxp/ui/components/RichText';
 
@@ -25,7 +27,7 @@ export const PricingSectionPure: React.FC<PricingSectionPureProps> = ({
         <div className="w-full flex flex-col gap-16">
             <div className="h-full flex flex-col gap-4 md:gap-5">
                 {title && (
-                    <Typography variant="highlightedMedium" asChild>
+                    <Typography variant={headingType === 'h1' ? 'highlightedBig' : 'highlightedMedium'} asChild>
                         <HeadingComponent>{title}</HeadingComponent>
                     </Typography>
                 )}
@@ -38,9 +40,12 @@ export const PricingSectionPure: React.FC<PricingSectionPureProps> = ({
             </div>
 
             {pricingList && pricingList.length > 0 && (
-                <ul className="flex flex-col lg:flex-row gap-4">
+                <ul className="flex flex-col lg:flex-row gap-8 lg:gap-4 items-center lg:items-stretch lg:justify-center ">
                     {pricingList.map((card, index) => (
-                        <li key={`${card.title}-${index}`} className="flex-1 self-stretch">
+                        <li
+                            key={`${card.title}-${index}`}
+                            className={cn('flex-1 max-w-[400px]', card.isPromoted && 'order-first lg:order-none')}
+                        >
                             <PricingCard {...card} LinkComponent={LinkComponent} />
                         </li>
                     ))}

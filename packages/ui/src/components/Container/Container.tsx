@@ -15,8 +15,8 @@ const containerVariants = cva('w-full mx-auto px-4 md:px-6', {
         spacing: {
             none: '',
             small: 'py-6 md:py-6',
-            medium: 'py-16 md:py-20',
-            large: 'py-32 md:py-40',
+            medium: 'py-10 md:py-14',
+            large: 'py-20 md:py-24',
         },
     },
     defaultVariants: {
@@ -45,9 +45,15 @@ export const Container: React.FC<ContainerProps> = ({
     className,
     spacing = 'medium',
     background = 'none',
+    theme,
 }) => {
+    let finalTheme = theme;
+    if (theme) {
+        finalTheme = `theme-${theme}`;
+    }
+
     return (
-        <div className={cn(containerBackgroundVariants({ background }), className)}>
+        <div className={cn(finalTheme, containerBackgroundVariants({ background }), className)}>
             <div className={containerVariants({ variant, spacing })}>
                 <div className="">{children}</div>
             </div>

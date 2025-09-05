@@ -23,6 +23,7 @@ export const mapHeader = (data: GetHeaderQuery, baseURL?: string): CMS.Model.Hea
             width: component.logo.width,
             height: component.logo.height,
         },
+        logoLabel: component.logoLabel,
         userInfo:
             component.userInfo?.slug && component.userInfo?.SEO?.title
                 ? {
@@ -60,16 +61,17 @@ const mapNaviagation = (
             return {
                 __typename: 'NavigationGroup',
                 title: item.title,
-                items: item.items?.map((item) => mapHeaderItem(item)),
+                items: item.items?.map((item) => mapNavigationItem(item)),
+                url: item.url || item.page?.slug || '/',
             };
         case 'ComponentContentNavigationItem':
-            return mapHeaderItem(item);
+            return mapNavigationItem(item);
         default:
             throw new NotFoundException();
     }
 };
 
-const mapHeaderItem = (item: NavigationItemFragment): Models.Navigation.NavigationItem => {
+const mapNavigationItem = (item: NavigationItemFragment): Models.Navigation.NavigationItem => {
     return {
         __typename: 'NavigationItem',
         label: item.label,

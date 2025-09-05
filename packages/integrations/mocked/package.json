@@ -1,6 +1,6 @@
 {
     "name": "@dxp/integrations.mocked",
-    "version": "0.0.4",
+    "version": "0.4.4",
     "private": false,
     "license": "MIT",
     "exports": {
@@ -41,7 +41,6 @@
         "@dxp/eslint-config": "*",
         "@dxp/prettier-config": "*",
         "@dxp/typescript-config": "*",
-        "@o2s/telemetry": "*",
         "concurrently": "^9.1.2",
         "eslint": "^9.27.0",
         "prettier": "^3.5.3",

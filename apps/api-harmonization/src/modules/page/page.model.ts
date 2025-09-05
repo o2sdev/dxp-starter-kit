@@ -1,5 +1,6 @@
 import * as BentoGrid from '@dxp/blocks.bento-grid/api-harmonization';
 import * as CtaSection from '@dxp/blocks.cta-section/api-harmonization';
+import * as DocumentList from '@dxp/blocks.document-list/api-harmonization';
 import * as Faq from '@dxp/blocks.faq/api-harmonization';
 import * as FeatureSectionGrid from '@dxp/blocks.feature-section-grid/api-harmonization';
 import * as FeatureSection from '@dxp/blocks.feature-section/api-harmonization';
@@ -9,7 +10,6 @@ import * as PricingSection from '@dxp/blocks.pricing-section/api-harmonization';
 import * as QuickLinks from '@dxp/blocks.quick-links/api-harmonization';
 
 // BLOCK IMPORT
-
 import { CMS, Models } from '@dxp/framework/modules';
 
 export class Init {
@@ -19,9 +19,12 @@ export class Init {
     }[];
     common!: PageCommon;
     labels!: Labels;
+    themes!: Themes;
 }
 
 export type Labels = CMS.Model.AppConfig.Labels;
+export type Themes = CMS.Model.AppConfig.Themes;
+
 export class Page {
     data?: PageData;
     meta!: Metadata;
@@ -34,6 +37,8 @@ export class NotFound {
 export class Metadata {
     seo!: Models.SEO.Page;
     locales!: string[];
+    theme?: string;
+    redirect?: string;
 }
 
 export class Breadcrumb {
@@ -58,6 +63,7 @@ export class PageData {
 
 export type Blocks =
     // BLOCK REGISTER
+    | DocumentList.Model.DocumentListBlock['__typename']
     | PricingSection.Model.PricingSectionBlock['__typename']
     | FeatureSectionGrid.Model.FeatureSectionGridBlock['__typename']
     | HeroSection.Model.HeroSectionBlock['__typename']

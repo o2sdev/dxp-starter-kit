@@ -4,50 +4,60 @@ const MOCK_FOOTER_EN: CMS.Model.Footer.Footer = {
     id: 'laee0xa1zmm9uraev3hpruho',
     title: 'Legal and privacy',
     logo: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
         alt: 'Logo',
         width: 92,
         height: 24,
     },
+    logoLabel: 'Go to home',
     items: [
         {
             __typename: 'NavigationGroup',
-            title: 'Privacy Policy',
+            title: 'Personal',
+            url: '/personal',
             items: [
                 {
-                    label: 'Privacy Policy 1',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Accounts',
+                    url: '/personal/accounts',
                 },
                 {
-                    label: 'Privacy Policy 2',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Cards',
+                    url: '/personal/cards',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Insurance',
+                    url: '/personal/insurance',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Help and Support',
+                    url: '/help-and-support',
                 },
             ],
         },
         {
             __typename: 'NavigationGroup',
-            title: 'Terms of Service',
+            title: 'Business',
+            url: '/business',
             items: [
                 {
-                    label: 'Terms of Service 1',
-                    url: 'https://hycom.digital/terms-and-conditions',
                     __typename: 'NavigationItem',
+                    label: 'Accounts',
+                    url: '/business/accounts',
                 },
                 {
-                    label: 'Terms of Service 2',
-                    url: 'https://hycom.digital/terms-and-conditions',
                     __typename: 'NavigationItem',
+                    label: 'Cards',
+                    url: '/business/cards',
                 },
-            ],
-        },
-        {
-            __typename: 'NavigationGroup',
-            title: 'Cookies Settings',
-            items: [
-                { label: 'Cookies Settings 1', url: '/', __typename: 'NavigationItem' },
-                { label: 'Cookies Settings 2', url: '/', __typename: 'NavigationItem' },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Help and Support',
+                    url: '/help-and-support',
+                },
             ],
         },
     ],
@@ -58,57 +68,59 @@ const MOCK_FOOTER_PL: CMS.Model.Footer.Footer = {
     id: 'laee0xa1zmm9uraev3hpruho',
     title: 'Informacje prawne i prywatność',
     logo: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
         alt: 'Logo',
         width: 92,
         height: 24,
     },
+    logoLabel: 'Przejdź do strony głównej',
     items: [
         {
             __typename: 'NavigationGroup',
-            title: 'Polityka Prywatności',
+            title: 'Indywidualny',
+            url: '/indywidualny',
             items: [
                 {
-                    label: 'Polityka Prywatności 1',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Konta',
+                    url: '/indywidualny/konta',
                 },
                 {
-                    label: 'Polityka Prywatności 2',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Karty',
+                    url: '/indywidualny/karty',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Ubezpieczenia',
+                    url: '/indywidualny/ubezpieczenia',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Pomoc i wsparcie',
+                    url: '/pomoc-i-wsparcie',
                 },
             ],
         },
         {
             __typename: 'NavigationGroup',
-            title: 'Warunki Korzystania',
+            title: 'Firma',
+            url: '/firma',
             items: [
                 {
-                    label: 'Warunki Korzystania 1',
-                    url: 'https://hycom.digital/terms-and-conditions',
                     __typename: 'NavigationItem',
+                    label: 'Konta',
+                    url: '/firma/konta',
                 },
                 {
-                    label: 'Warunki Korzystania 2',
-                    url: 'https://hycom.digital/terms-and-conditions',
                     __typename: 'NavigationItem',
-                },
-            ],
-        },
-        {
-            __typename: 'NavigationGroup',
-            title: 'Ustawienia Plików Cookie',
-            items: [
-                {
-                    label: 'Ustawienia Plików Cookie 1',
-                    url: '/',
-                    __typename: 'NavigationItem',
+                    label: 'Karty',
+                    url: '/firma/karty',
                 },
                 {
-                    label: 'Ustawienia Plików Cookie 2',
-                    url: '/',
                     __typename: 'NavigationItem',
+                    label: 'Pomoc i wsparcie',
+                    url: '/pomoc-i-wsparcie',
                 },
             ],
         },
@@ -120,50 +132,60 @@ const MOCK_FOOTER_DE: CMS.Model.Footer.Footer = {
     id: 'laee0xa1zmm9uraev3hpruho',
     title: 'Rechtliches und Datenschutz',
     logo: {
-        url: 'https://raw.githubusercontent.com/o2sdev/openselfservice/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/logo.svg',
         alt: 'Logo',
         width: 92,
         height: 24,
     },
+    logoLabel: 'Zur Startseite',
     items: [
         {
             __typename: 'NavigationGroup',
-            title: 'Datenschutzrichtlinie',
+            title: 'Persönlich',
+            url: '/personlich',
             items: [
                 {
-                    label: 'Datenschutzrichtlinie 1',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Konten',
+                    url: '/personlich/konten',
                 },
                 {
-                    label: 'Datenschutzrichtlinie 2',
-                    url: 'https://hycom.digital/privacy-policy',
                     __typename: 'NavigationItem',
+                    label: 'Karten',
+                    url: '/personlich/karten',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Versicherungen',
+                    url: '/personlich/versicherungen',
+                },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Hilfe und Support',
+                    url: '/hilfe-und-support',
                 },
             ],
         },
         {
             __typename: 'NavigationGroup',
-            title: 'Nutzungsbedingungen',
+            title: 'Geschäftlich',
+            url: '/geschaftlich',
             items: [
                 {
-                    label: 'Nutzungsbedingungen 1',
-                    url: 'https://hycom.digital/terms-and-conditions',
                     __typename: 'NavigationItem',
+                    label: 'Konten',
+                    url: '/geschaftlich/konten',
                 },
                 {
-                    label: 'Nutzungsbedingungen 2',
-                    url: 'https://hycom.digital/terms-and-conditions',
                     __typename: 'NavigationItem',
+                    label: 'Karten',
+                    url: '/geschaftlich/karten',
                 },
-            ],
-        },
-        {
-            __typename: 'NavigationGroup',
-            title: 'Cookie-Einstellungen',
-            items: [
-                { label: 'Cookie-Einstellungen 1', url: '/', __typename: 'NavigationItem' },
-                { label: 'Cookie-Einstellungen 2', url: '/', __typename: 'NavigationItem' },
+                {
+                    __typename: 'NavigationItem',
+                    label: 'Hilfe und Support',
+                    url: '/hilfe-und-support',
+                },
             ],
         },
     ],

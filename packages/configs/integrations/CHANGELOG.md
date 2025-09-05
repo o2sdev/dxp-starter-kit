@@ -1,5 +1,21 @@
 # @dxp/configs.integrations
 
+## 0.1.0
+
+### Minor Changes
+
+- ecbe952: feat: replace buttons with links in blocks and add CMS-editable variant field
+
+### Patch Changes
+
+- Updated dependencies [7363f97]
+- Updated dependencies [05158f2]
+- Updated dependencies [e383fa0]
+- Updated dependencies [ecbe952]
+    - @dxp/integrations.strapi-cms@0.1.0
+    - @dxp/integrations.mocked@0.1.0
+    - @dxp/framework@0.1.0
+
 ## 0.0.5
 
 ### Patch Changes

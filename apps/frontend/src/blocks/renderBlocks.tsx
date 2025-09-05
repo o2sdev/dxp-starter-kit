@@ -3,6 +3,7 @@
 import { Modules } from '@dxp/api-harmonization';
 import * as BentoGrid from '@dxp/blocks.bento-grid/frontend';
 import * as CtaSection from '@dxp/blocks.cta-section/frontend';
+import * as DocumentList from '@dxp/blocks.document-list/frontend';
 import * as Faq from '@dxp/blocks.faq/frontend';
 import * as FeatureSectionGrid from '@dxp/blocks.feature-section-grid/frontend';
 import * as FeatureSection from '@dxp/blocks.feature-section/frontend';
@@ -11,7 +12,6 @@ import * as MediaSection from '@dxp/blocks.media-section/frontend';
 import * as PricingSection from '@dxp/blocks.pricing-section/frontend';
 import * as QuickLinks from '@dxp/blocks.quick-links/frontend';
 // BLOCK IMPORT
-import { RoutingConfig } from 'next-intl/routing';
 import { getLocale } from 'next-intl/server';
 import React from 'react';
 
@@ -28,16 +28,7 @@ interface BlockProps {
     slug: string[];
     locale: string;
     accessToken: string | undefined;
-    routing: RoutingConfig<
-        string[],
-        'always',
-        {
-            [key: string]: {
-                [locale: string]: string;
-            };
-        },
-        never
-    >;
+    routing: typeof routing;
 }
 
 export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: string[]) => {
@@ -58,6 +49,7 @@ export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: str
                 variant={block.layout?.variant}
                 spacing={block.layout?.spacing}
                 background={block.layout?.background}
+                theme={block.layout?.theme}
                 key={block.id}
             >
                 {renderBlock(block.__typename, blockProps)}
@@ -86,6 +78,8 @@ const renderBlock = (typename: string, blockProps: BlockProps) => {
             return <FeatureSectionGrid.Renderer {...blockProps} />;
         case 'PricingSectionBlock':
             return <PricingSection.Renderer {...blockProps} />;
+        case 'DocumentListBlock':
+            return <DocumentList.Renderer {...blockProps} />;
         // BLOCK REGISTER
         default:
             return null;

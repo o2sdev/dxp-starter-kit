@@ -8,6 +8,8 @@ import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
+import { RichText } from '../../RichText';
+
 import { InformativeCardProps } from './InformativeCard.types';
 
 const InformativeCardContent: React.FC<Readonly<InformativeCardProps>> = ({
@@ -15,7 +17,7 @@ const InformativeCardContent: React.FC<Readonly<InformativeCardProps>> = ({
     title,
     description,
     href,
-    lineClamp,
+    lineClamp = 7,
 }) => {
     if (!icon && !title && !description) {
         return null;
@@ -35,15 +37,14 @@ const InformativeCardContent: React.FC<Readonly<InformativeCardProps>> = ({
                 {title && <Typography variant="h3">{title}</Typography>}
 
                 {description && (
-                    <Typography
-                        variant="p"
+                    <RichText
+                        baseFontSize="body"
+                        content={description}
                         className={cn(
                             'text-muted-foreground',
                             lineClamp && `overflow-ellipsis line-clamp-${lineClamp}`,
                         )}
-                    >
-                        {description}
-                    </Typography>
+                    />
                 )}
             </div>
             {href && (

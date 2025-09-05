@@ -5,12 +5,12 @@ import React from 'react';
 
 import { cn } from '@dxp/ui/lib/utils';
 
-import { ActionList } from '@dxp/ui/components/ActionList';
 import { DynamicIcon } from '@dxp/ui/components/DynamicIcon';
 import { Image } from '@dxp/ui/components/Image';
+import { LinkList } from '@dxp/ui/components/LinkList';
 import { RichText } from '@dxp/ui/components/RichText';
 
-import { Button } from '@dxp/ui/elements/button';
+import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
 import { CtaSectionPureProps } from './CtaSection.types';
@@ -18,7 +18,7 @@ import { CtaSectionPureProps } from './CtaSection.types';
 export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessToken, routing, ...component }) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
-    const { title, description, image, links, preTitle, inverted, labels } = component;
+    const { title, description, image, links, preTitle, inverted } = component;
 
     const isImageAvailable = image && image.url;
 
@@ -44,55 +44,45 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
                         )}
                     >
                         <div className="flex flex-col gap-5 md:gap-4">
-                            {preTitle && (
-                                <Typography variant="body" className="text-primary-foreground">
-                                    {preTitle}
-                                </Typography>
-                            )}
+                            {preTitle && <Typography variant="body">{preTitle}</Typography>}
 
                             {title && (
-                                <Typography variant="highlightedMedium" asChild>
+                                <Typography variant="highlightedMedium" asChild className="text-secondary">
                                     <h2>{title}</h2>
                                 </Typography>
                             )}
                         </div>
 
-                        {description && (
-                            <RichText content={description} baseFontSize="body" className="text-primary-foreground" />
-                        )}
+                        {description && <RichText content={description} baseFontSize="body" className="text-muted" />}
                     </div>
 
-                    {links && links.length > 0 && (
-                        <ActionList
-                            className={cn(
-                                'sm:flex-row align-start justify-center lg:justify-start',
-                                !isImageAvailable && 'justify-center lg:justify-center',
-                            )}
-                            actions={links.map(
-                                (link, index) =>
-                                    link.label && (
-                                        <Button
-                                            asChild
-                                            variant={index === 0 ? 'default' : 'link'}
-                                            key={`${link.label}-${index}`}
-                                            className={
-                                                index === 0
-                                                    ? 'no-underline hover:no-underline bg-primary-foreground text-primary hover:bg-primary-foreground/80'
-                                                    : 'no-underline hover:no-underline flex-1 text-primary-foreground'
-                                            }
-                                        >
-                                            <LinkComponent href={link.url}>
-                                                <>
-                                                    {link.label}
-                                                    {link.icon && <DynamicIcon name={link.icon} size={16} />}
-                                                </>
-                                            </LinkComponent>
-                                        </Button>
-                                    ),
-                            )}
-                            showMoreLabel={labels.showMore}
-                        />
-                    )}
+                    <LinkList
+                        className={cn('justify-center lg:justify-start', !isImageAvailable && 'lg:justify-center')}
+                        LinkComponent={LinkComponent}
+                    >
+                        {links?.map(
+                            (link) =>
+                                link.label && (
+                                    <Link
+                                        asChild
+                                        variant={link.variant}
+                                        key={link.label}
+                                        className={cn(
+                                            link.variant === 'primary' &&
+                                                'text-primary bg-primary-foreground hover:bg-primary-foreground/90',
+                                            link.variant === 'link' && 'text-link bg-link-foreground',
+                                        )}
+                                    >
+                                        <LinkComponent href={link.url}>
+                                            <>
+                                                {link.label}
+                                                {link.icon && <DynamicIcon name={link.icon} size={16} />}
+                                            </>
+                                        </LinkComponent>
+                                    </Link>
+                                ),
+                        )}
+                    </LinkList>
                 </div>
             </div>
 

@@ -1,7 +1,8 @@
 'use client';
 
+import { ChevronDownIcon } from 'lucide-react';
 import { useLocale } from 'next-intl';
-import React, { JSX } from 'react';
+import React from 'react';
 
 import { Models } from '@dxp/framework/modules';
 
@@ -9,7 +10,7 @@ import { cn } from '@dxp/ui/lib/utils';
 
 import { Image } from '@dxp/ui/components/Image';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@dxp/ui/elements/accordion';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@dxp/ui/elements/collapsible';
 import { Link } from '@dxp/ui/elements/link';
 import {
     NavigationMenu,
@@ -28,11 +29,18 @@ import { FooterProps } from './Footer.types';
 export const Footer: React.FC<FooterProps> = ({ data }) => {
     const locale = useLocale();
 
-    const navigationItemClass = cn(navigationMenuTriggerStyle());
+    const navigationItemClass = cn(
+        navigationMenuTriggerStyle(),
+        'data-active:bg-transparent data-active:underline underline-offset-4 hover:!bg-transparent hover:underline',
+    );
 
     const mobileNavigationItemClass = cn(navigationMenuTriggerStyle(), navigationItemClass, 'justify-start');
 
     const getUrl = (item: Models.Navigation.NavigationGroup) => {
+        if (item.url) {
+            return item.url;
+        }
+
         const lvl1Item = item.items?.[0];
         if (lvl1Item) {
             if (lvl1Item.__typename === 'NavigationItem') {
@@ -40,9 +48,11 @@ export const Footer: React.FC<FooterProps> = ({ data }) => {
             }
         }
 
-        const lvl2Item = item.items?.[0];
-        if (lvl2Item?.__typename === 'NavigationItem') {
-            return lvl2Item.url || '/';
+        if (item.items?.[0]?.__typename === 'NavigationGroup') {
+            const lvl2Item = item.items?.[0]?.items?.[0];
+            if (lvl2Item?.__typename === 'NavigationItem') {
+                return lvl2Item.url || '/';
+            }
         }
 
         return '/';
@@ -86,22 +96,28 @@ export const Footer: React.FC<FooterProps> = ({ data }) => {
         );
     };
 
-    const AccordionItemTemplate = ({
+    const CollapsibleItemTemplate = ({
         item,
-        tag,
         children,
     }: {
         item: Models.Navigation.NavigationGroup;
-        tag: keyof JSX.IntrinsicElements;
         children: React.ReactNode;
     }) => {
         return (
-            <AccordionItem value={item.title} className="border-none">
-                <AccordionTrigger className={mobileNavigationItemClass} tag={tag}>
-                    {item.title}
-                </AccordionTrigger>
-                <AccordionContent className="p-0">{children}</AccordionContent>
-            </AccordionItem>
+            <Collapsible>
+                <div className="flex items-center justify-between">
+                    <Link className={cn(mobileNavigationItemClass, 'flex-1')} asChild>
+                        <NextLink href={item.url || '/'}>{item.title}</NextLink>
+                    </Link>
+
+                    <CollapsibleTrigger className="p-1.5 data-[state=open]:rotate-180 transition-transform duration-200 border border-border">
+                        <ChevronDownIcon className="h-6 w-6" />
+                    </CollapsibleTrigger>
+                </div>
+                <CollapsibleContent className="p-0 overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up flex flex-col gap-2">
+                    {children}
+                </CollapsibleContent>
+            </Collapsible>
         );
     };
 
@@ -119,33 +135,50 @@ export const Footer: React.FC<FooterProps> = ({ data }) => {
 
     const NavigationGroup = ({ item }: { item: Models.Navigation.NavigationGroup }) => {
         return (
-            <AccordionItemTemplate item={item} tag="h3">
-                <ul className="flex flex-col items-start gap-2 w-full pt-2 pl-3">
-                    {item.items.map((item) => {
-                        switch (item.__typename) {
-                            case 'NavigationItem':
-                                return <MobileNavigationItem item={item} key={item.label} />;
-                            case 'NavigationGroup':
-                                return (
-                                    <li key={item.title} className="w-full list-none">
-                                        <Accordion type="multiple" className="flex flex-col gap-2">
-                                            <AccordionItemTemplate item={item} tag="h4">
-                                                <ul className="flex flex-col items-start gap-2 w-full pt-2 pl-3">
-                                                    {item.items.map((item) => {
-                                                        if (item.__typename !== 'NavigationItem') {
-                                                            return null;
-                                                        }
-                                                        return <MobileNavigationItem item={item} key={item.label} />;
-                                                    })}
-                                                </ul>
-                                            </AccordionItemTemplate>
-                                        </Accordion>
-                                    </li>
-                                );
-                        }
-                    })}
-                </ul>
-            </AccordionItemTemplate>
+            <li key={item.title} className="w-full list-none">
+                <CollapsibleItemTemplate item={item}>
+                    <ul className="flex flex-col items-start gap-2 w-full pt-2 pl-3">
+                        {item.items.map((item) => {
+                            switch (item.__typename) {
+                                case 'NavigationItem':
+                                    return <MobileNavigationItem item={item} key={item.label} />;
+                                case 'NavigationGroup':
+                                    return (
+                                        <li key={item.title} className="w-full list-none">
+                                            <Collapsible>
+                                                <div className="flex items-center justify-between">
+                                                    <Link className={mobileNavigationItemClass} asChild>
+                                                        <NextLink href={item.url || '/'}>{item.title}</NextLink>
+                                                    </Link>
+
+                                                    <CollapsibleTrigger className="p-1.5 data-[state=open]:rotate-180 transition-transform duration-200 border border-border">
+                                                        <ChevronDownIcon className="h-6 w-6" />
+                                                    </CollapsibleTrigger>
+                                                </div>
+                                                <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up flex flex-col gap-2 p-0">
+                                                    <ul className="flex flex-col items-start gap-2 w-full pt-2 pl-3">
+                                                        {item.items.map((item) => {
+                                                            if (item.__typename !== 'NavigationItem') {
+                                                                return null;
+                                                            }
+                                                            return (
+                                                                <MobileNavigationItem item={item} key={item.label} />
+                                                            );
+                                                        })}
+                                                    </ul>
+
+                                                    <Separator className="w-full" />
+                                                </CollapsibleContent>
+                                            </Collapsible>
+                                        </li>
+                                    );
+                            }
+                        })}
+                    </ul>
+
+                    <Separator className="w-full" />
+                </CollapsibleItemTemplate>
+            </li>
         );
     };
 
@@ -154,8 +187,7 @@ export const Footer: React.FC<FooterProps> = ({ data }) => {
             <Separator />
             <div className="w-full m-auto max-w-7xl flex flex-row justify-between px-4 md:px-6 py-4 md:py-6">
                 <div className="flex gap-8 items-center justify-between w-full md:justify-start">
-                    {/*TODO: get label from API*/}
-                    <Link href="/" aria-label={'go to home'}>
+                    <Link href="/" aria-label={data.logoLabel}>
                         {data.logo?.url && (
                             <Image
                                 src={data.logo.url}
@@ -196,20 +228,22 @@ export const Footer: React.FC<FooterProps> = ({ data }) => {
             </div>
             <Separator />
             <div className="w-full m-auto max-w-7xl flex flex-col md:hidden">
-                <Accordion type="multiple" className="flex flex-col gap-2 p-2">
-                    <AccordionItemTemplate item={data as unknown as Models.Navigation.NavigationGroup} tag="h2">
-                        <Accordion type="multiple" className="flex flex-col gap-2 pt-2 pl-3">
-                            {data.items.map((item) => {
-                                switch (item.__typename) {
-                                    case 'NavigationItem':
-                                        return <MobileNavigationItem item={item} key={item.label} />;
-                                    case 'NavigationGroup':
-                                        return <NavigationGroup item={item} key={item.title} />;
-                                }
-                            })}
-                        </Accordion>
-                    </AccordionItemTemplate>
-                </Accordion>
+                <Collapsible className="flex flex-col gap-2 p-2">
+                    <CollapsibleItemTemplate item={data as unknown as Models.Navigation.NavigationGroup}>
+                        <Collapsible className="flex flex-col gap-2 pt-2 pl-3">
+                            <ul className="flex flex-col gap-2">
+                                {data.items.map((item) => {
+                                    switch (item.__typename) {
+                                        case 'NavigationItem':
+                                            return <MobileNavigationItem item={item} key={item.label} />;
+                                        case 'NavigationGroup':
+                                            return <NavigationGroup item={item} key={item.title} />;
+                                    }
+                                })}
+                            </ul>
+                        </Collapsible>
+                    </CollapsibleItemTemplate>
+                </Collapsible>
                 <Separator />
             </div>
         </footer>

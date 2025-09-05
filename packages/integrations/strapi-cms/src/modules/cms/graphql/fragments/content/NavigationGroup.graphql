@@ -6,4 +6,13 @@ fragment NavigationGroup on ComponentContentNavigationGroup {
             ...NavigationItem
         }
     }
+    url
+    page {
+        ... on Page {
+            slug
+            permissions {
+                ...Roles
+            }
+        }
+    }
 }

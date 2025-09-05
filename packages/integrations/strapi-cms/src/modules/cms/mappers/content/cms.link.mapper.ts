@@ -10,5 +10,6 @@ export const mapLink = (component?: LinkFragment): Models.Link.Link | undefined 
         description: component.description,
         url: (component.page?.slug || component.url)!,
         icon: component.icon,
+        variant: component.variant,
     };
 };

@@ -31,6 +31,8 @@ export const mapPage = (
                 noFollow: page.seo.noFollow,
             },
             locales,
+            theme: page.theme,
+            redirect: page.redirect,
         },
         data: {
             alternativeUrls,
@@ -138,6 +140,7 @@ export const mapInit = (
     header: CMS.Model.Header.Header,
     footer: CMS.Model.Footer.Footer,
     labels: CMS.Model.AppConfig.Labels,
+    themes: CMS.Model.AppConfig.Themes,
     roles: Auth.Constants.Roles[],
 ): Init => {
     return {
@@ -173,5 +176,6 @@ export const mapInit = (
             },
         },
         labels,
+        themes,
     };
 };

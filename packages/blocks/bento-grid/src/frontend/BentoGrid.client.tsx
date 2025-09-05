@@ -40,13 +40,19 @@ export const BentoGridPure: React.FC<BentoGridPureProps> = ({ locale, accessToke
                     className={cn(
                         'grid grid-flow-row mx-auto gap-3 grid-cols-[repeat(1,minmax(250px,500px))]',
                         items.length === 2 && 'lg:grid-cols-[repeat(2,minmax(250px,500px))]',
-                        items.length === 3 && 'lg:grid-cols-[repeat(3,minmax(250px,500px))]',
+                        items.length >= 3 && 'lg:grid-cols-[repeat(3,minmax(250px,500px))]',
                     )}
                 >
                     {items.map(
                         (item, index) =>
                             item.title && (
-                                <li key={`${item.title}-${index}`} className="w-full">
+                                <li
+                                    key={`${item.title}-${index}`}
+                                    className={cn(
+                                        'w-full h-full',
+                                        index === 3 || index === 6 || index === 10 ? 'lg:col-span-2' : '',
+                                    )}
+                                >
                                     <FeatureCard
                                         title={item.title}
                                         description={item.description}

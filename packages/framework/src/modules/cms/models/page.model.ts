@@ -22,7 +22,9 @@ export class Page {
             };
         };
     };
+    redirect?: string;
     permissions?: Auth.Constants.Roles[];
+    theme?: string;
 }
 
 export abstract class Template {
@@ -60,4 +62,5 @@ export class LayoutSection {
     spacing?: 'none' | 'small' | 'medium' | 'large';
     background?: 'none' | 'light' | 'dark' | 'brand';
     variant?: 'narrow' | 'full' | 'wide';
+    theme?: string;
 }

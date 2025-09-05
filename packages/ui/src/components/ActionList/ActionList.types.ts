@@ -1,10 +1,10 @@
 import { VariantProps } from 'class-variance-authority';
 
-import { buttonVariants } from '@dxp/ui/elements/button';
+import { baseVariant } from '@dxp/ui/lib/utils';
 
 export type ActionListProps = {
     actions?: React.ReactNode[];
     showMoreLabel: string;
     className?: string;
-    triggerVariant?: VariantProps<typeof buttonVariants>['variant'];
+    triggerVariant?: VariantProps<typeof baseVariant>['variant'];
 };

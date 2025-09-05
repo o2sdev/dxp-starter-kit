@@ -32,6 +32,7 @@ export const mapPage = (data: PageFragment): CMS.Model.Page.Page => {
                   }
                 : undefined,
         },
+        theme: data.theme?.name,
         hasOwnTitle: data.hasOwnTitle,
         showBreadcrumbs: data.showBreadcrumbs,
         parent: {
@@ -52,6 +53,7 @@ export const mapPage = (data: PageFragment): CMS.Model.Page.Page => {
                 },
             },
         },
+        redirect: data.redirect?.slug,
     };
 };
 
@@ -152,6 +154,7 @@ const mapLayout = (layout: LayoutSectionFragment): CMS.Model.Page.LayoutSection 
         spacing: layout.spacing,
         background: layout.background,
         variant: layout.variant,
+        theme: layout.theme?.name,
     };
 };
 
@@ -186,5 +189,7 @@ const mapComponent = (component: ComponentFragment) => {
             return 'BentoGridBlock';
         case 'ComponentComponentsPricingSection':
             return 'PricingSectionBlock';
+        case 'ComponentComponentsDocumentList':
+            return 'DocumentListBlock';
     }
 };

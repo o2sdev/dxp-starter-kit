@@ -20,7 +20,7 @@ import { generateSeo } from '@/utils/seo';
 
 import { auth, signIn } from '@/auth';
 
-import { Link } from '@/i18n';
+import { Link, redirect } from '@/i18n';
 
 import { PageTemplate } from '@/templates/PageTemplate/PageTemplate';
 
@@ -96,6 +96,13 @@ export default async function Page({ params }: Props) {
             session?.accessToken,
         );
 
+        if (meta.redirect) {
+            redirect({
+                href: meta.redirect,
+                locale,
+            });
+        }
+
         if (session?.user && session?.error === 'RefreshTokenError') {
             return await signIn();
         }
@@ -104,47 +111,60 @@ export default async function Page({ params }: Props) {
             notFound();
         }
 
+        let theme = '';
+        if (meta.theme) {
+            theme = `theme-${meta.theme}`;
+        }
+
         return (
-            <GlobalProvider config={init} labels={init.labels} locale={locale}>
-                <div className="flex flex-col min-h-dvh">
-                    <Header data={init.common.header} alternativeUrls={data.alternativeUrls} />
-                    <div className="flex flex-col grow">
-                        <main className="flex flex-col row-start-2 items-center sm:items-start">
-                            <div className="w-full px-4 md:px-6 ml-auto mr-auto md:max-w-7xl">
-                                {data.showBreadcrumbs && (
-                                    <div className="my-6">
-                                        <Breadcrumbs
-                                            breadcrumbs={
-                                                rootBreadcrumb
-                                                    ? [rootBreadcrumb, ...data.breadcrumbs]
-                                                    : data.breadcrumbs
-                                            }
-                                            LinkComponent={Link}
-                                        />
-                                    </div>
-                                )}
+            <body className={theme}>
+                <GlobalProvider
+                    config={init}
+                    labels={init.labels}
+                    locale={locale}
+                    themes={init.themes}
+                    currentTheme={meta.theme}
+                >
+                    <div className="flex flex-col min-h-dvh">
+                        <Header data={init.common.header} alternativeUrls={data.alternativeUrls} />
+                        <div className="flex flex-col grow">
+                            <main className="flex flex-col row-start-2 items-center sm:items-start">
+                                <div className="w-full px-4 md:px-6 ml-auto mr-auto md:max-w-7xl">
+                                    {data.showBreadcrumbs && (
+                                        <div className="my-6">
+                                            <Breadcrumbs
+                                                breadcrumbs={
+                                                    rootBreadcrumb
+                                                        ? [rootBreadcrumb, ...data.breadcrumbs]
+                                                        : data.breadcrumbs
+                                                }
+                                                LinkComponent={Link}
+                                            />
+                                        </div>
+                                    )}
 
-                                {!data.hasOwnTitle && (
-                                    <div className="flex flex-col gap-6 my-6">
-                                        <Typography variant="h1" asChild>
-                                            <h1>{meta.seo.title}</h1>
-                                        </Typography>
-                                        <Separator />
-                                    </div>
-                                )}
-                            </div>
+                                    {!data.hasOwnTitle && (
+                                        <div className="flex flex-col gap-6 my-6">
+                                            <Typography variant="h1" asChild>
+                                                <h1>{meta.seo.title}</h1>
+                                            </Typography>
+                                            <Separator />
+                                        </div>
+                                    )}
+                                </div>
 
-                            <div className="relative w-full h-full">
-                                <PageTemplate slug={slug} data={data} />
-                            </div>
-                        </main>
+                                <div className="relative w-full h-full">
+                                    <PageTemplate slug={slug} data={data} />
+                                </div>
+                            </main>
+                        </div>
+                        <Footer data={init.common.footer} />
+
+                        <Toaster />
+                        <AppSpinner />
                     </div>
-                    <Footer data={init.common.footer} />
-
-                    <Toaster />
-                    <AppSpinner />
-                </div>
-            </GlobalProvider>
+                </GlobalProvider>
+            </body>
         );
     } catch (error) {
         if (

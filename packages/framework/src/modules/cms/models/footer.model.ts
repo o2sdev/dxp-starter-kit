@@ -7,4 +7,5 @@ export class Footer {
     copyright!: string;
     items!: (NavigationGroup | NavigationItem)[];
     logo?: Media.Media;
+    logoLabel?: string;
 }

@@ -49,9 +49,4 @@ export class CmsController {
     getAppConfig(@Query() params: Request.GetCmsAppConfigParams) {
         return this.cms.getAppConfig(params);
     }
-
-    @Get('/blocks/faq')
-    getFaqBlock(@Query() params: Request.GetCmsEntryParams) {
-        return this.cms.getFaqBlock(params);
-    }
 }
