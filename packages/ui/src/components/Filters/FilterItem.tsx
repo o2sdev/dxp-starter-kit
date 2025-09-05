@@ -1,5 +1,5 @@
 import { Field, FieldProps, FormikValues } from 'formik';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import ScrollContainer from 'react-indiana-drag-scroll';
 
 import { cn } from '@dxp/ui/lib/utils';
