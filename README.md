@@ -50,7 +50,7 @@ Includes guides for installation, configuration, content modeling, and extensibi
 To create a new project based on the starter:
 
 ```bash
-npx create-o2s-dxp-app my-project
+npx create-dxp-app my-project
 cd my-project
 npm run dev
 ```
