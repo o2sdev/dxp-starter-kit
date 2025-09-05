@@ -16,9 +16,9 @@
         "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json}\""
     },
     "dependencies": {
-        "@dxp/framework": "*",
-        "@dxp/integrations.mocked": "*",
-        "@dxp/integrations.strapi-cms": "*"
+        "@dxp/framework": "^0.2.1",
+        "@dxp/integrations.mocked": "^0.4.4",
+        "@dxp/integrations.strapi-cms": "^0.3.0"
     },
     "devDependencies": {
         "@dxp/eslint-config": "*",
