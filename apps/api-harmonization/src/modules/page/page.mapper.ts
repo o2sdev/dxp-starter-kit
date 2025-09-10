@@ -59,6 +59,7 @@ export const mapArticle = (
                 noFollow: false,
             },
             locales: [mainLocale],
+            theme: article.theme,
         },
         data: {
             alternativeUrls: {},
@@ -68,6 +69,11 @@ export const mapArticle = (
                     main: [
                         {
                             __typename: 'ArticleBlock',
+                            layout: {
+                                variant: 'full',
+                                spacing: 'none',
+                                background: 'none',
+                            },
                             ...article,
                         },
                     ],

@@ -1,4 +1,9 @@
+import * as ArticleList from '@dxp/blocks.article-list/api-harmonization';
+import * as ArticleSearch from '@dxp/blocks.article-search/api-harmonization';
+import * as Article from '@dxp/blocks.article/api-harmonization';
 import * as BentoGrid from '@dxp/blocks.bento-grid/api-harmonization';
+import * as CategoryList from '@dxp/blocks.category-list/api-harmonization';
+import * as Category from '@dxp/blocks.category/api-harmonization';
 import * as CtaSection from '@dxp/blocks.cta-section/api-harmonization';
 import * as DocumentList from '@dxp/blocks.document-list/api-harmonization';
 import * as Faq from '@dxp/blocks.faq/api-harmonization';
@@ -72,4 +77,9 @@ export type Blocks =
     | BentoGrid.Model.BentoGridBlock['__typename']
     | CtaSection.Model.CtaSectionBlock['__typename']
     | FeatureSection.Model.FeatureSectionBlock['__typename']
-    | Faq.Model.FaqBlock['__typename'];
+    | Faq.Model.FaqBlock['__typename']
+    | CategoryList.Model.CategoryListBlock['__typename']
+    | ArticleList.Model.ArticleListBlock['__typename']
+    | Category.Model.CategoryBlock['__typename']
+    | Article.Model.ArticleBlock['__typename']
+    | ArticleSearch.Model.ArticleSearchBlock['__typename'];

@@ -3,6 +3,8 @@ import { of } from 'rxjs';
 
 import { CMS } from '@dxp/framework/modules';
 
+import { mapArticleListBlock } from './mappers/blocks/cms.article-list.mapper';
+import { mapArticleSearchBlock } from './mappers/blocks/cms.article-search.mapper';
 import { mapBentoGridBlock } from './mappers/blocks/cms.bento-grid.mapper';
 import { mapCtaSectionBlock } from './mappers/blocks/cms.cta-section.mapper';
 import { mapDocumentListBlock } from './mappers/blocks/cms.document-list.mapper';
@@ -14,6 +16,8 @@ import { mapMediaSectionBlock } from './mappers/blocks/cms.media-section.mapper'
 import { mapPricingSectionBlock } from './mappers/blocks/cms.pricing-section.mapper';
 import { mapQuickLinksBlock } from './mappers/blocks/cms.quick-links.mapper';
 import { mapAppConfig } from './mappers/cms.app-config.mapper';
+import { mapCategoryListBlock } from './mappers/cms.category-list.mapper';
+import { mapCategoryBlock } from './mappers/cms.category.mapper';
 import { mapFooter } from './mappers/cms.footer.mapper';
 import { mapHeader } from './mappers/cms.header.mapper';
 import { mapNotFoundPage } from './mappers/cms.not-found-page.mapper';
@@ -96,5 +100,21 @@ export class CmsService implements CMS.Service {
 
     getDocumentListBlock(_options: CMS.Request.GetCmsEntryParams) {
         return of(mapDocumentListBlock(_options.locale)).pipe(responseDelay());
+    }
+
+    getArticleListBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapArticleListBlock(options.id, options.locale)).pipe(responseDelay());
+    }
+
+    getCategoryBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapCategoryBlock(options.id, options.locale)).pipe(responseDelay());
+    }
+
+    getCategoryListBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapCategoryListBlock(options.locale)).pipe(responseDelay());
+    }
+
+    getArticleSearchBlock(options: CMS.Request.GetCmsEntryParams) {
+        return of(mapArticleSearchBlock(options.id, options.locale)).pipe(responseDelay());
     }
 }
