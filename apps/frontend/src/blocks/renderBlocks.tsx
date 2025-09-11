@@ -1,7 +1,12 @@
 'use server';
 
 import { Modules } from '@dxp/api-harmonization';
+import * as ArticleList from '@dxp/blocks.article-list/frontend';
+import * as ArticleSearch from '@dxp/blocks.article-search/frontend';
+import * as Article from '@dxp/blocks.article/frontend';
 import * as BentoGrid from '@dxp/blocks.bento-grid/frontend';
+import * as CategoryList from '@dxp/blocks.category-list/frontend';
+import * as Category from '@dxp/blocks.category/frontend';
 import * as CtaSection from '@dxp/blocks.cta-section/frontend';
 import * as DocumentList from '@dxp/blocks.document-list/frontend';
 import * as Faq from '@dxp/blocks.faq/frontend';
@@ -80,6 +85,16 @@ const renderBlock = (typename: string, blockProps: BlockProps) => {
             return <PricingSection.Renderer {...blockProps} />;
         case 'DocumentListBlock':
             return <DocumentList.Renderer {...blockProps} />;
+        case 'CategoryListBlock':
+            return <CategoryList.Renderer {...blockProps} />;
+        case 'ArticleListBlock':
+            return <ArticleList.Renderer {...blockProps} />;
+        case 'CategoryBlock':
+            return <Category.Renderer {...blockProps} renderBlocks={renderBlocks} />;
+        case 'ArticleBlock':
+            return <Article.Renderer {...blockProps} />;
+        case 'ArticleSearchBlock':
+            return <ArticleSearch.Renderer {...blockProps} />;
         // BLOCK REGISTER
         default:
             return null;

@@ -44,7 +44,9 @@ export const BlogCard: React.FC<Readonly<BlogCardProps>> = ({
                             {categoryTitle && (
                                 <>
                                     <span className="text-sm">·</span>
-                                    <span>{categoryTitle}</span>
+                                    <span className="text-ellipsis whitespace-nowrap overflow-hidden">
+                                        {categoryTitle}
+                                    </span>
                                 </>
                             )}
                         </Typography>

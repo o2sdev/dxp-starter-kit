@@ -64,4 +64,20 @@ export abstract class CmsService {
     abstract getDocumentListBlock(
         options: CMS.Request.GetCmsEntryParams,
     ): Observable<CMS.Model.DocumentListBlock.DocumentListBlock>;
+
+    abstract getArticleListBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.ArticleListBlock.ArticleListBlock>;
+
+    abstract getCategoryBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.CategoryBlock.CategoryBlock>;
+
+    abstract getCategoryListBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.CategoryListBlock.CategoryListBlock>;
+
+    abstract getArticleSearchBlock(
+        options: CMS.Request.GetCmsEntryParams,
+    ): Observable<CMS.Model.ArticleSearchBlock.ArticleSearchBlock>;
 }

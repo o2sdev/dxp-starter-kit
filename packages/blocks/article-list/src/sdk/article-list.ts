@@ -1,0 +1,32 @@
+import { Models } from '@dxp/utils.api-harmonization';
+import { Utils } from '@dxp/utils.frontend';
+
+import { Sdk } from '@dxp/framework/sdk';
+
+import { Model, Request, URL } from '../api-harmonization/article-list.client';
+
+const API_URL = URL;
+
+export const articleList = (sdk: Sdk) => ({
+    blocks: {
+        getArticleList: (
+            query: Request.GetArticleListBlockQuery,
+            headers: Models.Headers.AppHeaders,
+            authorization?: string,
+        ): Promise<Model.ArticleListBlock> =>
+            sdk.makeRequest({
+                method: 'get',
+                url: `${API_URL}`,
+                headers: {
+                    ...Utils.Headers.getApiHeaders(),
+                    ...headers,
+                    ...(authorization
+                        ? {
+                              Authorization: `Bearer ${authorization}`,
+                          }
+                        : {}),
+                },
+                params: query,
+            }),
+    },
+});

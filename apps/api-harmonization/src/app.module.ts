@@ -1,5 +1,10 @@
 import { configuration } from '@dxp/api-harmonization/config/configuration';
+import * as ArticleList from '@dxp/blocks.article-list/api-harmonization';
+import * as ArticleSearch from '@dxp/blocks.article-search/api-harmonization';
+import * as Article from '@dxp/blocks.article/api-harmonization';
 import * as BentoGrid from '@dxp/blocks.bento-grid/api-harmonization';
+import * as CategoryList from '@dxp/blocks.category-list/api-harmonization';
+import * as Category from '@dxp/blocks.category/api-harmonization';
 import * as CtaSection from '@dxp/blocks.cta-section/api-harmonization';
 import * as DocumentList from '@dxp/blocks.document-list/api-harmonization';
 import * as Faq from '@dxp/blocks.faq/api-harmonization';
@@ -10,7 +15,6 @@ import * as MediaSection from '@dxp/blocks.media-section/api-harmonization';
 import * as PricingSection from '@dxp/blocks.pricing-section/api-harmonization';
 import * as QuickLinks from '@dxp/blocks.quick-links/api-harmonization';
 // BLOCK IMPORT
-
 import { Auth } from '@dxp/configs.integrations';
 import { HttpModule } from '@nestjs/axios';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
@@ -65,6 +69,11 @@ export const AuthModuleBaseModule = AuthModule.Module.register(AppConfig);
         FeatureSectionGrid.Module.register(AppConfig),
         PricingSection.Module.register(AppConfig),
         DocumentList.Module.register(AppConfig),
+        Category.Module.register(AppConfig),
+        CategoryList.Module.register(AppConfig),
+        Article.Module.register(AppConfig),
+        ArticleSearch.Module.register(AppConfig),
+        ArticleList.Module.register(AppConfig),
         // BLOCK REGISTER
     ],
     providers: [

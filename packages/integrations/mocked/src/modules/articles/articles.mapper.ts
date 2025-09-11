@@ -49,19 +49,25 @@ export const mapCategories = (
     };
 };
 
-export const mapArticle = (locale: string, slug: string): Articles.Model.Article | undefined => {
+export const mapArticle = (locale: string, slug: string, theme?: string): Articles.Model.Article | undefined => {
     const articles = locale === 'pl' ? MOCK_ARTICLES_PL : locale === 'de' ? MOCK_ARTICLES_DE : MOCK_ARTICLES_EN;
-    return articles.find((article) => article.slug === slug);
+    return articles.find((article) => article.slug === slug && (!theme || article.theme === theme));
 };
 
-export const mapArticles = (locale: string, options: Articles.Request.GetArticleListQuery): Articles.Model.Articles => {
-    const { offset = 0, limit = 10 } = options;
+export const mapArticles = (
+    locale: string,
+    options: Articles.Request.GetArticleListQuery & { theme?: string },
+): Articles.Model.Articles => {
+    const { offset = 0, limit = 10, theme } = options;
     const articles = locale === 'pl' ? MOCK_ARTICLES_PL : locale === 'de' ? MOCK_ARTICLES_DE : MOCK_ARTICLES_EN;
     const filteredArticles = articles.filter((article) => {
         if (options.dateFrom && new Date(article.createdAt) < new Date(options.dateFrom)) {
             return false;
         }
         if (options.dateTo && new Date(article.createdAt) > new Date(options.dateTo)) {
+            return false;
+        }
+        if (theme && article.theme !== theme) {
             return false;
         }
         return true;

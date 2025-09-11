@@ -54,11 +54,47 @@ export const PAGE_PERSONAL_HELP_AND_SUPPORT_1_EN: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    __typename: 'ArticleSearchBlock',
+                    id: 'article-search-1',
                     layout: {
-                        variant: 'narrow',
-                        spacing: 'large',
+                        variant: 'wide',
+                        spacing: 'none',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'QuickLinksBlock',
+                    id: 'quick-links-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'ArticleListBlock',
+                    id: 'article-list-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'BentoGridBlock',
+                    id: 'bento-grid-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FaqBlock',
+                    id: 'faq-4',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
                         background: 'none',
                     },
                 },
@@ -76,7 +112,7 @@ export const PAGE_PERSONAL_HELP_AND_SUPPORT_1_DE: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Hilfe und Support | Persönlich',
+        title: 'Hilfe und Support',
         description:
             "Demo app of Digital Experience Platform Kit. Build future-proof portals with composable architecture and a modern frontend tech stack. DXP offers a Next.js boilerplate, an API integration & data normalization server, and capabilities to integrate headless APIs like CMS, CRM, Search or headless e-commerce. It's powered by Next.js, React.js, TypeScript, and NestJS.",
         keywords: [
@@ -123,11 +159,47 @@ export const PAGE_PERSONAL_HELP_AND_SUPPORT_1_DE: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    __typename: 'ArticleSearchBlock',
+                    id: 'article-search-1',
                     layout: {
-                        variant: 'narrow',
-                        spacing: 'large',
+                        variant: 'wide',
+                        spacing: 'none',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'QuickLinksBlock',
+                    id: 'quick-links-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'ArticleListBlock',
+                    id: 'article-list-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'BentoGridBlock',
+                    id: 'bento-grid-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FaqBlock',
+                    id: 'faq-4',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
                         background: 'none',
                     },
                 },
@@ -145,7 +217,7 @@ export const PAGE_PERSONAL_HELP_AND_SUPPORT_1_PL: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Pomoc i wsparcie | Indywidualny',
+        title: 'Pomoc i wsparcie',
         description:
             "Demo app of Digital Experience Platform Kit. Build future-proof portals with composable architecture and a modern frontend tech stack. DXP offers a Next.js boilerplate, an API integration & data normalization server, and capabilities to integrate headless APIs like CMS, CRM, Search or headless e-commerce. It's powered by Next.js, React.js, TypeScript, and NestJS.",
         keywords: [
@@ -192,11 +264,47 @@ export const PAGE_PERSONAL_HELP_AND_SUPPORT_1_PL: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    __typename: 'ArticleSearchBlock',
+                    id: 'article-search-1',
                     layout: {
-                        variant: 'narrow',
-                        spacing: 'large',
+                        variant: 'wide',
+                        spacing: 'none',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'QuickLinksBlock',
+                    id: 'quick-links-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'ArticleListBlock',
+                    id: 'article-list-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'BentoGridBlock',
+                    id: 'bento-grid-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FaqBlock',
+                    id: 'faq-4',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
                         background: 'none',
                     },
                 },

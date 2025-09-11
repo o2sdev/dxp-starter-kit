@@ -265,7 +265,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL: CMS.Model.Page.Page = {
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Konto Oszczędnościowe | Konta | Indywidualny',
+        title: 'Konto Oszczędnościowe',
         description:
             "Demo app of Digital Experience Platform Kit. Build future-proof portals with composable architecture and a modern frontend tech stack. DXP offers a Next.js boilerplate, an API integration & data normalization server, and capabilities to integrate headless APIs like CMS, CRM, Search or headless e-commerce. It's powered by Next.js, React.js, TypeScript, and NestJS.",
         keywords: [

@@ -181,10 +181,227 @@ const MOCK_QUICK_LINKS_BLOCK_50_PL: CMS.Model.QuickLinksBlock.QuickLinksBlock = 
         },
     ],
 };
+const MOCK_QUICK_LINKS_BLOCK_2_EN: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
+    id: 'quick-links-2',
+    items: [
+        {
+            label: 'Account',
+            description: 'Get step-by-step guidance on managing your accounts.',
+            icon: 'CircleUser',
+            url: '/persona/help-and-support/finance-and-savings/smart-budgeting-strategies-for-financial-success',
+            variant: 'link',
+        },
+        {
+            label: 'Cards',
+            description: 'Activate cards, set limits, freeze or unfreeze.',
+            icon: 'CreditCard',
+            url: '/persona/help-and-support/finance-and-savings/understanding-insurance-types-for-complete-protection',
+            variant: 'link',
+        },
+        {
+            label: 'Transfers',
+            description: 'Learn how to send, receive, and track money.',
+            icon: 'ArrowRightLeft',
+            url: '/persona/help-and-support/finance-and-savings/investment-strategies-for-long-term-wealth-building',
+            variant: 'link',
+        },
+        {
+            label: 'Security',
+            description: 'Keep your accounts safe and respond to suspicious activity.',
+            icon: 'Shield',
+            url: '/persona/help-and-support/finance-and-savings/how-to-optimize-your-cnc-machine-for-maximum-efficiency',
+            variant: 'link',
+        },
+    ],
+};
 
-const QUICK_LINKS_BLOCKS_EN = [MOCK_QUICK_LINKS_BLOCK_1_EN, MOCK_QUICK_LINKS_BLOCK_50_EN];
-const QUICK_LINKS_BLOCKS_DE = [MOCK_QUICK_LINKS_BLOCK_1_DE, MOCK_QUICK_LINKS_BLOCK_50_DE];
-const QUICK_LINKS_BLOCKS_PL = [MOCK_QUICK_LINKS_BLOCK_1_PL, MOCK_QUICK_LINKS_BLOCK_50_PL];
+const MOCK_QUICK_LINKS_BLOCK_2_DE: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
+    id: 'quick-links-2',
+    items: [
+        {
+            label: 'Konto',
+            description: 'Erhalten Sie Schritt-für-Schritt-Anleitung zur Verwaltung Ihrer Konten.',
+            icon: 'CircleUser',
+            url: '/personlich/hilfe-und-support/finanzen-und-sparen/intelligente-budgetierungsstrategien-fuer-finanziellen-erfolg',
+            variant: 'link',
+        },
+        {
+            label: 'Karten',
+            description: 'Aktivieren Sie Karten, legen Sie Limits fest, sperren oder entsperren Sie.',
+            icon: 'CreditCard',
+            url: '/personlich/hilfe-und-support/finanzen-und-sparen/versicherungsarten-verstehen-fuer-vollstaendigen-schutz',
+            variant: 'link',
+        },
+        {
+            label: 'Überweisungen',
+            description: 'Erfahren Sie, wie Sie Geld senden, empfangen und verfolgen können.',
+            icon: 'ArrowRightLeft',
+            url: '/personlich/hilfe-und-support/finanzen-und-sparen/anlagestrategien-fuer-langfristigen-vermoegensaufbau',
+            variant: 'link',
+        },
+        {
+            label: 'Sicherheit',
+            description: 'Schützen Sie Ihre Konten und reagieren Sie auf verdächtige Aktivitäten.',
+            icon: 'Shield',
+            url: '/personlich/hilfe-und-support/finanzen-und-sparen/wie-sie-ihre-cnc-maschine-fuer-maximale-effizienz-optimieren',
+            variant: 'link',
+        },
+    ],
+};
+
+const MOCK_QUICK_LINKS_BLOCK_2_PL: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
+    id: 'quick-links-2',
+    items: [
+        {
+            label: 'Konto',
+            description: 'Uzyskaj szczegółowe wskazówki dotyczące zarządzania swoimi kontami.',
+            icon: 'CircleUser',
+            url: '/indywidualny/pomoc-i-wsparcie/finanse-i-oszczednosci/inteligentne-strategie-budzetowania-dla-sukcesu-finansowego',
+            variant: 'link',
+        },
+        {
+            label: 'Karty',
+            description: 'Aktywuj karty, ustaw limity, zablokuj lub odblokuj.',
+            icon: 'CreditCard',
+            url: '/indywidualny/pomoc-i-wsparcie/finanse-i-oszczednosci/zrozumienie-rodzajow-ubezpieczen-dla-pelnej-ochrony',
+            variant: 'link',
+        },
+        {
+            label: 'Przelewy',
+            description: 'Dowiedz się, jak wysyłać, otrzymywać i śledzić pieniądze.',
+            icon: 'ArrowRightLeft',
+            url: '/indywidualny/pomoc-i-wsparcie/finanse-i-oszczednosci/strategie-inwestycyjne-dla-dlugoterminowego-budowania-majatku',
+            variant: 'link',
+        },
+        {
+            label: 'Bezpieczeństwo',
+            description: 'Chroń swoje konta i reaguj na podejrzane działania.',
+            icon: 'Shield',
+            url: '/indywidualny/pomoc-i-wsparcie/finanse-i-oszczednosci/jak-zoptymalizowac-maszyne-cnc-dla-maksymalnej-wydajnosci',
+            variant: 'link',
+        },
+    ],
+};
+const MOCK_QUICK_LINKS_BLOCK_3_EN: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
+    id: 'quick-links-3',
+    items: [
+        {
+            label: 'Account',
+            description: 'Get step-by-step guidance on managing your accounts.',
+            icon: 'CircleUser',
+            url: '/business/help-and-support/finance-and-savings/smart-budgeting-strategies-for-financial-success',
+            variant: 'link',
+        },
+        {
+            label: 'Cards',
+            description: 'Activate cards, set limits, freeze or unfreeze.',
+            icon: 'CreditCard',
+            url: '/business/help-and-support/finance-and-savings/understanding-insurance-types-for-complete-protection',
+            variant: 'link',
+        },
+        {
+            label: 'Transfers',
+            description: 'Learn how to send, receive, and track money.',
+            icon: 'ArrowRightLeft',
+            url: '/business/help-and-support/finance-and-savings/investment-strategies-for-long-term-wealth-building',
+            variant: 'link',
+        },
+        {
+            label: 'Security',
+            description: 'Keep your accounts safe and respond to suspicious activity.',
+            icon: 'Shield',
+            url: '/business/help-and-support/finance-and-savings/how-to-optimize-your-cnc-machine-for-maximum-efficiency',
+            variant: 'link',
+        },
+    ],
+};
+
+const MOCK_QUICK_LINKS_BLOCK_3_DE: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
+    id: 'quick-links-3',
+    items: [
+        {
+            label: 'Konto',
+            description: 'Erhalten Sie Schritt-für-Schritt-Anleitung zur Verwaltung Ihrer Konten.',
+            icon: 'CircleUser',
+            url: '/geschaftlich/hilfe-und-support/finanzen-und-sparen/intelligente-budgetierungsstrategien-fuer-finanziellen-erfolg',
+            variant: 'link',
+        },
+        {
+            label: 'Karten',
+            description: 'Aktivieren Sie Karten, legen Sie Limits fest, sperren oder entsperren Sie.',
+            icon: 'CreditCard',
+            url: '/geschaftlich/hilfe-und-support/finanzen-und-sparen/versicherungsarten-verstehen-fuer-vollstaendigen-schutz',
+            variant: 'link',
+        },
+        {
+            label: 'Überweisungen',
+            description: 'Erfahren Sie, wie Sie Geld senden, empfangen und verfolgen können.',
+            icon: 'ArrowRightLeft',
+            url: '/geschaftlich/hilfe-und-support/finanzen-und-sparen/anlagestrategien-fuer-langfristigen-vermoegensaufbau',
+            variant: 'link',
+        },
+        {
+            label: 'Sicherheit',
+            description: 'Schützen Sie Ihre Konten und reagieren Sie auf verdächtige Aktivitäten.',
+            icon: 'Shield',
+            url: '/geschaftlich/hilfe-und-support/finanzen-und-sparen/wie-sie-ihre-cnc-maschine-fuer-maximale-effizienz-optimieren',
+            variant: 'link',
+        },
+    ],
+};
+
+const MOCK_QUICK_LINKS_BLOCK_3_PL: CMS.Model.QuickLinksBlock.QuickLinksBlock = {
+    id: 'quick-links-3',
+    items: [
+        {
+            label: 'Konto',
+            description: 'Uzyskaj szczegółowe wskazówki dotyczące zarządzania swoimi kontami.',
+            icon: 'CircleUser',
+            url: '/firma/pomoc-i-wsparcie/finanse-i-oszczednosci/inteligentne-strategie-budzetowania-dla-sukcesu-finansowego',
+            variant: 'link',
+        },
+        {
+            label: 'Karty',
+            description: 'Aktywuj karty, ustaw limity, zablokuj lub odblokuj.',
+            icon: 'CreditCard',
+            url: '/firma/pomoc-i-wsparcie/finanse-i-oszczednosci/zrozumienie-rodzajow-ubezpieczen-dla-pelnej-ochrony',
+            variant: 'link',
+        },
+        {
+            label: 'Przelewy',
+            description: 'Dowiedz się, jak wysyłać, otrzymywać i śledzić pieniądze.',
+            icon: 'ArrowRightLeft',
+            url: '/firma/pomoc-i-wsparcie/finanse-i-oszczednosci/strategie-inwestycyjne-dla-dlugoterminowego-budowania-majatku',
+            variant: 'link',
+        },
+        {
+            label: 'Bezpieczeństwo',
+            description: 'Chroń swoje konta i reaguj na podejrzane działania.',
+            icon: 'Shield',
+            url: '/firma/pomoc-i-wsparcie/finanse-i-oszczednosci/jak-zoptymalizowac-maszyne-cnc-dla-maksymalnej-wydajnosci',
+            variant: 'link',
+        },
+    ],
+};
+
+const QUICK_LINKS_BLOCKS_EN = [
+    MOCK_QUICK_LINKS_BLOCK_1_EN,
+    MOCK_QUICK_LINKS_BLOCK_2_EN,
+    MOCK_QUICK_LINKS_BLOCK_3_EN,
+    MOCK_QUICK_LINKS_BLOCK_50_EN,
+];
+const QUICK_LINKS_BLOCKS_DE = [
+    MOCK_QUICK_LINKS_BLOCK_1_DE,
+    MOCK_QUICK_LINKS_BLOCK_2_DE,
+    MOCK_QUICK_LINKS_BLOCK_3_DE,
+    MOCK_QUICK_LINKS_BLOCK_50_DE,
+];
+const QUICK_LINKS_BLOCKS_PL = [
+    MOCK_QUICK_LINKS_BLOCK_1_PL,
+    MOCK_QUICK_LINKS_BLOCK_2_PL,
+    MOCK_QUICK_LINKS_BLOCK_3_PL,
+    MOCK_QUICK_LINKS_BLOCK_50_PL,
+];
 
 export const mapQuickLinksBlock = ({
     locale,
