@@ -2,7 +2,7 @@ import { CMS } from '@dxp/framework/modules';
 
 export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_EN: CMS.Model.Page.Page = {
     id: 'business-help-and-support-1',
-    slug: '/personal/help-and-support',
+    slug: '/business/help-and-support',
     locale: 'en',
     seo: {
         noIndex: false,
@@ -40,15 +40,9 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_EN: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/business/cards',
+        slug: '/business',
         seo: {
-            title: 'Cards',
-        },
-        parent: {
-            slug: '/business',
-            seo: {
-                title: 'Business',
-            },
+            title: 'Business',
         },
     },
     theme: 'business',
@@ -60,10 +54,46 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_EN: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    __typename: 'ArticleSearchBlock',
+                    id: 'article-search-2',
                     layout: {
-                        variant: 'narrow',
+                        variant: 'wide',
+                        spacing: 'none',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'QuickLinksBlock',
+                    id: 'quick-links-3',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'ArticleListBlock',
+                    id: 'article-list-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'BentoGridBlock',
+                    id: 'bento-grid-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FaqBlock',
+                    id: 'faq-4',
+                    layout: {
+                        variant: 'wide',
                         spacing: 'large',
                         background: 'none',
                     },
@@ -77,12 +107,12 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_EN: CMS.Model.Page.Page = {
 
 export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_DE: CMS.Model.Page.Page = {
     id: 'business-help-and-support-1',
-    slug: '/personlich/hilfe-und-support',
+    slug: '/geschaftlich/hilfe-und-support',
     locale: 'de',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Hilfe und Support | Geschäftlich',
+        title: 'Hilfe und Support',
         description:
             "Demo app of Digital Experience Platform Kit. Build future-proof portals with composable architecture and a modern frontend tech stack. DXP offers a Next.js boilerplate, an API integration & data normalization server, and capabilities to integrate headless APIs like CMS, CRM, Search or headless e-commerce. It's powered by Next.js, React.js, TypeScript, and NestJS.",
         keywords: [
@@ -115,15 +145,9 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_DE: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/geschaftlich/karten',
+        slug: '/geschaftlich',
         seo: {
-            title: 'Karten',
-        },
-        parent: {
-            slug: '/geschaftlich',
-            seo: {
-                title: 'Geschäftlich',
-            },
+            title: 'Geschäftlich',
         },
     },
     theme: 'business',
@@ -135,10 +159,46 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_DE: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    __typename: 'ArticleSearchBlock',
+                    id: 'article-search-2',
                     layout: {
-                        variant: 'narrow',
+                        variant: 'wide',
+                        spacing: 'none',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'QuickLinksBlock',
+                    id: 'quick-links-3',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'ArticleListBlock',
+                    id: 'article-list-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'BentoGridBlock',
+                    id: 'bento-grid-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FaqBlock',
+                    id: 'faq-4',
+                    layout: {
+                        variant: 'wide',
                         spacing: 'large',
                         background: 'none',
                     },
@@ -152,12 +212,12 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_DE: CMS.Model.Page.Page = {
 
 export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL: CMS.Model.Page.Page = {
     id: 'business-help-and-support-1',
-    slug: '/indywidualny/pomoc-i-wsparcie',
+    slug: '/firma/pomoc-i-wsparcie',
     locale: 'pl',
     seo: {
         noIndex: false,
         noFollow: false,
-        title: 'Pomoc i wsparcie | Firma',
+        title: 'Pomoc i wsparcie',
         description:
             "Demo app of Digital Experience Platform Kit. Build future-proof portals with composable architecture and a modern frontend tech stack. DXP offers a Next.js boilerplate, an API integration & data normalization server, and capabilities to integrate headless APIs like CMS, CRM, Search or headless e-commerce. It's powered by Next.js, React.js, TypeScript, and NestJS.",
         keywords: [
@@ -190,15 +250,9 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL: CMS.Model.Page.Page = {
         },
     },
     parent: {
-        slug: '/firma/karty',
+        slug: '/firma',
         seo: {
-            title: 'Karty',
-        },
-        parent: {
-            slug: '/firma',
-            seo: {
-                title: 'Firma',
-            },
+            title: 'Pomoc i wsparcie',
         },
     },
     theme: 'business',
@@ -210,10 +264,46 @@ export const PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL: CMS.Model.Page.Page = {
         slots: {
             main: [
                 {
-                    __typename: 'FaqBlock',
-                    id: 'faq-1',
+                    __typename: 'ArticleSearchBlock',
+                    id: 'article-search-2',
                     layout: {
-                        variant: 'narrow',
+                        variant: 'wide',
+                        spacing: 'none',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'QuickLinksBlock',
+                    id: 'quick-links-3',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'ArticleListBlock',
+                    id: 'article-list-2',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'BentoGridBlock',
+                    id: 'bento-grid-1',
+                    layout: {
+                        variant: 'wide',
+                        spacing: 'medium',
+                        background: 'none',
+                    },
+                },
+                {
+                    __typename: 'FaqBlock',
+                    id: 'faq-4',
+                    layout: {
+                        variant: 'wide',
                         spacing: 'large',
                         background: 'none',
                     },

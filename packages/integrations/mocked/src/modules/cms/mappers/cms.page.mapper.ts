@@ -36,6 +36,14 @@ import {
     PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL,
 } from './mocks/pages/business-help-and-support.page';
 import { PAGE_BUSINESS_DE, PAGE_BUSINESS_EN, PAGE_BUSINESS_PL } from './mocks/pages/business.page';
+import {
+    PAGE_FINANCES_AND_SAVINGS_BUSINESS_DE,
+    PAGE_FINANCES_AND_SAVINGS_BUSINESS_EN,
+    PAGE_FINANCES_AND_SAVINGS_BUSINESS_PL,
+    PAGE_FINANCES_AND_SAVINGS_PERSONAL_DE,
+    PAGE_FINANCES_AND_SAVINGS_PERSONAL_EN,
+    PAGE_FINANCES_AND_SAVINGS_PERSONAL_PL,
+} from './mocks/pages/category.page';
 import { PAGE_HOME_DE, PAGE_HOME_EN, PAGE_HOME_PL } from './mocks/pages/home.page';
 import {
     PAGE_PERSONAL_ACCOUNTS_EVERYDAY_ACCOUNT_DE,
@@ -265,6 +273,24 @@ export const mapPage = (slug: string, locale: string): CMS.Model.Page.Page | und
         case '/firma/pomoc-i-wsparcie':
             return PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL;
 
+        case '/personal/help-and-support/finance-and-savings':
+            return PAGE_FINANCES_AND_SAVINGS_PERSONAL_EN;
+
+        case '/personlich/hilfe-und-support/finanzen-und-sparen':
+            return PAGE_FINANCES_AND_SAVINGS_PERSONAL_DE;
+
+        case '/indywidualny/pomoc-i-wsparcie/finanse-i-oszczednosci':
+            return PAGE_FINANCES_AND_SAVINGS_PERSONAL_PL;
+
+        case '/business/help-and-support/finance-and-savings':
+            return PAGE_FINANCES_AND_SAVINGS_BUSINESS_EN;
+
+        case '/geschaftlich/hilfe-und-support/finanzen-und-sparen':
+            return PAGE_FINANCES_AND_SAVINGS_BUSINESS_DE;
+
+        case '/firma/pomoc-i-wsparcie/finanse-i-oszczednosci':
+            return PAGE_FINANCES_AND_SAVINGS_BUSINESS_PL;
+
         default:
             return undefined;
     }
@@ -284,6 +310,8 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
                 PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL,
                 PAGE_PERSONAL_CARDS_PL,
                 PAGE_PERSONAL_CARDS_DEBIT_CARD_PL,
+                PAGE_FINANCES_AND_SAVINGS_PERSONAL_PL,
+                PAGE_FINANCES_AND_SAVINGS_BUSINESS_PL,
             ];
         case 'de':
             return [
@@ -297,6 +325,8 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
                 PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE,
                 PAGE_PERSONAL_CARDS_DE,
                 PAGE_PERSONAL_CARDS_DEBIT_CARD_DE,
+                PAGE_FINANCES_AND_SAVINGS_PERSONAL_DE,
+                PAGE_FINANCES_AND_SAVINGS_BUSINESS_DE,
             ];
         case 'en':
             return [
@@ -310,6 +340,8 @@ export const getAllPages = (locale: string): CMS.Model.Page.Page[] => {
                 PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_EN,
                 PAGE_PERSONAL_CARDS_EN,
                 PAGE_PERSONAL_CARDS_DEBIT_CARD_EN,
+                PAGE_FINANCES_AND_SAVINGS_PERSONAL_EN,
+                PAGE_FINANCES_AND_SAVINGS_BUSINESS_EN,
             ];
         default:
             return [];
@@ -330,9 +362,6 @@ export const getAlternativePages = (id: string, slug: string, locale: string): C
         PAGE_BUSINESS_ACCOUNTS_DE,
         PAGE_BUSINESS_ACCOUNTS_EN,
         PAGE_BUSINESS_ACCOUNTS_PL,
-        PAGE_PERSONAL_HELP_AND_SUPPORT_1_DE,
-        PAGE_PERSONAL_HELP_AND_SUPPORT_1_EN,
-        PAGE_PERSONAL_HELP_AND_SUPPORT_1_PL,
         PAGE_PERSONAL_CARDS_DE,
         PAGE_PERSONAL_CARDS_EN,
         PAGE_PERSONAL_CARDS_PL,
@@ -345,6 +374,18 @@ export const getAlternativePages = (id: string, slug: string, locale: string): C
         PAGE_PERSONAL_CARDS_DEBIT_CARD_DE,
         PAGE_PERSONAL_CARDS_DEBIT_CARD_EN,
         PAGE_PERSONAL_CARDS_DEBIT_CARD_PL,
+        PAGE_PERSONAL_HELP_AND_SUPPORT_1_EN,
+        PAGE_PERSONAL_HELP_AND_SUPPORT_1_DE,
+        PAGE_PERSONAL_HELP_AND_SUPPORT_1_PL,
+        PAGE_BUSINESS_HELP_AND_SUPPORT_1_EN,
+        PAGE_BUSINESS_HELP_AND_SUPPORT_1_DE,
+        PAGE_BUSINESS_HELP_AND_SUPPORT_1_PL,
+        PAGE_FINANCES_AND_SAVINGS_PERSONAL_PL,
+        PAGE_FINANCES_AND_SAVINGS_BUSINESS_PL,
+        PAGE_FINANCES_AND_SAVINGS_PERSONAL_DE,
+        PAGE_FINANCES_AND_SAVINGS_BUSINESS_DE,
+        PAGE_FINANCES_AND_SAVINGS_PERSONAL_EN,
+        PAGE_FINANCES_AND_SAVINGS_BUSINESS_EN,
     ]
         .filter((page) => page.id === id)
         .map((page) => {
