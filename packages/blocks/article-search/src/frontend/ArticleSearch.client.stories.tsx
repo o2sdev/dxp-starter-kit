@@ -21,7 +21,7 @@ export const Default: Story = {
         const user = userEvent.setup({
             delay: 100,
         });
-        await user.type(searchInput, 'power', {
+        await user.type(searchInput, 'smart', {
             delay: 100,
         });
     },
