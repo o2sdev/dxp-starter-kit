@@ -1,5 +1,18 @@
 # @dxp/api-harmonization
 
+## 1.10.0
+
+### Minor Changes
+
+- 4cc7401: added support and blocks for knowledge base - articles and categories
+
+### Patch Changes
+
+- Updated dependencies [4cc7401]
+    - @dxp/integrations.strapi-cms@0.4.0
+    - @dxp/integrations.mocked@0.5.0
+    - @dxp/framework@0.3.0
+
 ## 1.9.3
 
 ### Patch Changes

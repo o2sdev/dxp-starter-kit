@@ -1,5 +1,11 @@
 # @dxp/framework
 
+## 0.3.0
+
+### Minor Changes
+
+- 4cc7401: added support and blocks for knowledge base - articles and categories
+
 ## 0.2.1
 
 ### Patch Changes
