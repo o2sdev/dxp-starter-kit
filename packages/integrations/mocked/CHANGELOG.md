@@ -1,5 +1,11 @@
 # @dxp/integrations.mocked
 
+## 0.5.1
+
+### Patch Changes
+
+- 76818f9: fixed a typo in an URL
+
 ## 0.5.0
 
 ### Minor Changes
