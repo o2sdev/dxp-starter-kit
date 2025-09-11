@@ -1,5 +1,11 @@
 # @dxp/blocks.article-list
 
+## 1.1.1
+
+### Patch Changes
+
+- 7cddfca: fixed typos in URLs
+
 ## 1.1.0
 
 ### Minor Changes
