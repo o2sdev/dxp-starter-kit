@@ -43,13 +43,13 @@ export const MOCK_ARTICLE4_EN: Articles.Model.Article[] = [
         lead: 'Learn how to safeguard your financial information from cyber threats with these proven security measures.',
         tags: ['cybersecurity', 'financial-protection', 'online-banking'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.webp',
             width: 640,
             height: 427,
             alt: 'Cybersecurity protection',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.webp',
             alt: 'Cybersecurity protection thumbnail',
         },
         category: {
@@ -71,7 +71,7 @@ export const MOCK_ARTICLE4_EN: Articles.Model.Article[] = [
                 updatedAt: '2023-07-20T16:30:00Z',
                 __typename: 'ArticleSectionImage',
                 image: {
-                    url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/youtube-player.jpg',
+                    url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/youtube-player.webp',
                     alt: 'Digital security for financial accounts',
                 },
             },
@@ -123,13 +123,13 @@ export const MOCK_ARTICLE4_DE: Articles.Model.Article[] = [
         lead: 'Erfahren Sie, wie Sie Ihre Finanzinformationen mit bewährten Sicherheitsmaßnahmen vor Cyberbedrohungen schützen können.',
         tags: ['cybersicherheit', 'finanzieller-schutz', 'online-banking'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.webp',
             width: 640,
             height: 427,
             alt: 'Cybersicherheitsschutz',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.webp',
             alt: 'Cybersicherheitsschutz Thumbnail',
         },
         category: {
@@ -151,7 +151,7 @@ export const MOCK_ARTICLE4_DE: Articles.Model.Article[] = [
                 updatedAt: '2023-07-20T16:30:00Z',
                 __typename: 'ArticleSectionImage',
                 image: {
-                    url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/youtube-player.jpg',
+                    url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/youtube-player.webp',
                     alt: 'Digitale Sicherheit für Finanzkonten',
                 },
             },
@@ -203,13 +203,13 @@ export const MOCK_ARTICLE4_PL: Articles.Model.Article[] = [
         lead: 'Dowiedz się, jak zabezpieczyć swoje informacje finansowe przed zagrożeniami cybernetycznymi dzięki sprawdzonym środkom bezpieczeństwa.',
         tags: ['cyberbezpieczeństwo', 'ochrona-finansowa', 'bankowość-internetowa'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.webp',
             width: 640,
             height: 427,
             alt: 'Ochrona cyberbezpieczeństwa',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-8.webp',
             alt: 'Miniatura ochrony cyberbezpieczeństwa',
         },
         category: {
@@ -231,7 +231,7 @@ export const MOCK_ARTICLE4_PL: Articles.Model.Article[] = [
                 updatedAt: '2023-07-20T16:30:00Z',
                 __typename: 'ArticleSectionImage',
                 image: {
-                    url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/youtube-player.jpg',
+                    url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/youtube-player.webp',
                     alt: 'Cyfrowe bezpieczeństwo dla kont finansowych',
                 },
             },

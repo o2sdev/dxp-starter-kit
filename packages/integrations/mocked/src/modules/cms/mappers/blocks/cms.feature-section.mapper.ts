@@ -26,7 +26,7 @@ const MOCK_FEATURE_SECTION_BLOCK_1_EN: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-3.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-3.webp',
         width: 560,
         height: 560,
         alt: 'Feature Section Image',
@@ -69,7 +69,7 @@ const MOCK_FEATURE_SECTION_BLOCK_1_DE: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-3.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-3.webp',
         width: 560,
         height: 560,
         alt: 'Feature Section Image',
@@ -112,7 +112,7 @@ const MOCK_FEATURE_SECTION_BLOCK_1_PL: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-3.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-3.webp',
         width: 560,
         height: 560,
         alt: 'Feature Section Image',
@@ -138,7 +138,7 @@ const MOCK_FEATURE_SECTION_BLOCK_2_EN: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-4.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-4.webp',
         width: 560,
         height: 560,
         alt: 'Feature Section Image',
@@ -165,7 +165,7 @@ const MOCK_FEATURE_SECTION_BLOCK_2_DE: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-4.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-4.webp',
         width: 560,
         height: 560,
         alt: 'Feature Section Image',
@@ -192,7 +192,7 @@ const MOCK_FEATURE_SECTION_BLOCK_2_PL: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-4.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-4.webp',
         width: 560,
         height: 560,
         alt: 'Feature Section Image',
@@ -362,7 +362,7 @@ const MOCK_FEATURE_SECTION_BLOCK_5_EN: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-12.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-12.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -388,7 +388,7 @@ const MOCK_FEATURE_SECTION_BLOCK_5_DE: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-12.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-12.webp',
         width: 584,
         height: 584,
         alt: 'Bild des Funktionsabschnitts',
@@ -414,7 +414,7 @@ const MOCK_FEATURE_SECTION_BLOCK_5_PL: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-12.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-12.webp',
         width: 584,
         height: 584,
         alt: 'Obraz sekcji funkcji',
@@ -440,7 +440,7 @@ const MOCK_FEATURE_SECTION_BLOCK_6_EN: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: false,
     iconBorder: true,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-13.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-13.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -470,7 +470,7 @@ const MOCK_FEATURE_SECTION_BLOCK_6_DE: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: false,
     iconBorder: true,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-13.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-13.webp',
         width: 584,
         height: 584,
         alt: 'Bild des Funktionsabschnitts',
@@ -500,7 +500,7 @@ const MOCK_FEATURE_SECTION_BLOCK_6_PL: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: false,
     iconBorder: true,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-13.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-13.webp',
         width: 584,
         height: 584,
         alt: 'Obraz sekcji funkcji',
@@ -547,7 +547,7 @@ const MOCK_FEATURE_SECTION_BLOCK_7_EN: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-18.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-18.webp',
         width: 560,
         height: 560,
         alt: 'Feature Section Image',
@@ -590,7 +590,7 @@ const MOCK_FEATURE_SECTION_BLOCK_7_DE: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-18.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-18.webp',
         width: 560,
         height: 560,
         alt: 'Feature Section Image',
@@ -633,7 +633,7 @@ const MOCK_FEATURE_SECTION_BLOCK_7_PL: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-18.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-18.webp',
         width: 560,
         height: 560,
         alt: 'Feature Section Image',
@@ -658,7 +658,7 @@ const MOCK_FEATURE_SECTION_BLOCK_8_EN: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-11.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-11.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -677,7 +677,7 @@ const MOCK_FEATURE_SECTION_BLOCK_8_DE: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-11.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-11.webp',
         width: 584,
         height: 584,
         alt: 'Bild des Funktionsabschnitts',
@@ -695,7 +695,7 @@ const MOCK_FEATURE_SECTION_BLOCK_8_PL: CMS.Model.FeatureSectionBlock.FeatureSect
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-11.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-11.webp',
         width: 584,
         height: 584,
         alt: 'Obraz sekcji funkcji',
@@ -780,7 +780,7 @@ const MOCK_FEATURE_SECTION_BLOCK_10_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     title: 'Flexible Coverage Options',
     description: 'Choose insurance plans that grow with your business and adapt to changing needs.',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-19.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-19.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -799,7 +799,7 @@ const MOCK_FEATURE_SECTION_BLOCK_10_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     description:
         'Wählen Sie Versicherungspläne, die mit Ihrem Unternehmen wachsen und sich an veränderte Bedürfnisse anpassen.',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-19.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-19.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -818,7 +818,7 @@ const MOCK_FEATURE_SECTION_BLOCK_10_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     description:
         'Wybierz plany ubezpieczeniowe, które rosną wraz z Twoją firmą i dostosowują się do zmieniających się potrzeb.',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-19.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-19.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -838,7 +838,7 @@ const MOCK_FEATURE_SECTION_BLOCK_11_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-23.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-23.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -865,7 +865,7 @@ const MOCK_FEATURE_SECTION_BLOCK_11_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-23.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-23.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -892,7 +892,7 @@ const MOCK_FEATURE_SECTION_BLOCK_11_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-23.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-23.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -918,7 +918,7 @@ const MOCK_FEATURE_SECTION_BLOCK_12_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-24.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-24.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -944,7 +944,7 @@ const MOCK_FEATURE_SECTION_BLOCK_12_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-24.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-24.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -970,7 +970,7 @@ const MOCK_FEATURE_SECTION_BLOCK_12_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-24.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-24.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -996,7 +996,7 @@ const MOCK_FEATURE_SECTION_BLOCK_13_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-25.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-25.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1022,7 +1022,7 @@ const MOCK_FEATURE_SECTION_BLOCK_13_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-25.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-25.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1048,7 +1048,7 @@ const MOCK_FEATURE_SECTION_BLOCK_13_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-25.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-25.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1074,7 +1074,7 @@ const MOCK_FEATURE_SECTION_BLOCK_14_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-27.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-27.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1099,7 +1099,7 @@ const MOCK_FEATURE_SECTION_BLOCK_14_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-27.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-27.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1124,7 +1124,7 @@ const MOCK_FEATURE_SECTION_BLOCK_14_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-27.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-27.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1149,7 +1149,7 @@ const MOCK_FEATURE_SECTION_BLOCK_50_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-52.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-52.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1188,7 +1188,7 @@ const MOCK_FEATURE_SECTION_BLOCK_50_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-52.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-52.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1227,7 +1227,7 @@ const MOCK_FEATURE_SECTION_BLOCK_50_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-52.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-52.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1266,7 +1266,7 @@ const MOCK_FEATURE_SECTION_BLOCK_51_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-59.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-59.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1285,7 +1285,7 @@ const MOCK_FEATURE_SECTION_BLOCK_51_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-59.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-59.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1303,7 +1303,7 @@ const MOCK_FEATURE_SECTION_BLOCK_51_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-59.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-59.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1322,7 +1322,7 @@ const MOCK_FEATURE_SECTION_BLOCK_52_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: true,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-61.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-61.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1359,7 +1359,7 @@ const MOCK_FEATURE_SECTION_BLOCK_52_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: true,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-61.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-61.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1396,7 +1396,7 @@ const MOCK_FEATURE_SECTION_BLOCK_52_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: true,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-61.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-61.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1432,7 +1432,7 @@ const MOCK_FEATURE_SECTION_BLOCK_53_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-64.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-64.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1458,7 +1458,7 @@ const MOCK_FEATURE_SECTION_BLOCK_53_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-64.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-64.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1484,7 +1484,7 @@ const MOCK_FEATURE_SECTION_BLOCK_53_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-64.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-64.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1510,7 +1510,7 @@ const MOCK_FEATURE_SECTION_BLOCK_54_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-62.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-62.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1536,7 +1536,7 @@ const MOCK_FEATURE_SECTION_BLOCK_54_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-62.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-62.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1562,7 +1562,7 @@ const MOCK_FEATURE_SECTION_BLOCK_54_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-62.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-62.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1669,7 +1669,7 @@ const MOCK_FEATURE_SECTION_BLOCK_56_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1695,7 +1695,7 @@ const MOCK_FEATURE_SECTION_BLOCK_56_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1721,7 +1721,7 @@ const MOCK_FEATURE_SECTION_BLOCK_56_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1746,7 +1746,7 @@ const MOCK_FEATURE_SECTION_BLOCK_57_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-68.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-68.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1773,7 +1773,7 @@ const MOCK_FEATURE_SECTION_BLOCK_57_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-68.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-68.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1800,7 +1800,7 @@ const MOCK_FEATURE_SECTION_BLOCK_57_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-68.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-68.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1826,7 +1826,7 @@ const MOCK_FEATURE_SECTION_BLOCK_58_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-70.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-70.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1853,7 +1853,7 @@ const MOCK_FEATURE_SECTION_BLOCK_58_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-70.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-70.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1879,7 +1879,7 @@ const MOCK_FEATURE_SECTION_BLOCK_58_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: true,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-70.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-70.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1906,7 +1906,7 @@ const MOCK_FEATURE_SECTION_BLOCK_59_EN: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1932,7 +1932,7 @@ const MOCK_FEATURE_SECTION_BLOCK_59_DE: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',
@@ -1958,7 +1958,7 @@ const MOCK_FEATURE_SECTION_BLOCK_59_PL: CMS.Model.FeatureSectionBlock.FeatureSec
     inverted: false,
     iconBorder: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.png',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-67.webp',
         width: 584,
         height: 584,
         alt: 'Feature Section Image',

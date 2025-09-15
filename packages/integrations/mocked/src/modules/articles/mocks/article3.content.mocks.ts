@@ -43,13 +43,13 @@ export const MOCK_ARTICLE3_EN: Articles.Model.Article[] = [
         lead: 'Learn proven investment approaches that can help you grow your wealth steadily over time while managing risk effectively.',
         tags: ['investing', 'wealth-building', 'financial-planning'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.webp',
             width: 640,
             height: 427,
             alt: 'Investment growth',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.webp',
             alt: 'Investment growth thumbnail',
         },
         category: {
@@ -113,13 +113,13 @@ export const MOCK_ARTICLE3_DE: Articles.Model.Article[] = [
         lead: 'Erfahren Sie bewährte Anlageansätze, die Ihnen helfen können, Ihr Vermögen im Laufe der Zeit stetig zu vermehren und gleichzeitig Risiken effektiv zu managen.',
         tags: ['investieren', 'vermögensaufbau', 'finanzplanung'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.webp',
             width: 640,
             height: 427,
             alt: 'Anlagewachstum',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.webp',
             alt: 'Anlagewachstum Thumbnail',
         },
         category: {
@@ -183,13 +183,13 @@ export const MOCK_ARTICLE3_PL: Articles.Model.Article[] = [
         lead: 'Poznaj sprawdzone podejścia inwestycyjne, które mogą pomóc Ci systematycznie pomnażać majątek, jednocześnie efektywnie zarządzając ryzykiem.',
         tags: ['inwestowanie', 'budowanie-majątku', 'planowanie-finansowe'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.webp',
             width: 640,
             height: 427,
             alt: 'Wzrost inwestycji',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-54.webp',
             alt: 'Miniatura wzrostu inwestycji',
         },
         category: {

@@ -43,13 +43,13 @@ export const MOCK_ARTICLE1_EN: Articles.Model.Article[] = [
         lead: 'Master your finances with proven budgeting techniques that help you save more and spend wisely.',
         tags: ['budgeting', 'savings', 'financial-planning'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.webp',
             width: 640,
             height: 427,
             alt: 'Financial planning',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.webp',
             alt: 'Financial planning thumbnail',
         },
         category: {
@@ -113,13 +113,13 @@ export const MOCK_ARTICLE1_DE: Articles.Model.Article[] = [
         lead: 'Beherrschen Sie Ihre Finanzen mit bewährten Budgetierungstechniken, die Ihnen helfen, mehr zu sparen und klug auszugeben.',
         tags: ['budgetierung', 'sparen', 'finanzplanung'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.webp',
             width: 640,
             height: 427,
             alt: 'Finanzplanung',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.webp',
             alt: 'Finanzplanung Thumbnail',
         },
         category: {
@@ -183,13 +183,13 @@ export const MOCK_ARTICLE1_PL: Articles.Model.Article[] = [
         lead: 'Opanuj swoje finanse dzięki sprawdzonym technikom budżetowania, które pomogą Ci więcej oszczędzać i mądrze wydawać.',
         tags: ['budżetowanie', 'oszczędności', 'planowanie-finansowe'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.webp',
             width: 640,
             height: 427,
             alt: 'Planowanie finansowe',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-56.webp',
             alt: 'Miniatura planowania finansowego',
         },
         category: {

@@ -43,13 +43,13 @@ export const MOCK_ARTICLE2_EN: Articles.Model.Article[] = [
         lead: 'Navigate the complex world of insurance to ensure you and your loved ones are properly protected against life uncertainties.',
         tags: ['insurance', 'financial-planning', 'risk-management'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.webp',
             width: 640,
             height: 427,
             alt: 'Insurance protection',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.webp',
             alt: 'Insurance protection thumbnail',
         },
         category: {
@@ -113,13 +113,13 @@ export const MOCK_ARTICLE2_DE: Articles.Model.Article[] = [
         lead: 'Navigieren Sie durch die komplexe Welt der Versicherungen, um sicherzustellen, dass Sie und Ihre Lieben vor den Unwägbarkeiten des Lebens angemessen geschützt sind.',
         tags: ['versicherung', 'finanzplanung', 'risikomanagement'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.webp',
             width: 640,
             height: 427,
             alt: 'Versicherungsschutz',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.webp',
             alt: 'Versicherungsschutz Thumbnail',
         },
         category: {
@@ -183,13 +183,13 @@ export const MOCK_ARTICLE2_PL: Articles.Model.Article[] = [
         lead: 'Poruszaj się po złożonym świecie ubezpieczeń, aby zapewnić sobie i swoim bliskim odpowiednią ochronę przed niepewnościami życia.',
         tags: ['ubezpieczenie', 'planowanie-finansowe', 'zarządzanie-ryzykiem'],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.webp',
             width: 640,
             height: 427,
             alt: 'Ochrona ubezpieczeniowa',
         },
         thumbnail: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/refs/heads/main/packages/integrations/mocked/public/images/demo/Frame-6.webp',
             alt: 'Miniatura ochrony ubezpieczeniowej',
         },
         category: {
