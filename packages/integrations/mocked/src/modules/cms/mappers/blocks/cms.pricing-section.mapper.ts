@@ -12,7 +12,7 @@ const MOCK_PRICING_SECTION_BLOCK_1_EN: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Everyday Account',
             description: 'A flexible account for daily banking, designed to managing your money effortless.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-9.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-9.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -55,7 +55,7 @@ const MOCK_PRICING_SECTION_BLOCK_1_EN: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Savings Account',
             description: 'Grow your wealth with an account built for easy saving and smart financial planning',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-10.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-10.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -120,7 +120,7 @@ const MOCK_PRICING_SECTION_BLOCK_1_DE: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Alltagskonto',
             description: 'Ein flexibles Konto für das tägliche Banking, entwickelt, um Ihr Geld mühelos zu verwalten.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-9.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-9.webp',
                 width: 351,
                 height: 233,
                 alt: 'Bild der Preissektion',
@@ -164,7 +164,7 @@ const MOCK_PRICING_SECTION_BLOCK_1_DE: CMS.Model.PricingSectionBlock.PricingSect
             description:
                 'Vermehren Sie Ihr Vermögen mit einem Konto, das für einfaches Sparen und intelligente Finanzplanung entwickelt wurde',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-10.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-10.webp',
                 width: 351,
                 height: 233,
                 alt: 'Bild der Preissektion',
@@ -230,7 +230,7 @@ const MOCK_PRICING_SECTION_BLOCK_1_PL: CMS.Model.PricingSectionBlock.PricingSect
             description:
                 'Elastyczne konto do codziennego bankowania, zaprojektowane tak, aby zarządzanie pieniędzmi było bezwysiłkowe.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-9.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-9.webp',
                 width: 351,
                 height: 233,
                 alt: 'Obraz sekcji cenowej',
@@ -274,7 +274,7 @@ const MOCK_PRICING_SECTION_BLOCK_1_PL: CMS.Model.PricingSectionBlock.PricingSect
             description:
                 'Pomnażaj swoje bogactwo dzięki kontu stworzonym do łatwego oszczędzania i inteligentnego planowania finansowego',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-10.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-10.webp',
                 width: 351,
                 height: 233,
                 alt: 'Obraz sekcji cenowej',
@@ -338,7 +338,7 @@ const MOCK_PRICING_SECTION_BLOCK_2_EN: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Debit Card',
             description: 'A flexible card for daily banking, designed to managing your money effortless.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-14.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-14.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -381,7 +381,7 @@ const MOCK_PRICING_SECTION_BLOCK_2_EN: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Credit Card',
             description: 'Grow your wealth with a card built for easy saving and smart financial planning',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-15.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-15.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -446,7 +446,7 @@ const MOCK_PRICING_SECTION_BLOCK_2_DE: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Debit-Karte',
             description: 'Eine flexible Karte für das tägliche Banking, entwickelt, um Ihr Geld mühelos zu verwalten.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-14.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-14.webp',
                 width: 351,
                 height: 233,
                 alt: 'Bild der Preissektion',
@@ -490,7 +490,7 @@ const MOCK_PRICING_SECTION_BLOCK_2_DE: CMS.Model.PricingSectionBlock.PricingSect
             description:
                 'Vermehren Sie Ihr Vermögen mit einer Karte, die für einfaches Sparen und intelligente Finanzplanung entwickelt wurde',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-15.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-15.webp',
                 width: 351,
                 height: 233,
                 alt: 'Bild der Preissektion',
@@ -556,7 +556,7 @@ const MOCK_PRICING_SECTION_BLOCK_2_PL: CMS.Model.PricingSectionBlock.PricingSect
             description:
                 'Elastyczna karta do codziennego bankowania, zaprojektowana tak, aby zarządzanie pieniędzmi było bezwysiłkowe.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-14.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-14.webp',
                 width: 351,
                 height: 233,
                 alt: 'Obraz sekcji cenowej',
@@ -600,7 +600,7 @@ const MOCK_PRICING_SECTION_BLOCK_2_PL: CMS.Model.PricingSectionBlock.PricingSect
             description:
                 'Pomnażaj swoje bogactwo dzięki karcie stworzonej do łatwego oszczędzania i inteligentnego planowania finansowego',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-15.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-15.webp',
                 width: 351,
                 height: 233,
                 alt: 'Obraz sekcji cenowej',
@@ -664,7 +664,7 @@ const MOCK_PRICING_SECTION_BLOCK_3_EN: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Travel insurance',
             description: 'Protect your trips with comprehensive travel coverage.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-20.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-20.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -707,7 +707,7 @@ const MOCK_PRICING_SECTION_BLOCK_3_EN: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Home insurance',
             description: 'Safeguard yourproperty and assets with flexible home insurance solutions.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-21.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-21.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -772,7 +772,7 @@ const MOCK_PRICING_SECTION_BLOCK_3_DE: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Reiseversicherung',
             description: 'Schützen Sie Ihre Reisen mit umfassendem Reiseschutz.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-20.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-20.webp',
                 width: 351,
                 height: 233,
                 alt: 'Preissektionsbild',
@@ -815,7 +815,7 @@ const MOCK_PRICING_SECTION_BLOCK_3_DE: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Hausversicherung',
             description: 'Schützen Sie Ihr Eigentum und Ihre Vermögenswerte mit flexiblen Hausversicherungslösungen.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-21.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-21.webp',
                 width: 351,
                 height: 233,
                 alt: 'Preissektionsbild',
@@ -880,7 +880,7 @@ const MOCK_PRICING_SECTION_BLOCK_3_PL: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Ubezpieczenie podróżne',
             description: 'Chroń swoje podróże dzięki kompleksowemu ubezpieczeniu podróżnemu.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-20.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-20.webp',
                 width: 351,
                 height: 233,
                 alt: 'Obraz sekcji cenowej',
@@ -923,7 +923,7 @@ const MOCK_PRICING_SECTION_BLOCK_3_PL: CMS.Model.PricingSectionBlock.PricingSect
             title: 'Ubezpieczenie domu',
             description: 'Chroń swoją własność i aktywa dzięki elastycznym rozwiązaniom ubezpieczeniowym dla domu.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-21.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-21.webp',
                 width: 351,
                 height: 233,
                 alt: 'Obraz sekcji cenowej',
@@ -988,7 +988,7 @@ const MOCK_PRICING_SECTION_BLOCK_50_EN: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'A flexible solution for everyday transactions, giving your business instant access and effortless money management.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-57.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-57.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1032,7 +1032,7 @@ const MOCK_PRICING_SECTION_BLOCK_50_EN: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Designed for expanding companies, this account offers advanced tools, seamless integrations, and dedicated support to drive your business forward.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-58.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-58.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1098,7 +1098,7 @@ const MOCK_PRICING_SECTION_BLOCK_50_DE: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Eine flexible Lösung für alltägliche Transaktionen, die Ihrem Unternehmen sofortigen Zugang und mühelose Geldverwaltung bietet.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-57.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-57.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1142,7 +1142,7 @@ const MOCK_PRICING_SECTION_BLOCK_50_DE: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Entwickelt für expandierende Unternehmen, bietet dieses Konto erweiterte Tools, nahtlose Integrationen und dedizierten Support, um Ihr Geschäft voranzutreiben.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-58.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-58.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1208,7 +1208,7 @@ const MOCK_PRICING_SECTION_BLOCK_50_PL: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Elastyczne rozwiązanie do codziennych transakcji, dające Twojej firmie natychmiastowy dostęp i bezproblemowe zarządzanie pieniędzmi.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-57.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-57.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1252,7 +1252,7 @@ const MOCK_PRICING_SECTION_BLOCK_50_PL: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Zaprojektowane dla rozwijających się firm, to konto oferuje zaawansowane narzędzia, bezproblemowe integracje i dedykowane wsparcie, aby napędzać rozwój Twojej firmy.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-58.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-58.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1316,7 +1316,7 @@ const MOCK_PRICING_SECTION_BLOCK_51_EN: CMS.Model.PricingSectionBlock.PricingSec
             title: 'Business Debit',
             description: 'A convenient, secure way to handle everyday business expenses and manage payments worldwide.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-65.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-65.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1360,7 +1360,7 @@ const MOCK_PRICING_SECTION_BLOCK_51_EN: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Empower your team with controlled spending limits and real-time tracking for company purchases.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-66.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-66.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1423,7 +1423,7 @@ const MOCK_PRICING_SECTION_BLOCK_51_DE: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Eine bequeme, sichere Möglichkeit, alltägliche Geschäftsausgaben zu verwalten und Zahlungen weltweit zu tätigen.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-65.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-65.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1467,7 +1467,7 @@ const MOCK_PRICING_SECTION_BLOCK_51_DE: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Ermöglichen Sie Ihrem Team kontrollierte Ausgabenlimits und Echtzeit-Tracking für Unternehmenskäufe.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-66.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-66.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1530,7 +1530,7 @@ const MOCK_PRICING_SECTION_BLOCK_51_PL: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Wygodny, bezpieczny sposób na codzienne wydatki firmowe i zarządzanie płatnościami na całym świecie.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-65.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-65.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',
@@ -1574,7 +1574,7 @@ const MOCK_PRICING_SECTION_BLOCK_51_PL: CMS.Model.PricingSectionBlock.PricingSec
             description:
                 'Daj swojemu zespołowi kontrolowane limity wydatków i śledzenie w czasie rzeczywistym zakupów firmowych.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-66.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-66.webp',
                 width: 351,
                 height: 233,
                 alt: 'Pricing section image',

@@ -7,7 +7,7 @@ const MOCK_MEDIA_SECTION_BLOCK_1_EN: CMS.Model.MediaSectionBlock.MediaSectionBlo
     title: 'All-in-One Banking',
     description: 'See how every feature works together to give you a seamless, secure, and modern banking experience.',
     media: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/video-placeholder.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/video-placeholder.webp',
         width: 1024,
         height: 640,
         alt: 'Video placeholder',
@@ -28,7 +28,7 @@ const MOCK_MEDIA_SECTION_BLOCK_1_DE: CMS.Model.MediaSectionBlock.MediaSectionBlo
     description:
         'Sehen Sie sich an, wie jede Funktion zusammenarbeitet, um Ihnen eine reibungslose, sichere und moderne Bankerfahrung zu bieten.',
     media: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/video-placeholder.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/video-placeholder.webp',
         width: 1024,
         height: 640,
         alt: 'Video placeholder',
@@ -49,7 +49,7 @@ const MOCK_MEDIA_SECTION_BLOCK_1_PL: CMS.Model.MediaSectionBlock.MediaSectionBlo
     description:
         'Zobacz, jak każda funkcja współpracuje, aby dać Ci płynny, bezpieczny i nowoczesny doświadczenie bankowości.',
     media: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/video-placeholder.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/video-placeholder.webp',
         width: 1024,
         height: 640,
         alt: 'Video placeholder',
@@ -136,7 +136,7 @@ const MOCK_MEDIA_SECTION_BLOCK_50_EN: CMS.Model.MediaSectionBlock.MediaSectionBl
     description:
         'Integrate with leading accounting tools, access personalized financial analytics, and get expert business support whenever you need it.',
     media: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-51.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-51.webp',
         width: 1024,
         height: 683,
         alt: 'Media Section Image',
@@ -157,7 +157,7 @@ const MOCK_MEDIA_SECTION_BLOCK_50_DE: CMS.Model.MediaSectionBlock.MediaSectionBl
     description:
         'Integrieren Sie führende Buchhaltungstools, greifen Sie auf personalisierte Finanzanalysen zu und erhalten Sie jederzeit fachkundige Unterstützung für Ihr Unternehmen.',
     media: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-51.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-51.webp',
         width: 1024,
         height: 683,
         alt: 'Media Section Image',
@@ -178,7 +178,7 @@ const MOCK_MEDIA_SECTION_BLOCK_50_PL: CMS.Model.MediaSectionBlock.MediaSectionBl
     description:
         'Integruj się z wiodącymi narzędziami księgowymi, uzyskuj dostęp do spersonalizowanych analiz finansowych i otrzymuj fachowe wsparcie biznesowe, kiedy tylko tego potrzebujesz.',
     media: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-51.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-51.webp',
         width: 1024,
         height: 683,
         alt: 'Media Section Image',

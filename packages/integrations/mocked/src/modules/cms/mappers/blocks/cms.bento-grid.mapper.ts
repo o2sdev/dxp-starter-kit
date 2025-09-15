@@ -11,7 +11,7 @@ const MOCK_BENTO_GRID_BLOCK_1_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Master the basics of managing accounts, payments, and digital tools for confident day-to-day banking.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-6.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-6.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -29,7 +29,7 @@ const MOCK_BENTO_GRID_BLOCK_1_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Learn how to grow your money with automated savings, budgeting, and accessible investment strategies.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-7.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-7.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -47,7 +47,7 @@ const MOCK_BENTO_GRID_BLOCK_1_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Stay safe online with practical tips on protecting your finances and making the most of secure banking features.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-8.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-8.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -72,7 +72,7 @@ const MOCK_BENTO_GRID_BLOCK_1_DE: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Beherrschen Sie die Grundlagen der Kontoführung, Zahlungen und digitalen Werkzeuge für ein sicheres tägliches Banking.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-6.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-6.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -90,7 +90,7 @@ const MOCK_BENTO_GRID_BLOCK_1_DE: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Erfahren Sie, wie Sie Ihr Geld mit automatisierten Sparplänen, Budgetierung und zugänglichen Anlagestrategien vermehren können.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-7.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-7.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -108,7 +108,7 @@ const MOCK_BENTO_GRID_BLOCK_1_DE: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Bleiben Sie online sicher mit praktischen Tipps zum Schutz Ihrer Finanzen und zur optimalen Nutzung sicherer Bankfunktionen.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-8.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-8.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -133,7 +133,7 @@ const MOCK_BENTO_GRID_BLOCK_1_PL: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Opanuj podstawy zarządzania kontami, płatnościami i narzędziami cyfrowymi dla pewnego codziennego bankowania.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-6.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-6.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -151,7 +151,7 @@ const MOCK_BENTO_GRID_BLOCK_1_PL: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Dowiedz się, jak pomnażać swoje pieniądze dzięki automatycznym oszczędnościom, budżetowaniu i dostępnym strategiom inwestycyjnym.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-7.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-7.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -169,7 +169,7 @@ const MOCK_BENTO_GRID_BLOCK_1_PL: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Pozostań bezpieczny online dzięki praktycznym wskazówkom dotyczącym ochrony finansów i maksymalnego wykorzystania bezpiecznych funkcji bankowych.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-8.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-8.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -194,7 +194,7 @@ const MOCK_BENTO_GRID_BLOCK_50_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Master the fundamentals of business accounts, payments, and cash flow for confident day-to-day operations.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-54.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-54.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -212,7 +212,7 @@ const MOCK_BENTO_GRID_BLOCK_50_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Stay ahead of threats and regulations with practical advice on protecting your business and meeting compliance standards.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-55.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-55.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -230,7 +230,7 @@ const MOCK_BENTO_GRID_BLOCK_50_EN: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Master the fundamentals of business accounts, payments, and cash flow for confident day-to-day operations.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-56.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-56.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -255,7 +255,7 @@ const MOCK_BENTO_GRID_BLOCK_50_DE: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Beherrschen Sie die Grundlagen von Geschäftskonten, Zahlungen und Cashflow für sichere tägliche Abläufe.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-54.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-54.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -273,7 +273,7 @@ const MOCK_BENTO_GRID_BLOCK_50_DE: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Bleiben Sie Bedrohungen und Vorschriften voraus mit praktischen Ratschlägen zum Schutz Ihres Unternehmens und zur Einhaltung von Standards.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-55.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-55.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -291,7 +291,7 @@ const MOCK_BENTO_GRID_BLOCK_50_DE: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Beherrschen Sie die Grundlagen von Geschäftskonten, Zahlungen und Cashflow für sichere tägliche Abläufe.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-56.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-56.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -316,7 +316,7 @@ const MOCK_BENTO_GRID_BLOCK_50_PL: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Opanuj podstawy kont biznesowych, płatności i przepływów pieniężnych, aby pewnie prowadzić codzienne operacje.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-54.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-54.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -334,7 +334,7 @@ const MOCK_BENTO_GRID_BLOCK_50_PL: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Bądź na bieżąco z zagrożeniami i przepisami dzięki praktycznym poradom dotyczącym ochrony Twojej firmy i spełniania standardów zgodności.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-55.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-55.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',
@@ -352,7 +352,7 @@ const MOCK_BENTO_GRID_BLOCK_50_PL: CMS.Model.BentoGridBlock.BentoGridBlock = {
             description:
                 'Opanuj podstawy kont biznesowych, płatności i przepływów pieniężnych, aby pewnie prowadzić codzienne operacje.',
             image: {
-                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-56.webp',
+                url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-56.webp',
                 width: 402,
                 height: 216,
                 alt: 'Bento Grid Image',

@@ -9,7 +9,7 @@ const MOCK_HERO_SECTION_BLOCK_1_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-1.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-1.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -35,7 +35,7 @@ const MOCK_HERO_SECTION_BLOCK_1_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-1.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-1.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -62,7 +62,7 @@ const MOCK_HERO_SECTION_BLOCK_1_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-1.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-1.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -88,7 +88,7 @@ const MOCK_HERO_SECTION_BLOCK_2_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-2.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-2.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -120,7 +120,7 @@ const MOCK_HERO_SECTION_BLOCK_2_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-2.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-2.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -151,7 +151,7 @@ const MOCK_HERO_SECTION_BLOCK_2_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-2.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-2.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -182,7 +182,7 @@ const MOCK_HERO_SECTION_BLOCK_3_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-72.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-72.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -214,7 +214,7 @@ const MOCK_HERO_SECTION_BLOCK_3_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-72.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-72.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -245,7 +245,7 @@ const MOCK_HERO_SECTION_BLOCK_3_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-72.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-72.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -276,7 +276,7 @@ const MOCK_HERO_SECTION_BLOCK_4_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-16.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-16.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -307,7 +307,7 @@ const MOCK_HERO_SECTION_BLOCK_4_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-16.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-16.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -338,7 +338,7 @@ const MOCK_HERO_SECTION_BLOCK_4_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-16.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-16.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -369,7 +369,7 @@ const MOCK_HERO_SECTION_BLOCK_5_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-17.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-17.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -401,7 +401,7 @@ const MOCK_HERO_SECTION_BLOCK_5_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-17.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-17.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -433,7 +433,7 @@ const MOCK_HERO_SECTION_BLOCK_5_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-17.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-17.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -464,7 +464,7 @@ const MOCK_HERO_SECTION_BLOCK_6_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-22.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-22.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -496,7 +496,7 @@ const MOCK_HERO_SECTION_BLOCK_6_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-22.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-22.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -528,7 +528,7 @@ const MOCK_HERO_SECTION_BLOCK_6_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-22.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-22.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -559,7 +559,7 @@ const MOCK_HERO_SECTION_BLOCK_7_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-22.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-22.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -591,7 +591,7 @@ const MOCK_HERO_SECTION_BLOCK_7_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-22.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-22.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -623,7 +623,7 @@ const MOCK_HERO_SECTION_BLOCK_7_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock 
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-22.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-22.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -654,7 +654,7 @@ const MOCK_HERO_SECTION_BLOCK_50_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-50.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-50.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -681,7 +681,7 @@ const MOCK_HERO_SECTION_BLOCK_50_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-50.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-50.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -708,7 +708,7 @@ const MOCK_HERO_SECTION_BLOCK_50_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-50.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-50.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -735,7 +735,7 @@ const MOCK_HERO_SECTION_BLOCK_51_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-60.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-60.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -767,7 +767,7 @@ const MOCK_HERO_SECTION_BLOCK_51_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-60.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-60.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -799,7 +799,7 @@ const MOCK_HERO_SECTION_BLOCK_51_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-60.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-60.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -830,7 +830,7 @@ const MOCK_HERO_SECTION_BLOCK_52_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-63.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-63.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -862,7 +862,7 @@ const MOCK_HERO_SECTION_BLOCK_52_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-63.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-63.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -894,7 +894,7 @@ const MOCK_HERO_SECTION_BLOCK_52_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-63.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-63.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -925,7 +925,7 @@ const MOCK_HERO_SECTION_BLOCK_53_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-69.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-69.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -957,7 +957,7 @@ const MOCK_HERO_SECTION_BLOCK_53_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-69.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-69.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -988,7 +988,7 @@ const MOCK_HERO_SECTION_BLOCK_53_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-69.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-69.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -1019,7 +1019,7 @@ const MOCK_HERO_SECTION_BLOCK_54_EN: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-71.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-71.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -1051,7 +1051,7 @@ const MOCK_HERO_SECTION_BLOCK_54_DE: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-71.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-71.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',
@@ -1083,7 +1083,7 @@ const MOCK_HERO_SECTION_BLOCK_54_PL: CMS.Model.HeroSectionBlock.HeroSectionBlock
     inverted: false,
     headingType: 'h1',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-71.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-71.webp',
         width: 560,
         height: 560,
         alt: 'Hero Section Image',

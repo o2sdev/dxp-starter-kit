@@ -33,7 +33,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_EN: CMS.Model.Page.Page = {
             'frontend starter',
         ],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/dxp-social-card-1.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/dxp-social-card-1.png',
             width: 150,
             height: 150,
             alt: 'Digital Experience Platform Kit - The Open Source Composable Frontend for Portals',
@@ -162,7 +162,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_DE: CMS.Model.Page.Page = {
             'frontend starter',
         ],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/dxp-social-card-1.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/dxp-social-card-1.png',
             width: 150,
             height: 150,
             alt: 'Digital Experience Platform Kit - The Open Source Composable Frontend for Portals',
@@ -291,7 +291,7 @@ export const PAGE_PERSONAL_ACCOUNTS_SAVINGS_ACCOUNT_PL: CMS.Model.Page.Page = {
             'frontend starter',
         ],
         image: {
-            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/dxp-social-card-1.png',
+            url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/dxp-social-card-1.png',
             width: 150,
             height: 150,
             alt: 'Digital Experience Platform Kit - The Open Source Composable Frontend for Portals',

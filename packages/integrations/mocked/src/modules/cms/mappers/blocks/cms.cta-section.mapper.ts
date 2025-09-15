@@ -9,7 +9,7 @@ const MOCK_CTA_SECTION_BLOCK_1_EN: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
     description: 'A personal advisor who will help you buy stocks, funds, or crypto directly from your app.',
     inverted: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-5.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-5.webp',
         width: 612,
         height: 436,
         alt: 'CTA Section Image',
@@ -36,7 +36,7 @@ const MOCK_CTA_SECTION_BLOCK_1_DE: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
         'Ein persönlicher Berater, der Ihnen hilft, Aktien, Fonds oder Kryptowährungen direkt über Ihre App zu kaufen.',
     inverted: false,
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-5.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-5.webp',
         width: 612,
         height: 436,
         alt: 'CTA Section Image',
@@ -62,7 +62,7 @@ const MOCK_CTA_SECTION_BLOCK_1_PL: CMS.Model.CtaSectionBlock.CtaSectionBlock = {
     description:
         'Osobisty doradca, który pomoże Ci kupować akcje, fundusze lub kryptowaluty bezpośrednio z Twojej aplikacji.',
     image: {
-        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/main/packages/integrations/mocked/public/images/demo/Frame-5.webp',
+        url: 'https://raw.githubusercontent.com/o2sdev/dxp-starter-kit/feature/image-optimization/packages/integrations/mocked/public/images/demo/Frame-5.webp',
         width: 612,
         height: 436,
         alt: 'CTA Section Image',
