@@ -7,6 +7,7 @@ export interface PricingSectionProps {
     accessToken?: string;
     locale: string;
     routing: ReturnType<typeof defineRouting>;
+    hasPriority?: boolean;
 }
 
 export type PricingSectionPureProps = PricingSectionProps & Model.PricingSectionBlock;

@@ -12,7 +12,13 @@ import { Typography } from '@dxp/ui/elements/typography';
 
 import { DocumentListPureProps } from './DocumentList.types';
 
-export const DocumentListPure: React.FC<DocumentListPureProps> = ({ locale, accessToken, routing, ...component }) => {
+export const DocumentListPure: React.FC<DocumentListPureProps> = ({
+    locale,
+    accessToken,
+    routing,
+    hasPriority,
+    ...component
+}) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
     const { title, description, documents } = component;

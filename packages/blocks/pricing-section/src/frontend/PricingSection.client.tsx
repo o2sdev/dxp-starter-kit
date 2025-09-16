@@ -16,6 +16,7 @@ export const PricingSectionPure: React.FC<PricingSectionPureProps> = ({
     locale,
     accessToken,
     routing,
+    hasPriority,
     ...component
 }) => {
     const { Link: LinkComponent } = createNavigation(routing);

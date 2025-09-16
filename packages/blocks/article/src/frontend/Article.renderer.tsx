@@ -7,7 +7,7 @@ import { Loading } from '@dxp/ui/components/Loading';
 import { Article } from './Article.server';
 import { ArticleRendererProps } from './Article.types';
 
-export const ArticleRenderer: React.FC<ArticleRendererProps> = ({ id, slug, accessToken, routing }) => {
+export const ArticleRenderer: React.FC<ArticleRendererProps> = ({ id, slug, accessToken, routing, hasPriority }) => {
     const locale = useLocale();
 
     return (
@@ -22,7 +22,14 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({ id, slug, acce
                 </>
             }
         >
-            <Article id={id} slug={`/${slug.join('/')}`} accessToken={accessToken} locale={locale} routing={routing} />
+            <Article
+                id={id}
+                slug={`/${slug.join('/')}`}
+                accessToken={accessToken}
+                locale={locale}
+                routing={routing}
+                hasPriority={hasPriority}
+            />
         </Suspense>
     );
 };

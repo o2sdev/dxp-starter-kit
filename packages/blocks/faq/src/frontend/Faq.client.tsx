@@ -14,7 +14,7 @@ import { Typography } from '@dxp/ui/elements/typography';
 
 import { FaqPureProps, FaqSectionProps } from './Faq.types';
 
-export const FaqPure: React.FC<FaqPureProps> = ({ locale, accessToken, routing, ...component }) => {
+export const FaqPure: React.FC<FaqPureProps> = ({ locale, accessToken, routing, hasPriority, ...component }) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
     const { title, description, sections, banner, oneColumn, preTitle } = component;

@@ -6,7 +6,12 @@ import { Loading } from '@dxp/ui/components/Loading';
 import { PricingSection } from './PricingSection.server';
 import { PricingSectionRendererProps } from './PricingSection.types';
 
-export const PricingSectionRenderer: React.FC<PricingSectionRendererProps> = ({ id, accessToken, routing }) => {
+export const PricingSectionRenderer: React.FC<PricingSectionRendererProps> = ({
+    id,
+    accessToken,
+    routing,
+    hasPriority,
+}) => {
     const locale = useLocale();
 
     return (
@@ -23,7 +28,13 @@ export const PricingSectionRenderer: React.FC<PricingSectionRendererProps> = ({ 
                 </div>
             }
         >
-            <PricingSection id={id} accessToken={accessToken} locale={locale} routing={routing} />
+            <PricingSection
+                id={id}
+                accessToken={accessToken}
+                locale={locale}
+                routing={routing}
+                hasPriority={hasPriority}
+            />
         </Suspense>
     );
 };
