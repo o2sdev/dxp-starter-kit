@@ -14,6 +14,7 @@ export type PricingCardProps = {
     featureListTitle?: string;
     featureList?: Models.FeatureItem.FeatureItem[];
     LinkComponent: FrontendModels.Link.LinkComponent;
+    hasPriority?: boolean;
 };
 
 export type FeatureItemProps = Models.FeatureItem.FeatureItem;

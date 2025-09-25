@@ -48,7 +48,12 @@ export const PricingSectionPure: React.FC<PricingSectionPureProps> = ({
                             key={`${card.title}-${index}`}
                             className={cn('flex-1 max-w-[400px]', card.isPromoted && 'order-first lg:order-none')}
                         >
-                            <PricingCard {...card} LinkComponent={LinkComponent} titleType={SubHeadingComponent} />
+                            <PricingCard
+                                {...card}
+                                LinkComponent={LinkComponent}
+                                titleType={SubHeadingComponent}
+                                hasPriority={hasPriority}
+                            />
                         </li>
                     ))}
                 </ul>

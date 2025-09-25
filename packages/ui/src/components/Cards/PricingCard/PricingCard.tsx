@@ -61,6 +61,7 @@ export const PricingCard: React.FC<Readonly<PricingCardProps>> = (props) => {
         featureListTitle,
         featureList,
         LinkComponent,
+        hasPriority,
     } = props;
 
     return (
@@ -79,6 +80,7 @@ export const PricingCard: React.FC<Readonly<PricingCardProps>> = (props) => {
                             width={image.width}
                             height={image.height}
                             className="object-cover object-center w-full h-full"
+                            priority={hasPriority}
                         />
                     </div>
                 )}
