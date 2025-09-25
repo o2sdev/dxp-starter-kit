@@ -4,6 +4,7 @@ import { Models as FrontendModels } from '@dxp/utils.frontend';
 export type PricingCardProps = {
     image?: Models.Media.Media;
     title: string;
+    titleType?: 'h2' | 'h3' | 'h4';
     description?: string;
     price?: Models.Price.Price;
     tags?: Models.Badge.Badge[];

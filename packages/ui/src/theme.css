@@ -54,7 +54,7 @@
     --tertiary-border: hsl(230 6% 81%);
     --badge-default-background: hsl(31 100% 63.9%);
     --badge-secondary-background: hsl(31 97% 72%);
-    --badge-default-foreground: hsl(0 0% 100%);
+    --badge-default-foreground: hsl(0 0% 0%);
     --badge-secondary-foreground: hsl(0 0% 0%);
     --tertiary-hover: hsl(220 13% 95%);
 }

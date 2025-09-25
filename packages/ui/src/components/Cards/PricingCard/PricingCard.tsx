@@ -49,8 +49,19 @@ export const FeatureItem: React.FC<FeatureItemProps> = ({ title, description, ic
 };
 
 export const PricingCard: React.FC<Readonly<PricingCardProps>> = (props) => {
-    const { title, description, image, price, isPromoted, tags, links, featureListTitle, featureList, LinkComponent } =
-        props;
+    const {
+        title,
+        titleType: TitleTag = 'h3',
+        description,
+        image,
+        price,
+        isPromoted,
+        tags,
+        links,
+        featureListTitle,
+        featureList,
+        LinkComponent,
+    } = props;
 
     return (
         <div
@@ -76,7 +87,7 @@ export const PricingCard: React.FC<Readonly<PricingCardProps>> = (props) => {
                     <div className="flex flex-col gap-3">
                         {title && (
                             <Typography variant="highlightedSmall" asChild className={cn(isPromoted && 'text-primary')}>
-                                <h3>{title}</h3>
+                                <TitleTag>{title}</TitleTag>
                             </Typography>
                         )}
 
