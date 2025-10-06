@@ -3,7 +3,8 @@ import { Utils } from '@dxp/utils.frontend';
 
 import { Sdk } from '@dxp/framework/sdk';
 
-import { Model, Request, URL } from '../api-harmonization/faq.client';
+import { Model, Request } from '../api-harmonization/faq.client';
+import { URL } from '../api-harmonization/faq.url';
 
 const API_URL = URL;
 

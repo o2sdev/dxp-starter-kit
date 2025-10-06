@@ -7,6 +7,7 @@ export interface CtaSectionProps {
     accessToken?: string;
     locale: string;
     routing: ReturnType<typeof defineRouting>;
+    hasPriority?: boolean;
 }
 
 export type CtaSectionPureProps = CtaSectionProps & Model.CtaSectionBlock;

@@ -14,6 +14,7 @@
     },
     "include": [
         "src/frontend",
+        "src/api-harmonization/pricing-section.url.ts",
         "src/api-harmonization/pricing-section.client.ts",
         "src/api-harmonization/pricing-section.model.ts",
         "src/api-harmonization/pricing-section.request.ts",

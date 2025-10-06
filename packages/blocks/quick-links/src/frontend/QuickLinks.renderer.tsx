@@ -14,12 +14,12 @@ export const QuickLinksRenderer: React.FC<QuickLinksRendererProps> = ({ id, acce
             key={id}
             fallback={
                 <div className="flex flex-col gap-5 md:gap-6">
-                    <Loading bars={1} />
+                    {/*<Loading bars={1} />*/}
                     <div className="grid grid-flow-row gap-6 sm:grid-cols-[repeat(2,minmax(250px,600px))] lg:grid-cols-[repeat(4,minmax(200px,600px))]">
-                        <Loading bars={3} />
-                        <Loading bars={3} />
-                        <Loading bars={3} />
-                        <Loading bars={3} />
+                        <Loading bars={4} />
+                        <Loading bars={4} />
+                        <Loading bars={4} />
+                        <Loading bars={4} />
                     </div>
                 </div>
             }

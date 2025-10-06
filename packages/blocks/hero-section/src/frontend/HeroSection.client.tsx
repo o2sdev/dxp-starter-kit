@@ -14,7 +14,13 @@ import { Typography } from '@dxp/ui/elements/typography';
 
 import { HeroSectionPureProps } from './HeroSection.types';
 
-export const HeroSectionPure: React.FC<HeroSectionPureProps> = ({ locale, accessToken, routing, ...component }) => {
+export const HeroSectionPure: React.FC<HeroSectionPureProps> = ({
+    locale,
+    accessToken,
+    routing,
+    hasPriority,
+    ...component
+}) => {
     const { Link: LinkComponent } = createNavigation(routing);
 
     const { title, highlightedText, subtitle, description, image, links, headingType, preTitle, inverted } = component;
@@ -80,6 +86,8 @@ export const HeroSectionPure: React.FC<HeroSectionPureProps> = ({ locale, access
                         width={image.width}
                         height={image.height}
                         className="object-scale-down rounded-xl"
+                        priority={hasPriority}
+                        sizes="(max-width: 64rem): 100vw, 50vw"
                     />
                 </div>
             )}

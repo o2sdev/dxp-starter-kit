@@ -1,5 +1,17 @@
 # create-dxp-app
 
+## 0.0.8
+
+### Patch Changes
+
+- fd764a3: fixed event name for telemetry
+
+## 0.0.7
+
+### Patch Changes
+
+- 17f6e1d: fixed event name for telemetry
+
 ## 0.0.6
 
 ### Patch Changes

@@ -6,7 +6,7 @@ import { Loading } from '@dxp/ui/components/Loading';
 import { HeroSection } from './HeroSection.server';
 import { HeroSectionRendererProps } from './HeroSection.types';
 
-export const HeroSectionRenderer: React.FC<HeroSectionRendererProps> = ({ id, accessToken, routing }) => {
+export const HeroSectionRenderer: React.FC<HeroSectionRendererProps> = ({ id, accessToken, routing, hasPriority }) => {
     const locale = useLocale();
 
     return (
@@ -19,7 +19,13 @@ export const HeroSectionRenderer: React.FC<HeroSectionRendererProps> = ({ id, ac
                 </div>
             }
         >
-            <HeroSection id={id} accessToken={accessToken} locale={locale} routing={routing} />
+            <HeroSection
+                id={id}
+                accessToken={accessToken}
+                locale={locale}
+                routing={routing}
+                hasPriority={hasPriority}
+            />
         </Suspense>
     );
 };

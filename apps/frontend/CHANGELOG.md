@@ -1,5 +1,37 @@
 # @dxp/frontend
 
+## 1.12.0
+
+### Minor Changes
+
+- f1ac1f2: added support for prioritizing image rendering in order to disable lazyloading for images above the fold
+- e2f4907: made improvements to the way the code splitting to reduce the total size of JS bundles
+- 49d2bb0: reduced JS bundle size by moving to dynamic icon loading
+
+### Patch Changes
+
+- Updated dependencies [f1ac1f2]
+- Updated dependencies [e2f4907]
+- Updated dependencies [49d2bb0]
+    - @dxp/blocks.feature-section-grid@0.1.0
+    - @dxp/blocks.feature-section@0.2.0
+    - @dxp/blocks.pricing-section@0.2.0
+    - @dxp/blocks.article-search@1.2.0
+    - @dxp/blocks.category-list@1.2.0
+    - @dxp/blocks.document-list@0.2.0
+    - @dxp/blocks.media-section@0.2.0
+    - @dxp/blocks.article-list@1.2.0
+    - @dxp/blocks.hero-section@0.2.0
+    - @dxp/blocks.cta-section@0.2.0
+    - @dxp/blocks.quick-links@0.2.0
+    - @dxp/blocks.bento-grid@0.2.0
+    - @dxp/blocks.category@1.2.0
+    - @dxp/blocks.article@1.2.0
+    - @dxp/blocks.faq@0.2.0
+    - @dxp/ui@1.6.0
+    - @dxp/integrations.mocked@0.6.0
+    - @dxp/api-harmonization@1.11.0
+
 ## 1.11.0
 
 ### Minor Changes

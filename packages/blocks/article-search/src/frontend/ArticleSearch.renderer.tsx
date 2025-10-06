@@ -13,8 +13,8 @@ export const ArticleSearchRenderer: React.FC<ArticleSearchRendererProps> = ({ id
         <Suspense
             key={id}
             fallback={
-                <Container variant="narrow">
-                    <Loading bars={1} />
+                <Container variant="narrow" spacing="none">
+                    <Loading bars={0} />
                 </Container>
             }
         >

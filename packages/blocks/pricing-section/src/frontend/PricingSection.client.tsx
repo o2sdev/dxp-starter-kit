@@ -16,12 +16,14 @@ export const PricingSectionPure: React.FC<PricingSectionPureProps> = ({
     locale,
     accessToken,
     routing,
+    hasPriority,
     ...component
 }) => {
     const { Link: LinkComponent } = createNavigation(routing);
     const { title, subtitle, description, pricingList, headingType } = component;
 
     const HeadingComponent = headingType ? headingType : 'h2';
+    const SubHeadingComponent = !headingType || headingType === 'h1' ? 'h2' : 'h3';
 
     return (
         <div className="w-full flex flex-col gap-16">
@@ -46,7 +48,12 @@ export const PricingSectionPure: React.FC<PricingSectionPureProps> = ({
                             key={`${card.title}-${index}`}
                             className={cn('flex-1 max-w-[400px]', card.isPromoted && 'order-first lg:order-none')}
                         >
-                            <PricingCard {...card} LinkComponent={LinkComponent} />
+                            <PricingCard
+                                {...card}
+                                LinkComponent={LinkComponent}
+                                titleType={SubHeadingComponent}
+                                hasPriority={hasPriority}
+                            />
                         </li>
                     ))}
                 </ul>

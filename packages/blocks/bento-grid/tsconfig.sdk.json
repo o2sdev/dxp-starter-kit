@@ -12,6 +12,7 @@
     },
     "include": [
         "src/sdk",
+        "src/api-harmonization/bento-grid.url.ts",
         "src/api-harmonization/bento-grid.client.ts",
         "src/api-harmonization/bento-grid.model.ts",
         "src/api-harmonization/bento-grid.request.ts"

@@ -34,19 +34,25 @@ interface BlockProps {
     locale: string;
     accessToken: string | undefined;
     routing: typeof routing;
+    hasPriority?: boolean;
 }
 
 export const renderBlocks = async (blocks: CMS.Model.Page.SlotBlock[], slug: string[]) => {
     const session = await auth();
     const locale = await getLocale();
 
-    return blocks.map((block) => {
+    return blocks.map((block, index) => {
+        // decides whether the block is above the fold,
+        // e.g., to disable image lazy loading
+        const hasPriority = index < 2;
+
         const blockProps: BlockProps = {
             id: block.id,
             slug: slug,
             locale: locale,
             accessToken: session?.accessToken,
             routing: routing,
+            hasPriority,
         };
 
         return (

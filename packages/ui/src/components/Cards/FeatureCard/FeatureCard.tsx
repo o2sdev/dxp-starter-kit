@@ -10,7 +10,7 @@ import { RichText } from '@dxp/ui/components/RichText';
 import { Link } from '@dxp/ui/elements/link';
 import { Typography } from '@dxp/ui/elements/typography';
 
-import { FeatureCardProps } from '././FeatureCard.types';
+import { FeatureCardProps } from './FeatureCard.types';
 
 export const FeatureCardContent: React.FC<FeatureCardProps> = ({ title, description, image, link, LinkComponent }) => {
     return (

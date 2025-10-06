@@ -41,7 +41,7 @@ export const ArticleSearchPure: React.FC<ArticleSearchPureProps> = ({
     });
 
     return (
-        <Container variant="narrow">
+        <Container variant="narrow" spacing="none">
             <div className="w-full flex flex-col gap-6">
                 {title && (
                     <Typography variant="h2" asChild className="text-center">

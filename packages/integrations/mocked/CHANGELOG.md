@@ -1,5 +1,11 @@
 # @dxp/integrations.mocked
 
+## 0.6.0
+
+### Minor Changes
+
+- e2f4907: made improvements to the way the code splitting to reduce the total size of JS bundles
+
 ## 0.5.1
 
 ### Patch Changes
