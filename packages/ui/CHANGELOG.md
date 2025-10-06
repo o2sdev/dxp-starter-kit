@@ -1,5 +1,12 @@
 # @dxp/ui
 
+## 1.6.0
+
+### Minor Changes
+
+- f1ac1f2: added support for prioritizing image rendering in order to disable lazyloading for images above the fold
+- 49d2bb0: reduced JS bundle size by moving to dynamic icon loading
+
 ## 1.5.0
 
 ### Minor Changes
