@@ -14,6 +14,7 @@
     },
     "include": [
         "src/frontend",
+        "src/api-harmonization/quick-links.url.ts",
         "src/api-harmonization/quick-links.client.ts",
         "src/api-harmonization/quick-links.model.ts",
         "src/api-harmonization/quick-links.request.ts",

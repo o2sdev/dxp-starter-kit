@@ -1,6 +1,6 @@
 ---
-'@dxp/frontend': patch
-'@dxp/ui': patch
+'@dxp/frontend': minor
+'@dxp/ui': minor
 ---
 
-reduced JS bundle size by not moving to dynamic icon loading
+reduced JS bundle size by moving to dynamic icon loading

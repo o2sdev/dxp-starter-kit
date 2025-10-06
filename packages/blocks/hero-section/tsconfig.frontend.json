@@ -14,6 +14,7 @@
     },
     "include": [
         "src/frontend",
+        "src/api-harmonization/hero-section.url.ts",
         "src/api-harmonization/hero-section.client.ts",
         "src/api-harmonization/hero-section.model.ts",
         "src/api-harmonization/hero-section.request.ts",

@@ -12,6 +12,7 @@
     },
     "include": [
         "src/sdk",
+        "src/api-harmonization/cta-section.url.ts",
         "src/api-harmonization/cta-section.client.ts",
         "src/api-harmonization/cta-section.model.ts",
         "src/api-harmonization/cta-section.request.ts"

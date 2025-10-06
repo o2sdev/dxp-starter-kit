@@ -3,7 +3,8 @@ import { Utils } from '@dxp/utils.frontend';
 
 import { Sdk } from '@dxp/framework/sdk';
 
-import { Model, Request, URL } from '../api-harmonization/bento-grid.client';
+import { Model, Request } from '../api-harmonization/bento-grid.client';
+import { URL } from '../api-harmonization/bento-grid.url';
 
 const API_URL = URL;
 

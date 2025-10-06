@@ -3,7 +3,8 @@ import { Utils } from '@dxp/utils.frontend';
 
 import { Sdk } from '@dxp/framework/sdk';
 
-import { Model, Request, URL } from '../api-harmonization/media-section.client';
+import { Model, Request } from '../api-harmonization/media-section.client';
+import { URL } from '../api-harmonization/media-section.url';
 
 const API_URL = URL;
 
