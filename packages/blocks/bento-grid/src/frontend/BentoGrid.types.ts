@@ -7,6 +7,7 @@ export interface BentoGridProps {
     accessToken?: string;
     locale: string;
     routing: ReturnType<typeof defineRouting>;
+    hasPriority?: boolean;
 }
 
 export type BentoGridPureProps = BentoGridProps & Model.BentoGridBlock;

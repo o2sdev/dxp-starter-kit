@@ -50,6 +50,7 @@ export const MediaSectionPure: React.FC<MediaSectionPureProps> = ({ locale, acce
                             width={media.width}
                             height={media.height}
                             className="object-scale-down rounded-3xl shadow-xl/20"
+                            sizes="100vw"
                         />
                     </div>
                 </div>

@@ -14,6 +14,7 @@
     },
     "include": [
         "src/frontend",
+        "src/api-harmonization/media-section.url.ts",
         "src/api-harmonization/media-section.client.ts",
         "src/api-harmonization/media-section.model.ts",
         "src/api-harmonization/media-section.request.ts",

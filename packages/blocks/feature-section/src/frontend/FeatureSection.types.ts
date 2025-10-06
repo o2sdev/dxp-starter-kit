@@ -7,6 +7,7 @@ export interface FeatureSectionProps {
     accessToken?: string;
     locale: string;
     routing: ReturnType<typeof defineRouting>;
+    hasPriority?: boolean;
 }
 
 export type FeatureSectionPureProps = FeatureSectionProps & Model.FeatureSectionBlock;

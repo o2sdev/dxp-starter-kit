@@ -18,23 +18,25 @@ export const QuickLinksPure: React.FC<QuickLinksPureProps> = ({ locale, accessTo
 
     return (
         <div className="w-full flex flex-col gap-5 md:gap-6">
-            <div className="h-full w-full flex flex-col gap-2">
-                {preTitle && (
-                    <Typography variant="body" className="text-muted-foreground">
-                        {preTitle}
-                    </Typography>
-                )}
+            {(preTitle || title) && (
+                <div className="h-full w-full flex flex-col gap-2">
+                    {preTitle && (
+                        <Typography variant="body" className="text-muted-foreground">
+                            {preTitle}
+                        </Typography>
+                    )}
 
-                {title && (
-                    <Typography variant="highlightedMedium" asChild>
-                        <h2>{title}</h2>
-                    </Typography>
-                )}
+                    {title && (
+                        <Typography variant="highlightedMedium" asChild>
+                            <h2>{title}</h2>
+                        </Typography>
+                    )}
 
-                {description && (
-                    <RichText content={description} baseFontSize="body" className="text-muted-foreground" />
-                )}
-            </div>
+                    {description && (
+                        <RichText content={description} baseFontSize="body" className="text-muted-foreground" />
+                    )}
+                </div>
+            )}
 
             <ul className="grid grid-flow-row gap-6 sm:grid-cols-[repeat(2,minmax(250px,600px))] lg:grid-cols-[repeat(4,minmax(200px,600px))]">
                 {items?.map((item, index) => (

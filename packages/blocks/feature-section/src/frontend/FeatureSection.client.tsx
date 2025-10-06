@@ -121,6 +121,7 @@ export const FeatureSectionPure: React.FC<FeatureSectionPureProps> = ({
                         width={image.width}
                         height={image.height}
                         className="object-scale-down rounded-xl"
+                        sizes="(max-width: 64rem): 100vw, 50vw"
                     />
                 </div>
             )}

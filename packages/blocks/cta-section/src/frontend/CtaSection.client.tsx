@@ -97,6 +97,7 @@ export const CtaSectionPure: React.FC<CtaSectionPureProps> = ({ locale, accessTo
                             'w-full h-auto',
                             inverted ? 'rounded-bl-xl rounded-tr-xl' : 'rounded-tl-xl rounded-br-xl',
                         )}
+                        sizes="(max-width: 64rem): 100vw, 50vw"
                     />
                 </div>
             )}

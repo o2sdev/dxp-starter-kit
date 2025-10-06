@@ -14,6 +14,7 @@
     },
     "include": [
         "src/frontend",
+        "src/api-harmonization/feature-section-grid.url.ts",
         "src/api-harmonization/feature-section-grid.client.ts",
         "src/api-harmonization/feature-section-grid.model.ts",
         "src/api-harmonization/feature-section-grid.request.ts",

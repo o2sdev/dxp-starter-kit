@@ -1,7 +1,7 @@
 import { CMS } from '@dxp/configs.integrations';
 import { Models } from '@dxp/utils.api-harmonization';
 import { Injectable } from '@nestjs/common';
-import { Observable, forkJoin, map } from 'rxjs';
+import { Observable, delay, forkJoin, map } from 'rxjs';
 
 import { mapQuickLinks } from './quick-links.mapper';
 import { QuickLinksBlock } from './quick-links.model';
@@ -17,6 +17,8 @@ export class QuickLinksService {
     ): Observable<QuickLinksBlock> {
         const cms = this.cmsService.getQuickLinksBlock({ ...query, locale: headers['x-locale'] });
 
-        return forkJoin([cms]).pipe(map(([cms]) => mapQuickLinks(cms, headers['x-locale'])));
+        return forkJoin([cms])
+            .pipe(map(([cms]) => mapQuickLinks(cms, headers['x-locale'])))
+            .pipe(delay(2000));
     }
 }

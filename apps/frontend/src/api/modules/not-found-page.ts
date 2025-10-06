@@ -1,11 +1,12 @@
 import { Modules } from '@dxp/api-harmonization';
+import { URL } from '@dxp/api-harmonization/modules/not-found-page/not-found-page.url';
 import { Models } from '@dxp/utils.api-harmonization';
 
 import { Sdk } from '@dxp/framework/sdk';
 
 import { getApiHeaders } from '../../utils/api';
 
-const API_URL = Modules.NotFoundPage.URL;
+const API_URL = URL;
 
 export const notFoundPage = (sdk: Sdk) => ({
     modules: {

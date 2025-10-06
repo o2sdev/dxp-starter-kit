@@ -7,6 +7,7 @@ export interface HeroSectionProps {
     accessToken?: string;
     locale: string;
     routing: ReturnType<typeof defineRouting>;
+    hasPriority?: boolean;
 }
 
 export type HeroSectionPureProps = HeroSectionProps & Model.HeroSectionBlock;

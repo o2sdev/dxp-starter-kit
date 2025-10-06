@@ -7,7 +7,12 @@ import { Loading } from '@dxp/ui/components/Loading';
 import { DocumentList } from './DocumentList.server';
 import { DocumentListRendererProps } from './DocumentList.types';
 
-export const DocumentListRenderer: React.FC<DocumentListRendererProps> = ({ id, accessToken, routing }) => {
+export const DocumentListRenderer: React.FC<DocumentListRendererProps> = ({
+    id,
+    accessToken,
+    routing,
+    hasPriority,
+}) => {
     const locale = useLocale();
 
     return (
@@ -22,7 +27,13 @@ export const DocumentListRenderer: React.FC<DocumentListRendererProps> = ({ id, 
                 </>
             }
         >
-            <DocumentList id={id} accessToken={accessToken} locale={locale} routing={routing} />
+            <DocumentList
+                id={id}
+                accessToken={accessToken}
+                locale={locale}
+                routing={routing}
+                hasPriority={hasPriority}
+            />
         </Suspense>
     );
 };

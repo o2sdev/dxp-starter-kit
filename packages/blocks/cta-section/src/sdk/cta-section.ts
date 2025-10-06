@@ -3,7 +3,8 @@ import { Utils } from '@dxp/utils.frontend';
 
 import { Sdk } from '@dxp/framework/sdk';
 
-import { Model, Request, URL } from '../api-harmonization/cta-section.client';
+import { Model, Request } from '../api-harmonization/cta-section.client';
+import { URL } from '../api-harmonization/cta-section.url';
 
 const API_URL = URL;
 
