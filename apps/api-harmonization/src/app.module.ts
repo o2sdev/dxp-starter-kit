@@ -28,6 +28,7 @@ import { Articles, Auth as AuthModule, CMS, Cache, Search } from '@dxp/framework
 import { AppConfig } from './app.config';
 import { AppService } from './app.service';
 import { ContextHeadersMiddleware } from './middleware/context-headers.middleware';
+import { HealthModule } from './modules/health/health.module';
 import { NotFoundPageModule } from './modules/not-found-page/not-found-page.module';
 import { PageModule } from './modules/page/page.module';
 import { RoutesModule } from './modules/routes/routes.module';
@@ -48,6 +49,7 @@ export const AuthModuleBaseModule = AuthModule.Module.register(AppConfig);
             ignoreEnvFile: process.env.NODE_ENV !== 'development',
             envFilePath: `.env.local`,
         }),
+        HealthModule,
 
         CMSBaseModule,
         CacheBaseModule,
