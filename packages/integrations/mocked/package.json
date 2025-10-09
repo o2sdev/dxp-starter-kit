@@ -38,7 +38,7 @@
         "@o2s/utils.logger": "*"
     },
     "devDependencies": {
-        "@types/jsonwebtoken": "^9.0.9",
+        "@types/jsonwebtoken": "^9.0.10",
         "@dxp/eslint-config": "*",
         "@dxp/prettier-config": "*",
         "@dxp/typescript-config": "*",
