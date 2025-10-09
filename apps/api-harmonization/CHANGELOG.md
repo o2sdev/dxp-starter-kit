@@ -1,5 +1,13 @@
 # @dxp/api-harmonization
 
+## 1.11.1
+
+### Patch Changes
+
+- a9200d7: added healthchecks
+- Updated dependencies [8e461f7]
+    - @dxp/blocks.quick-links@0.2.1
+
 ## 1.11.0
 
 ### Minor Changes
