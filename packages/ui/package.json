@@ -23,7 +23,7 @@
         "@dxp/eslint-config": "*",
         "@dxp/prettier-config": "*",
         "@dxp/typescript-config": "*",
-        "@tailwindcss/postcss": "^4.1.7",
+        "@tailwindcss/postcss": "^4.1.14",
         "@trivago/prettier-plugin-sort-imports": "^5.2.2",
         "@turbo/gen": "^2.5.3",
         "@types/eslint": "^9.6.1",
