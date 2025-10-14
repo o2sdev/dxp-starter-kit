@@ -19,12 +19,111 @@ import { Link as NextLink, usePathname } from '@/i18n';
 
 import { MobileNavigationProps } from './MobileNavigation.types';
 
+// Component for navigation items
+const NavigationItem = ({
+    item,
+    navigationMobileItemClass,
+}: {
+    item: Models.Navigation.NavigationItem;
+    navigationMobileItemClass: string;
+}) => {
+    return (
+        <li key={item.label} className="w-full">
+            <Link className={navigationMobileItemClass} asChild>
+                <NextLink href={item.url || '/'}>{item.label}</NextLink>
+            </Link>
+        </li>
+    );
+};
+
+// Component for navigation groups
+const NavigationGroup = ({
+    item,
+    navigationMobileItemClass,
+}: {
+    item: Models.Navigation.NavigationGroup;
+    navigationMobileItemClass: string;
+}) => {
+    return (
+        <li key={item.title} className="w-full">
+            <Collapsible>
+                <div className="flex items-center justify-between">
+                    <Link className={navigationMobileItemClass} asChild>
+                        <NextLink href={item.url || '/'}>{item.title}</NextLink>
+                    </Link>
+
+                    <CollapsibleTrigger className="p-1.5 data-[state=open]:rotate-180 transition-transform duration-200 border border-border">
+                        <ChevronDownIcon className="h-6 w-6" />
+                    </CollapsibleTrigger>
+                </div>
+
+                <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up flex flex-col gap-2">
+                    <ul className="flex flex-col items-start gap-2 w-full pt-2 pl-3">
+                        {item.items.map((item) => {
+                            switch (item.__typename) {
+                                case 'NavigationItem':
+                                    return (
+                                        <NavigationItem
+                                            item={item}
+                                            key={item.label}
+                                            navigationMobileItemClass={navigationMobileItemClass}
+                                        />
+                                    );
+                                case 'NavigationGroup':
+                                    return (
+                                        <li key={item.title} className="w-full">
+                                            <Collapsible>
+                                                <div className="flex items-center justify-between">
+                                                    <Link className={navigationMobileItemClass} asChild>
+                                                        <NextLink href={item.url || '/'}>{item.title}</NextLink>
+                                                    </Link>
+
+                                                    <CollapsibleTrigger className="p-1.5 data-[state=open]:rotate-180 transition-transform duration-200 border border-border">
+                                                        <ChevronDownIcon className="h-6 w-6" />
+                                                    </CollapsibleTrigger>
+                                                </div>
+
+                                                <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up flex flex-col gap-2 p-0">
+                                                    <ul className="flex flex-col items-start gap-2 w-full pt-2 pl-3">
+                                                        {item.items.map((item) => {
+                                                            if (item.__typename !== 'NavigationItem') {
+                                                                return null;
+                                                            }
+                                                            return (
+                                                                <NavigationItem
+                                                                    item={item}
+                                                                    key={item.label}
+                                                                    navigationMobileItemClass={
+                                                                        navigationMobileItemClass
+                                                                    }
+                                                                />
+                                                            );
+                                                        })}
+                                                    </ul>
+
+                                                    <Separator className="w-full" />
+                                                </CollapsibleContent>
+                                            </Collapsible>
+                                        </li>
+                                    );
+                            }
+                        })}
+                    </ul>
+
+                    <Separator className="w-full" />
+                </CollapsibleContent>
+            </Collapsible>
+        </li>
+    );
+};
+
 export function MobileNavigation({ logoSlot, localeSlot, items, title, mobileMenuLabel }: MobileNavigationProps) {
     const pathname = usePathname();
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsMenuOpen(false);
     }, [pathname]);
 
@@ -32,76 +131,6 @@ export function MobileNavigation({ logoSlot, localeSlot, items, title, mobileMen
         navigationMenuTriggerStyle(),
         'w-full !justify-between h-10 p-2 !text-navbar-primary hover:!text-navbar-primary hover:!bg-navbar-accent-background',
     );
-
-    const NavigationItem = ({ item }: { item: Models.Navigation.NavigationItem }) => {
-        return (
-            <li key={item.label} className="w-full">
-                <Link className={navigationMobileItemClass} asChild>
-                    <NextLink href={item.url || '/'}>{item.label}</NextLink>
-                </Link>
-            </li>
-        );
-    };
-
-    const NavigationGroup = ({ item }: { item: Models.Navigation.NavigationGroup }) => {
-        return (
-            <li key={item.title} className="w-full">
-                <Collapsible>
-                    <div className="flex items-center justify-between">
-                        <Link className={navigationMobileItemClass} asChild>
-                            <NextLink href={item.url || '/'}>{item.title}</NextLink>
-                        </Link>
-
-                        <CollapsibleTrigger className="p-1.5 data-[state=open]:rotate-180 transition-transform duration-200 border border-border">
-                            <ChevronDownIcon className="h-6 w-6" />
-                        </CollapsibleTrigger>
-                    </div>
-
-                    <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up flex flex-col gap-2">
-                        <ul className="flex flex-col items-start gap-2 w-full pt-2 pl-3">
-                            {item.items.map((item) => {
-                                switch (item.__typename) {
-                                    case 'NavigationItem':
-                                        return <NavigationItem item={item} key={item.label} />;
-                                    case 'NavigationGroup':
-                                        return (
-                                            <li key={item.title} className="w-full">
-                                                <Collapsible>
-                                                    <div className="flex items-center justify-between">
-                                                        <Link className={navigationMobileItemClass} asChild>
-                                                            <NextLink href={item.url || '/'}>{item.title}</NextLink>
-                                                        </Link>
-
-                                                        <CollapsibleTrigger className="p-1.5 data-[state=open]:rotate-180 transition-transform duration-200 border border-border">
-                                                            <ChevronDownIcon className="h-6 w-6" />
-                                                        </CollapsibleTrigger>
-                                                    </div>
-
-                                                    <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up flex flex-col gap-2 p-0">
-                                                        <ul className="flex flex-col items-start gap-2 w-full pt-2 pl-3">
-                                                            {item.items.map((item) => {
-                                                                if (item.__typename !== 'NavigationItem') {
-                                                                    return null;
-                                                                }
-                                                                return <NavigationItem item={item} key={item.label} />;
-                                                            })}
-                                                        </ul>
-
-                                                        <Separator className="w-full" />
-                                                    </CollapsibleContent>
-                                                </Collapsible>
-                                            </li>
-                                        );
-                                }
-                            })}
-                        </ul>
-
-                        <Separator className="w-full" />
-                    </CollapsibleContent>
-                </Collapsible>
-            </li>
-        );
-    };
 
     return (
         <nav className="w-full bg-navbar-background">
@@ -150,9 +179,21 @@ export function MobileNavigation({ logoSlot, localeSlot, items, title, mobileMen
                                         {items.map((item) => {
                                             switch (item.__typename) {
                                                 case 'NavigationGroup':
-                                                    return <NavigationGroup key={item.title} item={item} />;
+                                                    return (
+                                                        <NavigationGroup
+                                                            key={item.title}
+                                                            item={item}
+                                                            navigationMobileItemClass={navigationMobileItemClass}
+                                                        />
+                                                    );
                                                 case 'NavigationItem':
-                                                    return <NavigationItem key={item.label} item={item} />;
+                                                    return (
+                                                        <NavigationItem
+                                                            key={item.label}
+                                                            item={item}
+                                                            navigationMobileItemClass={navigationMobileItemClass}
+                                                        />
+                                                    );
                                             }
                                         })}
                                     </ul>
