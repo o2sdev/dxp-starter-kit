@@ -33,20 +33,18 @@ export const Header: React.FC<HeaderProps> = ({ data, alternativeUrls, children 
         </Link>
     );
 
-    const LocaleSlot = () => {
-        return <LocaleSwitcher label={data.languageSwitcherLabel} alternativeUrls={alternativeUrls} />;
-    };
+    const LocaleSlot = <LocaleSwitcher label={data.languageSwitcherLabel} alternativeUrls={alternativeUrls} />;
 
     return (
         <header className="flex flex-col gap-4">
             <>
                 <div className="md:block hidden">
-                    <DesktopNavigation logoSlot={LogoSlot} localeSlot={<LocaleSlot />} items={data.items} />
+                    <DesktopNavigation logoSlot={LogoSlot} localeSlot={LocaleSlot} items={data.items} />
                 </div>
                 <div className="md:hidden">
                     <MobileNavigation
                         logoSlot={LogoSlot}
-                        localeSlot={<LocaleSlot />}
+                        localeSlot={LocaleSlot}
                         items={data.items}
                         title={data.title}
                         mobileMenuLabel={data.mobileMenuLabel}
