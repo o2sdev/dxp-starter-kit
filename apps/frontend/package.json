@@ -47,8 +47,8 @@
         "react-indiana-drag-scroll": "^2.2.1",
         "react-string-replace": "^1.1.1",
         "string-template": "^1.0.0",
-        "survey-core": "^2.3.10",
-        "survey-react-ui": "^2.3.10",
+        "survey-core": "^2.3.11",
+        "survey-react-ui": "^2.3.11",
         "throttle-debounce": "^5.0.2",
         "yup": "^1.7.1",
         "zod": "^4.1.12"
