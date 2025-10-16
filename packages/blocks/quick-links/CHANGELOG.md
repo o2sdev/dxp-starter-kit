@@ -1,5 +1,11 @@
 # @dxp/blocks.quick-links
 
+## 0.2.1
+
+### Patch Changes
+
+- 8e461f7: reverted temporary delay
+
 ## 0.2.0
 
 ### Minor Changes
