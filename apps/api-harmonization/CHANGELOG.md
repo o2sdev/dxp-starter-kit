@@ -1,5 +1,15 @@
 # @dxp/api-harmonization
 
+## 1.11.1
+
+### Patch Changes
+
+- a9200d7: added healthchecks
+- Updated dependencies [8e461f7]
+- Updated dependencies [c6a287f]
+    - @dxp/blocks.quick-links@0.2.1
+    - @dxp/integrations.mocked@0.6.1
+
 ## 1.11.0
 
 ### Minor Changes
@@ -77,7 +87,6 @@
 ### Minor Changes
 
 - e383fa0: feat: add DocumentList block for downloadable documents
-
     - add mocks,
     - add model in framework,
     - add DocumentList block to strapi integration,
