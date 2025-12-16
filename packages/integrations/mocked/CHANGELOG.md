@@ -1,5 +1,11 @@
 # @dxp/integrations.mocked
 
+## 0.6.1
+
+### Patch Changes
+
+- c6a287f: removed special characters from a slug
+
 ## 0.6.0
 
 ### Minor Changes
@@ -97,7 +103,6 @@
 
 - 05158f2: feat: align block headings
 - e383fa0: feat: add DocumentList block for downloadable documents
-
     - add mocks,
     - add model in framework,
     - add DocumentList block to strapi integration,

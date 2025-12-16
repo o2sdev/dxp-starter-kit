@@ -1,5 +1,18 @@
 # @dxp/frontend
 
+## 1.12.1
+
+### Patch Changes
+
+- ba530ce: updaded Next.js version
+- a9200d7: added healthchecks
+- Updated dependencies [8e461f7]
+- Updated dependencies [c6a287f]
+- Updated dependencies [a9200d7]
+    - @dxp/blocks.quick-links@0.2.1
+    - @dxp/integrations.mocked@0.6.1
+    - @dxp/api-harmonization@1.11.1
+
 ## 1.12.0
 
 ### Minor Changes
@@ -91,7 +104,6 @@
 ### Minor Changes
 
 - e383fa0: feat: add DocumentList block for downloadable documents
-
     - add mocks,
     - add model in framework,
     - add DocumentList block to strapi integration,
