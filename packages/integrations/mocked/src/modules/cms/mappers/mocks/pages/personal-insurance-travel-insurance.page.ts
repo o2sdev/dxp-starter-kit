@@ -224,7 +224,7 @@ export const PAGE_PERSONAL_INSURANCE_TRAVEL_INSURANCE_DE: CMS.Model.Page.Page = 
 
 export const PAGE_PERSONAL_INSURANCE_TRAVEL_INSURANCE_PL: CMS.Model.Page.Page = {
     id: 'personal-insurance-travel-insurance-1',
-    slug: '/indywidualny/ubezpieczenia/ubezpieczenie-podróży',
+    slug: '/indywidualny/ubezpieczenia/ubezpieczenie-podrozy',
     locale: 'pl',
     seo: {
         noIndex: false,

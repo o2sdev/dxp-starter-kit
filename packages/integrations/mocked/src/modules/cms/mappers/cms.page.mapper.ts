@@ -180,7 +180,7 @@ export const mapPage = (slug: string, locale: string): CMS.Model.Page.Page | und
         case '/personlich/versicherungen/reiseversicherung':
             return PAGE_PERSONAL_INSURANCE_TRAVEL_INSURANCE_DE;
 
-        case '/indywidualny/ubezpieczenia/ubezpieczenie-podróży':
+        case '/indywidualny/ubezpieczenia/ubezpieczenie-podrozy':
             return PAGE_PERSONAL_INSURANCE_TRAVEL_INSURANCE_PL;
 
         case '/personal/insurance/home-insurance':
