@@ -20,7 +20,7 @@
     "dependencies": {
         "@o2s/utils.logger": "*",
         "ofetch": "^1.4.1",
-        "qs": "^6.14.0",
+        "qs": "^6.16.0",
         "winston": "^3.18.3"
     },
     "devDependencies": {
