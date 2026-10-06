@@ -48,7 +48,7 @@
         "@nestjs/terminus": "^11.0.0",
         "@o2s/telemetry": "^1.1.0",
         "@o2s/utils.logger": "*",
-        "compression": "^1.8.1",
+        "compression": "^1.8.2",
         "cookie": "^1.0.2",
         "cookie-parser": "^1.4.7",
         "dayjs": "^1.11.18",
